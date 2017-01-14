@@ -1,7 +1,7 @@
 ### Unity ###
-[Ll]ibrary/*
+[Ll]ibrary/
+Library/
 Library/*
-Library
 [Tt]emp/
 /Temp
 Temp/
