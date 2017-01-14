@@ -1,6 +1,6 @@
 ### Unity ###
-[Ll]ibrary/
-Library/
+[Ll]ibrary/*
+Library/*
 /Library
 [Tt]emp/
 /Temp
