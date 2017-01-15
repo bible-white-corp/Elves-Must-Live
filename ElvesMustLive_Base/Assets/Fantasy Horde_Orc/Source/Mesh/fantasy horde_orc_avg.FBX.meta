@@ -1,0 +1,2084 @@
+fileFormatVersion: 2
+guid: 38b38e35a1631da488b5be9ddd9c1363
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: bip_gob_magLIKTarget
+    100002: fantasy horde-orc_avg_arm calf_R
+    100004: fantasy horde-orc_avg_knee armor L
+    100006: fantasy horde-orc_avg_arm calf_L
+    100008: fantasy horde-orc_avg_arm armor_R
+    100010: fantasy horde-orc_avg_shoulder armor B_R
+    100012: fantasy horde-orc_avg_shoulder armor C_L
+    100014: fantasy horde-orc_avg_shoulder armor A_R
+    100016: fantasy horde-orc_avg_ponny tail
+    100018: fantasy horde-orc_avg_wrist armor_L
+    100020: fantasy horde-orc_avg_arm armor_L
+    100022: fantasy horde-orc_avg_knee armor_R
+    100024: fantasy horde-orc_avg_shoulder armor B_L
+    100026: fantasy horde-orc_avg_armor pelvis
+    100028: fantasy horde-orc_avg_shoulder armor C_R
+    100030: fantasy horde-orc_avg_helmet closed
+    100032: fantasy horde-orc_avg_arm armor_L 1
+    100034: fantasy horde-orc_avg_wrist armor_R
+    100036: fantasy horde-orc_avg_shoulder armor A_L
+    100038: //RootNode
+    100040: bip_gob_magRIKTarget
+    100042: bon_gob_war_jaw
+    100044: goblin_quiver
+    100046: bip_gob_magRPlatform
+    100048: bip_gob_mag
+    100050: fantasy horde-orc_flag B
+    100052: fantasy horde-orc_sword
+    100054: bon_gob_war_face
+    100056: fantasy horde-orc_mace
+    100058: fantasy horde-orc_avg_body
+    100060: bon_gob_war_ear R_tip 1
+    100062: fantasy horde-orc_avg_mask
+    100064: fantasy horde-orc_staff C
+    100066: fantasy horde-orc_morningstar
+    100068: bip_gob_magLThigh
+    100070: bip_gob_magLCalf
+    100072: bip_gob_magLFoot
+    100074: bip_gob_magRThigh
+    100076: bip_gob_magLDigit11
+    100078: bip_gob_magPelvis
+    100080: bip_gob_magLForearm
+    100082: fantasy horde-orc_avg_hair
+    100084: fantasy horde-orc_staff A
+    100086: bip_gob_magRPalm
+    100088: bip_gob_magRDigit11 1
+    100090: bip_gob_magRUpperarm
+    100092: bip_gob_magLUpperarm
+    100094: fantasy horde-orc_avg_helmet
+    100096: bon_gob_war_ear R
+    100098: bip_gob_magSpine4
+    100100: bip_gob_magRibcage
+    100102: bip_gob_magLCollarbone
+    100104: bip_gob_magSpine3
+    100106: bip_gob_magRFoot
+    100108: bip_gob_magRDigit11
+    100110: bone_orc arch_main
+    100112: bip_gob_magSpine1
+    100114: bon_gob_war_hair_tip
+    100116: bip_gob_magSpine2
+    100118: fantasy horde-orc_shield A
+    100120: bip_gob_magRCalf
+    100122: bon_gob_war_hair
+    100124: bip_gob_magNeck2
+    100126: fantasy horde-orc_spearskull
+    100128: bon_gob_war_cloth00
+    100130: fantasy horde-orc_staff B
+    100132: fantasy horde-orc_avg_mohican
+    100134: fantasy horde-orc_flag A
+    100136: bip_gob_magLDigit22
+    100138: bip_gob_magHeadBone001
+    100140: bip_gob_magLDigit31
+    100142: bip_gob_magLDigit32
+    100144: bip_gob_magLDigit12
+    100146: fantasy horde-orc_avg_shoe
+    100148: bip_gob_magRForearm
+    100150: bip_gob_magRDigit21
+    100152: bip_gob_magLPalm
+    100154: bon_gob_war_jaw_tip 1
+    100156: bon_gob_war_ear L
+    100158: bip_gob_magLDigit21
+    100160: bip_gob_magRDigit12
+    100162: bon_gob_war_cloth_tip
+    100164: fantasy horde-orc_avg_cap
+    100166: bip_gob_magRDigit22
+    100168: bip_gob_magRCollarbone
+    100170: bip_gob_magRDigit31
+    100172: bip_gob_magLDigit11 1
+    100174: bip_gob_magRDigit32
+    100176: fantasy horde-orc_arch
+    100178: bip_gob_magHeadBone002
+    100180: bon_gob_war_cloth01
+    100182: fantasy horde-orc_avg_skull
+    100184: fantasy horde-orc_spear
+    100186: fantasy horde-orc_avg_cloth
+    100188: fantasy horde-orc_axe
+    100190: bon_gob_war_jaw_tip
+    100192: bip_gob_magLPlatform
+    100194: bip_gob_magNeck1
+    100196: fantasy horde-orc_avg_boot
+    100198: fantasy horde-orc_avg_armor
+    100200: bip_gob_magHead
+    100202: fantasy horde-orc_club
+    100204: bon_gob_war_ear R_tip
+    100206: fantasy horde-orc_scimitar
+    100208: fantasy horde-orc_flag C
+    100210: ik_orc arch_top01
+    100212: bone_orc arch_top00
+    100214: ctrl_orc arch_dummie botton
+    100216: bone_orc arch_top01
+    100218: ik_bone_orc arch_botton01
+    100220: bone_orc arch_botton01
+    100222: ctrl_orc arch_main
+    100224: bone_orc arch_botton_tip
+    100226: bone_orc arch_botton00
+    100228: ctrl_orc arch_dummie top
+    100230: bone_orc arch_top_tip
+    100232: ctrl_orc arch_arrow
+    100234: bip_horde
+    100236: bip_hordeHead
+    100238: bip_hordeHeadBone001
+    100240: bip_hordeHeadBone002
+    100242: bip_hordeLCalf
+    100244: bip_hordeLCollarbone
+    100246: bip_hordeLDigit11
+    100248: bip_hordeLDigit11 1
+    100250: bip_hordeLDigit12
+    100252: bip_hordeLDigit21
+    100254: bip_hordeLDigit22
+    100256: bip_hordeLDigit31
+    100258: bip_hordeLDigit32
+    100260: bip_hordeLFoot
+    100262: bip_hordeLForearm
+    100264: bip_hordeLIKTarget
+    100266: bip_hordeLPalm
+    100268: bip_hordeLPlatform
+    100270: bip_hordeLThigh
+    100272: bip_hordeLUpperarm
+    100274: bip_hordeNeck1
+    100276: bip_hordeNeck2
+    100278: bip_hordePelvis
+    100280: bip_hordeRCalf
+    100282: bip_hordeRCollarbone
+    100284: bip_hordeRDigit11
+    100286: bip_hordeRDigit11 1
+    100288: bip_hordeRDigit12
+    100290: bip_hordeRDigit21
+    100292: bip_hordeRDigit22
+    100294: bip_hordeRDigit31
+    100296: bip_hordeRDigit32
+    100298: bip_hordeRFoot
+    100300: bip_hordeRForearm
+    100302: bip_hordeRibcage
+    100304: bip_hordeRIKTarget
+    100306: bip_hordeRPalm
+    100308: bip_hordeRPlatform
+    100310: bip_hordeRThigh
+    100312: bip_hordeRUpperarm
+    100314: bip_hordeSpine1
+    100316: bip_hordeSpine2
+    100318: bip_hordeSpine3
+    100320: bip_hordeSpine4
+    100322: fantasy horde-orc_avg_beard
+    100324: fantasy horde-orc_fat_body
+    100326: fantasy horde-orc_atl body
+    100328: fantasy horde-orc_atl_mask
+    100330: fantasy horde-orc_fat_boot
+    100332: fantasy horde-orc_fat_mask
+    100334: fantasy horde-orc_fat_shoe
+    400000: bip_gob_magLIKTarget
+    400002: fantasy horde-orc_avg_arm calf_R
+    400004: fantasy horde-orc_avg_knee armor L
+    400006: fantasy horde-orc_avg_arm calf_L
+    400008: fantasy horde-orc_avg_arm armor_R
+    400010: fantasy horde-orc_avg_shoulder armor B_R
+    400012: fantasy horde-orc_avg_shoulder armor C_L
+    400014: fantasy horde-orc_avg_shoulder armor A_R
+    400016: fantasy horde-orc_avg_ponny tail
+    400018: fantasy horde-orc_avg_wrist armor_L
+    400020: fantasy horde-orc_avg_arm armor_L
+    400022: fantasy horde-orc_avg_knee armor_R
+    400024: fantasy horde-orc_avg_shoulder armor B_L
+    400026: fantasy horde-orc_avg_armor pelvis
+    400028: fantasy horde-orc_avg_shoulder armor C_R
+    400030: fantasy horde-orc_avg_helmet closed
+    400032: fantasy horde-orc_avg_arm armor_L 1
+    400034: fantasy horde-orc_avg_wrist armor_R
+    400036: fantasy horde-orc_avg_shoulder armor A_L
+    400038: //RootNode
+    400040: bip_gob_magRIKTarget
+    400042: bon_gob_war_jaw
+    400044: goblin_quiver
+    400046: bip_gob_magRPlatform
+    400048: bip_gob_mag
+    400050: fantasy horde-orc_flag B
+    400052: fantasy horde-orc_sword
+    400054: bon_gob_war_face
+    400056: fantasy horde-orc_mace
+    400058: fantasy horde-orc_avg_body
+    400060: bon_gob_war_ear R_tip 1
+    400062: fantasy horde-orc_avg_mask
+    400064: fantasy horde-orc_staff C
+    400066: fantasy horde-orc_morningstar
+    400068: bip_gob_magLThigh
+    400070: bip_gob_magLCalf
+    400072: bip_gob_magLFoot
+    400074: bip_gob_magRThigh
+    400076: bip_gob_magLDigit11
+    400078: bip_gob_magPelvis
+    400080: bip_gob_magLForearm
+    400082: fantasy horde-orc_avg_hair
+    400084: fantasy horde-orc_staff A
+    400086: bip_gob_magRPalm
+    400088: bip_gob_magRDigit11 1
+    400090: bip_gob_magRUpperarm
+    400092: bip_gob_magLUpperarm
+    400094: fantasy horde-orc_avg_helmet
+    400096: bon_gob_war_ear R
+    400098: bip_gob_magSpine4
+    400100: bip_gob_magRibcage
+    400102: bip_gob_magLCollarbone
+    400104: bip_gob_magSpine3
+    400106: bip_gob_magRFoot
+    400108: bip_gob_magRDigit11
+    400110: bone_orc arch_main
+    400112: bip_gob_magSpine1
+    400114: bon_gob_war_hair_tip
+    400116: bip_gob_magSpine2
+    400118: fantasy horde-orc_shield A
+    400120: bip_gob_magRCalf
+    400122: bon_gob_war_hair
+    400124: bip_gob_magNeck2
+    400126: fantasy horde-orc_spearskull
+    400128: bon_gob_war_cloth00
+    400130: fantasy horde-orc_staff B
+    400132: fantasy horde-orc_avg_mohican
+    400134: fantasy horde-orc_flag A
+    400136: bip_gob_magLDigit22
+    400138: bip_gob_magHeadBone001
+    400140: bip_gob_magLDigit31
+    400142: bip_gob_magLDigit32
+    400144: bip_gob_magLDigit12
+    400146: fantasy horde-orc_avg_shoe
+    400148: bip_gob_magRForearm
+    400150: bip_gob_magRDigit21
+    400152: bip_gob_magLPalm
+    400154: bon_gob_war_jaw_tip 1
+    400156: bon_gob_war_ear L
+    400158: bip_gob_magLDigit21
+    400160: bip_gob_magRDigit12
+    400162: bon_gob_war_cloth_tip
+    400164: fantasy horde-orc_avg_cap
+    400166: bip_gob_magRDigit22
+    400168: bip_gob_magRCollarbone
+    400170: bip_gob_magRDigit31
+    400172: bip_gob_magLDigit11 1
+    400174: bip_gob_magRDigit32
+    400176: fantasy horde-orc_arch
+    400178: bip_gob_magHeadBone002
+    400180: bon_gob_war_cloth01
+    400182: fantasy horde-orc_avg_skull
+    400184: fantasy horde-orc_spear
+    400186: fantasy horde-orc_avg_cloth
+    400188: fantasy horde-orc_axe
+    400190: bon_gob_war_jaw_tip
+    400192: bip_gob_magLPlatform
+    400194: bip_gob_magNeck1
+    400196: fantasy horde-orc_avg_boot
+    400198: fantasy horde-orc_avg_armor
+    400200: bip_gob_magHead
+    400202: fantasy horde-orc_club
+    400204: bon_gob_war_ear R_tip
+    400206: fantasy horde-orc_scimitar
+    400208: fantasy horde-orc_flag C
+    400210: ik_orc arch_top01
+    400212: bone_orc arch_top00
+    400214: ctrl_orc arch_dummie botton
+    400216: bone_orc arch_top01
+    400218: ik_bone_orc arch_botton01
+    400220: bone_orc arch_botton01
+    400222: ctrl_orc arch_main
+    400224: bone_orc arch_botton_tip
+    400226: bone_orc arch_botton00
+    400228: ctrl_orc arch_dummie top
+    400230: bone_orc arch_top_tip
+    400232: ctrl_orc arch_arrow
+    400234: bip_horde
+    400236: bip_hordeHead
+    400238: bip_hordeHeadBone001
+    400240: bip_hordeHeadBone002
+    400242: bip_hordeLCalf
+    400244: bip_hordeLCollarbone
+    400246: bip_hordeLDigit11
+    400248: bip_hordeLDigit11 1
+    400250: bip_hordeLDigit12
+    400252: bip_hordeLDigit21
+    400254: bip_hordeLDigit22
+    400256: bip_hordeLDigit31
+    400258: bip_hordeLDigit32
+    400260: bip_hordeLFoot
+    400262: bip_hordeLForearm
+    400264: bip_hordeLIKTarget
+    400266: bip_hordeLPalm
+    400268: bip_hordeLPlatform
+    400270: bip_hordeLThigh
+    400272: bip_hordeLUpperarm
+    400274: bip_hordeNeck1
+    400276: bip_hordeNeck2
+    400278: bip_hordePelvis
+    400280: bip_hordeRCalf
+    400282: bip_hordeRCollarbone
+    400284: bip_hordeRDigit11
+    400286: bip_hordeRDigit11 1
+    400288: bip_hordeRDigit12
+    400290: bip_hordeRDigit21
+    400292: bip_hordeRDigit22
+    400294: bip_hordeRDigit31
+    400296: bip_hordeRDigit32
+    400298: bip_hordeRFoot
+    400300: bip_hordeRForearm
+    400302: bip_hordeRibcage
+    400304: bip_hordeRIKTarget
+    400306: bip_hordeRPalm
+    400308: bip_hordeRPlatform
+    400310: bip_hordeRThigh
+    400312: bip_hordeRUpperarm
+    400314: bip_hordeSpine1
+    400316: bip_hordeSpine2
+    400318: bip_hordeSpine3
+    400320: bip_hordeSpine4
+    400322: fantasy horde-orc_avg_beard
+    400324: fantasy horde-orc_fat_body
+    400326: fantasy horde-orc_atl body
+    400328: fantasy horde-orc_atl_mask
+    400330: fantasy horde-orc_fat_boot
+    400332: fantasy horde-orc_fat_mask
+    400334: fantasy horde-orc_fat_shoe
+    2300000: fantasy horde-orc_avg_arm calf_R
+    2300002: fantasy horde-orc_avg_knee armor L
+    2300004: fantasy horde-orc_avg_arm calf_L
+    2300006: fantasy horde-orc_avg_arm armor_R
+    2300008: fantasy horde-orc_avg_shoulder armor B_R
+    2300010: fantasy horde-orc_avg_shoulder armor C_L
+    2300012: fantasy horde-orc_avg_shoulder armor A_R
+    2300014: fantasy horde-orc_avg_wrist armor_L
+    2300016: fantasy horde-orc_avg_arm armor_L
+    2300018: fantasy horde-orc_avg_knee armor_R
+    2300020: fantasy horde-orc_avg_shoulder armor B_L
+    2300022: fantasy horde-orc_avg_shoulder armor C_R
+    2300024: fantasy horde-orc_avg_helmet closed
+    2300026: fantasy horde-orc_avg_arm armor_L 1
+    2300028: fantasy horde-orc_avg_wrist armor_R
+    2300030: fantasy horde-orc_avg_shoulder armor A_L
+    2300032: goblin_quiver
+    2300034: fantasy horde-orc_flag B
+    2300036: fantasy horde-orc_sword
+    2300038: fantasy horde-orc_mace
+    2300040: fantasy horde-orc_staff C
+    2300042: fantasy horde-orc_morningstar
+    2300044: fantasy horde-orc_avg_hair
+    2300046: fantasy horde-orc_staff A
+    2300048: fantasy horde-orc_avg_helmet
+    2300050: fantasy horde-orc_avg_beard
+    2300052: fantasy horde-orc_shield A
+    2300054: fantasy horde-orc_spearskull
+    2300056: fantasy horde-orc_staff B
+    2300058: fantasy horde-orc_avg_mohican
+    2300060: fantasy horde-orc_flag A
+    2300064: fantasy horde-orc_avg_skull
+    2300066: fantasy horde-orc_spear
+    2300068: fantasy horde-orc_axe
+    2300070: fantasy horde-orc_avg_armor
+    2300072: fantasy horde-orc_club
+    2300074: fantasy horde-orc_scimitar
+    2300076: fantasy horde-orc_flag C
+    3300000: fantasy horde-orc_avg_arm calf_R
+    3300002: fantasy horde-orc_avg_knee armor L
+    3300004: fantasy horde-orc_avg_arm calf_L
+    3300006: fantasy horde-orc_avg_arm armor_R
+    3300008: fantasy horde-orc_avg_shoulder armor B_R
+    3300010: fantasy horde-orc_avg_shoulder armor C_L
+    3300012: fantasy horde-orc_avg_shoulder armor A_R
+    3300014: fantasy horde-orc_avg_wrist armor_L
+    3300016: fantasy horde-orc_avg_arm armor_L
+    3300018: fantasy horde-orc_avg_knee armor_R
+    3300020: fantasy horde-orc_avg_shoulder armor B_L
+    3300022: fantasy horde-orc_avg_shoulder armor C_R
+    3300024: fantasy horde-orc_avg_helmet closed
+    3300026: fantasy horde-orc_avg_arm armor_L 1
+    3300028: fantasy horde-orc_avg_wrist armor_R
+    3300030: fantasy horde-orc_avg_shoulder armor A_L
+    3300032: goblin_quiver
+    3300034: fantasy horde-orc_flag B
+    3300036: fantasy horde-orc_sword
+    3300038: fantasy horde-orc_mace
+    3300040: fantasy horde-orc_staff C
+    3300042: fantasy horde-orc_morningstar
+    3300044: fantasy horde-orc_avg_hair
+    3300046: fantasy horde-orc_staff A
+    3300048: fantasy horde-orc_avg_helmet
+    3300050: fantasy horde-orc_avg_beard
+    3300052: fantasy horde-orc_shield A
+    3300054: fantasy horde-orc_spearskull
+    3300056: fantasy horde-orc_staff B
+    3300058: fantasy horde-orc_avg_mohican
+    3300060: fantasy horde-orc_flag A
+    3300064: fantasy horde-orc_avg_skull
+    3300066: fantasy horde-orc_spear
+    3300068: fantasy horde-orc_axe
+    3300070: fantasy horde-orc_avg_armor
+    3300072: fantasy horde-orc_club
+    3300074: fantasy horde-orc_scimitar
+    3300076: fantasy horde-orc_flag C
+    4300000: fantasy horde-orc_avg_body
+    4300002: fantasy horde-orc_avg_arm calf_L
+    4300004: fantasy horde-orc_avg_knee armor L
+    4300006: fantasy horde-orc_avg_arm calf_R
+    4300008: fantasy horde-orc_avg_knee armor_R
+    4300010: fantasy horde-orc_shield A
+    4300012: fantasy horde-orc_avg_arm armor_L
+    4300014: fantasy horde-orc_avg_shoulder armor B_L
+    4300016: fantasy horde-orc_avg_shoulder armor C_L
+    4300018: fantasy horde-orc_avg_shoulder armor A_L
+    4300020: fantasy horde-orc_sword
+    4300022: fantasy horde-orc_spear
+    4300024: fantasy horde-orc_club
+    4300026: fantasy horde-orc_axe
+    4300028: fantasy horde-orc_scimitar
+    4300030: fantasy horde-orc_mace
+    4300032: fantasy horde-orc_morningstar
+    4300034: fantasy horde-orc_staff A
+    4300036: fantasy horde-orc_staff B
+    4300038: fantasy horde-orc_staff C
+    4300040: fantasy horde-orc_spearskull
+    4300042: fantasy horde-orc_avg_arm armor_R
+    4300044: fantasy horde-orc_avg_wrist armor_R
+    4300046: fantasy horde-orc_avg_shoulder armor B_R
+    4300048: fantasy horde-orc_avg_shoulder armor C_R
+    4300050: fantasy horde-orc_avg_shoulder armor A_R
+    4300052: fantasy horde-orc_avg_beard
+    4300054: fantasy horde-orc_avg_skull
+    4300056: fantasy horde-orc_avg_helmet closed
+    4300058: fantasy horde-orc_avg_helmet
+    4300060: fantasy horde-orc_avg_hair
+    4300062: fantasy horde-orc_avg_mohican
+    4300064: goblin_quiver
+    4300066: fantasy horde-orc_flag B
+    4300068: fantasy horde-orc_flag C
+    4300070: fantasy horde-orc_flag A
+    4300072: fantasy horde-orc_avg_armor
+    4300074: fantasy horde-orc_arch
+    4300076: fantasy horde-orc_avg_ponny tail
+    4300078: fantasy horde-orc_avg_cap
+    4300080: fantasy horde-orc_avg_shoe
+    4300082: fantasy horde-orc_avg_boot
+    4300084: fantasy horde-orc_avg_cloth
+    4300086: fantasy horde-orc_avg_mask
+    4300088: fantasy horde-orc_avg_armor pelvis
+    4300090: fantasy horde-orc_avg_arm armor_L
+    4300092: fantasy horde-orc_avg_wrist armor_L
+    4300094: bip_gob_magPelvis
+    4300096: bip_gob_magLThigh
+    4300098: bip_gob_magLCalf
+    4300100: bip_gob_magLFoot
+    4300102: bip_gob_magLDigit11
+    4300104: bip_gob_magRThigh
+    4300106: bip_gob_magRCalf
+    4300108: bip_gob_magRFoot
+    4300110: bip_gob_magRDigit11
+    4300112: bip_gob_magSpine1
+    4300114: bip_gob_magSpine2
+    4300116: bip_gob_magSpine3
+    4300118: bip_gob_magSpine4
+    4300120: bip_gob_magRibcage
+    4300122: bip_gob_magLCollarbone
+    4300124: bip_gob_magLUpperarm
+    4300126: bip_gob_magLForearm
+    4300128: bip_gob_magLPalm
+    4300130: bip_gob_magLDigit11
+    4300132: bip_gob_magLDigit12
+    4300134: bip_gob_magLDigit21
+    4300136: bip_gob_magLDigit22
+    4300138: bip_gob_magLDigit31
+    4300140: bip_gob_magLDigit32
+    4300142: bip_gob_magRCollarbone
+    4300144: bip_gob_magRUpperarm
+    4300146: bip_gob_magRForearm
+    4300148: bip_gob_magRPalm
+    4300150: bip_gob_magRDigit11
+    4300152: bip_gob_magRDigit12
+    4300154: bip_gob_magRDigit21
+    4300156: bip_gob_magRDigit22
+    4300158: bip_gob_magRDigit31
+    4300160: bip_gob_magRDigit32
+    4300162: bip_gob_magNeck1
+    4300164: bip_gob_magNeck2
+    4300166: bip_gob_magHead
+    4300168: bip_gob_magHeadBone001
+    4300170: bip_gob_magHeadBone002
+    4300172: fantasy horde-orc_fat_body
+    4300174: fantasy horde-orc_atl body
+    4300176: fantasy horde-orc_atl_mask
+    4300178: fantasy horde-orc_fat_mask
+    4300180: fantasy horde-orc_fat_boot
+    4300182: fantasy horde-orc_fat_shoe
+    7400000: Take 001
+    7400002: idle
+    7400004: idle0
+    7400006: idle break 1
+    7400008: idle break 2
+    7400010: salute
+    7400012: walk
+    7400014: run
+    7400016: run fast
+    7400018: crouch
+    7400020: crouch walk
+    7400022: hit
+    7400024: hit back
+    7400026: jump
+    7400028: falling
+    7400030: die soft
+    7400032: die hard
+    7400034: idle fight
+    7400036: idle break fight
+    7400038: blocking
+    7400040: axe attack
+    7400042: sword attack
+    7400044: sword double attack
+    7400046: arch attack
+    7400048: prepare spear
+    7400050: spear attack
+    7400052: casting A
+    7400054: casting B
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: fantasy horde-orc_avg_ponny tail
+    13700002: fantasy horde-orc_avg_armor pelvis
+    13700004: fantasy horde-orc_avg_body
+    13700006: fantasy horde-orc_avg_mask
+    13700008: fantasy horde-orc_avg_shoe
+    13700010: fantasy horde-orc_avg_cap
+    13700012: fantasy horde-orc_avg_cloth
+    13700014: fantasy horde-orc_avg_boot
+    13700016: fantasy horde-orc_arch
+    13700018: fantasy horde-orc_fat_body
+    13700020: fantasy horde-orc_atl body
+    13700022: fantasy horde-orc_atl_mask
+    13700024: fantasy horde-orc_fat_boot
+    13700026: fantasy horde-orc_fat_mask
+    13700028: fantasy horde-orc_fat_shoe
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: 
+      firstFrame: 5
+      lastFrame: 120
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: idle break 1
+      takeName: 
+      firstFrame: 120
+      lastFrame: 190
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: idle break 2
+      takeName: 
+      firstFrame: 190
+      lastFrame: 290
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: salute
+      takeName: 
+      firstFrame: 290
+      lastFrame: 340
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: walk
+      takeName: 
+      firstFrame: 385
+      lastFrame: 415
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: run
+      takeName: 
+      firstFrame: 420
+      lastFrame: 445
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: run fast
+      takeName: 
+      firstFrame: 455
+      lastFrame: 478
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: crouch
+      takeName: 
+      firstFrame: 485
+      lastFrame: 499
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: crouch walk
+      takeName: 
+      firstFrame: 500
+      lastFrame: 550
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: hit
+      takeName: 
+      firstFrame: 554
+      lastFrame: 575
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: jump
+      takeName: 
+      firstFrame: 580
+      lastFrame: 623
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: falling
+      takeName: 
+      firstFrame: 625
+      lastFrame: 665
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: die soft
+      takeName: 
+      firstFrame: 668
+      lastFrame: 740
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: die hard
+      takeName: 
+      firstFrame: 745
+      lastFrame: 770
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: idle fight
+      takeName: 
+      firstFrame: 775
+      lastFrame: 820
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: idle break fight
+      takeName: 
+      firstFrame: 820
+      lastFrame: 870
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: blocking
+      takeName: 
+      firstFrame: 870
+      lastFrame: 890
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: axe attack
+      takeName: 
+      firstFrame: 890
+      lastFrame: 910
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: sword attack
+      takeName: 
+      firstFrame: 910
+      lastFrame: 930
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: sword double attack
+      takeName: 
+      firstFrame: 930
+      lastFrame: 960
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: arch attack
+      takeName: 
+      firstFrame: 960
+      lastFrame: 1015
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: prepare spear
+      takeName: 
+      firstFrame: 1015
+      lastFrame: 1025
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: spear attack
+      takeName: 
+      firstFrame: 1025
+      lastFrame: 1045
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: casting A
+      takeName: 
+      firstFrame: 1060
+      lastFrame: 1090
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: casting B
+      takeName: 
+      firstFrame: 1090
+      lastFrame: 1115
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 0
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: bip_hordePelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLThigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRThigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLCalf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRCalf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeSpine2
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeSpine3
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeNeck1
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeHead
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLCollarbone
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRCollarbone
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLUpperarm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRUpperarm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLForearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRForearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLPalm
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRPalm
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLDigit11
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRDigit11
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bon_gob_war_ear L
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bon_gob_war_ear R
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bon_gob_war_jaw
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLDigit21
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLDigit22
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLDigit31
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLDigit32
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRDigit21
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRDigit22
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRDigit31
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRDigit32
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRDigit11 1
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeRDigit12
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLDigit11 1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: bip_hordeLDigit12
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: fantasy horde_orc_avg(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: bip_hordePelvis
+      position: {x: 2.81241217e-08, y: .727313995, z: -.0548782013}
+      rotation: {x: .499122649, y: -.500867248, z: -.499131203, w: .50087589}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: bip_hordeLThigh
+      position: {x: -.0104010766, y: .0283595826, z: .116508506}
+      rotation: {x: -.110452585, y: .991174161, z: -.027961947, w: .0677664429}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000024}
+      transformModified: 1
+    - name: bip_hordeLCalf
+      position: {x: -.348436654, y: 9.5367426e-08, z: 7.62939436e-08}
+      rotation: {x: -.00803415291, y: .0210680701, z: .34021163, w: .940078557}
+      scale: {x: 1.00000012, y: 1, z: 1}
+      transformModified: 1
+    - name: bip_hordeLFoot
+      position: {x: -.339098006, y: -9.53674295e-09, z: 0}
+      rotation: {x: -.0686383918, y: .0256588291, z: -.762533486, w: .64278549}
+      scale: {x: 1, y: .999999881, z: .99999994}
+      transformModified: 1
+    - name: bip_hordeLDigit11
+      position: {x: -.272767305, y: 9.53674295e-09, z: -1.90734859e-08}
+      rotation: {x: 9.21328683e-06, y: -6.16780671e-05, z: -.146423176, w: .98922205}
+      scale: {x: .999999881, y: 1, z: .999999762}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_arm calf_L
+      position: {x: -.358173519, y: .0908859223, z: .248561695}
+      rotation: {x: .745811701, y: -.187138319, z: .616716266, w: .168538421}
+      scale: {x: 1.0000025, y: 1.00000107, z: 1.00000167}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_knee armor L
+      position: {x: -.358173519, y: .0908859223, z: .248561695}
+      rotation: {x: .745811701, y: -.187138319, z: .616716266, w: .168538421}
+      scale: {x: 1.0000025, y: 1.00000107, z: 1.00000167}
+      transformModified: 1
+    - name: bip_hordeRThigh
+      position: {x: -.0104010766, y: .0283595826, z: -.116508551}
+      rotation: {x: -.110452779, y: .991174161, z: .0279626008, w: -.0677651837}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: bip_hordeRCalf
+      position: {x: -.348436654, y: 3.81469718e-08, z: -7.62939436e-08}
+      rotation: {x: .00795401447, y: -.0210972391, z: .340210229, w: .940079093}
+      scale: {x: .99999994, y: .999999821, z: 1}
+      transformModified: 1
+    - name: bip_hordeRFoot
+      position: {x: -.339098006, y: 0, z: 1.90734859e-08}
+      rotation: {x: .0687292591, y: -.0255480334, z: -.762636542, w: .642657936}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: bip_hordeRDigit11
+      position: {x: -.272767305, y: 0, z: 0}
+      rotation: {x: 1.80658049e-08, y: -3.27974341e-08, z: -.146263927, w: .989245594}
+      scale: {x: .999999821, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_arm calf_R
+      position: {x: -.358175427, y: .090908967, z: -.248550996}
+      rotation: {x: .616728842, y: -.168575838, z: .74580276, w: .187098831}
+      scale: {x: 1.00000322, y: 1.00000095, z: 1.00000167}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_knee armor_R
+      position: {x: -.358175427, y: .0909089744, z: -.248550996}
+      rotation: {x: .616728842, y: -.168575838, z: .74580276, w: .187098831}
+      scale: {x: 1.00000322, y: 1.00000095, z: 1.00000167}
+      transformModified: 1
+    - name: bip_hordeSpine1
+      position: {x: -.0276104733, y: -.00211248873, z: -5.24283683e-09}
+      rotation: {x: 8.06410316e-09, y: -3.70032112e-08, z: -.149439916, w: .988770843}
+      scale: {x: 1.00000024, y: 1.00000024, z: 1}
+      transformModified: 1
+    - name: bip_hordeSpine2
+      position: {x: -.156111822, y: 1.90734859e-08, z: 7.27595745e-14}
+      rotation: {x: 5.32315525e-10, y: -1.00038369e-08, z: .169456631, w: .985537648}
+      scale: {x: 1.00000036, y: 1.00000036, z: 1.00000012}
+      transformModified: 1
+    - name: bip_hordeSpine3
+      position: {x: -.132986531, y: 2.38418574e-09, z: 7.27595745e-14}
+      rotation: {x: 4.84574958e-09, y: 6.64837998e-08, z: .0844829455, w: .996424913}
+      scale: {x: .99999994, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: bip_hordeSpine4
+      position: {x: -.142910689, y: 0, z: 7.27595745e-14}
+      rotation: {x: 2.55520582e-09, y: 1.14689911e-08, z: -.0863764361, w: .99626261}
+      scale: {x: .999999225, y: .999999225, z: .999999821}
+      transformModified: 1
+    - name: bip_hordeRibcage
+      position: {x: -.192576975, y: 0, z: 7.27595745e-14}
+      rotation: {x: 2.81877605e-10, y: -2.97038323e-08, z: -.0201191027, w: .999797583}
+      scale: {x: 1.00000036, y: 1.00000036, z: 1.00000012}
+      transformModified: 1
+    - name: bip_hordeLCollarbone
+      position: {x: .000146484366, y: .0521275252, z: .0762030855}
+      rotation: {x: .04592916, y: .724625587, z: .168049037, w: .666759253}
+      scale: {x: .99999994, y: .999999881, z: 1}
+      transformModified: 1
+    - name: bip_hordeLUpperarm
+      position: {x: -.141163498, y: 1.90734859e-08, z: -1.52587887e-07}
+      rotation: {x: .156769022, y: -.0423791334, z: -.184779882, w: .969269812}
+      scale: {x: 1, y: 1, z: .999999881}
+      transformModified: 1
+    - name: bip_hordeLForearm
+      position: {x: -.289336592, y: 1.90734859e-08, z: 0}
+      rotation: {x: -.0840180516, y: -.0121937916, z: .00612482103, w: .996370852}
+      scale: {x: .99999994, y: 1.00000012, z: 1.00000024}
+      transformModified: 1
+    - name: bip_hordeLPalm
+      position: {x: -.274690717, y: 1.90734859e-08, z: 0}
+      rotation: {x: -.688029885, y: .0833224654, z: -.0276504532, w: .720352471}
+      scale: {x: 1, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: bip_hordeLDigit11 1
+      position: {x: -.0464644134, y: -.012190138, z: .0637555197}
+      rotation: {x: .429044873, y: .290789336, z: -.102694266, w: .849008858}
+      scale: {x: .999999881, y: .999999821, z: .999999881}
+      transformModified: 1
+    - name: bip_hordeLDigit12
+      position: {x: -.0988238677, y: -3.81469718e-08, z: 0}
+      rotation: {x: 6.31232324e-05, y: 7.25159998e-06, z: .225009084, w: .974356651}
+      scale: {x: 1, y: 1, z: .99999994}
+      transformModified: 1
+    - name: bip_hordeLDigit21
+      position: {x: -.159154013, y: -.00836337917, z: .0560333692}
+      rotation: {x: .0959055126, y: .0404288024, z: .010529818, w: .994513392}
+      scale: {x: .99999994, y: .999999821, z: .99999994}
+      transformModified: 1
+    - name: bip_hordeLDigit22
+      position: {x: -.0806666911, y: 0, z: 0}
+      rotation: {x: 4.35902678e-07, y: -4.7767756e-08, z: .0965703949, w: .995326161}
+      scale: {x: 1.00000012, y: 1, z: 1}
+      transformModified: 1
+    - name: bip_hordeLDigit31
+      position: {x: -.166658938, y: -.00562667847, z: -.0145289991}
+      rotation: {x: -.00540034845, y: -.0067661074, z: .0839800239, w: .99642992}
+      scale: {x: .99999994, y: .999999821, z: .999999881}
+      transformModified: 1
+    - name: bip_hordeLDigit32
+      position: {x: -.0875896066, y: 1.52587887e-07, z: -1.90734859e-08}
+      rotation: {x: -2.54441366e-05, y: -.000165127334, z: .156639412, w: .987655878}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: ctrl_orc arch_main
+      position: {x: -.124559365, y: -.0498524457, z: .0265587606}
+      rotation: {x: .692180455, y: .0193314999, z: .0177082643, w: .721248269}
+      scale: {x: 1.00000036, y: .999999881, z: .999999702}
+      transformModified: 1
+    - name: bone_orc arch_main
+      position: {x: .00879306812, y: -.0446564667, z: 0}
+      rotation: {x: 1.33850788e-08, y: -7.5340596e-09, z: -.687215567, w: .726453543}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ctrl_orc arch_arrow
+      position: {x: .191994831, y: .0211179536, z: .00694229128}
+      rotation: {x: -.707106888, y: -9.21962595e-09, z: 1.9756337e-08, w: .707106769}
+      scale: {x: 1, y: 1, z: .99999994}
+      transformModified: 1
+    - name: bone_orc arch_botton00
+      position: {x: .00425956724, y: .00139419548, z: .00220533367}
+      rotation: {x: -.706775606, y: .0745646432, z: -.0589842349, w: -.701020122}
+      scale: {x: .999999821, y: .999999583, z: .999999762}
+      transformModified: 1
+    - name: bone_orc arch_botton01
+      position: {x: -.575117052, y: 2.36511232e-06, z: 0}
+      rotation: {x: .000324950845, y: -.00010862037, z: .981257617, w: -.192700386}
+      scale: {x: 1.00000036, y: .99999994, z: 1.00000012}
+      transformModified: 1
+    - name: bone_orc arch_top00
+      position: {x: .00295293797, y: .00135833735, z: .000663414015}
+      rotation: {x: -.503070831, y: -.494182438, z: .510592937, w: -.491933256}
+      scale: {x: 1.00000012, y: .999999881, z: .999999702}
+      transformModified: 1
+    - name: bone_orc arch_top01
+      position: {x: -.527619243, y: -3.05175774e-07, z: 0}
+      rotation: {x: .000760906958, y: -6.89439403e-05, z: .981326044, w: .192350313}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_arm armor_L
+      position: {x: -.463523716, y: -.0300415698, z: 1.02954996}
+      rotation: {x: -.119720019, y: .688872993, z: -.00389776449, w: .714916706}
+      scale: {x: .999999464, y: 1.00000012, z: 1.0000006}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_wrist armor_L
+      position: {x: -.463523179, y: -.0300415978, z: 1.02955019}
+      rotation: {x: -.11972028, y: .688872993, z: -.00389797799, w: .714916706}
+      scale: {x: .999999464, y: 1.00000012, z: 1.0000006}
+      transformModified: 1
+    - name: fantasy horde-orc_shield A
+      position: {x: -.385235667, y: .0309112165, z: -.0724113435}
+      rotation: {x: .0934056491, y: .693910062, z: .713965297, w: .00423019985}
+      scale: {x: .999999523, y: 1.00000012, z: 1.00000036}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_shoulder armor A_L
+      position: {x: -.867573202, y: .312880993, z: .959959149}
+      rotation: {x: -.077161245, y: -.424320787, z: -.0409292243, w: .901289523}
+      scale: {x: -1.0000006, y: -1.00000024, z: -1.0000006}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_shoulder armor B_L
+      position: {x: -.867573202, y: .312880993, z: .959959149}
+      rotation: {x: -.077161558, y: -.424320817, z: -.0409295075, w: .901289463}
+      scale: {x: -1.00000072, y: -1.00000012, z: -1.00000072}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_shoulder armor C_L
+      position: {x: -.232752725, y: -.176336527, z: 1.31628811}
+      rotation: {x: .082343407, y: -.08776398, z: -.324537754, w: .938185632}
+      scale: {x: -.999999881, y: -1, z: -1}
+      transformModified: 1
+    - name: bip_hordeNeck1
+      position: {x: .00106094358, y: .0135850757, z: -7.11348536e-09}
+      rotation: {x: -1.38853951e-08, y: -5.45486323e-08, z: -.135721922, w: .990747035}
+      scale: {x: .99999994, y: .999999881, z: .99999994}
+      transformModified: 1
+    - name: bip_hordeNeck2
+      position: {x: -.0463989265, y: 0, z: 0}
+      rotation: {x: -1.25942776e-08, y: -6.79931134e-09, z: -.173648193, w: .984807789}
+      scale: {x: .99999994, y: 1, z: .999999881}
+      transformModified: 1
+    - name: bip_hordeHead
+      position: {x: -.0814034268, y: -7.62939436e-08, z: 7.27595745e-14}
+      rotation: {x: -2.80177481e-09, y: 6.69807889e-08, z: .348523527, w: .937300026}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: bip_hordeHeadBone001
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -4.57323422e-14, y: -1.29979144e-27, z: 2.84217128e-14, w: 1}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: bip_hordeHeadBone002
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -4.57323422e-14, y: -1.29979144e-27, z: 2.84217128e-14, w: 1}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: bon_gob_war_ear L
+      position: {x: -.0394038372, y: .0264779106, z: .0882107392}
+      rotation: {x: -.487002254, y: .222356766, z: .512668192, w: .671235859}
+      scale: {x: .999999881, y: .999999881, z: 1.00000036}
+      transformModified: 1
+    - name: bon_gob_war_ear R
+      position: {x: -.036259003, y: .0264780354, z: -.0792687982}
+      rotation: {x: .668872118, y: .512963593, z: .229365349, w: -.486692876}
+      scale: {x: 1.00000024, y: .999999821, z: .99999994}
+      transformModified: 1
+    - name: bon_gob_war_face
+      position: {x: -.0715266392, y: .0716578066, z: 6.10351606e-07}
+      rotation: {x: -.673626304, y: .739072144, z: -7.17771968e-07, w: 3.39181895e-07}
+      scale: {x: 1.00000107, y: 1.0000006, z: .999999702}
+      transformModified: 1
+    - name: bon_gob_war_hair
+      position: {x: -.142097935, y: -.0277829096, z: 4.57763662e-07}
+      rotation: {x: .901848614, y: .432052165, z: 4.51458277e-07, w: 8.41184317e-07}
+      scale: {x: 1.00000036, y: 1.0000006, z: .999999881}
+      transformModified: 1
+    - name: bon_gob_war_jaw
+      position: {x: -.00173110957, y: .0388114974, z: 1.06811524e-06}
+      rotation: {x: -.46909833, y: .883145928, z: -6.48881041e-07, w: 1.42191112e-07}
+      scale: {x: .999999702, y: 1.00000012, z: .999999881}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_beard
+      position: {x: -.757641196, y: -1.24040103, z: 1.41137843e-06}
+      rotation: {x: .624478519, y: .33170265, z: .624478519, w: -.33170265}
+      scale: {x: .999999881, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_hair
+      position: {x: 1.45021987, y: -.0279265754, z: 4.2915417e-08}
+      rotation: {x: .707106829, y: 5.35891154e-08, z: -.707106829, w: 5.35891154e-08}
+      scale: {x: .999999881, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_helmet
+      position: {x: 1.45021987, y: -.0279265754, z: 4.2915417e-08}
+      rotation: {x: .707106829, y: 2.0044466e-07, z: -.707106829, w: 2.0044466e-07}
+      scale: {x: .999999762, y: 1.00000012, z: .999999821}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_helmet closed
+      position: {x: 1.45021987, y: -.0279265754, z: 4.2915417e-08}
+      rotation: {x: .707106829, y: 2.0044466e-07, z: -.707106829, w: 2.0044466e-07}
+      scale: {x: .999999762, y: 1.00000012, z: .999999821}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_mohican
+      position: {x: 1.45021987, y: -.0279265754, z: 4.2915417e-08}
+      rotation: {x: .707106829, y: 2.0044466e-07, z: -.707106829, w: 2.0044466e-07}
+      scale: {x: .999999762, y: 1.00000012, z: .999999821}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_skull
+      position: {x: -.0813594013, y: .180520937, z: -2.18278724e-13}
+      rotation: {x: .707106829, y: 2.0044466e-07, z: -.707106829, w: 2.0044466e-07}
+      scale: {x: .999999762, y: 1.00000012, z: .999999821}
+      transformModified: 1
+    - name: bip_hordeRCollarbone
+      position: {x: .000146484366, y: .0521275215, z: -.0762030855}
+      rotation: {x: -.045928929, y: -.724625289, z: .168049097, w: .666759551}
+      scale: {x: 1, y: .99999994, z: 1}
+      transformModified: 1
+    - name: bip_hordeRUpperarm
+      position: {x: -.141163483, y: 1.90734859e-08, z: 0}
+      rotation: {x: -.15656127, y: .0428174362, z: -.184585035, w: .969321191}
+      scale: {x: .999999881, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: bip_hordeRForearm
+      position: {x: -.289336562, y: -1.90734859e-08, z: 0}
+      rotation: {x: .0840192586, y: .012216405, z: .00592412474, w: .996371627}
+      scale: {x: .99999994, y: .999999881, z: .999999881}
+      transformModified: 1
+    - name: bip_hordeRPalm
+      position: {x: -.274690807, y: -9.53674295e-09, z: 0}
+      rotation: {x: .688506007, y: -.0815500692, z: -.0223778393, w: .720283508}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: bip_hordeRDigit11 1
+      position: {x: -.0464659259, y: -.0121886311, z: -.0637580827}
+      rotation: {x: -.393776447, y: -.308616787, z: -.0744512901, w: .862642944}
+      scale: {x: 1.00000012, y: 1, z: .99999994}
+      transformModified: 1
+    - name: bip_hordeRDigit12
+      position: {x: -.0988238901, y: 0, z: 0}
+      rotation: {x: -6.32025549e-05, y: -7.23932681e-06, z: .225009069, w: .974356711}
+      scale: {x: .99999994, y: .999999821, z: 1}
+      transformModified: 1
+    - name: bip_hordeRDigit21
+      position: {x: -.159155577, y: -.00835935585, z: -.0560292192}
+      rotation: {x: -.0122589804, y: -.00332332612, z: .088582702, w: .995987892}
+      scale: {x: 1, y: 1, z: 1.00000024}
+      transformModified: 1
+    - name: bip_hordeRDigit22
+      position: {x: -.0806666538, y: -1.52587887e-07, z: 3.81469718e-08}
+      rotation: {x: -4.63152901e-07, y: -3.0609062e-08, z: .0965704322, w: .995326161}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000012}
+      transformModified: 1
+    - name: bip_hordeRDigit31
+      position: {x: -.166661933, y: -.00562089356, z: .0145330084}
+      rotation: {x: .0585902818, y: .0360387675, z: .0899204165, w: .993570685}
+      scale: {x: 1, y: .999999881, z: 1.00000012}
+      transformModified: 1
+    - name: bip_hordeRDigit32
+      position: {x: -.0875896811, y: 0, z: -3.81469718e-08}
+      rotation: {x: 2.54571605e-05, y: .000165069025, z: .156639352, w: .987655878}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_axe
+      position: {x: -.120896988, y: -.0478160083, z: -.0114112087}
+      rotation: {x: -1.16635384e-07, y: .993164718, z: -1.24776318e-06, w: -.116721243}
+      scale: {x: 1.00000012, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_club
+      position: {x: -.120896988, y: -.0478160083, z: -.0114112087}
+      rotation: {x: 1.23928046e-07, y: .993164718, z: -1.62646825e-06, w: -.116721295}
+      scale: {x: .999999821, y: .999999166, z: 1.00000119}
+      transformModified: 1
+    - name: fantasy horde-orc_mace
+      position: {x: -.120896988, y: -.0478160083, z: -.0114112087}
+      rotation: {x: 1.44482257e-07, y: .993164718, z: -1.3877434e-06, w: -.116721302}
+      scale: {x: .999999702, y: .999999464, z: 1.00000119}
+      transformModified: 1
+    - name: fantasy horde-orc_morningstar
+      position: {x: -.120896988, y: -.0478160083, z: -.0114112087}
+      rotation: {x: 1.44482257e-07, y: .993164718, z: -1.3877434e-06, w: -.116721302}
+      scale: {x: .999999702, y: .999999464, z: 1.00000119}
+      transformModified: 1
+    - name: fantasy horde-orc_scimitar
+      position: {x: -.120896988, y: -.0478160083, z: -.0114112087}
+      rotation: {x: 1.80026589e-07, y: .993164718, z: -1.149132e-06, w: -.11672131}
+      scale: {x: 1.00000048, y: 1.00000024, z: .999999642}
+      transformModified: 1
+    - name: fantasy horde-orc_spear
+      position: {x: -.163296804, y: -.043788299, z: -.243328705}
+      rotation: {x: -.152210772, y: .978565395, z: .00668552378, w: -.138553366}
+      scale: {x: .999999762, y: 1, z: .99999994}
+      transformModified: 1
+    - name: fantasy horde-orc_spearskull
+      position: {x: -.163296923, y: -.0437881462, z: -.243328795}
+      rotation: {x: -.152210727, y: .978565395, z: .00668550655, w: -.138553292}
+      scale: {x: 1, y: 1.00000012, z: 1.00000024}
+      transformModified: 1
+    - name: fantasy horde-orc_staff A
+      position: {x: -.179129943, y: -.0418322757, z: -.257128835}
+      rotation: {x: -.152210668, y: .978565395, z: .00668529049, w: -.138553336}
+      scale: {x: .99999994, y: 1.00000012, z: .999999881}
+      transformModified: 1
+    - name: fantasy horde-orc_staff B
+      position: {x: -.179154843, y: -.0739306659, z: -.278568476}
+      rotation: {x: -.152210668, y: .978565395, z: .00668561691, w: -.138553366}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000036}
+      transformModified: 1
+    - name: fantasy horde-orc_staff C
+      position: {x: -.179129943, y: -.0418322757, z: -.257128835}
+      rotation: {x: -.152210668, y: .978565395, z: .00668561691, w: -.138553366}
+      scale: {x: 1.00000012, y: 1.00000012, z: 1.00000036}
+      transformModified: 1
+    - name: fantasy horde-orc_sword
+      position: {x: -.120896988, y: -.0478160083, z: -.0114111323}
+      rotation: {x: -1.23865834e-06, y: -5.31320097e-07, z: 2.08615717e-07, w: 1}
+      scale: {x: .999999404, y: 1.00000048, z: 1.00000024}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_arm armor_R
+      position: {x: -.436339378, y: -.0309329126, z: -1.02996814}
+      rotation: {x: .38132602, y: .074049212, z: .916238189, w: -.0980551168}
+      scale: {x: .999999881, y: 1.00000072, z: 1.00000036}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_wrist armor_R
+      position: {x: -.436339378, y: -.030933084, z: -1.0299679}
+      rotation: {x: -.0980548114, y: .916238248, z: -.0740488842, w: -.38132596}
+      scale: {x: -1, y: -1.00000024, z: -.999999821}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_shoulder armor A_R
+      position: {x: -.870007634, y: .302221745, z: -.961170077}
+      rotation: {x: .424157739, y: -.0745857656, z: .90181917, w: .0353462324}
+      scale: {x: 1.0000006, y: 1.00000012, z: 1.00000036}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_shoulder armor B_R
+      position: {x: -.870007634, y: .302221745, z: -.961170077}
+      rotation: {x: .424157739, y: -.0745859221, z: .90181917, w: .0353464708}
+      scale: {x: 1.0000006, y: 1.00000048, z: 1.00000048}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_shoulder armor C_R
+      position: {x: -.232752636, y: -.176336393, z: -1.31628799}
+      rotation: {x: .0877640396, y: .082343407, z: .938185811, w: .324537367}
+      scale: {x: .999999702, y: .999999702, z: 1.00000024}
+      transformModified: 1
+    - name: fantasy horde-orc_flag A
+      position: {x: -.674779058, y: -.0485311337, z: -.129551843}
+      rotation: {x: .726280689, y: .00336165004, z: -.68546921, w: -.0513525009}
+      scale: {x: .701409936, y: .701410055, z: .701410055}
+      transformModified: 1
+    - name: fantasy horde-orc_flag B
+      position: {x: -.472814322, y: -.0627218857, z: -.118401788}
+      rotation: {x: .551830292, y: .472205698, z: -.489666313, w: -.482423037}
+      scale: {x: .701410055, y: .701409876, z: .701409996}
+      transformModified: 1
+    - name: fantasy horde-orc_flag C
+      position: {x: -.674779058, y: -.0485311337, z: -.129551843}
+      rotation: {x: .726280689, y: .00336165004, z: -.68546921, w: -.0513525009}
+      scale: {x: .701409936, y: .701410055, z: .701410055}
+      transformModified: 1
+    - name: goblin_quiver
+      position: {x: 1.32508814, y: -.00476326933, z: .0466471277}
+      rotation: {x: .719215751, y: .0841933489, z: -.677608728, w: -.128400221}
+      scale: {x: 1.00000012, y: 1.00000072, z: .999999702}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_armor
+      position: {x: .880973399, y: -.0273409747, z: 4.52996751e-08}
+      rotation: {x: .706935346, y: -.0155700361, z: -.706935346, w: -.0155700361}
+      scale: {x: 1.00000024, y: .999999762, z: .999999464}
+      transformModified: 1
+    - name: bon_gob_war_cloth00
+      position: {x: -.0753793344, y: .20983398, z: -3.23501865e-07}
+      rotation: {x: -.0231210887, y: .675200701, z: .736841321, w: -.0251856074}
+      scale: {x: 1.00000083, y: .999999523, z: 1.00000036}
+      transformModified: 1
+    - name: bon_gob_war_cloth01
+      position: {x: -.233868629, y: 5.12599918e-08, z: -5.72204577e-08}
+      rotation: {x: .000435091177, y: -.0161284022, z: -.000532939797, w: .999869704}
+      scale: {x: 1, y: .99999994, z: 1.00000012}
+      transformModified: 1
+    - name: fantasy horde-orc_arch
+      position: {x: -.68485719, y: .721358299, z: -.0366389379}
+      rotation: {x: .878192067, y: .43721202, z: -.171183869, w: .091216594}
+      scale: {x: 1.00000012, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_atl body
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_atl_mask
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_armor pelvis
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_body
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_boot
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_cap
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_cloth
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_mask
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_ponny tail
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_avg_shoe
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_fat_body
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_fat_boot
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_fat_mask
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: fantasy horde-orc_fat_shoe
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
