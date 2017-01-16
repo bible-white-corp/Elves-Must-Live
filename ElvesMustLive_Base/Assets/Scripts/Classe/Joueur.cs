@@ -12,7 +12,7 @@ public class Joueur : MonoBehaviour {
     {
         Debug.Log ("test");
         health = 30;
-        initprefab = (GameObject)Instantiate(orc_with_cam);
+        playerobject = (GameObject)Instantiate(orc_with_cam);
         
     }
 

@@ -14,7 +14,7 @@ public class EnnemyMovement : MonoBehaviour
 	void Awake ()
 	{
 		// Set up the references.
-		player = GameObject.FindGameObjectWithTag ("Player").transform;
+		
 		coll = GetComponent<SphereCollider> ();
 		//playerHealth = player.GetComponent <PlayerHealth> ();
 		//enemyHealth = GetComponent <EnemyHealth> ();
@@ -23,6 +23,7 @@ public class EnnemyMovement : MonoBehaviour
 	}
 	void Start ()
 	{
+
 	}
 
 
@@ -36,7 +37,8 @@ public class EnnemyMovement : MonoBehaviour
 	{
 		if (coll.tag == "Player")
 		{
-			nav.enabled = true;
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            nav.enabled = true;
 			animator.SetBool ("InMov", true);
 		}
 	}
