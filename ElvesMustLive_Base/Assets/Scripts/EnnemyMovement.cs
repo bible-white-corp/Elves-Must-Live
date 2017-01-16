@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class EnnemyMovement : MonoBehaviour
 {
+	Animator animator;
 	Transform player;               // Reference to the player's position.
 	//PlayerHealth playerHealth;       Reference to the player's health.
 	//EnemyHealth enemyHealth;         Reference to this enemy's health.
@@ -18,6 +19,7 @@ public class EnnemyMovement : MonoBehaviour
 		//playerHealth = player.GetComponent <PlayerHealth> ();
 		//enemyHealth = GetComponent <EnemyHealth> ();
 		nav = GetComponent <NavMeshAgent> ();
+		animator = GetComponent<Animator> ();
 	}
 	void Start ()
 	{
@@ -26,35 +28,32 @@ public class EnnemyMovement : MonoBehaviour
 
 	void Update ()
 	{
-		//if(enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
-		if (OnTriggerEnter(coll)==true)
-		{
-			Debug.Log ("destination set");
-			nav.SetDestination (player.position);
-		}
+		
+	}
+			
 
-		if (OnTriggerExit(coll)==true)
-		{
-		Debug.Log ("destination unset");
-		nav.enabled = false;
-		}
-	} 
-	bool OnTriggerEnter(Collider coll)
+	void OnTriggerEnter(Collider coll)
 	{
 		if (coll.tag == "Player")
 		{
-			Debug.Log (" enter");
-			return true;
+			nav.enabled = true;
+			animator.SetBool ("InMov", true);
 		}
-		return false;
+	}
+	void OnTriggerStay(Collider coll)
+	{
+		if (coll.tag == "Player")
+		{
+			nav.SetDestination (player.position);
+		}
 	}
 
-	bool OnTriggerExit(Collider coll)
+	void OnTriggerExit(Collider coll)
 	{
 		if (coll.tag =="Player")
 		{
-			return true;
+			nav.enabled = false;
+			animator.SetBool ("InMov", false);
 		}
-		return false;
 	}
 }
