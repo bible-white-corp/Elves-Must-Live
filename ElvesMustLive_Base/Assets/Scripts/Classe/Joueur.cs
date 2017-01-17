@@ -1,35 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Joueur : MonoBehaviour {
+public class Joueur : Character {
 
-    Object orc_with_cam = Resources.Load("Perso_with_cam");
-    public static int health;
-    public static GameObject playerobject;
+    Object characterprefab = Resources.Load("Perso");
+    GameObject cam;
 
     public Joueur()
     {
-        Debug.Log ("test");
         health = 30;
-        playerobject = (GameObject)Instantiate(orc_with_cam);
-        
+        characterobject = (GameObject)Instantiate(characterprefab);
     }
-
-    public void death()
+    public Joueur(bool camera)
     {
-        Destroy(playerobject);
-    }
-
-    public int Health
-    {
-        get
-        {
-            return health;
-        }
-        set
-        {
-            health = value;
-        }
+        health = 30;
+        characterobject = (GameObject)Instantiate(characterprefab);
+        if (camera)
+            cam = (GameObject)Instantiate(Resources.Load("CameraRing"));
     }
 }

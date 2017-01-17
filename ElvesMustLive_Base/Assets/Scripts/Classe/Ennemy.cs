@@ -1,35 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class Ennemy : MonoBehaviour
+
+public class Ennemy : Character
 {
-
-    Object ennemyprefab = Resources.Load("ennemy");
-    public static int health;
-    public static GameObject ennemyobject;
+    UnityEngine.Object characterprefab = Resources.Load("ennemy");
+    Animator animator;
+    Transform player;               // Reference to the player's position.
+    NavMeshAgent nav;               // Reference to the nav mesh agent.
+    SphereCollider coll;
 
     public Ennemy()
     {
         health = 30;
-        ennemyobject = (GameObject)Instantiate(ennemyprefab);
-
+        characterobject = (GameObject)Instantiate(characterprefab);
+        coll = GetComponent<SphereCollider>();
+        nav = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
-    public void death()
+        // TRIGGER =
+    void OnTriggerEnter(Collider coll)
     {
-        Destroy(ennemyobject);
-    }
-
-    public int Health
-    {
-        get
+        Debug.Log("Tets");
+        if (coll.tag == "Player")
         {
-            return health;
-        }
-        set
-        {
-            health = value;
+            Debug.Log("Trigger Enter");
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+            nav.enabled = true;
+            animator.SetBool("InMov", true);
         }
     }
+    void OnTriggerStay(Collider coll)
+    {
+        if (coll.tag == "Player")
+        {
+            nav.SetDestination(player.position);
+        }
+    }
+
+    void OnTriggerExit(Collider coll)
+    {
+        if (coll.tag == "Player")
+        {
+            nav.enabled = false;
+            animator.SetBool("InMov", false);
+        }
+    }
+    // END TRIGGER
 }
+
