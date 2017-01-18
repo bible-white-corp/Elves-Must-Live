@@ -16,6 +16,7 @@ public class Character : MonoBehaviour
     public void Death()
     {
         Destroy(characterobject);
+        Debug.Log("Mort.");
     }
 
     public int Health

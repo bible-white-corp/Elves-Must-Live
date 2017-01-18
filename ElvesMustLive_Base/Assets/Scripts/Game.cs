@@ -6,9 +6,8 @@ using UnityEngine.AI;
 public class Game : MonoBehaviour {
 
     Joueur player1;
-    Ennemy en;
+    GameObject cam;
     [SerializeField] bool SummonPlayer1 = true;
-    [SerializeField] bool WithCamera = true;
     [SerializeField] bool SummonEnnemies = false;
     [SerializeField] int NombresEnnemies = 1;
 
@@ -16,12 +15,13 @@ public class Game : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        cam = (GameObject)Instantiate(Resources.Load("CameraRig")); // La caméra va TOUJOURS suivre le joueur, même si il meurt, et revient après. Super joli en plus.
         if (SummonPlayer1)
-            player1 = new Joueur(WithCamera);
+            player1 = new Joueur();
         if (SummonEnnemies)
             for (int i = 0; i < NombresEnnemies; i++)
             {
-                en = new Ennemy();
+                new Ennemy();
             }
         }
 	
@@ -31,11 +31,10 @@ public class Game : MonoBehaviour {
         if (Input.GetKey("h"))
         {
             player1.Health -= 10;
-            Debug.Log(player1.Health);
 
             if (player1.CheckDeath())
             {
-                player1 = new Joueur(WithCamera);
+                player1 = new Joueur();
             }
         }
 
@@ -53,12 +52,5 @@ public class Game : MonoBehaviour {
         }
 
     }
-    void OnTriggerEnter(Collider coll)
-    {
-        Debug.Log("Tets");
-        if (coll.tag == "Player")
-        {
-            Debug.Log("Trigger Enter");
-        }
-    }
+
 }

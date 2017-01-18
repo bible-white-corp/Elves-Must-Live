@@ -2,12 +2,10 @@
 using System.Collections;
 using UnityEngine.AI;
 
-public class EnnemyMovement : MonoBehaviour
+public class EnnemyMov1 : MonoBehaviour
 {
 	Animator animator;
 	Transform player;               // Reference to the player's position.
-	//PlayerHealth playerHealth;       Reference to the player's health.
-	//EnemyHealth enemyHealth;         Reference to this enemy's health.
 	NavMeshAgent nav;               // Reference to the nav mesh agent.
 	SphereCollider coll;
 
@@ -16,20 +14,8 @@ public class EnnemyMovement : MonoBehaviour
 		// Set up the references.
 		
 		coll = GetComponent<SphereCollider> ();
-		//playerHealth = player.GetComponent <PlayerHealth> ();
-		//enemyHealth = GetComponent <EnemyHealth> ();
 		nav = GetComponent <NavMeshAgent> ();
 		animator = GetComponent<Animator> ();
-	}
-	void Start ()
-	{
-
-	}
-
-
-	void Update ()
-	{
-		
 	}
 			
 

@@ -6,49 +6,15 @@ using UnityEngine.AI;
 
 public class Ennemy : Character
 {
-    UnityEngine.Object characterprefab = Resources.Load("ennemy");
-    Animator animator;
-    Transform player;               // Reference to the player's position.
-    NavMeshAgent nav;               // Reference to the nav mesh agent.
-    SphereCollider coll;
+    Object characterprefab = Resources.Load("ennemy");
 
     public Ennemy()
     {
         health = 30;
         characterobject = (GameObject)Instantiate(characterprefab);
-        coll = GetComponent<SphereCollider>();
-        nav = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        characterobject.AddComponent<EnnemyMov1>(); // Script de movement, on peut en ajouter d'autres et tout pour gerer les diffrentes IA
     }
 
-        // TRIGGER =
-    void OnTriggerEnter(Collider coll)
-    {
-        Debug.Log("Tets");
-        if (coll.tag == "Player")
-        {
-            Debug.Log("Trigger Enter");
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-            nav.enabled = true;
-            animator.SetBool("InMov", true);
-        }
-    }
-    void OnTriggerStay(Collider coll)
-    {
-        if (coll.tag == "Player")
-        {
-            nav.SetDestination(player.position);
-        }
-    }
 
-    void OnTriggerExit(Collider coll)
-    {
-        if (coll.tag == "Player")
-        {
-            nav.enabled = false;
-            animator.SetBool("InMov", false);
-        }
-    }
-    // END TRIGGER
 }
 
