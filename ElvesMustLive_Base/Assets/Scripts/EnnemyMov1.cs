@@ -18,6 +18,7 @@ public class EnnemyMov1 : MonoBehaviour
 		coll = GetComponent<SphereCollider> ();
 		nav = GetComponent <NavMeshAgent> ();
 		animator = GetComponent<Animator> ();
+		distance = 5;
 	}
 			
 
@@ -33,7 +34,7 @@ public class EnnemyMov1 : MonoBehaviour
 	}
 	void OnTriggerStay(Collider coll)
 	{
-		if (coll.tag == "Player")
+		if (coll.tag == "Player" && nav.enabled==true)
 		{
 			nav.SetDestination (player.position);
 			distance = Vector3.Distance (player.position, ennemy.position);
@@ -47,5 +48,9 @@ public class EnnemyMov1 : MonoBehaviour
 			nav.enabled = false;
 			animator.SetBool ("InMov", false);
 		}
+	}
+	public float GetDistance()
+	{
+		return distance;
 	}
 }
