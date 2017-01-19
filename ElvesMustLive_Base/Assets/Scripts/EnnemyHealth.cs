@@ -1,28 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class EnnemyCombat : MonoBehaviour 
+public class EnnemyHealth : MonoBehaviour 
 {
-	//Faut qu'on discute de ce qu'on va faire...
+	public int health;
+	Animator anim;
+	public float sinkspeed = 2.5f;
+	CapsuleCollider CapsColl;
+	bool IsSinking;
+	bool IsDead;
+	NavMeshAgent nav;
 
-	/*using System.Collections;
-	using System.Collections.Generic;
-	using UnityEngine;
-	using UnityEngine.AI;
-
-	public class EnnemyCombat : MonoBehaviour 
-	{
-
-		int health;
-		Animator anim;
-		public float sinkspeed = 2.5f;
-		CapsuleCollider CapsColl;
-		bool IsSinking;
-		bool IsDead;
-		NavMeshAgent nav;
-
-		void Start () 
+	void Start () 
 		{
 			health = 30;
 			anim = GetComponent<Animator> ();
@@ -70,6 +61,4 @@ public class EnnemyCombat : MonoBehaviour
 			IsSinking = true;
 			Destroy (gameObject, 2f);
 		}
-	}
-*/
 }

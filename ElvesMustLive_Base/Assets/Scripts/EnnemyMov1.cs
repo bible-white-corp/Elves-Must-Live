@@ -8,6 +8,8 @@ public class EnnemyMov1 : MonoBehaviour
 	Transform player;               // Reference to the player's position.
 	NavMeshAgent nav;               // Reference to the nav mesh agent.
 	SphereCollider coll;
+	public float distance;
+	Transform ennemy;
 
 	void Awake ()
 	{
@@ -26,6 +28,7 @@ public class EnnemyMov1 : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").transform;
             nav.enabled = true;
 			animator.SetBool ("InMov", true);
+			ennemy = GetComponent<Transform> ();
 		}
 	}
 	void OnTriggerStay(Collider coll)
@@ -33,6 +36,7 @@ public class EnnemyMov1 : MonoBehaviour
 		if (coll.tag == "Player")
 		{
 			nav.SetDestination (player.position);
+			distance = Vector3.Distance (player.position, ennemy.position);
 		}
 	}
 
