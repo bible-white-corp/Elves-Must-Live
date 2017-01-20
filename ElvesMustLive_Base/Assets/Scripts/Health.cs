@@ -16,16 +16,12 @@ public class Health : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
-        //Pour le player qui n'a pas de Nav
+        //Pour le player qui n'a pas de Nav #Thetoto
         try
         {
             nav = GetComponent<NavMeshAgent>();
         }
-        catch (System.Exception)
-        {
-            Debug.Log("No NavMesh");
-        }
-            
+        catch { }
     }
 
     void Update()
@@ -53,7 +49,7 @@ public class Health : MonoBehaviour
     public void Death()
     {
         IsDead = true;
-        anim.SetBool("Died", true);
+        anim.SetBool("Died", true); // Dont work #Thetoto
         StartSinking();
     }
     public void StartSinking()
@@ -63,7 +59,12 @@ public class Health : MonoBehaviour
             nav.enabled = false;
         }
         GetComponent<Rigidbody>().isKinematic = true;
-        Destroy(GetComponent<SphereCollider>()); // Pour empècher les autres animations...
+        try
+        {
+            GetComponent<SphereCollider>().enabled = false; // Pour empècher les autres animations... #Thetoto
+        }
+        catch { }
+
         IsSinking = true;
         Destroy(gameObject, 2f);
     }

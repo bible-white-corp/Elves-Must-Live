@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Game : MonoBehaviour {
 
-    GameObject player1;
+    public static GameObject player1;
 
     // Use this for initialization
     void Start () {
@@ -31,7 +31,10 @@ public class Game : MonoBehaviour {
         }
         if (Input.GetKey("t"))
         {
-            
+            if (player1 == null)
+            {
+                player1 = (GameObject)Instantiate(Resources.Load("Perso"));
+            }
         }
 
     }

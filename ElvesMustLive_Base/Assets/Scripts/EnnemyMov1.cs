@@ -4,20 +4,21 @@ using UnityEngine.AI;
 
 public class EnnemyMov1 : MonoBehaviour
 {
-	Animator animator;
-	Transform player;               // Reference to the player's position.
+    public Animator animator;           // Reference to the player's position.
 	public NavMeshAgent nav;               // Reference to the nav mesh agent.
 	SphereCollider coll;
 	public float distance;
-	Transform ennemy;
+    EnnemyAttack atkscript;
+    public GameObject player;
 
 	void Awake ()
 	{
 		// Set up the references.
-		
 		coll = GetComponent<SphereCollider> ();
 		nav = GetComponent <NavMeshAgent> ();
 		animator = GetComponent<Animator> ();
+        atkscript = GetComponent<EnnemyAttack>();
+        atkscript.enabled = false;
 		distance = 5;
 	}
 			
@@ -27,22 +28,24 @@ public class EnnemyMov1 : MonoBehaviour
         
 		if (coll.tag == "Player")
 		{
-            gameObject.AddComponent<EnnemyAttack>();
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            player = coll.gameObject; // Mieux qu'un Find.
+            atkscript.playerhp = player.GetComponent<Health>(); // On envoie le component vie au script d'atk #Thetoto
+            atkscript.enabled = true;
             nav.enabled = true;
 			animator.SetBool ("InMov", true);
-			ennemy = GetComponent<Transform> ();
 		}
 	}
 	void OnTriggerStay(Collider coll)
 	{
 		if (coll.tag == "Player")
 		{
-			distance = Vector3.Distance (player.position, ennemy.position);
+			distance = Vector3.Distance (player.transform.position, gameObject.transform.position);
             if (nav.enabled)
             {
-                nav.SetDestination(player.position);
+                nav.SetDestination(player.transform.position);
+                
             }
+            
 		}
 	}
 
@@ -52,7 +55,7 @@ public class EnnemyMov1 : MonoBehaviour
 		{
 			nav.enabled = false;
 			animator.SetBool ("InMov", false);
-            Destroy(GetComponent<EnnemyAttack>());
+            atkscript.enabled = false;
 		}
 	}
 
