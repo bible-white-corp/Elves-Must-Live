@@ -7,10 +7,12 @@ public class Health : MonoBehaviour
 {
 	public int health = 30;
 	Animator anim;
-	public float sinkspeed = 2.5f;
+	public float sinkspeed = 1f;
 	bool IsSinking;
 	bool IsDead;
 	NavMeshAgent nav;
+	Rigidbody body;
+	float TimerbeforeDeath;
 
     void Start()
     {
@@ -24,12 +26,16 @@ public class Health : MonoBehaviour
         catch { }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (IsSinking)
         {
-            // c'est le machin qui fait fondre l'ennemi
-            transform.Translate(-Vector3.up * sinkspeed * Time.deltaTime);
+			TimerbeforeDeath += Time.deltaTime;
+			if (TimerbeforeDeath > 2.5f)
+			{
+				// c'est le machin qui fait fondre l'ennemi
+				transform.Translate (Vector3.down * sinkspeed * Time.deltaTime);
+			}
         }
     }
 
@@ -49,23 +55,26 @@ public class Health : MonoBehaviour
     public void Death()
     {
         IsDead = true;
-        anim.SetBool("Died", true); // Dont work #Thetoto
+		anim.SetBool ("InMov", false);
+		anim.SetTrigger ("Died"); // Dont work #Thetoto
         StartSinking();
     }
     public void StartSinking()
     {
         if (nav)
         {
-            nav.enabled = false;
+			Destroy (nav);
+			Debug.Log ("DEnav");
         }
-        GetComponent<Rigidbody>().isKinematic = true;
+		GetComponent<Rigidbody> ().isKinematic = true;
         try
         {
             GetComponent<SphereCollider>().enabled = false; // Pour empècher les autres animations... #Thetoto
         }
         catch { }
-
+		body = GetComponent<Rigidbody> ();
+		Destroy (body);
         IsSinking = true;
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 5f);
     }
 }
