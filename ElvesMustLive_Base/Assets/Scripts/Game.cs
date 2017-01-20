@@ -25,7 +25,7 @@ public class Game : MonoBehaviour {
         {
             GameObject.FindGameObjectWithTag("Shootable").GetComponent<Health>().TakeDamage(31);
         }
-        if (Input.GetKey("j"))
+		if (Input.GetKeyDown("j"))
         {
             Instantiate(Resources.Load("Ennemy"));
         }
