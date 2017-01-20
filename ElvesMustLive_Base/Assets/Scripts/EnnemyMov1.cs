@@ -6,7 +6,7 @@ public class EnnemyMov1 : MonoBehaviour
 {
 	Animator animator;
 	Transform player;               // Reference to the player's position.
-	NavMeshAgent nav;               // Reference to the nav mesh agent.
+	public NavMeshAgent nav;               // Reference to the nav mesh agent.
 	SphereCollider coll;
 	public float distance;
 	Transform ennemy;
@@ -24,8 +24,10 @@ public class EnnemyMov1 : MonoBehaviour
 
 	void OnTriggerEnter(Collider coll)
 	{
+        
 		if (coll.tag == "Player")
 		{
+            gameObject.AddComponent<EnnemyAttack>();
             player = GameObject.FindGameObjectWithTag("Player").transform;
             nav.enabled = true;
 			animator.SetBool ("InMov", true);
@@ -34,10 +36,13 @@ public class EnnemyMov1 : MonoBehaviour
 	}
 	void OnTriggerStay(Collider coll)
 	{
-		if (coll.tag == "Player" && nav.enabled==true)
+		if (coll.tag == "Player")
 		{
-			nav.SetDestination (player.position);
 			distance = Vector3.Distance (player.position, ennemy.position);
+            if (nav.enabled)
+            {
+                nav.SetDestination(player.position);
+            }
 		}
 	}
 
@@ -47,10 +52,8 @@ public class EnnemyMov1 : MonoBehaviour
 		{
 			nav.enabled = false;
 			animator.SetBool ("InMov", false);
+            Destroy(GetComponent<EnnemyAttack>());
 		}
 	}
-	public float GetDistance()
-	{
-		return distance;
-	}
+
 }
