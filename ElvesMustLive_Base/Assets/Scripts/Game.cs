@@ -23,7 +23,7 @@ public class Game : MonoBehaviour {
 
         if (Input.GetKey("k"))
         {
-            GameObject.FindGameObjectWithTag("Shootable").GetComponent<Health>().TakeDamage(30);
+            GameObject.FindGameObjectWithTag("Shootable").GetComponent<Health>().TakeDamage(31);
         }
         if (Input.GetKey("j"))
         {

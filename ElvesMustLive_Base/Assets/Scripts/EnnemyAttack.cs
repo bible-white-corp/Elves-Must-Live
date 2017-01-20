@@ -40,7 +40,6 @@ public class EnnemyAttack : MonoBehaviour
             if (timer >= TimeBetweenAttacks)
             {
                 timer = 0f;
-                Debug.Log("On Attack");
                 gameObject.transform.LookAt(mov1.player.transform); // Regarder le player pour pas qu'il parte en couille   
                 playerhp.TakeDamage(AttackDamage);
             }
@@ -48,7 +47,6 @@ public class EnnemyAttack : MonoBehaviour
 
         if (Distance > 1.6f) // On s'est trop eloigne, plus a porte #Thetoto
         {
-            Debug.Log("On atk plus, on marche");
             nav.enabled = true;
             anim.SetBool("InMov", true);
             anim.SetBool("Engage", false);

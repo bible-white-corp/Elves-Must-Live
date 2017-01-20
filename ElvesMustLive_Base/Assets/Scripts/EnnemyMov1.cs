@@ -25,14 +25,17 @@ public class EnnemyMov1 : MonoBehaviour
 
 	void OnTriggerEnter(Collider coll)
 	{
+		
         
 		if (coll.tag == "Player")
 		{
+			Debug.Log ("Ca marche");
             player = coll.gameObject; // Mieux qu'un Find.
             atkscript.playerhp = player.GetComponent<Health>(); // On envoie le component vie au script d'atk #Thetoto
             atkscript.enabled = true;
             nav.enabled = true;
 			animator.SetBool ("InMov", true);
+
 		}
 	}
 	void OnTriggerStay(Collider coll)
