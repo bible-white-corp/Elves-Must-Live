@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityStandardAssets.Characters.ThirdPerson; //ici
 
 public class Health : MonoBehaviour 
 {
@@ -13,6 +14,8 @@ public class Health : MonoBehaviour
 	NavMeshAgent nav;
 	Rigidbody body;
 	float TimerbeforeDeath;
+	ThirdPersonCharacter script;
+	ThirdPersonUserControl script2;
 
     void Start()
     {
@@ -66,15 +69,21 @@ public class Health : MonoBehaviour
 			Destroy (nav);
 			Debug.Log ("DEnav");
         }
-		GetComponent<Rigidbody> ().isKinematic = true;
         try
         {
             GetComponent<SphereCollider>().enabled = false; // Pour empècher les autres animations... #Thetoto
         }
         catch { }
 		body = GetComponent<Rigidbody> ();
+		if (gameObject.tag == "Player")
+		{
+			script = GetComponent<ThirdPersonCharacter> (); // le bail, c'est que utiliser ces scripts, il faut definir 
+			script2 = GetComponent<ThirdPersonUserControl> (); // en using les scripts, regarde en haut
+			Destroy (script);
+			DestroyImmediate (script2);
+		}
 		Destroy (body);
         IsSinking = true;
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 3f);
     }
 }
