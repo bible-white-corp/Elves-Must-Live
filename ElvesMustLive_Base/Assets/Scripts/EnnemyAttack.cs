@@ -46,7 +46,7 @@ public class EnnemyAttack : MonoBehaviour
             }
         }
 
-        if (Distance > 1.6f && nav.enabled == false) // On s'est trop eloigne, plus a porte #Thetoto
+        if (Distance > 1.6f) // On s'est trop eloigne, plus a porte #Thetoto
         {
             Debug.Log("On atk plus, on marche");
             nav.enabled = true;

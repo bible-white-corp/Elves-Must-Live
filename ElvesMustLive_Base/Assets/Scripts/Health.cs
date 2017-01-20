@@ -49,8 +49,7 @@ public class Health : MonoBehaviour
     public void Death()
     {
         IsDead = true;
-        anim.SetBool("InMov", false);
-        anim.SetTrigger("Died"); // Dont work #Thetoto
+        anim.SetBool("Died", true); // Dont work #Thetoto
         StartSinking();
     }
     public void StartSinking()
@@ -59,8 +58,7 @@ public class Health : MonoBehaviour
         {
             nav.enabled = false;
         }
-        Destroy(GetComponent<Rigidbody>());
-        //GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<Rigidbody>().isKinematic = true;
         try
         {
             GetComponent<SphereCollider>().enabled = false; // Pour empècher les autres animations... #Thetoto
@@ -68,6 +66,6 @@ public class Health : MonoBehaviour
         catch { }
 
         IsSinking = true;
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 2f);
     }
 }
