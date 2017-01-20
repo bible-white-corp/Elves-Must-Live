@@ -37,6 +37,7 @@ public class EnnemyMov1 : MonoBehaviour
 		{
 			nav.enabled = false;
 			animator.SetBool ("InMov", false);
+			Destroy (gameObject);
 		}
 			
 	}
