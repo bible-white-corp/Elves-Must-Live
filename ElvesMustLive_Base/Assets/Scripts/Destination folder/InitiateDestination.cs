@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InitiateComponent : MonoBehaviour {
+public class InitiateDestination : MonoBehaviour {
 
 	public GameObject FirstDestination;
 	EnnemyMov1 script;
