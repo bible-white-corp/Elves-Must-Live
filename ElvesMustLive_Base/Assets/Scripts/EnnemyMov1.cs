@@ -11,34 +11,27 @@ public class EnnemyMov1 : MonoBehaviour
     EnnemyAttack atkscript;
     public GameObject player;
 	public GameObject Destination;
-	InitiateComponent initiate;
+	//InitiateDestination initiate;
 
 
 	void Awake ()
 	{
 		// Set up the references.
-		coll = GetComponent<SphereCollider> ();
 		nav = GetComponent <NavMeshAgent> ();
 		animator = GetComponent<Animator> ();
         atkscript = GetComponent<EnnemyAttack>();
         atkscript.enabled = false;
 		distance = 5;	
-		initiate = GetComponent <InitiateComponent> ();
+		//initiate = GetComponent <InitiateDestination> ();
 	}
 	void Start()
 	{
-		initiate.enabled = true;
+		//initiate.enabled = true;
 		nav.enabled = true;
 		animator.SetBool ("InMov", true);
 	}
 	void Update()
 	{
-		if (Destination.name == "Portal") 
-		{
-			nav.enabled = false;
-			animator.SetBool ("InMov", false);
-			Destroy (gameObject);
-		}
 			
 	}
 			
@@ -49,9 +42,8 @@ public class EnnemyMov1 : MonoBehaviour
         
 		if (coll.tag == "Player")
 		{
-			Debug.Log ("Ca marche");
             player = coll.gameObject; // Mieux qu'un Find.
-            atkscript.playerhp = player.GetComponent<Health>(); // On envoie le component vie au script d'atk #Thetoto
+            atkscript.playerhp = player.GetComponent<PlayerHealth>(); // On envoie le component vie au script d'atk #Thetoto
             atkscript.enabled = true;
 
 		}
@@ -65,7 +57,6 @@ public class EnnemyMov1 : MonoBehaviour
             {
                 nav.SetDestination(player.transform.position);
             }
-            
 		}
 	}
 

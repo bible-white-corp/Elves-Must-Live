@@ -17,14 +17,14 @@ public class Game : MonoBehaviour {
 
         if (Input.GetKey("h"))
         {
-            player1.GetComponent<Health>().TakeDamage(30);
-            //player1 = (GameObject)Instantiate(Resources.Load("Perso"));
+            player1.GetComponent<PlayerHealth>().TakeDamage(30);
         }
 
         if (Input.GetKey("k"))
         {
             GameObject.FindGameObjectWithTag("Shootable").GetComponent<Health>().TakeDamage(31);
         }
+
 		if (Input.GetKeyDown("j"))
         {
             Instantiate(Resources.Load("Ennemy"));

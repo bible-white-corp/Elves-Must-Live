@@ -8,7 +8,7 @@ public class EnnemyAttack : MonoBehaviour
 	public float TimeBetweenAttacks = 1.6f;
 	public int AttackDamage = 10;
 	Animator anim;
-    public Health playerhp;
+    public PlayerHealth playerhp;
     float timer;
 	EnnemyMov1 mov1;
 	float Distance;
