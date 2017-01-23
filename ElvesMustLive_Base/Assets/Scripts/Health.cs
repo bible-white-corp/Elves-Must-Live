@@ -17,7 +17,6 @@ public class Health : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-
         //Pour le player qui n'a pas de Nav #Thetoto
         try
         {

@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityStandardAssets.Cameras;
 
 public class Game : MonoBehaviour {
 
     public static GameObject player1;
+	FreeLookCam playercam;
 
     // Use this for initialization
-    void Start () {
+    void Start () 
+	{
         player1 = GameObject.FindGameObjectWithTag("Player");
+		GameObject cam = GameObject.FindGameObjectWithTag ("PlayerCamera");
+		playercam = cam.GetComponent<FreeLookCam> ();
     }
 	
 	// Update is called once per frame
@@ -34,6 +39,7 @@ public class Game : MonoBehaviour {
             if (player1 == null)
             {
                 player1 = (GameObject)Instantiate(Resources.Load("Perso"));
+				playercam.enabled = true;
             }
         }
 
