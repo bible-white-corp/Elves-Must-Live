@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour {
     Health health;
     Animator anim;
     Collider coll;
+    public bool isAttack;
 
     // Use this for initialization
     void Start () {
@@ -16,31 +17,35 @@ public class PlayerAttack : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        if (Input.GetMouseButtonDown(0) && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+	void Update ()
+    {
+        if (isAttack && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
+            isAttack = false;
+            coll.enabled = false;
+        }
+        if (Input.GetMouseButtonDown(0) && !isAttack)
+        {
+            isAttack = true;
             coll.enabled = true;
-            coll.isTrigger = true;
             anim.SetTrigger("Atk");
         }
-        if (Input.GetMouseButtonUp(0))
-        {
-            coll.isTrigger = false;
-            coll.enabled = false;
-            
-        }
-	}
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
+        
         Debug.Log(other.name);
-        if (other.tag == "Shootable")
+        if (other.tag == "Shootable" && isAttack)
         {
             health = other.gameObject.GetComponent<Health>();
-            Debug.Log(health.health  + " before");
+            Debug.Log(health.health + " before");
             health.TakeDamage(20);
             Debug.Log(health.health + " after");
+            //coll.enabled = false;
         }
+        
     }
 
     private void OnTriggerStay(Collider other)
@@ -50,6 +55,6 @@ public class PlayerAttack : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        
+
     }
 }

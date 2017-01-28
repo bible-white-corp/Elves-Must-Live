@@ -9,7 +9,7 @@ public class Health : MonoBehaviour
 	Animator anim;
 	public float sinkspeed = 1f;
 	bool IsSinking;
-	bool IsDead;
+	public bool IsDead;
 	NavMeshAgent nav;
 	Rigidbody body;
 	float TimerbeforeDeath;
@@ -66,7 +66,7 @@ public class Health : MonoBehaviour
         }
         try
         {
-            GetComponent<SphereCollider>().enabled = false; // Pour empècher les autres animations... #Thetoto
+            GetComponentInChildren<SphereCollider>().enabled = false; // Pour empècher les autres animations... #Thetoto
         }
         catch { }
 		body = GetComponent<Rigidbody> ();

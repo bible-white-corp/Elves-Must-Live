@@ -9,6 +9,7 @@ public class EnnemyMov1 : MonoBehaviour
 	SphereCollider coll;
 	public float distance;
     EnnemyAttack atkscript;
+    Health hp;
     public GameObject player;
 	public GameObject Destination;
 	//InitiateDestination initiate;
@@ -20,6 +21,7 @@ public class EnnemyMov1 : MonoBehaviour
 		nav = GetComponentInParent<NavMeshAgent> (); 
 		animator = GetComponentInParent<Animator> ();
         atkscript = GetComponentInParent<EnnemyAttack>();
+        hp = GetComponentInParent<Health>();
         atkscript.enabled = false;
 		distance = 5;	
 		//initiate = GetComponent <InitiateDestination> ();
@@ -32,7 +34,7 @@ public class EnnemyMov1 : MonoBehaviour
 	}
 	void Update()
 	{
-			
+        
 	}
 			
 
@@ -50,7 +52,7 @@ public class EnnemyMov1 : MonoBehaviour
 	}
 	void OnTriggerStay(Collider coll)
 	{
-		if (coll.tag == "Player")
+		if (coll.tag == "Player" && !hp.IsDead)
 		{
 			distance = Vector3.Distance (player.transform.position, gameObject.transform.position);
             if (nav.enabled)
