@@ -6,12 +6,11 @@ public class InitiateDestination : MonoBehaviour {
 
 	public GameObject FirstDestination;
 	EnnemyMov1 script;
-	void Awake () 
+	void Start () 
 	{
-		script = GetComponent<EnnemyMov1> ();
-		FirstDestination = GameObject.Find("Destination1");
-		script.ChangeDestination (FirstDestination);
-	}
+        script = GetComponentInChildren<EnnemyMov1>();
+        script.ChangeDestination(FirstDestination);
+    }
 	
 	// Update is called once per frame
 	void Update () {

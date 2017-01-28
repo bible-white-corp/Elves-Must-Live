@@ -17,17 +17,17 @@ public class EnnemyMov1 : MonoBehaviour
 	void Awake ()
 	{
 		// Set up the references.
-		nav = GetComponent <NavMeshAgent> ();
-		animator = GetComponent<Animator> ();
-        atkscript = GetComponent<EnnemyAttack>();
+		nav = GetComponentInParent<NavMeshAgent> (); 
+		animator = GetComponentInParent<Animator> ();
+        atkscript = GetComponentInParent<EnnemyAttack>();
         atkscript.enabled = false;
 		distance = 5;	
 		//initiate = GetComponent <InitiateDestination> ();
 	}
-	void Start()
+	void Start()    
 	{
 		//initiate.enabled = true;
-		nav.enabled = true;
+		//nav.enabled = true;
 		animator.SetBool ("InMov", true);
 	}
 	void Update()

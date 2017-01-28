@@ -16,7 +16,7 @@ public class EnnemyAttack : MonoBehaviour
 
 	void Start () // Pas d'info sur le joueur ici, car si il change, (respawn) marche plus. 
 	{
-        mov1 = GetComponent<EnnemyMov1>();
+        mov1 = GetComponentInChildren<EnnemyMov1>();
         anim = mov1.animator;
         nav = mov1.nav;
 	}
