@@ -10,26 +10,52 @@ public class PlayerBow : MonoBehaviour {
     Collider coll;
     public bool isAttack;
     GameObject arrow;
+    GameObject realarrow;
+
+    Game game;
+    GameObject tpscam;
+    GameObject fpscam;
+
 
     // Use this for initialization
     void Start ()
     {
+        game = GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>();
+        tpscam = game.cam;
+        fpscam = game.fpscam;
+        Debug.Log(fpscam);
+        fpscam.SetActive(false);
         anim = GetComponentInParent<Animator>();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (isAttack && Input.GetMouseButtonDown(1))
         {
-            Debug.Log("Clic droit");
+            anim.SetTrigger("Arrow");
         }
 
-        if (isAttack && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk"))
+        if (isAttack && Input.GetMouseButtonDown(0))
         {
-            isAttack = false;
-            //Lancer la flèche ici
+            anim.SetTrigger("Cancel");
         }
+
+        if (isAttack && anim.GetCurrentAnimatorStateInfo(0).IsName("Bow2"))
+        {
+            Debug.Log("Destroy temp arrow");
+            Destroy(arrow);
+            isAttack = false;
+            tpscam.SetActive(true);
+            fpscam.SetActive(false);
+            game.player1.transform.rotation = Quaternion.Euler(0, game.player1.transform.rotation.y, 0);
+        }
+
+        if (isAttack && anim.GetCurrentAnimatorStateInfo(0).IsName("Wait"))
+        {
+            Debug.Log("Waiting");
+        }
+
         if (Input.GetMouseButtonDown(0) && !isAttack)
         {
             isAttack = true;
@@ -38,6 +64,8 @@ public class PlayerBow : MonoBehaviour {
             arrow = (GameObject)Instantiate(Resources.Load("Arrow"), transform);
             Debug.Log("Fleche");
             // Mettre la caméra (Une autre caméra) en mode "viser"
+            tpscam.SetActive(false);
+            fpscam.SetActive(true);
         }
 
 

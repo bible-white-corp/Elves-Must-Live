@@ -6,15 +6,18 @@ using UnityStandardAssets.Cameras;
 
 public class Game : MonoBehaviour {
 
-    public static GameObject player1;
+    public GameObject player1;
 	FreeLookCam playercam;
+
+    public GameObject fpscam; // Utile dans le script FPSCam !
+    public GameObject cam;
 
     // Use this for initialization
     void Start () 
 	{
         player1 = GameObject.FindGameObjectWithTag("Player");
-		GameObject cam = GameObject.FindGameObjectWithTag ("PlayerCamera");
-		playercam = cam.GetComponent<FreeLookCam> ();
+        cam = GameObject.FindGameObjectWithTag("PlayerCamera");
+        playercam = cam.GetComponent<FreeLookCam> ();
     }
 	
 	// Update is called once per frame

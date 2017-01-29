@@ -11,7 +11,7 @@ public class EnnemyMov1 : MonoBehaviour
     EnnemyAttack atkscript;
     Health hp;
     public GameObject player;
-	public GameObject Destination;
+	public Transform Destination;
 	//InitiateDestination initiate;
 
 
@@ -66,13 +66,13 @@ public class EnnemyMov1 : MonoBehaviour
 	{
 		if (coll.tag =="Player")
 		{
-			nav.SetDestination (Destination.transform.position);
+			nav.SetDestination (Destination.position);
             atkscript.enabled = false;
 		}
 	}
-	public void ChangeDestination(GameObject newgameObject)
+	public void ChangeDestination(Transform newgameObject)
 	{
-		nav.SetDestination (newgameObject.transform.position);
+		nav.SetDestination (newgameObject.position);
 		Destination = newgameObject;
 		Debug.Log ("Change Destination called");
 	}

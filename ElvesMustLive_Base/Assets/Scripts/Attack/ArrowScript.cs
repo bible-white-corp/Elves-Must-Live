@@ -8,7 +8,7 @@ public class ArrowScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -18,7 +18,21 @@ public class ArrowScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        other.GetComponent<Health>().TakeDamage(AttackDamage);
-        Destroy(gameObject);
+        if (other.tag != "Player")
+        {
+
+            Debug.Log(other.gameObject);
+            try
+            {
+                other.GetComponent<Health>().TakeDamage(AttackDamage);
+                Debug.Log("You touch " + other.gameObject);
+            }
+            catch (System.Exception)
+            {
+                Debug.Log("You fail your arrow in " + other.gameObject);
+            }
+
+            Destroy(gameObject);
+        }
     }
 }

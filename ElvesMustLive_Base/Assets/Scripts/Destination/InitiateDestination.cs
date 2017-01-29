@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class InitiateDestination : MonoBehaviour {
 
-	public GameObject FirstDestination;
+	public Transform FirstDestination;
 	EnnemyMov1 script;
 	void Start () 
 	{
         script = GetComponentInChildren<EnnemyMov1>();
-        FirstDestination = GameObject.Find("Destination1");
+        FirstDestination = GameObject.Find("Destination1").transform;
         script.ChangeDestination(FirstDestination);
     }
 	
