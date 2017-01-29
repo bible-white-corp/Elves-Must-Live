@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour {
 
+    Animator anim;
     List<GameObject> weapon = new List<GameObject>();
     public int CurrentW = 0;
 
 	// Use this for initialization
-	void Start () {
-        foreach (Transform child in gameObject.transform)
+	void Start ()
+    {
+        anim = GetComponentInParent<Animator>();
+            foreach (Transform child in gameObject.transform)
         {
-             Debug.Log(child.gameObject);
+            Debug.Log(child.gameObject);
             weapon.Add(child.gameObject);
         }
-        ChangeW();
+        ChangeW(0);
     }
 	
 	// Update is called once per frame  
@@ -23,24 +26,22 @@ public class Switch : MonoBehaviour {
         if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
             Debug.Log("Change weapon (+)");
-            CurrentW++;
-            ChangeW();
+            ChangeW(1);
         }
         if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
             Debug.Log("Change weapon (-)");
-            CurrentW--;
-            ChangeW();
+            ChangeW(-1);
         }
 
     }
 
-    public void ChangeW()
+    public void ChangeW(int nb)
     {
-        foreach (var go in weapon)
-        {
-            go.SetActive(false);
-        }
+        weapon[CurrentW].SetActive(false);
+        anim.SetBool(weapon[CurrentW].tag, false);
+
+        CurrentW += nb;
         if (CurrentW < 0)
         {
             CurrentW = weapon.Count - 1;
@@ -49,7 +50,9 @@ public class Switch : MonoBehaviour {
         {
             CurrentW = 0;
         }
+
         weapon[CurrentW].SetActive(true);
+        anim.SetBool(weapon[CurrentW].tag, true);
     }
 
 

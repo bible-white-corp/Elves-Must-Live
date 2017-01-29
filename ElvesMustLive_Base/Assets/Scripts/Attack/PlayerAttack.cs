@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (isAttack && !anim.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        if (isAttack && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk"))
         {
             isAttack = false;
             coll.enabled = false;
