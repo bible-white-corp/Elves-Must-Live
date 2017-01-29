@@ -35,13 +35,11 @@ public class PlayerAttack : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        
         Debug.Log(other.name);
-        if (other.tag == "Shootable" && isAttack)
+        if (other.tag == "Shootable" && isAttack) // Can attack twice a same Ennemy...
         {
             health = other.gameObject.GetComponent<Health>();
-            Debug.Log(health.health + " before");
-            health.TakeDamage(20);
+            health.TakeDamage(AttackDamage);
             Debug.Log(health.health + " after");
             //coll.enabled = false;
         }

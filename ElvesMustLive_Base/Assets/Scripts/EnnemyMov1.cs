@@ -20,7 +20,7 @@ public class EnnemyMov1 : MonoBehaviour
 		// Set up the references.
 		nav = GetComponentInParent<NavMeshAgent> (); 
 		animator = GetComponentInParent<Animator> ();
-        atkscript = GetComponentInParent<EnnemyAttack>();
+        atkscript = GetComponentInChildren<EnnemyAttack>();
         hp = GetComponentInParent<Health>();
         atkscript.enabled = false;
 		distance = 5;	

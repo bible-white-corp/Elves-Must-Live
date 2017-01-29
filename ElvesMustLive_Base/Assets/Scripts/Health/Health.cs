@@ -13,9 +13,11 @@ public class Health : MonoBehaviour
 	NavMeshAgent nav;
 	Rigidbody body;
 	float TimerbeforeDeath;
+    public GameObject obj;
 
     void Start()
     {
+        obj = gameObject;
         anim = GetComponent<Animator>();
         //Pour le player qui n'a pas de Nav #Thetoto
         try
