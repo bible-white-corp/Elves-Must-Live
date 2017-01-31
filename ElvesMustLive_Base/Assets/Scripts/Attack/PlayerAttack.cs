@@ -24,7 +24,7 @@ public class PlayerAttack : MonoBehaviour {
             isAttack = false;
             coll.enabled = false;
         }
-        if (Input.GetMouseButtonDown(0) && !isAttack)
+        if (Input.GetButton("Fire1") && !isAttack)
         {
             isAttack = true;
             coll.enabled = true;

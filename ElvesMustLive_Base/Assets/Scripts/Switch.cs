@@ -5,6 +5,8 @@ using UnityEngine;
 public class Switch : MonoBehaviour {
 
     Animator anim;
+    float timer;
+    bool timeout = false;
     List<GameObject> weapon = new List<GameObject>();
     public int CurrentW = 0;
 
@@ -21,18 +23,33 @@ public class Switch : MonoBehaviour {
     }
 	
 	// Update is called once per frame  
-	void Update () {
+	void Update () 
+	{
+		if (timeout)
+		{
+			timer += Time.deltaTime;
+			if (timer > 0.3f)
+			{
+				timer = 0f;
+				timeout = false;
+			}
+		}
+		else
+		{
+        	if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        	{
+        	    Debug.Log("Change weapon (+)");
+        	    ChangeW(1);
+        	    timeout = true;
+        	}
+        	if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        	{
+        	    Debug.Log("Change weapon (-)");
+        	    ChangeW(-1);
+        	    timeout = true;
+        	}
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0)
-        {
-            Debug.Log("Change weapon (+)");
-            ChangeW(1);
-        }
-        if (Input.GetAxis("Mouse ScrollWheel") < 0)
-        {
-            Debug.Log("Change weapon (-)");
-            ChangeW(-1);
-        }
+    	}
 
     }
 

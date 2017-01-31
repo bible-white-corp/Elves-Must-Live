@@ -31,16 +31,6 @@ public class PlayerBow : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (isAttack && Input.GetMouseButtonDown(1))
-        {
-            anim.SetTrigger("Arrow");
-        }
-
-        if (isAttack && Input.GetMouseButtonDown(0))
-        {
-            anim.SetTrigger("Cancel");
-        }
-
         if (isAttack && anim.GetCurrentAnimatorStateInfo(0).IsName("Bow2"))
         {
             Debug.Log("Destroy temp arrow");
@@ -54,9 +44,19 @@ public class PlayerBow : MonoBehaviour {
         if (isAttack && anim.GetCurrentAnimatorStateInfo(0).IsName("Wait"))
         {
             Debug.Log("Waiting");
+            
+            if (Input.GetButton("Fire2"))
+            {
+                anim.SetTrigger("Arrow");
+            }
+
+            if (Input.GetButton("Fire1"))
+            {
+                anim.SetTrigger("Cancel");
+            }
         }
 
-        if (Input.GetMouseButtonDown(0) && !isAttack)
+        if (Input.GetButton("Fire1") && !isAttack)
         {
             isAttack = true;
             anim.SetTrigger("Atk");
