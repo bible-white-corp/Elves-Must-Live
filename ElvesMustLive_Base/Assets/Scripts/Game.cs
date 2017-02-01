@@ -7,13 +7,13 @@ using UnityStandardAssets.Cameras;
 public class Game : MonoBehaviour {
 
     public GameObject player1;
-	FreeLookCam playercam;
+	public FreeLookCam playercam;
 
     public GameObject fpscam; // Utile dans le script FPSCam !
     public GameObject cam;
 
     // Use this for initialization
-    void Start () 
+    void Awake () 
 	{
         player1 = GameObject.FindGameObjectWithTag("Player");
         cam = GameObject.FindGameObjectWithTag("PlayerCamera");

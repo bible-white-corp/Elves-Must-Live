@@ -5,15 +5,18 @@ using UnityEngine;
 public class ArrowScript : MonoBehaviour {
 
     int AttackDamage = 10;
+    public Rigidbody rigid;
 
 	// Use this for initialization
-	void Start () {
-
+	void Start ()
+    {
+        rigid = GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	void Update ()
+    {
+        rigid.AddForce(new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.y));
 	}
 
     private void OnTriggerEnter(Collider other)

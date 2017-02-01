@@ -13,9 +13,11 @@ public class PlayerBow : MonoBehaviour {
     GameObject realarrow;
 
     Game game;
+
     GameObject tpscam;
     GameObject fpscam;
 
+    float saveY;
 
     // Use this for initialization
     void Start ()
@@ -23,8 +25,6 @@ public class PlayerBow : MonoBehaviour {
         game = GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>();
         tpscam = game.cam;
         fpscam = game.fpscam;
-        Debug.Log(fpscam);
-        fpscam.SetActive(false);
         anim = GetComponentInParent<Animator>();
     }
 	
@@ -33,27 +33,36 @@ public class PlayerBow : MonoBehaviour {
     {
         if (isAttack && anim.GetCurrentAnimatorStateInfo(0).IsName("Bow2"))
         {
-            Debug.Log("Destroy temp arrow");
-            Destroy(arrow);
             isAttack = false;
-            tpscam.SetActive(true);
+
+            Debug.Log(game.player1.transform.rotation.y);
+            //game.player1.transform.rotation = Quaternion.Euler(0, saveY, 0);
+            Debug.Log(game.player1.transform.rotation.y);
+            // SET TPS
             fpscam.SetActive(false);
-            game.player1.transform.rotation = Quaternion.Euler(0, game.player1.transform.rotation.y, 0);
+            //tpscam.transform.rotation = Quaternion.Euler(game.player1.transform.rotation.x, game.player1.transform.rotation.y, game.player1.transform.rotation.z);
         }
 
         if (isAttack && anim.GetCurrentAnimatorStateInfo(0).IsName("Wait"))
         {
             Debug.Log("Waiting");
-            
+            saveY = game.player1.transform.rotation.y;
             if (Input.GetButton("Fire2"))
             {
+                Debug.Log("Destroy temp arrow");
+                Destroy(arrow);
                 anim.SetTrigger("Arrow");
+
+                Debug.Log(saveY);
+                arrow = (GameObject)Instantiate(Resources.Load("Arrow"), transform.position, new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w));
+
             }
 
             if (Input.GetButton("Fire1"))
             {
                 anim.SetTrigger("Cancel");
             }
+
         }
 
         if (Input.GetButton("Fire1") && !isAttack)
@@ -62,9 +71,10 @@ public class PlayerBow : MonoBehaviour {
             anim.SetTrigger("Atk");
             //Summon la flèche ici, pauser l'animation pour viser ?
             arrow = (GameObject)Instantiate(Resources.Load("Arrow"), transform);
-            Debug.Log("Fleche");
+            arrow.GetComponent<Rigidbody>().isKinematic = true;
+
             // Mettre la caméra (Une autre caméra) en mode "viser"
-            tpscam.SetActive(false);
+            // SET FPS
             fpscam.SetActive(true);
         }
 
