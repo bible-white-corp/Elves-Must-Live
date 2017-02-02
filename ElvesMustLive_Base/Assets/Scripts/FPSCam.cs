@@ -7,9 +7,7 @@ public class FPSCam : MonoBehaviour {
 
     Game game;
 
-    Transform rig;
-    Transform pivot;
-    Transform maincam;
+    FreeLookCam tpscam;
 
     GameObject target;
     Vector3 temp;
@@ -18,13 +16,14 @@ public class FPSCam : MonoBehaviour {
     private void Start()
     {
         game = GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>();
+        tpscam = game.playercam;
         game.fpscam = gameObject;
         gameObject.SetActive(false);
 
     }
     void Update()
     {
-
+        transform.parent.eulerAngles = new Vector3(0f, tpscam.m_LookAngle + 60, tpscam.m_TiltAngle);
     }
 
 

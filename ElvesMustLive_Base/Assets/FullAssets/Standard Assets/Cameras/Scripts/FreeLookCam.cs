@@ -111,5 +111,12 @@ namespace UnityStandardAssets.Cameras
 				transform.localRotation = m_TransformTargetRot;
 			}
         }
+
+        public void LookPlayer(float h, float v)
+        {
+            Debug.Log(m_LookAngle + " to " + h);
+            m_LookAngle = Mathf.SmoothStep(m_LookAngle, h, 0.3f);
+            m_TiltAngle = Mathf.SmoothStep(m_TiltAngle, v, 0.3f);
+        }
     }
 }

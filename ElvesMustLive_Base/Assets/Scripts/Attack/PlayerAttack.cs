@@ -41,7 +41,6 @@ public class PlayerAttack : MonoBehaviour {
             health = other.gameObject.GetComponent<Health>();
             health.TakeDamage(AttackDamage);
             Debug.Log(health.health + " after");
-            //coll.enabled = false;
         }
         
     }

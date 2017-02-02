@@ -46,6 +46,12 @@ public class Game : MonoBehaviour {
             }
         }
 
+        if (Input.GetButton("CenterCam")) //La touche L dans TLoZelda. Pas trouver d'autre examples #Thetoto.
+        {
+            playercam.LookPlayer(player1.transform.rotation.eulerAngles.y, 15f);
+
+        }
+
     }
 
 }

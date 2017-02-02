@@ -11,17 +11,18 @@ public class ArrowScript : MonoBehaviour {
 	void Start ()
     {
         rigid = GetComponent<Rigidbody>();
+        Destroy(gameObject, 20f);
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        rigid.AddForce(new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.y));
+        //rigid.AddForce(new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.y));
 	}
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "Player")
+        if (other.tag != "Player" && other.tag != "Untagged")
         {
 
             Debug.Log(other.gameObject);

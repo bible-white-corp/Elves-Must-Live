@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour {
     public int health = 30;
 	public float sinkspeed = 10f;
     Animator anim;
-    bool IsDead;
+    public bool IsDead;
     Rigidbody body;
     CapsuleCollider caps;
 	float TimerbeforeDeath;
@@ -68,6 +68,7 @@ public class PlayerHealth : MonoBehaviour {
         // Le joueur va pas mourir toutes les deux minutes, ca devrais pas poser de pb
         Destroy(GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>());
         Destroy(GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>());
+        
         Destroy(gameObject, 4f);
     }
         

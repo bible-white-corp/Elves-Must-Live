@@ -9,11 +9,12 @@ public class PlayerBow : MonoBehaviour {
     Animator anim;
     Collider coll;
     public bool isAttack;
+    GameObject temparrow;
     GameObject arrow;
-    GameObject realarrow;
 
     Game game;
 
+    GameObject arrowspot;
     GameObject tpscam;
     GameObject fpscam;
 
@@ -23,61 +24,57 @@ public class PlayerBow : MonoBehaviour {
     void Start ()
     {
         game = GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>();
+        arrowspot = GameObject.FindGameObjectWithTag("ArrowSpot");
         tpscam = game.cam;
         fpscam = game.fpscam;
         anim = GetComponentInParent<Animator>();
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-        if (isAttack && anim.GetCurrentAnimatorStateInfo(0).IsName("Bow2"))
+        if (isAttack)
         {
-            isAttack = false;
-
-            Debug.Log(game.player1.transform.rotation.y);
-            //game.player1.transform.rotation = Quaternion.Euler(0, saveY, 0);
-            Debug.Log(game.player1.transform.rotation.y);
-            // SET TPS
-            fpscam.SetActive(false);
-            //tpscam.transform.rotation = Quaternion.Euler(game.player1.transform.rotation.x, game.player1.transform.rotation.y, game.player1.transform.rotation.z);
-        }
-
-        if (isAttack && anim.GetCurrentAnimatorStateInfo(0).IsName("Wait"))
-        {
-            Debug.Log("Waiting");
-            saveY = game.player1.transform.rotation.y;
-            if (Input.GetButton("Fire2"))
+            //Respawn temp arrow after x seconds (and dont allow to fire a second time immediatly)
+            if (Input.GetButtonDown("Fire2"))
             {
                 Debug.Log("Destroy temp arrow");
-                Destroy(arrow);
+                Destroy(temparrow);
                 anim.SetTrigger("Arrow");
 
-                Debug.Log(saveY);
-                arrow = (GameObject)Instantiate(Resources.Load("Arrow"), transform.position, new Quaternion(transform.rotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w));
+                arrow = (GameObject)Instantiate(Resources.Load("Arrow"), arrowspot.transform.position, arrowspot.transform.rotation);
+                arrow.transform.position = arrowspot.transform.position + Camera.main.transform.forward;
+                arrow.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 40;
+                //arrow.transform.eulerAngles = new Vector3(-arrowspot.transform.eulerAngles.x, arrowspot.transform.eulerAngles.y - 90, arrowspot.transform.eulerAngles.z);
 
             }
 
-            if (Input.GetButton("Fire1"))
+            if (Input.GetButtonDown("Fire1"))
             {
                 anim.SetTrigger("Cancel");
+                isAttack = false;
+                game.player1.transform.eulerAngles = new Vector3(0f, game.playercam.m_LookAngle, 0f);
+                // SET TPS
+                fpscam.SetActive(false);
             }
 
         }
-
-        if (Input.GetButton("Fire1") && !isAttack)
+        else
         {
-            isAttack = true;
-            anim.SetTrigger("Atk");
-            //Summon la flèche ici, pauser l'animation pour viser ?
-            arrow = (GameObject)Instantiate(Resources.Load("Arrow"), transform);
-            arrow.GetComponent<Rigidbody>().isKinematic = true;
 
-            // Mettre la caméra (Une autre caméra) en mode "viser"
-            // SET FPS
-            fpscam.SetActive(true);
+            if (Input.GetButtonDown("Fire1"))
+            {
+                isAttack = true;
+                anim.SetTrigger("Atk");
+                //Summon la flèche ici, pauser l'animation pour viser ?
+                temparrow = (GameObject)Instantiate(Resources.Load("TempArrow"), transform);
+
+                // Mettre la caméra (Une autre caméra) en mode "viser"
+                // SET FPS
+                fpscam.SetActive(true);
+            }
+
+
         }
-
-
     }
 }

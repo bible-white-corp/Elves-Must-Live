@@ -36,13 +36,13 @@ public class Switch : MonoBehaviour {
 		}
 		else
 		{
-        	if (Input.GetAxis("Mouse ScrollWheel") > 0)
+        	if (Input.GetAxis("Mouse ScrollWheel") > 0 && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk"))
         	{
         	    Debug.Log("Change weapon (+)");
         	    ChangeW(1);
         	    timeout = true;
         	}
-        	if (Input.GetAxis("Mouse ScrollWheel") < 0)
+        	if (Input.GetAxis("Mouse ScrollWheel") < 0 && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk"))
         	{
         	    Debug.Log("Change weapon (-)");
         	    ChangeW(-1);

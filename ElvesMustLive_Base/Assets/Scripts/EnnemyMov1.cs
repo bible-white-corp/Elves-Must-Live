@@ -52,14 +52,14 @@ public class EnnemyMov1 : MonoBehaviour
 	}
 	void OnTriggerStay(Collider coll)
 	{
-		if (coll.tag == "Player" && !hp.IsDead)
-		{
-			distance = Vector3.Distance (player.transform.position, gameObject.transform.position);
+        if (coll.tag == "Player" && !hp.IsDead)
+        {
+            distance = Vector3.Distance(player.transform.position, gameObject.transform.position);
             if (nav.enabled)
             {
                 nav.SetDestination(player.transform.position);
             }
-		}
+        }
 	}
 
 	void OnTriggerExit(Collider coll)
