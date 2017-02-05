@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAttack : MonoBehaviour {
+public class PlayerAttack : Photon.MonoBehaviour
+{
 
     public int AttackDamage = 10;
     Health health;
@@ -10,15 +11,23 @@ public class PlayerAttack : MonoBehaviour {
     Collider coll;
     public bool isAttack;
 
+    PlayerControl home;
+
     // Use this for initialization
     void Start () {
-        anim = GetComponentInParent<Animator>();
+        home = GetComponentInParent<PlayerControl>();
+        anim = home.anim;
         coll = GetComponent<BoxCollider>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
+        if (home.isMine == false && PhotonNetwork.connected == true)
+        {
+            return;
+        }
+
         if (isAttack && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk"))
         {
             isAttack = false;

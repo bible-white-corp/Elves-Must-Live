@@ -5,7 +5,7 @@ using UnityStandardAssets.Cameras;
 
 public class FPSCam : MonoBehaviour {
 
-    Game game;
+    PlayerControl home;
 
     FreeLookCam tpscam;
 
@@ -15,14 +15,19 @@ public class FPSCam : MonoBehaviour {
 
     private void Start()
     {
-        game = GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>();
-        tpscam = game.playercam;
-        game.fpscam = gameObject;
+        home = GetComponentInParent<PlayerControl>();
+        tpscam = home.camscript;
+        home.fpscam = gameObject;
         gameObject.SetActive(false);
 
     }
     void Update()
     {
+        if (home.isMine == false && PhotonNetwork.connected == true)
+        {
+            return;
+        }
+
         transform.parent.eulerAngles = new Vector3(0f, tpscam.m_LookAngle + 60, tpscam.m_TiltAngle);
     }
 

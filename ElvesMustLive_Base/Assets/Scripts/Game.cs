@@ -2,30 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityStandardAssets.Cameras;
+
+using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
 
-    public GameObject player1;
-	public FreeLookCam playercam;
+    public GameObject global;
 
-    public GameObject fpscam; // Utile dans le script FPSCam !
-    public GameObject cam;
 
     // Use this for initialization
     void Awake () 
 	{
-        player1 = GameObject.FindGameObjectWithTag("Player");
-        cam = GameObject.FindGameObjectWithTag("PlayerCamera");
-        playercam = cam.GetComponent<FreeLookCam> ();
+        global = gameObject;
     }
-	
-	// Update is called once per frame
-	void Update () {
 
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetKey("h"))
         {
-            player1.GetComponent<PlayerHealth>().TakeDamage(30);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().TakeDamage(30);
         }
 
         if (Input.GetKey("k"))
@@ -33,25 +29,23 @@ public class Game : MonoBehaviour {
             GameObject.FindGameObjectWithTag("Shootable").GetComponent<Health>().TakeDamage(31);
         }
 
-		if (Input.GetKeyDown("j"))
+        if (Input.GetKeyDown("j"))
         {
             Instantiate(Resources.Load("Ennemy"));
         }
         if (Input.GetKey("t"))
         {
-            if (player1 == null)
+            if (global == null)
             {
-                player1 = (GameObject)Instantiate(Resources.Load("Perso"));
-				playercam.enabled = true;
+                global = (GameObject)Instantiate(Resources.Load("PersoAndCam"));
             }
         }
 
-        if (Input.GetButton("CenterCam")) //La touche L dans TLoZelda. Pas trouver d'autre examples #Thetoto.
-        {
-            playercam.LookPlayer(player1.transform.rotation.eulerAngles.y, 15f);
 
-        }
 
     }
+
+
+    
 
 }

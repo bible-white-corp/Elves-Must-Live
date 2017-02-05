@@ -10,11 +10,14 @@ public class Switch : MonoBehaviour {
     List<GameObject> weapon = new List<GameObject>();
     public int CurrentW = 0;
 
+    PlayerControl home;
+
 	// Use this for initialization
 	void Start ()
     {
-        anim = GetComponentInParent<Animator>();
-            foreach (Transform child in gameObject.transform)
+        home = GetComponentInParent<PlayerControl>();
+        anim = home.anim;
+        foreach (Transform child in gameObject.transform)
         {
             Debug.Log(child.gameObject);
             weapon.Add(child.gameObject);
@@ -25,7 +28,12 @@ public class Switch : MonoBehaviour {
 	// Update is called once per frame  
 	void Update () 
 	{
-		if (timeout)
+        if (home.isMine == false && PhotonNetwork.connected == true)
+        {
+            return;
+        }
+
+        if (timeout)
 		{
 			timer += Time.deltaTime;
 			if (timer > 0.3f)

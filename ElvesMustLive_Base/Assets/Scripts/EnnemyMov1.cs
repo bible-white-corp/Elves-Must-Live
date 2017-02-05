@@ -6,7 +6,6 @@ public class EnnemyMov1 : MonoBehaviour
 {
     public Animator animator;           // Reference to the player's position.
 	public NavMeshAgent nav;               // Reference to the nav mesh agent.
-	SphereCollider coll;
 	public float distance;
     EnnemyAttack atkscript;
     Health hp;

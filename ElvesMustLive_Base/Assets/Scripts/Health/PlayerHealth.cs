@@ -9,18 +9,20 @@ public class PlayerHealth : MonoBehaviour {
     Animator anim;
     public bool IsDead;
     Rigidbody body;
-    CapsuleCollider caps;
 	float TimerbeforeDeath;
 	bool IsSinking;
-	FreeLookCam camscript;
-	GameObject Cam;
+	GameObject MyCam;
+
+    PlayerControl home;
 
 
     // Use this for initialization
     void Start ()
 	{
-        anim = GetComponent<Animator>();
+        home = GetComponentInParent<PlayerControl>();
+        anim = home.anim;
 		TimerbeforeDeath = 0;
+        MyCam = home.cam;
     }
 	
 	// Update is called once per frame
@@ -57,15 +59,12 @@ public class PlayerHealth : MonoBehaviour {
 
     public void Death()
     {
-		Cam = GameObject.FindGameObjectWithTag ("PlayerCamera");
-		Debug.Log (Cam.name);
-		camscript = Cam.GetComponent<FreeLookCam> ();
-		camscript.enabled = false;
+        home.camscript.m_Target = null;
 		IsSinking = true;
         IsDead = true;
         anim.SetTrigger("Died");
         GetComponent<Rigidbody>().isKinematic = true;
-        // Le joueur va pas mourir toutes les deux minutes, ca devrais pas poser de pb
+        // A faire qu'une fois donc demande pas tant de ressources...
         Destroy(GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>());
         Destroy(GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>());
         

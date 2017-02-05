@@ -5,7 +5,7 @@ using UnityStandardAssets.CrossPlatformInput;
 namespace UnityStandardAssets.Characters.ThirdPerson
 {
     [RequireComponent(typeof (ThirdPersonCharacter))]
-    public class ThirdPersonUserControl : MonoBehaviour
+    public class ThirdPersonUserControl : Photon.MonoBehaviour
     {
         private ThirdPersonCharacter m_Character; // A reference to the ThirdPersonCharacter on the object
         private Transform m_Cam;                  // A reference to the main camera in the scenes transform
@@ -16,6 +16,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         
         private void Start()
         {
+
             // get the transform of the main camera
             if (Camera.main != null)
             {
@@ -35,6 +36,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
         private void Update()
         {
+            //Gestion Network
+            if (photonView.isMine == false && PhotonNetwork.connected == true)
+            {
+                return;
+            }
+
             if (!m_Jump)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
@@ -45,6 +52,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         // Fixed update is called in sync with physics
         private void FixedUpdate()
         {
+            //Gestion Network
+            if (photonView.isMine == false && PhotonNetwork.connected == true)
+            {
+                return;
+            }
+
             // read inputs
             float h = CrossPlatformInputManager.GetAxis("Horizontal");
             float v = CrossPlatformInputManager.GetAxis("Vertical");

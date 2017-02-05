@@ -12,9 +12,9 @@ public class PlayerBow : MonoBehaviour {
     GameObject temparrow;
     GameObject arrow;
 
-    Game game;
-
-    GameObject arrowspot;
+    PlayerControl home;
+    //SET IN THE EDITOR
+    public GameObject arrowspot;
     GameObject tpscam;
     GameObject fpscam;
 
@@ -23,16 +23,20 @@ public class PlayerBow : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        game = GameObject.FindGameObjectWithTag("GameController").GetComponent<Game>();
-        arrowspot = GameObject.FindGameObjectWithTag("ArrowSpot");
-        tpscam = game.cam;
-        fpscam = game.fpscam;
-        anim = GetComponentInParent<Animator>();
+        home = GetComponentInParent<PlayerControl>();
+        tpscam = home.cam;
+        fpscam = home.fpscam;
+        anim = home.anim;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (home.isMine == false && PhotonNetwork.connected == true)
+        {
+            return;
+        }
+
         if (isAttack)
         {
             //Respawn temp arrow after x seconds (and dont allow to fire a second time immediatly)
@@ -53,7 +57,7 @@ public class PlayerBow : MonoBehaviour {
             {
                 anim.SetTrigger("Cancel");
                 isAttack = false;
-                game.player1.transform.eulerAngles = new Vector3(0f, game.playercam.m_LookAngle, 0f);
+                home.camscript.transform.eulerAngles = new Vector3(0f, home.camscript.m_LookAngle, 0f);
                 // SET TPS
                 fpscam.SetActive(false);
             }

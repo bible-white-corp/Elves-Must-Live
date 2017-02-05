@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 //namespace Com.BibleWhiteCorp.ElvesMustLive
 //{
@@ -18,6 +18,11 @@ public class Launcher : Photon.PunBehaviour
     [Tooltip("The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
     public byte MaxPlayersPerRoom = 4;
 
+    [Tooltip("The Ui Panel to let the user enter name, connect and play")]
+    public GameObject controlPanel;
+    [Tooltip("The UI Label to inform the user that the connection is in progress")]
+    public GameObject progressLabel;
+
     #endregion
 
 
@@ -29,6 +34,12 @@ public class Launcher : Photon.PunBehaviour
     /// </summary>
     string _gameVersion = "1";
 
+    /// <summary>
+    /// Keep track of the current process. Since connection is asynchronous and is based on several callbacks from Photon, 
+    /// we need to keep track of this to properly adjust the behavior when we receive call back by Photon.
+    /// Typically this is used for the OnConnectedToMaster() callback.
+    /// </summary>
+    bool isConnecting;
 
     #endregion
 
@@ -55,7 +66,11 @@ public class Launcher : Photon.PunBehaviour
         PhotonNetwork.logLevel = Loglevel;
     }
 
-
+    private void Start()
+    {
+        progressLabel.SetActive(false);
+        controlPanel.SetActive(true);   
+    }
 
     #endregion
 
@@ -70,7 +85,11 @@ public class Launcher : Photon.PunBehaviour
     /// </summary>
     public void Connect()
     {
+        progressLabel.SetActive(true);
+        controlPanel.SetActive(false);
 
+        // keep track of the will to join a room, because when we come back from the game we will get a callback that we are connected, so we need to know what to do then
+        isConnecting = true;
 
         // we check if we are connected or not, we join if we are , else we initiate the connection to the server.
         if (PhotonNetwork.connected)
@@ -93,11 +112,15 @@ public class Launcher : Photon.PunBehaviour
 
     public override void OnConnectedToMaster()
     {
-
-
         Debug.Log("DemoAnimator/Launcher: OnConnectedToMaster() was called by PUN");
-        // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnPhotonRandomJoinFailed()  
-        PhotonNetwork.JoinRandomRoom();
+        // we don't want to do anything if we are not attempting to join a room. 
+        // this case where isConnecting is false is typically when you lost or quit the game, when this level is loaded, OnConnectedToMaster will be called, in that case
+        // we don't want to do anything.
+        if (isConnecting)
+        {
+            // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnPhotonRandomJoinFailed()
+            PhotonNetwork.JoinRandomRoom();
+        }
 
     }
 
@@ -112,11 +135,13 @@ public class Launcher : Photon.PunBehaviour
     public override void OnJoinedRoom()
     {
         Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
+        PhotonNetwork.LoadLevel("Scene_orc_anim");
     }
 
     public override void OnDisconnectedFromPhoton()
     {
-
+        progressLabel.SetActive(false);
+        controlPanel.SetActive(true);
 
         Debug.LogWarning("DemoAnimator/Launcher: OnDisconnectedFromPhoton() was called by PUN");
     }
@@ -126,7 +151,8 @@ public class Launcher : Photon.PunBehaviour
     #region Offline
     public void Offline()
     {
-        Application.LoadLevel("Scene_orc_anim");
+        PhotonNetwork.offlineMode = true;
+        PhotonNetwork.CreateRoom("Offline");
     }
 
     public void LocalMulti()
