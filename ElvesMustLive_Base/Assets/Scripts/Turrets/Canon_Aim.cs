@@ -11,12 +11,16 @@ public class Canon_Aim : MonoBehaviour {
 	public float TurretsSpeed;
 	SphereCollider coll;
 	Transform children;
+	float timerbeforeshot;
+	public float reloadtime;
+	Transform sortie;
+	public GameObject Bullet;
 
 	void Start () 
 	{
-		children = transform.GetChild (0);
 		coll = GetComponent<SphereCollider> ();
 		LastKnownPosition = Vector3.zero;
+		timerbeforeshot = 0f;
 	}
 
 	void Update () 
@@ -37,6 +41,12 @@ public class Canon_Aim : MonoBehaviour {
 				transform.rotation = Quaternion.RotateTowards(transform.rotation,temporaire,TurretsSpeed* Time.deltaTime);
 				transform.GetChild (0).rotation = new Quaternion (LookAtRotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);  
 			}
+			timerbeforeshot += Time.deltaTime;
+			if (timerbeforeshot > reloadtime) 
+			{
+				Shoot (transform.GetChild (0).GetChild (1));
+				timerbeforeshot = 0f;
+			}
 		}
 	}
 		
@@ -56,6 +66,7 @@ public class Canon_Aim : MonoBehaviour {
 			currentTarget = coll.gameObject;
 			LastKnownPosition = currentTarget.transform.position;
 		}
+
 	}
 	void OnTriggerExit(Collider coll)
 	{
@@ -63,5 +74,12 @@ public class Canon_Aim : MonoBehaviour {
 		{
 			currentTarget = null;
 		}
+	}
+
+	void Shoot(Transform hole)
+	{
+		GameObject Shoot = Instantiate (Bullet,hole.position,hole.rotation) as GameObject;
+		Shoot.GetComponent<Rigidbody> ().AddForce (hole.forward * 2500);
+		Destroy (Shoot, 2);
 	}
 }
