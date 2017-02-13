@@ -15,6 +15,7 @@ public class Canon_Aim : MonoBehaviour {
 	public float reloadtime;
 	Transform sortie;
 	public GameObject Bullet;
+	Health script;
 
 	void Start () 
 	{
@@ -57,6 +58,7 @@ public class Canon_Aim : MonoBehaviour {
 		{
 			currentTarget = coll.gameObject;
 			LastKnownPosition = currentTarget.transform.position;
+			script = coll.GetComponent<Health> ();
 		}
 	}
 	void OnTriggerStay(Collider coll)
@@ -65,6 +67,11 @@ public class Canon_Aim : MonoBehaviour {
 		{
 			currentTarget = coll.gameObject;
 			LastKnownPosition = currentTarget.transform.position;
+			script = coll.GetComponent<Health> ();
+		}
+		if (script.health <= 0) 
+		{
+			currentTarget = null;
 		}
 
 	}
@@ -80,6 +87,7 @@ public class Canon_Aim : MonoBehaviour {
 	{
 		GameObject Shoot = Instantiate (Bullet,hole.position,hole.rotation) as GameObject;
 		Shoot.GetComponent<Rigidbody> ().AddForce (hole.forward * 2500);
+		Shoot.AddComponent<Collisionexplode> ();
 		Destroy (Shoot, 2);
 	}
 }
