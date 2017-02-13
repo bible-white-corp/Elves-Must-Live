@@ -74,7 +74,6 @@ public class EnnemyMov1 : MonoBehaviour
 	{
 		nav.SetDestination (newgameObject.position);
 		Destination = newgameObject;
-		Debug.Log ("Change Destination called");
 	}
 
 }
