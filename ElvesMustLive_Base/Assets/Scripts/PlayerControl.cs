@@ -12,13 +12,17 @@ public class PlayerControl : Photon.MonoBehaviour {
     public Animator anim;
     public PlayerHealth hp;
     public CapsuleCollider capscoll;
+    public PhotonView view;
     public bool isMine;
+    public List<GameObject> weapon;
+    public TextMesh txtname;
 
     PlayerControl home;
 
 	// Use this for initialization
 	void Awake () {
         isMine = photonView.isMine;
+        view = photonView;
         if (isMine)
         {
             // Set in the Editor.
@@ -26,6 +30,10 @@ public class PlayerControl : Photon.MonoBehaviour {
             cam = GameObject.FindGameObjectWithTag("PlayerCamera");
             camscript = cam.GetComponent<FreeLookCam>();
             camscript.m_Target = gameObject.transform;
+        }
+        else
+        {
+            txtname.text = photonView.owner.NickName;
         }
         
     }
@@ -44,4 +52,24 @@ public class PlayerControl : Photon.MonoBehaviour {
 
         }
     }
+
+#region PUN RPC
+
+    [PunRPC]
+    public void Tets()
+    {
+        Debug.Log("Test");
+    }
+
+    [PunRPC]
+    public void ActiveW(int i)
+    {
+        weapon[i].SetActive(true);
+    }
+    [PunRPC]
+    public void DesactiveW(int i)
+    {
+        weapon[i].SetActive(false);
+    }
+    #endregion
 }

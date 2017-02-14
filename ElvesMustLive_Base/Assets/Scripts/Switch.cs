@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Switch : MonoBehaviour {
+public class Switch : Photon.MonoBehaviour
+{
 
     Animator anim;
     float timer;
@@ -22,6 +23,7 @@ public class Switch : MonoBehaviour {
             Debug.Log(child.gameObject);
             weapon.Add(child.gameObject);
         }
+        home.weapon = weapon;
         ChangeW(0);
     }
 	
@@ -48,6 +50,7 @@ public class Switch : MonoBehaviour {
         	{
         	    Debug.Log("Change weapon (+)");
         	    ChangeW(1);
+                
         	    timeout = true;
         	}
         	if (Input.GetAxis("Mouse ScrollWheel") < 0 && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk"))
@@ -63,9 +66,9 @@ public class Switch : MonoBehaviour {
 
     public void ChangeW(int nb)
     {
-        weapon[CurrentW].SetActive(false);
+        //weapon[CurrentW].SetActive(false);
         anim.SetBool(weapon[CurrentW].tag, false);
-
+        home.view.RPC("DesactiveW", PhotonTargets.All, CurrentW);
         CurrentW += nb;
         if (CurrentW < 0)
         {
@@ -75,8 +78,7 @@ public class Switch : MonoBehaviour {
         {
             CurrentW = 0;
         }
-
-        weapon[CurrentW].SetActive(true);
+        home.view.RPC("ActiveW", PhotonTargets.All, CurrentW);
         anim.SetBool(weapon[CurrentW].tag, true);
     }
 

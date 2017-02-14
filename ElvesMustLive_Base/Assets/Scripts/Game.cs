@@ -11,8 +11,8 @@ public class Game : MonoBehaviour {
 
 
     // Use this for initialization
-    void Awake () 
-	{
+    void Awake()
+    {
         global = gameObject;
     }
 
@@ -40,12 +40,19 @@ public class Game : MonoBehaviour {
                 global = (GameObject)Instantiate(Resources.Load("PersoAndCam"));
             }
         }
-
+        if (Input.GetKeyDown("r"))
+        {
+            TestSpawn();
+        }
 
 
     }
+    [PunRPC]
+    public void TestSpawn()
+    {
+        PhotonNetwork.InstantiateSceneObject("Test", transform.position, Quaternion.identity, 0, new object[] { });
+    }
 
 
-    
 
 }

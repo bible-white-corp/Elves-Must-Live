@@ -1443,7 +1443,7 @@ ModelImporter:
       name: elf prepare arch
       takeName: Take 001
       firstFrame: 1155
-      lastFrame: 1185
+      lastFrame: 1180
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

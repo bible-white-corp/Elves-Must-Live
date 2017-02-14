@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBow : MonoBehaviour {
+public class PlayerBow : Photon.MonoBehaviour
+{
 
     public int AttackDamage = 10;
     Health health;
@@ -17,8 +18,7 @@ public class PlayerBow : MonoBehaviour {
     public GameObject arrowspot;
     GameObject tpscam;
     GameObject fpscam;
-
-    float saveY;
+   
 
     // Use this for initialization
     void Start ()
@@ -42,24 +42,25 @@ public class PlayerBow : MonoBehaviour {
             //Respawn temp arrow after x seconds (and dont allow to fire a second time immediatly)
             if (Input.GetButtonDown("Fire2"))
             {
-                Debug.Log("Destroy temp arrow");
                 Destroy(temparrow);
+
                 anim.SetTrigger("Arrow");
 
-                arrow = (GameObject)Instantiate(Resources.Load("Arrow"), arrowspot.transform.position, arrowspot.transform.rotation);
+                arrow = PhotonNetwork.Instantiate("Arrow", arrowspot.transform.position, arrowspot.transform.rotation,0 );
                 arrow.transform.position = arrowspot.transform.position + Camera.main.transform.forward;
                 arrow.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 40;
-                //arrow.transform.eulerAngles = new Vector3(-arrowspot.transform.eulerAngles.x, arrowspot.transform.eulerAngles.y - 90, arrowspot.transform.eulerAngles.z);
-
-            }
+               
+            }   
 
             if (Input.GetButtonDown("Fire1"))
             {
                 anim.SetTrigger("Cancel");
+                Destroy(temparrow);
                 isAttack = false;
                 home.camscript.transform.eulerAngles = new Vector3(0f, home.camscript.m_LookAngle, 0f);
                 // SET TPS
                 fpscam.SetActive(false);
+                home.player.transform.eulerAngles = new Vector3(0f, home.player.transform.eulerAngles.y, 0f);
             }
 
         }

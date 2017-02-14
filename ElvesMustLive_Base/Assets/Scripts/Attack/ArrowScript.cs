@@ -2,27 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowScript : MonoBehaviour {
+public class ArrowScript : Photon.MonoBehaviour {
 
     int AttackDamage = 10;
     public Rigidbody rigid;
+    float time;
 
 	// Use this for initialization
 	void Start ()
     {
         rigid = GetComponent<Rigidbody>();
-        Destroy(gameObject, 20f);
+        time = 0;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        //rigid.AddForce(new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.y));
+        time += Time.deltaTime;
+        if (time > 20f)
+        {
+            PhotonNetwork.Destroy(gameObject);
+        }
 	}
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "Player" && other.tag != "Untagged")
+        if (other.tag != "Player")
         {
 
             Debug.Log(other.gameObject);
@@ -36,7 +41,7 @@ public class ArrowScript : MonoBehaviour {
                 Debug.Log("You fail your arrow in " + other.gameObject);
             }
 
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 }
