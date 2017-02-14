@@ -16,12 +16,15 @@ public class Canon_Aim : MonoBehaviour {
 	Transform sortie;
 	public GameObject Bullet;
 	Health script;
+	bool engage; //ca sert a bidouiller 
+	public GameObject explosion;
 
 	void Start () 
 	{
 		coll = GetComponent<SphereCollider> ();
 		LastKnownPosition = Vector3.zero;
 		timerbeforeshot = 0f;
+		engage = false;
 	}
 
 	void Update () 
@@ -54,24 +57,27 @@ public class Canon_Aim : MonoBehaviour {
 
 	void OnTriggerEnter(Collider coll)
 	{
-		if (currentTarget == null && coll.tag == "Shootable") 
+		if (engage == false && coll.tag == "Shootable") 
 		{
 			currentTarget = coll.gameObject;
 			LastKnownPosition = currentTarget.transform.position;
 			script = coll.GetComponent<Health> ();
+			engage = true;
 		}
 	}
 	void OnTriggerStay(Collider coll)
 	{
-		if (currentTarget == null && coll.tag == "Shootable") 
+		if (engage==false && coll.tag == "Shootable") 
 		{
 			currentTarget = coll.gameObject;
 			LastKnownPosition = currentTarget.transform.position;
 			script = coll.GetComponent<Health> ();
+			engage = true;
 		}
-		if (script.health <= 0) 
+		if (engage && script.health <= 0) 
 		{
 			currentTarget = null;
+			engage = false;
 		}
 
 	}
@@ -80,6 +86,7 @@ public class Canon_Aim : MonoBehaviour {
 		if (coll.gameObject == currentTarget) 
 		{
 			currentTarget = null;
+			engage = false;
 		}
 	}
 
@@ -88,6 +95,6 @@ public class Canon_Aim : MonoBehaviour {
 		GameObject Shoot = Instantiate (Bullet,hole.position,hole.rotation) as GameObject;
 		Shoot.GetComponent<Rigidbody> ().AddForce (hole.forward * 2500);
 		Shoot.AddComponent<Collisionexplode> ();
-		Destroy (Shoot, 2);
+		Shoot.GetComponent<Collisionexplode> ().SetExplosion (explosion);
 	}
 }

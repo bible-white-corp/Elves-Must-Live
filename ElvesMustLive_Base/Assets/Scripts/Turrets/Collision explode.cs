@@ -2,20 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collisionexplode : MonoBehaviour {
+public class Collisionexplode : 
+MonoBehaviour {
 
-	ParticleSystem explo;
 	public int damage;
+	Transform bulletpos;
+	GameObject explosion;
+	float timer;
+
 	void Start () 
 	{
 		damage = 15;
-		explo = GetComponent<ParticleSystem> ();
+		timer = 0;
 	}
-	
+
+	public void SetExplosion(GameObject explo)
+	{
+		explosion = explo;
+	}
 	// Update is called once per frame
 	void Update () 
 	{
-		
+		timer += Time.deltaTime;
+		if (timer >= 1) 
+		{
+			autodestruct ();
+		}
 	}
 
 	void OnTriggerEnter(Collider coll)
@@ -31,6 +43,14 @@ public class Collisionexplode : MonoBehaviour {
 	{
 		var script = coll.GetComponent<Health> ();
 		script.TakeDamage (damage);
+		this.gameObject.GetComponent<MeshRenderer> ().enabled = false;
+		GameObject boum = Instantiate (explosion,gameObject.transform.position,gameObject.transform.rotation) as GameObject;
+		Destroy (boum, 1);
+		autodestruct ();
+
+	}
+	void autodestruct()
+	{
 		Destroy (gameObject);
 	}
 }
