@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Canon_Aim : MonoBehaviour {
 
+	public int DirectHitDamage;
 	public GameObject currentTarget;
 	private Vector3 LastKnownPosition;
 	private Quaternion LookAtRotation;
