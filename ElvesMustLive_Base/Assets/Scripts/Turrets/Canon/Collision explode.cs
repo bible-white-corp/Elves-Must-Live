@@ -37,7 +37,6 @@ MonoBehaviour {
 	{
 		if (coll.tag == "Shootable") 
 		{
-			Debug.Log ("enters");
 			Explode (coll);
 		}
 	}
