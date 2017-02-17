@@ -41,11 +41,11 @@ public class Collision_Pierce : MonoBehaviour {
 		
 		if (coll.tag == "Shootable") 
 		{
-			Physics.IgnoreCollision (gameObject.GetComponent<Collider> (), coll);
+			Physics.IgnoreCollision (gameObject.GetComponent<Collider> (), coll); //finalement, je rends le projectile intangible
 			if (FirstHit == false)
 			{
 				FirstHit = true;
-				//gameObject.GetComponent<Rigidbody> ().i = true; on permet au carreau de traverser les cibles
+				//gameObject.GetComponent<Rigidbody> ().i = true; //ca marchait pas
 				Instantiate (Pierce, coll.transform.position,coll.transform.rotation,coll.transform); //on declenche les particules
 			}
 			Piercetouch (coll); //on declenche les degats

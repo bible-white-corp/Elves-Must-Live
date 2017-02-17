@@ -11,7 +11,6 @@ public class explosionDamage : MonoBehaviour {
 		if (coll.tag == "Shootable") 
 		{
 			coll.GetComponent<Health> ().TakeDamage (ExplosionDamage);
-			Debug.Log ("Damaged");
 		}
 	}
 }

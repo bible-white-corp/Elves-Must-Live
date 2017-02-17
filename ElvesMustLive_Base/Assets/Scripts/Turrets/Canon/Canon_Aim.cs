@@ -10,7 +10,6 @@ public class Canon_Aim : MonoBehaviour {
 	private Quaternion LookAtRotation;
 	private Quaternion temporaire;
 	public float TurretsSpeed;
-	SphereCollider coll;
 	Transform children;
 	float timerbeforeshot;
 	public float reloadtime;
@@ -22,7 +21,6 @@ public class Canon_Aim : MonoBehaviour {
 
 	void Start () 
 	{
-		coll = GetComponent<SphereCollider> ();
 		LastKnownPosition = Vector3.zero;
 		timerbeforeshot = 0f;
 		engage = false;
