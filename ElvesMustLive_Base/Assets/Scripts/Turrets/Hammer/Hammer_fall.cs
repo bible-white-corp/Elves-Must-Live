@@ -25,6 +25,7 @@ public class Hammer_fall : MonoBehaviour {
 			if (coll.tag == "Shootable") 
 			{
 				transform.GetChild(0).GetComponent<Hammer_hit>().TriggerHit ();
+				transform.GetChild (0).GetComponent<Hammer_hit> ().SetTimes (0.5f, 2, 2);
 				IsFalling = true;
 			}
 

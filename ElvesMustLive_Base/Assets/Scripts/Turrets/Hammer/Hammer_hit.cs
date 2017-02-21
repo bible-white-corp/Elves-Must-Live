@@ -10,6 +10,9 @@ public class Hammer_hit : MonoBehaviour {
 	int damage;
 	float crushtimer;
 	float reloadtimer;
+	float fallingtime;
+	float downtime;
+	float reloadtime;
 	float i;
 
 	void Awake () 
@@ -29,13 +32,13 @@ public class Hammer_hit : MonoBehaviour {
 		{
 			if (i <= 90) 
 			{
-				objectif.Set (i, 0, 0, 0);
-				transform.rotation = objectif;
-				i += 0.25f;
+				transform.localRotation = Quaternion.Euler (new Vector3 (i, 0, 0));
+				i += Time.deltaTime * (1f/fallingtime) *90; ;
 			} 
 			else 
 			{
-				if (crushtimer < 2) {
+				if (crushtimer < downtime) 
+				{
 					crushtimer += Time.deltaTime;
 				} 
 				else
@@ -43,6 +46,7 @@ public class Hammer_hit : MonoBehaviour {
 					crushtimer = 0;
 					IsFalling = false;
 					IsElevating = true;
+					i = 89;
 				}
 			}
 		}
@@ -50,13 +54,12 @@ public class Hammer_hit : MonoBehaviour {
 		{
 			if (i > 0) 
 			{
-				objectif [0] = i;
-				transform.rotation = Quaternion.RotateTowards (transform.rotation, objectif, Time.deltaTime);
+				transform.localRotation = Quaternion.Euler (new Vector3 (i, 0, 0));
 				i -= 1;
 			}
 			else 
 			{
-				if ( reloadtimer < 2) 
+				if ( reloadtimer < reloadtime) 
 				{
 					reloadtimer += Time.deltaTime;
 				} 
@@ -77,6 +80,12 @@ public class Hammer_hit : MonoBehaviour {
 		IsFalling = true;
 	}
 
+	public void SetTimes(float fallingtime, float downtime, float reloadtime)
+		{
+		this.fallingtime = fallingtime;
+		this.downtime = downtime;
+		this.reloadtime = reloadtime;
+		}
 	public void SetDamage(int dmg)
 	{
 		damage = dmg;
