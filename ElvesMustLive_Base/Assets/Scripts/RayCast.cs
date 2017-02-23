@@ -19,16 +19,15 @@ public class RayCast : MonoBehaviour {
     public void Cast()
     {
         Debug.Log(gameObject.name);
-        desti = transform.TransformDirection(Vector3.forward);
-
-        Physics.Raycast(transform.position, desti, out hit, 10f);
-        Debug.Log(hit.collider.tag);
-        Debug.Log(hit.transform.position);
-        if (hit.collider.tag == "Groud")
-        {
-            PhotonNetwork.Instantiate("Cannon", hit.point, Quaternion.identity, 0);
-            Debug.Log("Fine");
-        }
-
+		if (Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward), out hit)) 
+		{
+			Debug.Log (hit.collider.tag);
+			Debug.Log (hit.transform.position);
+			if (hit.collider.tag == "Ground") 
+			{
+				PhotonNetwork.Instantiate ("Cannon", hit.point, Quaternion.identity, 0);
+				Debug.Log ("Fine");
+			}
+		}
     }
 }
