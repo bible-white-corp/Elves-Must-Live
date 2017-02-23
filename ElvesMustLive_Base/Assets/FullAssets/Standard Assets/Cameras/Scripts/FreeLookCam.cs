@@ -21,12 +21,16 @@ namespace UnityStandardAssets.Cameras
         [SerializeField] private bool m_LockCursor = false;                   // Whether the cursor should be hidden and locked.
         [SerializeField] private bool m_VerticalAutoReturn = false;           // set wether or not the vertical axis should auto return
 
+
         public float m_LookAngle;                    // The rig's y axis rotation.
         public float m_TiltAngle;                    // The pivot's x axis rotation.
         private const float k_LookDistance = 100f;    // How far in front of the pivot the character's look target is.
-		private Vector3 m_PivotEulers;
-		private Quaternion m_PivotTargetRot;
-		private Quaternion m_TransformTargetRot;
+        private Vector3 m_PivotEulers;
+        private Quaternion m_PivotTargetRot;
+        private Quaternion m_TransformTargetRot;
+
+
+
 
         protected override void Awake()
         {
@@ -34,10 +38,12 @@ namespace UnityStandardAssets.Cameras
             // Lock or unlock the cursor.
             Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
             Cursor.visible = !m_LockCursor;
-			m_PivotEulers = m_Pivot.rotation.eulerAngles;
+            m_PivotEulers = m_Pivot.rotation.eulerAngles;
 
-	        m_PivotTargetRot = m_Pivot.transform.localRotation;
-			m_TransformTargetRot = transform.localRotation;
+            m_PivotTargetRot = m_Pivot.transform.localRotation;
+            m_TransformTargetRot = transform.localRotation;
+
+
         }
 
 
@@ -57,6 +63,7 @@ namespace UnityStandardAssets.Cameras
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+
 
 
         protected override void FollowTarget(float deltaTime)

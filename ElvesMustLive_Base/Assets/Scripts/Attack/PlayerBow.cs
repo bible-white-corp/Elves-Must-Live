@@ -49,7 +49,7 @@ public class PlayerBow : Photon.MonoBehaviour
                 arrow = PhotonNetwork.Instantiate("Arrow", arrowspot.transform.position, arrowspot.transform.rotation,0 );
                 arrow.transform.position = arrowspot.transform.position + Camera.main.transform.forward;
                 arrow.GetComponent<Rigidbody>().velocity = Camera.main.transform.forward * 40;
-               
+                
             }   
 
             if (Input.GetButtonDown("Fire1"))

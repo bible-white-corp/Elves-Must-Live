@@ -16,11 +16,12 @@ public class PlayerControl : Photon.MonoBehaviour {
     public bool isMine;
     public List<GameObject> weapon;
     public TextMesh txtname;
+    public RayCast raycast;
 
     PlayerControl home;
 
-	// Use this for initialization
-	void Awake () {
+    // Use this for initialization
+    void Awake () {
         isMine = photonView.isMine;
         view = photonView;
         if (isMine)
@@ -30,6 +31,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             cam = GameObject.FindGameObjectWithTag("PlayerCamera");
             camscript = cam.GetComponent<FreeLookCam>();
             camscript.m_Target = gameObject.transform;
+            
         }
         else
         {
@@ -43,6 +45,11 @@ public class PlayerControl : Photon.MonoBehaviour {
         if (isMine == false && PhotonNetwork.connected == true)
         {
             return;
+        }
+
+        if (Input.GetKeyDown("b"))
+        {
+            raycast.Cast();
         }
 
         if (Input.GetButton("CenterCam")) //CenterCam = x
