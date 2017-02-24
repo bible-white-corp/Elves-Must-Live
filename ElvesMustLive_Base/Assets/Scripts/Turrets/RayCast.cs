@@ -7,7 +7,7 @@ public class RayCast : MonoBehaviour {
     Vector3 desti;
     RaycastHit hit;
 	GameObject prerendu;
-	GameObject prospect;
+    //GameObject prospect;
 	bool initiatable;
 	Color OKcolor;
 	Color WRONGColor;
@@ -18,7 +18,7 @@ public class RayCast : MonoBehaviour {
 	bool NearGround;
 	Vector3 temp;
 	GameObject tempProspect;
-	Prerenducollision script2;
+	//Prerenducollision script2;
 	float i;
 
 	void Start () 
@@ -48,12 +48,12 @@ public class RayCast : MonoBehaviour {
 	{
 		if (initiatable) 
 		{
-			this.prospect = prospect;
+			//this.prospect = prospect;
 			initiatable = false;
 			if (true) 
 			{
 				tempProspect= Instantiate (prospect,transform.position, new Quaternion(0,0,0,0),transform);
-				script2 = tempProspect.GetComponent<Prerenducollision> ();
+				//script2 = tempProspect.GetComponent<Prerenducollision> ();
 				i = tempProspect.transform.localRotation.y;
 
 				//materials = prerendu.GetComponentsInChildren<Material>();
@@ -108,12 +108,12 @@ public class RayCast : MonoBehaviour {
 	}
 	public void RightRotate()
 	{
-		i += 1;
+		i += 5;
 		tempProspect.transform.localRotation = Quaternion.Euler (new Vector3 (0, i, 0));
 	}
 	public void LeftRotate()
 	{
-		i -= 1;
+		i -= 5;
 		tempProspect.transform.localRotation = Quaternion.Euler (new Vector3 (0, i, 0));
 	}
 	public void Cancel()

@@ -16,7 +16,7 @@ public class PlayerBow : Photon.MonoBehaviour
     PlayerControl home;
     //SET IN THE EDITOR
     public GameObject arrowspot;
-    GameObject tpscam;
+    //GameObject tpscam;
     GameObject fpscam;
    
 
@@ -24,7 +24,7 @@ public class PlayerBow : Photon.MonoBehaviour
     void Start ()
     {
         home = GetComponentInParent<PlayerControl>();
-        tpscam = home.cam;
+        //tpscam = home.cam;
         fpscam = home.fpscam;
         anim = home.anim;
     }

@@ -11,7 +11,6 @@ public class PlayerHealth : MonoBehaviour {
     Rigidbody body;
 	float TimerbeforeDeath;
 	bool IsSinking;
-	GameObject MyCam;
 
     PlayerControl home;
 
@@ -22,7 +21,6 @@ public class PlayerHealth : MonoBehaviour {
         home = GetComponentInParent<PlayerControl>();
         anim = home.anim;
 		TimerbeforeDeath = 0;
-        MyCam = home.cam;
     }
 	
 	// Update is called once per frame

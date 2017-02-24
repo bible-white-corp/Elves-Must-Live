@@ -17,16 +17,18 @@ public class PlayerControl : Photon.MonoBehaviour {
     public List<GameObject> weapon;
     public TextMesh txtname;
     public RayCast raycast;
-	public GameObject tourelle;
-	public GameObject pretourelle;
-	bool BuildConfirm;
+    public GameObject tourelle;
+    public GameObject pretourelle;
+    bool BuildConfirm;
+
+    List<string> AvailableTurrets;
+    int curretTurret = 0;
 
     PlayerControl home;
 
     // Use this for initialization
     void Awake () 
-	{
-		BuildConfirm = false;
+	{   
         isMine = photonView.isMine;
         view = photonView;
         if (isMine)
@@ -36,13 +38,21 @@ public class PlayerControl : Photon.MonoBehaviour {
             cam = GameObject.FindGameObjectWithTag("PlayerCamera");
             camscript = cam.GetComponent<FreeLookCam>();
             camscript.m_Target = gameObject.transform;
-            
+
+            BuildConfirm = false;
+            AvailableTurrets = new List<string>();
+            AvailableTurrets.Add("Cannon");
+            AvailableTurrets.Add("Hammer");
+            AvailableTurrets.Add("Crossbow");
+            tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret]);
+            pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret] + "Preview");
         }
         else
         {
             txtname.text = photonView.owner.NickName;
         }
         
+
     }
 	
 	// Update is called once per frame
@@ -67,13 +77,34 @@ public class PlayerControl : Photon.MonoBehaviour {
 				BuildConfirm = true;
 			}
         }
-		if (Input.GetKey ("q")) 
-		{
-			if (BuildConfirm) 
-			{
-				raycast.LeftRotate ();
-			}
-		}
+        if (Input.GetKeyDown("r"))
+        {
+            curretTurret = curretTurret - 1;
+            if (curretTurret < 0)
+            {
+                curretTurret = AvailableTurrets.Count - 1;
+            }
+            tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret]);
+            pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret] + "Preview");
+        }
+        if (Input.GetKeyDown("t"))
+        {
+            curretTurret = curretTurret + 1;
+            if (curretTurret >= AvailableTurrets.Count)
+            {
+                curretTurret = 0;
+            }
+
+            tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret]);
+            pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret] + "Preview");
+        }
+        if (Input.GetKey("q"))
+        {
+            if (BuildConfirm)
+            {
+                raycast.LeftRotate();
+            }
+        }
 		if (Input.GetKey ("e")) 
 		{
 			if (BuildConfirm) 
