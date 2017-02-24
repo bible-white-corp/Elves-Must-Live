@@ -17,11 +17,16 @@ public class PlayerControl : Photon.MonoBehaviour {
     public List<GameObject> weapon;
     public TextMesh txtname;
     public RayCast raycast;
+	public GameObject tourelle;
+	public GameObject pretourelle;
+	bool BuildConfirm;
 
     PlayerControl home;
 
     // Use this for initialization
-    void Awake () {
+    void Awake () 
+	{
+		BuildConfirm = false;
         isMine = photonView.isMine;
         view = photonView;
         if (isMine)
@@ -41,16 +46,46 @@ public class PlayerControl : Photon.MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
         if (isMine == false && PhotonNetwork.connected == true)
         {
             return;
         }
 
-        if (Input.GetKeyDown("b"))
+		if (Input.GetKeyDown("b"))
         {
-            raycast.Cast();
+			if (BuildConfirm) 
+			{
+				raycast.Confirm ();
+				BuildConfirm = false;
+			} 
+			else 
+			{
+				raycast.SetObjPropect (pretourelle);
+				raycast.SetObj (tourelle);
+				BuildConfirm = true;
+			}
         }
+		if (Input.GetKey ("q")) 
+		{
+			if (BuildConfirm) 
+			{
+				raycast.LeftRotate ();
+			}
+		}
+		if (Input.GetKey ("e")) 
+		{
+			if (BuildConfirm) 
+			{
+				raycast.RightRotate ();
+			}
+		}
+		if (Input.GetKey (KeyCode.Escape)) 
+		{
+			raycast.Cancel();
+			BuildConfirm = false;
+		}
 
         if (Input.GetButton("CenterCam")) //CenterCam = x
                                           //La touche L dans TLoZelda. Pas trouver d'autre examples #Thetoto.
@@ -59,6 +94,10 @@ public class PlayerControl : Photon.MonoBehaviour {
 
         }
     }
+	public void TurretBuildFailed()
+	{
+		this.BuildConfirm = true;
+	}
 
 #region PUN RPC
 

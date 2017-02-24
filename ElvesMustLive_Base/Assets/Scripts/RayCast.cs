@@ -6,28 +6,122 @@ public class RayCast : MonoBehaviour {
 
     Vector3 desti;
     RaycastHit hit;
-	// Use this for initialization
-	void Start () {
-        
+	GameObject prerendu;
+	GameObject prospect;
+	bool initiatable;
+	Color OKcolor;
+	Color WRONGColor;
+	Material[] materials;
+	SphereCollider sphere;
+	bool placable;
+	PlayerControl script;
+	bool NearGround;
+	Vector3 temp;
+	GameObject tempProspect;
+	Prerenducollision script2;
+	float i;
+
+	void Start () 
+	{
+		script = GetComponentInParent<PlayerControl> ();
+		placable = true;
+		initiatable = true;
+		OKcolor = new Color (0, 255, 0);
+		WRONGColor = new Color (255, 0, 0);
+		NearGround = true;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-        
+
+	void Update () 
+	{
+		if (!initiatable) 
+		{
+			Cast ();
+		}
     }
+
+	public void SetObj(GameObject build)
+	{
+		this.prerendu = build;
+	}
+	public void SetObjPropect (GameObject prospect)
+	{
+		if (initiatable) 
+		{
+			this.prospect = prospect;
+			initiatable = false;
+			if (true) 
+			{
+				tempProspect= Instantiate (prospect,transform.position, new Quaternion(0,0,0,0),transform);
+				script2 = tempProspect.GetComponent<Prerenducollision> ();
+				i = tempProspect.transform.localRotation.y;
+
+				//materials = prerendu.GetComponentsInChildren<Material>();
+			} 
+			else 
+			{
+				initiatable = true;
+				//eventuellement, message d'erreur par la suite
+			}
+		}
+	}
 
     public void Cast()
     {
-        Debug.Log(gameObject.name);
-		if (Physics.Raycast (transform.position, transform.TransformDirection(Vector3.forward), out hit)) 
+		
+		if (placable && NearGround) 
 		{
-			Debug.Log (hit.collider.tag);
-			Debug.Log (hit.transform.position);
-			if (hit.collider.tag == "Ground") 
+			foreach (Renderer rend in gameObject.GetComponentsInChildren<Renderer>()) 
 			{
-				PhotonNetwork.Instantiate ("Cannon", hit.point, Quaternion.identity, 0);
-				Debug.Log ("Fine");
+				rend.material.color = OKcolor;
 			}
 		}
-    }
+		else 
+		{
+			foreach (Renderer rend in gameObject.GetComponentsInChildren<Renderer>()) 
+			{
+				rend.material.color = WRONGColor;
+			}
+		}
+	}
+
+	public void Confirm ()
+	{
+		if (placable && NearGround )
+		{
+			PhotonNetwork.Instantiate (prerendu.name, gameObject.transform.position, tempProspect.transform.rotation,0);
+			Destroy (tempProspect);
+			initiatable = true;
+		} 
+		else
+		{
+			script.TurretBuildFailed ();
+		}
+	}
+	public void IsPlacable(bool placable)
+	{
+		this.placable = placable;
+	}
+	public void IsGrounded(bool grounded)
+	{
+		this.NearGround = grounded;
+	}
+	public void RightRotate()
+	{
+		i += 1;
+		tempProspect.transform.localRotation = Quaternion.Euler (new Vector3 (0, i, 0));
+	}
+	public void LeftRotate()
+	{
+		i -= 1;
+		tempProspect.transform.localRotation = Quaternion.Euler (new Vector3 (0, i, 0));
+	}
+	public void Cancel()
+	{
+		if (!initiatable)
+		{
+		Destroy (tempProspect);
+		initiatable = true;
+		}
+	}
 }
