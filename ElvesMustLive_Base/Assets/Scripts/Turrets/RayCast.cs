@@ -89,7 +89,9 @@ public class RayCast : MonoBehaviour {
 	{
 		if (placable && NearGround )
 		{
-			PhotonNetwork.Instantiate (prerendu.name, gameObject.transform.position, tempProspect.transform.rotation,0);
+            // Pour que le master client soit le propriétaire, et pas que les tourelles dépop quand on se déco.
+            script.view.RPC("PlaceTurret", PhotonTargets.MasterClient, prerendu.name, gameObject.transform.position, tempProspect.transform.rotation);
+			//PhotonNetwork.InstantiateSceneObject(prerendu.name, gameObject.transform.position, tempProspect.transform.rotation,0, new object[] { });
 			Destroy (tempProspect);
 			initiatable = true;
 		} 

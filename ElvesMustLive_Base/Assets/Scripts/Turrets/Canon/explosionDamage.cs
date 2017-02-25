@@ -8,9 +8,10 @@ public class explosionDamage : MonoBehaviour {
 
 	void OnTriggerEnter(Collider coll)
 	{
-		if (coll.tag == "Shootable") 
-		{
-			coll.GetComponent<Health> ().TakeDamage (ExplosionDamage);
+		if (PhotonNetwork.isMasterClient && coll.tag == "Shootable")
+        // Que le master inflige qui va ensuite retransmettre aux autres (pour pas dupliquer les dégats et bien synchro)
+        {
+            coll.GetComponent<Health> ().TakeDamage (ExplosionDamage);
 		}
 	}
 }

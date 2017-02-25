@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Health : MonoBehaviour 
+public class Health : Photon.MonoBehaviour 
 {
 	public int health = 30;
 	Animator anim;
@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
     {
         obj = gameObject;
         anim = GetComponent<Animator>();
-        //Pour le player qui n'a pas de Nav #Thetoto
+        //Si pas de nav, pour certains ennemies immobiles.
         try
         {
             nav = GetComponent<NavMeshAgent>();
@@ -40,8 +40,15 @@ public class Health : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int amount)
+    // A terme, j'aimerai que ce soit par RPC, pour synchro correctement entre les clients.
+    // La personne qui fait des dégats avec son arme envoie aux autres et pas chacun de son coté #Thetoto
+    [PunRPC]
+    void SendDamage(int amount, int dest)
     {
+        if (PhotonView.Get(gameObject) != photonView)
+        {
+            return;
+        }
         if (IsDead)
         {
             return;
@@ -52,6 +59,10 @@ public class Health : MonoBehaviour
         {
             Death();
         }
+    }
+    public void TakeDamage(int amount)
+    {
+        photonView.RPC("SendDamage", PhotonTargets.AllBufferedViaServer, amount, photonView.viewID);
     }
     public void Death()
     {

@@ -93,9 +93,10 @@ public class Hammer_hit : MonoBehaviour {
 
 	void OnTriggerEnter(Collider coll)
 	{
-		if (IsFalling && coll.tag == "Shootable") 
-		{
-			coll.gameObject.GetComponent<Health> ().TakeDamage (damage);
+		if (PhotonNetwork.isMasterClient && IsFalling && coll.tag == "Shootable")
+        // Que le master inflige qui va ensuite retransmettre aux autres (pour pas dupliquer les dégats et bien synchro)
+        {
+            coll.gameObject.GetComponent<Health> ().TakeDamage (damage);
 		}
 	}
 }

@@ -148,5 +148,11 @@ public class PlayerControl : Photon.MonoBehaviour {
     {
         weapon[i].SetActive(false);
     }
+    [PunRPC]
+    public void PlaceTurret(string name, Vector3 pos, Quaternion rot)
+    {
+        PhotonNetwork.InstantiateSceneObject(name, pos, rot, 0, new object[] { });
+
+    }
     #endregion
 }

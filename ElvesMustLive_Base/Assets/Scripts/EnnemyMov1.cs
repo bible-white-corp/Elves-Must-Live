@@ -43,7 +43,7 @@ public class EnnemyMov1 : MonoBehaviour
         
 		if (coll.tag == "Player")
 		{
-            player = coll.gameObject; // Mieux qu'un Find.
+            player = coll.gameObject;
             atkscript.playerhp = player.GetComponent<PlayerHealth>(); // On envoie le component vie au script d'atk #Thetoto
             atkscript.enabled = true;
 

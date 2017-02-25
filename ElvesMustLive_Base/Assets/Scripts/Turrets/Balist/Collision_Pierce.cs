@@ -54,7 +54,11 @@ public class Collision_Pierce : MonoBehaviour {
 
 	void Piercetouch (Collider coll)
 	{
-		script = coll.gameObject.GetComponent<Health>();
-		script.TakeDamage(damage);
+        if (PhotonNetwork.isMasterClient) 
+            // Que le master inflige qui va ensuite retransmettre aux autres (pour pas dupliquer les dégats et bien synchro)
+        {
+            script = coll.gameObject.GetComponent<Health>();
+            script.TakeDamage(damage);
+        }
 	}
 }
