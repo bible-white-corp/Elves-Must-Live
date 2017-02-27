@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Canon_Aim : MonoBehaviour {
 
+	public int DirectHitDamage;
 	public GameObject currentTarget;
 	private Vector3 LastKnownPosition;
 	private Quaternion LookAtRotation;
 	private Quaternion temporaire;
 	public float TurretsSpeed;
-	SphereCollider coll;
 	Transform children;
 	float timerbeforeshot;
 	public float reloadtime;
@@ -21,7 +21,6 @@ public class Canon_Aim : MonoBehaviour {
 
 	void Start () 
 	{
-		coll = GetComponent<SphereCollider> ();
 		LastKnownPosition = Vector3.zero;
 		timerbeforeshot = 0f;
 		engage = false;

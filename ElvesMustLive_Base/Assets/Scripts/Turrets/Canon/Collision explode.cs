@@ -12,13 +12,16 @@ MonoBehaviour {
 
 	void Start () 
 	{
-		damage = 15;
 		timer = 0;
 	}
 
 	public void SetExplosion(GameObject explo)
 	{
 		explosion = explo;
+	}
+	public void SetDirectHitDamage(int damage)
+	{
+		this.damage = damage;
 	}
 	// Update is called once per frame
 	void Update () 
@@ -34,7 +37,6 @@ MonoBehaviour {
 	{
 		if (coll.tag == "Shootable") 
 		{
-			Debug.Log ("enters");
 			Explode (coll);
 		}
 	}

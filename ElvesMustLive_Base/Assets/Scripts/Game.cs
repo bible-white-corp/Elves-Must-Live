@@ -33,7 +33,7 @@ public class Game : MonoBehaviour {
         {
             PhotonNetwork.InstantiateSceneObject("Ennemy", new Vector3(0f, 5f, 0f), Quaternion.identity, 0, new object[] { });
         }
-        if (Input.GetKey("t"))
+        if (Input.GetKey("y"))
         {
             if (global == null)
             {
