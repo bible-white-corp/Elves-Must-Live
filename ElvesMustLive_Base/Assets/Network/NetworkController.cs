@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class NetworkController : Photon.PunBehaviour
 {
 
-	// Use this for initialization
-	void Start () {
-        PhotonNetwork.Instantiate("Perso", new Vector3(0f, 5f, 0f), Quaternion.identity,0);
+
+    // Use this for initialization
+    void Start () {
+        PhotonNetwork.Instantiate("Perso", gameObject.transform.position, Quaternion.identity,0);
 
     }
 	
