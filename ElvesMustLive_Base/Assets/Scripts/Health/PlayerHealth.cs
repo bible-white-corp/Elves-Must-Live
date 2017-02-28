@@ -6,7 +6,8 @@ using UnityStandardAssets.Cameras;
 
 public class PlayerHealth : MonoBehaviour {
     public int health = 30;
-    public Slider healthSlider;
+    public GameObject Slider;
+    private Slider healthSlider;
 	public float sinkspeed = 10f;
     Animator anim;
     public bool IsDead;
@@ -15,12 +16,12 @@ public class PlayerHealth : MonoBehaviour {
 	bool IsSinking;
 
     PlayerControl home;
-
-
+    
     // Use this for initialization
     void Start ()
 	{
         home = GetComponentInParent<PlayerControl>();
+        healthSlider = Slider.GetComponent<Slider>();
         anim = home.anim;
 		TimerbeforeDeath = 0;
     }
