@@ -19,11 +19,6 @@ public class Game : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("h"))
-        {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>().TakeDamage(30);
-        }
-
         if (Input.GetKey("k"))
         {
             GameObject.FindGameObjectWithTag("Shootable").GetComponent<Health>().TakeDamage(31);
@@ -33,8 +28,6 @@ public class Game : MonoBehaviour {
         {
             PhotonNetwork.InstantiateSceneObject("Ennemy", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
         }
-
-
     }
 
 
