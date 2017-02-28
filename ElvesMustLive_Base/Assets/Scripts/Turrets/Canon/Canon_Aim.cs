@@ -31,6 +31,7 @@ public class Canon_Aim : MonoBehaviour {
 	{
 		if (currentTarget != null)
 		{
+            /*
 			if (currentTarget.transform.position != LastKnownPosition) 
 			{
 				LastKnownPosition = currentTarget.transform.position;
@@ -43,8 +44,13 @@ public class Canon_Aim : MonoBehaviour {
 				temporaire[1] = LookAtRotation.y;
 				transform.rotation = Quaternion.RotateTowards(transform.rotation,temporaire,TurretsSpeed* Time.deltaTime);
 				transform.GetChild (0).rotation = new Quaternion (LookAtRotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);  
-			}
-			timerbeforeshot += Time.deltaTime;
+			}*/
+
+            //Seum que mes deux lignes remplacent toute ta merde ?
+            var targetRotation = Quaternion.LookRotation(currentTarget.transform.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, TurretsSpeed * Time.deltaTime);
+
+            timerbeforeshot += Time.deltaTime;
 			if (timerbeforeshot > reloadtime) 
 			{
 				Shoot (transform.GetChild (0).GetChild (1));

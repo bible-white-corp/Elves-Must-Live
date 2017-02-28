@@ -30,6 +30,7 @@ public class Balist_aim : MonoBehaviour
 	{
 		if (currentTarget != null) 
 		{
+            /*
 			if (currentTarget.transform.position != LastKnownPosition) 
 			{ //si la cible a bougee
 				LastKnownPosition = currentTarget.transform.position; 
@@ -48,8 +49,13 @@ public class Balist_aim : MonoBehaviour
 				transform.GetChild (0).rotation = new Quaternion (LookAtRotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);  
 				//on modifie l'orientation du crossbow en x
 				//il est important que les commandes soient effectuees dans cette ordre pour les chgt d'orientation
-			}
-			timebeforeshoot += Time.deltaTime;
+			}*/
+
+            //Seum que mes deux lignes remplacent toute ta merde ?
+            var targetRotation = Quaternion.LookRotation(currentTarget.transform.position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, TurretSpeed * Time.deltaTime);
+
+            timebeforeshoot += Time.deltaTime;
 			//on met a jour le timer entre les tirs
 			if (timebeforeshoot > ReloadTime) 
 			{

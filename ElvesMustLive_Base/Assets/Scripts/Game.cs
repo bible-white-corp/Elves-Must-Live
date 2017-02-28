@@ -33,25 +33,10 @@ public class Game : MonoBehaviour {
         {
             PhotonNetwork.InstantiateSceneObject("Ennemy", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
         }
-        if (Input.GetKey("y"))
-        {
-            if (global == null)
-            {
-                global = (GameObject)Instantiate(Resources.Load("PersoAndCam"));
-            }
-        }
-        if (Input.GetKeyDown("r"))
-        {
-            TestSpawn();
-        }
 
 
     }
-    [PunRPC]
-    public void TestSpawn()
-    {
-        PhotonNetwork.InstantiateSceneObject("Test", transform.position, Quaternion.identity, 0, new object[] { });
-    }
+
 
 
 

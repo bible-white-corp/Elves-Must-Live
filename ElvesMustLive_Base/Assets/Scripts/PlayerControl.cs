@@ -93,6 +93,7 @@ public class PlayerControl : Photon.MonoBehaviour {
 				raycast.SetObj (tourelle);
 			}
         }
+
         if (Input.GetKeyDown("t"))
         {
 			if (BuildConfirm) 
