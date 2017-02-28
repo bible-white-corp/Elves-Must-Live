@@ -29,10 +29,19 @@ public class Prerenducollision : MonoBehaviour
 
 	void OnTriggerStay(Collider coll)
 	{
-		Debug.Log ("touch");
-		this.NearGround = true;
+		if (coll.tag == "Ground")
+		{
+			this.NearGround = true;
+		}
 	}
 
+	void OnTriggerExit (Collider coll)
+	{
+		if (coll.tag == "Ground")
+		{
+			this.NearGround = false;
+		}
+	}
 	public void IsPlacable(bool placable)
 	{
 		this.placable = placable;

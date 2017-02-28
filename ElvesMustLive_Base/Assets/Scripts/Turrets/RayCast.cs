@@ -34,8 +34,6 @@ public class RayCast : MonoBehaviour {
 
 	void LateUpdate () 
 	{
-		Debug.Log ("Touch Groung: "+ NearGround);
-		Debug.Log ("Is Obstructed: "+ placable);
 		if (!initiatable) 
 		{
 			Cast ();
