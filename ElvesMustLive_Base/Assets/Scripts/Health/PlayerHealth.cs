@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Cameras;
 
 public class PlayerHealth : MonoBehaviour {
     public int health = 30;
+    public Slider healthSlider;
 	public float sinkspeed = 10f;
     Animator anim;
     public bool IsDead;
@@ -48,6 +50,7 @@ public class PlayerHealth : MonoBehaviour {
             return;
         }
         health -= amount;
+        healthSlider.value = health;
 
         if (health <= 0)
         {
