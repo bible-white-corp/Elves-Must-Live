@@ -16,42 +16,25 @@ public class Prerenducollision : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
-		script.IsGrounded (NearGround);
+		this.NearGround = false;
+	}
+
+	void LateUpdate()
+	{
 		script.IsPlacable (placable);
+		script.IsGrounded (NearGround);
 	}
-	void OnTriggerEnter(Collider coll)
-	{
-		if (coll.tag == "Obstacle") 
-		{
-			placable = false;
-		}
-		if (coll.tag == "Ground") 
-		{
-			NearGround = true;
-		}
-	}
+
 	void OnTriggerStay(Collider coll)
 	{
-		if (coll.tag == "Obstacle") 
-		{
-			placable = false;
-		}
-		if (coll.tag == "Ground") 
-		{
-			NearGround = true;
-		}
+		Debug.Log ("touch");
+		this.NearGround = true;
 	}
-	void OnTriggerExit(Collider coll)
+
+	public void IsPlacable(bool placable)
 	{
-		if (coll.tag == "Obstacle") 
-		{
-			placable = true;
-		}
-		if (coll.tag == "Ground") 
-		{
-			NearGround = false;
-		}
+		this.placable = placable;
 	}
 }

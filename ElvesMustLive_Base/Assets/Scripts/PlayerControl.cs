@@ -79,24 +79,35 @@ public class PlayerControl : Photon.MonoBehaviour {
         }
         if (Input.GetKeyDown("r"))
         {
-            curretTurret = curretTurret - 1;
-            if (curretTurret < 0)
-            {
-                curretTurret = AvailableTurrets.Count - 1;
-            }
-            tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret]);
-            pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret] + "Preview");
+			if (BuildConfirm) 
+			{
+				curretTurret = curretTurret - 1;
+				if (curretTurret < 0) 
+				{
+					curretTurret = AvailableTurrets.Count - 1;
+				}
+				raycast.Cancel ();
+				tourelle = (GameObject)Resources.Load (AvailableTurrets [curretTurret]);
+				pretourelle = (GameObject)Resources.Load (AvailableTurrets [curretTurret] + "Preview");
+				raycast.SetObjPropect (pretourelle);
+				raycast.SetObj (tourelle);
+			}
         }
         if (Input.GetKeyDown("t"))
         {
-            curretTurret = curretTurret + 1;
-            if (curretTurret >= AvailableTurrets.Count)
-            {
-                curretTurret = 0;
-            }
-
-            tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret]);
-            pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret] + "Preview");
+			if (BuildConfirm) 
+			{
+				curretTurret = curretTurret + 1;
+				if (curretTurret >= AvailableTurrets.Count) 
+				{
+					curretTurret = 0;
+				}
+				raycast.Cancel ();
+				tourelle = (GameObject)Resources.Load (AvailableTurrets [curretTurret]);
+				pretourelle = (GameObject)Resources.Load (AvailableTurrets [curretTurret] + "Preview");
+				raycast.SetObjPropect (pretourelle);
+				raycast.SetObj (tourelle);
+			}
         }
         if (Input.GetKey("q"))
         {
