@@ -23,7 +23,10 @@ public class Placability : MonoBehaviour {
 	}
 	void OnTriggerStay(Collider coll)
 	{
+		if (coll.tag != "Soutenance Debug")
+		{
 		this.IsPlacable =false;
+		}
 	}
 
 }
