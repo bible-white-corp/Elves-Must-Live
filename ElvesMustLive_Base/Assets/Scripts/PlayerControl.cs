@@ -17,25 +17,26 @@ public class PlayerControl : Photon.MonoBehaviour {
     public List<GameObject> weapon;
     public TextMesh txtname;
     public RayCast raycast;
-    public GameObject tourelle;
-    public GameObject pretourelle;
-    bool BuildConfirm;
+    public bool useController = false;
 
+    bool BuildConfirm;
+    GameObject tourelle;
+    GameObject pretourelle;
     List<string> AvailableTurrets;
     int curretTurret = 0;
-
-    PlayerControl home;
+    
 
     // Use this for initialization
     void Awake () 
 	{   
         isMine = photonView.isMine;
         view = photonView;
+
         if (isMine)
         {
             // Set in the Editor.
             // Ce sera la seule dans le scene. On affiche pas ceux des autres joueurs.
-            cam = GameObject.FindGameObjectWithTag("PlayerCamera");
+            cam = (GameObject)Instantiate(Resources.Load("CameraRig"), transform.position, Quaternion.identity);
             camscript = cam.GetComponent<FreeLookCam>();
             camscript.m_Target = gameObject.transform;
 
@@ -51,7 +52,20 @@ public class PlayerControl : Photon.MonoBehaviour {
         {
             txtname.text = photonView.owner.NickName;
         }
-        
+
+        if (PlayerPrefs.GetInt("mod") == 1) //mod == 1 : splitted screen
+        { 
+            if (int.Parse(photonView.instantiationData[0].ToString()) == 0)
+            {
+                cam.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
+            }
+            else
+            {
+                cam.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 1f, 1f);
+                cam.GetComponentInChildren<AudioListener>().enabled = false;
+                useController = true;
+            }
+        }
 
     }
 	
@@ -130,7 +144,7 @@ public class PlayerControl : Photon.MonoBehaviour {
 			BuildConfirm = false;
 		}
 
-        if (Input.GetButton("CenterCam")) //CenterCam = x
+        if (!useController && Input.GetButton("CenterCam") || useController && Input.GetButton("2-CenterCam")) //CenterCam = x
                                           //La touche L dans TLoZelda. Pas trouver d'autre examples #Thetoto.
         {
             camscript.LookPlayer(player.transform.rotation.eulerAngles.y, 15f);
@@ -143,13 +157,7 @@ public class PlayerControl : Photon.MonoBehaviour {
 	}
 
 #region PUN RPC
-
-    [PunRPC]
-    public void Tets()
-    {
-        Debug.Log("Test");
-    }
-
+    
     [PunRPC]
     public void ActiveW(int i)
     {

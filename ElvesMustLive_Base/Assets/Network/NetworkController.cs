@@ -9,8 +9,12 @@ public class NetworkController : Photon.PunBehaviour
 
     // Use this for initialization
     void Start () {
-        PhotonNetwork.Instantiate("Perso", gameObject.transform.position, Quaternion.identity,0);
-
+        PhotonNetwork.Instantiate("Perso", gameObject.transform.position, Quaternion.identity, 0, new object[1] { 0 }); //  0 = player 1
+        if (PlayerPrefs.GetInt("mod") == 1)
+        {
+            PhotonNetwork.Instantiate("Perso", gameObject.transform.position, Quaternion.identity, 0, new object[1] { 1 } ); //  1 = player 2
+            Debug.Log("Add another player");
+        }
     }
 	
 	// Update is called once per frame

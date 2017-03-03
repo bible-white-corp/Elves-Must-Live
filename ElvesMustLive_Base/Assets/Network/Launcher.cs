@@ -85,6 +85,7 @@ public class Launcher : Photon.PunBehaviour
     /// </summary>
     public void Connect()
     {
+        PhotonNetwork.offlineMode = false;
         progressLabel.SetActive(true);
         controlPanel.SetActive(false);
 
@@ -129,7 +130,7 @@ public class Launcher : Photon.PunBehaviour
         Debug.Log("DemoAnimator/Launcher:OnPhotonRandomJoinFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom(null, new RoomOptions() {maxPlayers = 4}, null);");
 
         // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
-        PhotonNetwork.CreateRoom(null, new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
+        PhotonNetwork.CreateRoom(PhotonNetwork.playerName, new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
     }
 
     public override void OnJoinedRoom()
@@ -157,7 +158,15 @@ public class Launcher : Photon.PunBehaviour
 
     public void LocalMulti()
     {
-        Debug.Log("Nothing.");  
+        if (PlayerPrefs.GetInt("mod") == 0)
+        {
+            PlayerPrefs.SetInt("mod", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("mod", 0);
+        }
+        Debug.Log("Set to "+ PlayerPrefs.GetInt("mod"));  
     }
     #endregion
 

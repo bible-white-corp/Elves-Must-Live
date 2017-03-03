@@ -8,12 +8,15 @@ using UnityEngine.SceneManagement;
 public class Game : MonoBehaviour {
 
     public GameObject global;
-
+    public bool Splited;
+    public bool Online;
+    public bool SinglePlayer;   
 
     // Use this for initialization
     void Awake()
     {
         global = gameObject;
+
     }
 
     // Update is called once per frame

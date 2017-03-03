@@ -20,7 +20,6 @@ public class Switch : Photon.MonoBehaviour
         anim = home.anim;
         foreach (Transform child in gameObject.transform)
         {
-            Debug.Log(child.gameObject);
             weapon.Add(child.gameObject);
         }
         home.weapon = weapon;
@@ -46,16 +45,13 @@ public class Switch : Photon.MonoBehaviour
 		}
 		else
 		{
-        	if (Input.GetAxis("Mouse ScrollWheel") > 0 && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk"))
+        	if ((!home.useController && Input.GetAxis("Mouse ScrollWheel") > 0 || home.useController && Input.GetAxis("2-Mouse ScrollWheel") > 0) && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk"))
         	{
-        	    Debug.Log("Change weapon (+)");
         	    ChangeW(1);
-                
         	    timeout = true;
         	}
-        	if (Input.GetAxis("Mouse ScrollWheel") < 0 && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk"))
+        	if ((!home.useController && Input.GetAxis("Mouse ScrollWheel") < 0 || home.useController && Input.GetAxis("2-Mouse ScrollWheel") < 0) && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk"))
         	{
-        	    Debug.Log("Change weapon (-)");
         	    ChangeW(-1);
         	    timeout = true;
         	}

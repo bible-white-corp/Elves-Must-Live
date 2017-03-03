@@ -61,7 +61,7 @@ public class RayCast : MonoBehaviour {
 			} 
 			else 
 			{
-				initiatable = true;
+				//initiatable = true;
 				//eventuellement, message d'erreur par la suite
 			}
 		}
