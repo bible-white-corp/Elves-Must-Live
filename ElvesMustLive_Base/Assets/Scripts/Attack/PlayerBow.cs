@@ -21,7 +21,7 @@ public class PlayerBow : Photon.MonoBehaviour
     PlayerControl home;
     //SET IN THE EDITOR
     public GameObject arrowspot;
-    //GameObject tpscam;
+    Camera tpscam;
     GameObject fpscam;
 
     float t;
@@ -31,7 +31,7 @@ public class PlayerBow : Photon.MonoBehaviour
     void Start ()
     {
         home = GetComponentInParent<PlayerControl>();
-        //tpscam = home.cam;
+        tpscam = home.cam.GetComponentInChildren<Camera>();
         fpscam = home.fpscam;
         anim = home.anim;
     }
@@ -43,12 +43,10 @@ public class PlayerBow : Photon.MonoBehaviour
         {
             return;
         }
-
-
-
+        
         if (isAttack)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && !home.useController || Input.GetButtonDown("2-Fire1") && home.useController)
             {
                 anim.SetTrigger("Cancel");
                 Destroy(temparrow);
@@ -56,6 +54,7 @@ public class PlayerBow : Photon.MonoBehaviour
                 home.camscript.transform.eulerAngles = new Vector3(0f, home.camscript.m_LookAngle, 0f);
                 // SET TPS
                 fpscam.SetActive(false);
+                tpscam.enabled = true;
                 home.player.transform.eulerAngles = new Vector3(0f, home.player.transform.eulerAngles.y, 0f);
             }
 
@@ -69,7 +68,7 @@ public class PlayerBow : Photon.MonoBehaviour
                 return;
             }
             
-            if (Input.GetButtonDown("Fire2"))
+            if (Input.GetButtonDown("Fire2") && !home.useController || Input.GetButtonDown("2-Fire2") && home.useController)
             {
                 Destroy(temparrow);
                 anim.SetTrigger("Arrow");
@@ -86,7 +85,7 @@ public class PlayerBow : Photon.MonoBehaviour
         else
         {
 
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && !home.useController || Input.GetButtonDown("2-Fire1") && home.useController)
             {
                 isAttack = true;
                 anim.SetTrigger("Atk");
@@ -94,6 +93,7 @@ public class PlayerBow : Photon.MonoBehaviour
                 // Mettre la caméra (Une autre caméra) en mode "viser"
                 // SET FPS
                 fpscam.SetActive(true);
+                tpscam.enabled = false;
             }
 
 

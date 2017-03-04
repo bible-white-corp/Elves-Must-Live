@@ -29,7 +29,7 @@ namespace UnityStandardAssets.Cameras
         private Quaternion m_PivotTargetRot;
         private Quaternion m_TransformTargetRot;
 
-
+        public PlayerControl home;
 
 
         protected override void Awake()
@@ -43,9 +43,7 @@ namespace UnityStandardAssets.Cameras
             m_PivotTargetRot = m_Pivot.transform.localRotation;
             m_TransformTargetRot = transform.localRotation;
 
-
         }
-
 
         protected void Update()
         {
@@ -79,9 +77,19 @@ namespace UnityStandardAssets.Cameras
 			if(Time.timeScale < float.Epsilon)
 			return;
 
+            float x;
+            float y;
             // Read the user input
-            var x = CrossPlatformInputManager.GetAxis("Mouse X");
-            var y = CrossPlatformInputManager.GetAxis("Mouse Y");
+            if (home.useController)
+            {
+                x = CrossPlatformInputManager.GetAxis("2-Mouse X");
+                y = CrossPlatformInputManager.GetAxis("2-Mouse Y");
+            }
+            else
+            {
+                x = CrossPlatformInputManager.GetAxis("Mouse X");
+                y = CrossPlatformInputManager.GetAxis("Mouse Y");
+            }
 
             // Adjust the look angle by an amount proportional to the turn speed and horizontal input.
             m_LookAngle += x*m_TurnSpeed;

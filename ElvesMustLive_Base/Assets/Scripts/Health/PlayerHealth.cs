@@ -7,8 +7,8 @@ using UnityStandardAssets.Cameras;
 public class PlayerHealth : MonoBehaviour {
     public float health = 30;
     public float maxhealth = 30;
-    public GameObject Slider;
-    private Slider healthSlider;
+    //public GameObject Slider;
+    //private Slider healthSlider;
 	public float sinkspeed = 10f;
     Animator anim;
     public bool IsDead;
@@ -17,23 +17,22 @@ public class PlayerHealth : MonoBehaviour {
 	bool IsSinking;
 
     PlayerControl home;
-    
-    // Use this for initialization
-    void Start ()
-	{
-        home = GetComponentInParent<PlayerControl>();
-        healthSlider = Slider.GetComponent<Slider>();
-        anim = home.anim;
-		TimerbeforeDeath = 0;
-    }
 
     public float barDisplay;
     public Vector2 pos = new Vector2(20, 40);
     public Vector2 size = new Vector2(105, 20);
     public Texture2D emptyTex;
     public Texture2D fullTex;
-    
 
+    // Use this for initialization
+    void Start ()
+	{
+        home = GetComponentInParent<PlayerControl>();
+        //healthSlider = Slider.GetComponent<Slider>();
+        anim = home.anim;
+		TimerbeforeDeath = 0;
+    }
+    
     void OnGUI()
     {
         barDisplay = health / maxhealth;
@@ -76,7 +75,7 @@ public class PlayerHealth : MonoBehaviour {
             return;
         }
         health -= amount;
-        healthSlider.value = health;
+        //healthSlider.value = health;
 
         if (health <= 0)
         {

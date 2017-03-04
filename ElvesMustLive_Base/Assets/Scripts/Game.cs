@@ -16,7 +16,10 @@ public class Game : MonoBehaviour {
     void Awake()
     {
         global = gameObject;
-
+        if (PlayerPrefs.GetInt("mod") == 1)
+        {
+            Splited = true;
+        }
     }
 
     // Update is called once per frame
@@ -30,6 +33,14 @@ public class Game : MonoBehaviour {
         if (Input.GetKeyDown("j"))
         {
             PhotonNetwork.InstantiateSceneObject("Ennemy", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
+        }
+    }
+    private void OnGUI()
+    {
+        if (Splited)
+        {
+            GUI.color = Color.black;
+            GUI.Box(new Rect(Screen.width / 2, 0, 5, Screen.height), "");
         }
     }
 

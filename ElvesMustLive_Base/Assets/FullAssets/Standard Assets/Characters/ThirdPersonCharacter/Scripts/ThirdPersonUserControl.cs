@@ -12,13 +12,17 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
-
+        PlayerControl home;
         
         private void Start()
         {
-
+            home = GetComponent<PlayerControl>();
             // get the transform of the main camera
-            if (Camera.main != null)
+            if (home.cam != null)
+            {
+                m_Cam = home.cam.transform;
+            }
+            else if (Camera.main != null)
             {
                 m_Cam = Camera.main.transform;
             }
@@ -31,6 +35,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<ThirdPersonCharacter>();
+
         }
 
 
@@ -44,7 +49,14 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (!m_Jump)
             {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                if (home.useController)
+                {
+                    m_Jump = CrossPlatformInputManager.GetButtonDown("2-Jump");
+                }
+                else
+                {
+                    m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+                }
             }
         }
 
@@ -59,10 +71,20 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 
             // read inputs
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");
-            bool crouch = Input.GetKey(KeyCode.C);
-
+            float h;
+            float v;
+            bool crouch = false;
+            if (home.useController)
+            {
+                h = CrossPlatformInputManager.GetAxis("2-Horizontal");
+                v = CrossPlatformInputManager.GetAxis("2-Vertical");
+            }
+            else
+            {
+                h = CrossPlatformInputManager.GetAxis("Horizontal");
+                v = CrossPlatformInputManager.GetAxis("Vertical");
+                crouch = Input.GetKey(KeyCode.C);
+            }
             // calculate move direction to pass to character
             if (m_Cam != null)
             {

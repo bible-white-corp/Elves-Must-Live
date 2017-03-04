@@ -18,10 +18,7 @@ public class Launcher : Photon.PunBehaviour
     [Tooltip("The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
     public byte MaxPlayersPerRoom = 4;
 
-    [Tooltip("The Ui Panel to let the user enter name, connect and play")]
-    public GameObject controlPanel;
-    [Tooltip("The UI Label to inform the user that the connection is in progress")]
-    public GameObject progressLabel;
+    public LoadProgress progress;
 
     #endregion
 
@@ -68,8 +65,8 @@ public class Launcher : Photon.PunBehaviour
 
     private void Start()
     {
-        progressLabel.SetActive(false);
-        controlPanel.SetActive(true);   
+        progress.LoadCanvas.enabled = false;
+        progress.MainCanvas.enabled = true;
     }
 
     #endregion
@@ -85,9 +82,9 @@ public class Launcher : Photon.PunBehaviour
     /// </summary>
     public void Connect()
     {
+        progress.Set(true);
+        progress.NetworkState = 0.25f;
         PhotonNetwork.offlineMode = false;
-        progressLabel.SetActive(true);
-        controlPanel.SetActive(false);
 
         // keep track of the will to join a room, because when we come back from the game we will get a callback that we are connected, so we need to know what to do then
         isConnecting = true;
@@ -120,15 +117,17 @@ public class Launcher : Photon.PunBehaviour
         if (isConnecting)
         {
             // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnPhotonRandomJoinFailed()
+            progress.NetworkState = 0.5f;
             PhotonNetwork.JoinRandomRoom();
         }
+        
 
     }
 
     public override void OnPhotonRandomJoinFailed(object[] codeAndMsg)
     {
         Debug.Log("DemoAnimator/Launcher:OnPhotonRandomJoinFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom(null, new RoomOptions() {maxPlayers = 4}, null);");
-
+        progress.NetworkState = 0.75f;
         // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
         PhotonNetwork.CreateRoom(PhotonNetwork.playerName, new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
     }
@@ -136,13 +135,13 @@ public class Launcher : Photon.PunBehaviour
     public override void OnJoinedRoom()
     {
         Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
-        PhotonNetwork.LoadLevel("Map/Map 1");
+        progress.NetworkState = 1;
+        progress.LoadALevel("Map/Map 1");
     }
 
     public override void OnDisconnectedFromPhoton()
     {
-        progressLabel.SetActive(false);
-        controlPanel.SetActive(true);
+        progress.Set(false);
 
         Debug.LogWarning("DemoAnimator/Launcher: OnDisconnectedFromPhoton() was called by PUN");
     }
@@ -152,6 +151,8 @@ public class Launcher : Photon.PunBehaviour
     #region Offline
     public void Offline()
     {
+        progress.Set(true);
+        progress.NetworkState = 0.5f;
         PhotonNetwork.offlineMode = true;
         PhotonNetwork.CreateRoom("Offline");
     }

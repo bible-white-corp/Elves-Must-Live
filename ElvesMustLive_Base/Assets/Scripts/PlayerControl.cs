@@ -24,7 +24,8 @@ public class PlayerControl : Photon.MonoBehaviour {
     GameObject pretourelle;
     List<string> AvailableTurrets;
     int curretTurret = 0;
-    
+
+    public int screen; // 0 = full, 1 = left, 2 = right
 
     // Use this for initialization
     void Awake () 
@@ -39,6 +40,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             cam = (GameObject)Instantiate(Resources.Load("CameraRig"), transform.position, Quaternion.identity);
             camscript = cam.GetComponent<FreeLookCam>();
             camscript.m_Target = gameObject.transform;
+            camscript.home = this;
 
             BuildConfirm = false;
             AvailableTurrets = new List<string>();
@@ -57,6 +59,7 @@ public class PlayerControl : Photon.MonoBehaviour {
         { 
             if (int.Parse(photonView.instantiationData[0].ToString()) == 0)
             {
+                screen = 1;
                 cam.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
             }
             else
@@ -64,7 +67,13 @@ public class PlayerControl : Photon.MonoBehaviour {
                 cam.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 1f, 1f);
                 cam.GetComponentInChildren<AudioListener>().enabled = false;
                 useController = true;
+                screen = 2;
+                hp.pos.x += Screen.width / 2;
             }
+        }
+        else
+        {
+            screen = 0;
         }
 
     }
