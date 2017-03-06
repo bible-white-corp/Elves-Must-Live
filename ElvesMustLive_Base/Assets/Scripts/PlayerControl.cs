@@ -19,7 +19,7 @@ public class PlayerControl : Photon.MonoBehaviour {
     public RayCast raycast;
     public bool useController = false;
 
-    bool BuildConfirm;
+    public bool BuildConfirm;
     GameObject tourelle;
     GameObject pretourelle;
     List<string> AvailableTurrets;
@@ -86,7 +86,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             return;
         }
 
-		if (Input.GetKeyDown("b"))
+		if (Input.GetButtonDown("Build") && !useController || (Input.GetButtonDown("2-Build") && useController))
         {
 			if (BuildConfirm) 
 			{
@@ -100,7 +100,7 @@ public class PlayerControl : Photon.MonoBehaviour {
 				BuildConfirm = true;
 			}
         }
-        if (Input.GetKeyDown("r"))
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && !useController || (Input.GetAxis("2-Mouse ScrollWheel") > 0 && useController))
         {
 			if (BuildConfirm) 
 			{
@@ -117,7 +117,7 @@ public class PlayerControl : Photon.MonoBehaviour {
 			}
         }
 
-        if (Input.GetKeyDown("t"))
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && !useController || (Input.GetAxis("2-Mouse ScrollWheel") < 0 && useController))
         {
 			if (BuildConfirm) 
 			{
@@ -133,7 +133,7 @@ public class PlayerControl : Photon.MonoBehaviour {
 				raycast.SetObj (tourelle);
 			}
         }
-        if (Input.GetKey("q"))
+        if (Input.GetAxis("Rotate") < 0 && !useController || (Input.GetAxis("2-Rotate") < 0 && useController))
         {
             if (BuildConfirm)
             {

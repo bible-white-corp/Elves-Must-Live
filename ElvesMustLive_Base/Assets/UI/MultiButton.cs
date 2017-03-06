@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class MultiButton : MonoBehaviour {
 
-    public Text text;
+    public UILabel text;
     
 	// Use this for initialization
 	void Start () {

@@ -65,8 +65,8 @@ public class Launcher : Photon.PunBehaviour
 
     private void Start()
     {
-        progress.LoadCanvas.enabled = false;
-        progress.MainCanvas.enabled = true;
+        //progress.LoadCanvas.enabled = false;
+        //progress.MainCanvas.enabled = true;
     }
 
     #endregion

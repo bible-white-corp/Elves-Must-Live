@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadProgress : Photon.MonoBehaviour {
 
-    public Canvas MainCanvas;
-    public Canvas LoadCanvas;
+    public UIPanel MainCanvas;
     public GameObject DoneText;
 
     public Texture2D emptyTex;
@@ -56,13 +55,13 @@ public class LoadProgress : Photon.MonoBehaviour {
         if (b)
         {
             MainCanvas.enabled = false;
-            LoadCanvas.enabled = true;
+
             isLoading = true;
         }
         else
         {
             MainCanvas.enabled = true;
-            LoadCanvas.enabled = false;
+
             isLoading = false;
         }
     }
@@ -96,7 +95,6 @@ public class LoadProgress : Photon.MonoBehaviour {
             {
                 barDisplay = Mathf.SmoothDamp(barDisplay, (NetworkState + LoadState) / 2, ref velocity, 0.3f);
             }
-            Debug.Log(barDisplay);
 
             //draw the background:
             GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y));
