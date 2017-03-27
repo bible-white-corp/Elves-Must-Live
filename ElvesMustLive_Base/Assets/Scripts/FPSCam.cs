@@ -14,7 +14,7 @@ public class FPSCam : MonoBehaviour {
 
     public bool viseur = true;           // SET THE VISEUR
     public int sizeviseur = 20;           // SET THE VISEUR
-    float adapt;
+    float adapt = 0;
 
     private GUIStyle guistyle;
 
@@ -33,10 +33,12 @@ public class FPSCam : MonoBehaviour {
             if (int.Parse(home.photonView.instantiationData[0].ToString()) == 0)
             {
                 GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
+                adapt = Screen.width / 4;
             }
             else
             {
                 GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 1f, 1f);
+                adapt = 3 * Screen.width / 4;
                 //GetComponentInChildren<AudioListener>().enabled = false;
             }
         }
@@ -56,18 +58,6 @@ public class FPSCam : MonoBehaviour {
     {
         if (viseur)
         {
-            if (home.screen == 0)
-            {
-                adapt = 0;
-            }
-            else if (home.screen == 1)
-            {
-                adapt = Screen.width / 4;
-            }
-            else if (home.screen == 2)
-            {
-                adapt = 3 * Screen.width / 4;
-            }
             GUI.Label(new Rect(adapt, Screen.height / 2, 200, 200), "+", guistyle);
         }
     }

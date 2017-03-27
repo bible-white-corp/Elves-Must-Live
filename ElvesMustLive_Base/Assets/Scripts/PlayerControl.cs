@@ -18,8 +18,10 @@ public class PlayerControl : Photon.MonoBehaviour {
     public TextMesh txtname;
     public RayCast raycast;
     public bool useController = false;
+    public GameObject UIRoot;
 
     public bool BuildConfirm;
+
     GameObject tourelle;
     GameObject pretourelle;
     List<string> AvailableTurrets;
@@ -32,9 +34,11 @@ public class PlayerControl : Photon.MonoBehaviour {
 	{   
         isMine = photonView.isMine;
         view = photonView;
-
         if (isMine)
         {
+            UIRoot = GameObject.Find("UI Root/Window Panel");
+            GameObject.Find("UI Root/Window Panel/Scroll View/UIGrid").GetComponent<OnClickTurret>().home = this;
+            UIRoot.SetActive(false);
             // Set in the Editor.
             // Ce sera la seule dans le scene. On affiche pas ceux des autres joueurs.
             cam = (GameObject)Instantiate(Resources.Load("CameraRig"), transform.position, Quaternion.identity);
@@ -46,7 +50,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             AvailableTurrets = new List<string>();
             AvailableTurrets.Add("Cannon");
             AvailableTurrets.Add("Hammer");
-            AvailableTurrets.Add("Crossbow");
+            AvailableTurrets.Add("CrossBow");
             tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret]);
             pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret] + "Preview");
         }
@@ -90,11 +94,16 @@ public class PlayerControl : Photon.MonoBehaviour {
         {
 			if (BuildConfirm) 
 			{
-				raycast.Confirm ();
-				BuildConfirm = false;
+                if (raycast.Confirm())
+                {
+                    UIRoot.SetActive(false);
+                    BuildConfirm = false;
+                }
+				
 			} 
 			else 
 			{
+                UIRoot.SetActive(true);
 				raycast.SetObjPropect (pretourelle);
 				raycast.SetObj (tourelle);
 				BuildConfirm = true;
@@ -109,12 +118,8 @@ public class PlayerControl : Photon.MonoBehaviour {
 				{
 					curretTurret = AvailableTurrets.Count - 1;
 				}
-				raycast.Cancel ();
-				tourelle = (GameObject)Resources.Load (AvailableTurrets [curretTurret]);
-				pretourelle = (GameObject)Resources.Load (AvailableTurrets [curretTurret] + "Preview");
-				raycast.SetObjPropect (pretourelle);
-				raycast.SetObj (tourelle);
-			}
+                ChangeTurret(AvailableTurrets[curretTurret]);
+            }
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0 && !useController || (Input.GetAxis("2-Mouse ScrollWheel") < 0 && useController))
@@ -126,13 +131,10 @@ public class PlayerControl : Photon.MonoBehaviour {
 				{
 					curretTurret = 0;
 				}
-				raycast.Cancel ();
-				tourelle = (GameObject)Resources.Load (AvailableTurrets [curretTurret]);
-				pretourelle = (GameObject)Resources.Load (AvailableTurrets [curretTurret] + "Preview");
-				raycast.SetObjPropect (pretourelle);
-				raycast.SetObj (tourelle);
+                ChangeTurret(AvailableTurrets[curretTurret]);
 			}
         }
+        
         if (Input.GetAxis("Rotate") < 0 && !useController || (Input.GetAxis("2-Rotate") < 0 && useController))
         {
             if (BuildConfirm)
@@ -140,7 +142,7 @@ public class PlayerControl : Photon.MonoBehaviour {
                 raycast.LeftRotate();
             }
         }
-		if (Input.GetKey ("e")) 
+		if (Input.GetAxis("Rotate") > 0 && !useController || (Input.GetAxis("2-Rotate") > 0 && useController)) 
 		{
 			if (BuildConfirm) 
 			{
@@ -150,6 +152,7 @@ public class PlayerControl : Photon.MonoBehaviour {
 		if (Input.GetKey (KeyCode.Escape)) 
 		{
 			raycast.Cancel();
+            UIRoot.SetActive(false);
 			BuildConfirm = false;
 		}
 
@@ -159,6 +162,15 @@ public class PlayerControl : Photon.MonoBehaviour {
             camscript.LookPlayer(player.transform.rotation.eulerAngles.y, 15f);
 
         }
+    }
+
+    public void ChangeTurret(string name)
+    {
+        raycast.Cancel();
+        tourelle = (GameObject)Resources.Load(name);
+        pretourelle = (GameObject)Resources.Load(name + "Preview");
+        raycast.SetObjPropect(pretourelle);
+        raycast.SetObj(tourelle);
     }
 	public void TurretBuildFailed()
 	{

@@ -86,7 +86,7 @@ public class RayCast : MonoBehaviour {
 		}
 	}
 
-	public void Confirm ()
+	public bool Confirm ()
 	{
 		if (placable && NearGround )
 		{
@@ -95,10 +95,12 @@ public class RayCast : MonoBehaviour {
 			//PhotonNetwork.InstantiateSceneObject(prerendu.name, gameObject.transform.position, tempProspect.transform.rotation,0, new object[] { });
 			Destroy (tempProspect);
 			initiatable = true;
+            return true;
 		} 
 		else
 		{
-			script.TurretBuildFailed ();
+			//script.TurretBuildFailed (); Inutile.
+            return false;
 		}
 	}
 	public void IsPlacable(bool placable)

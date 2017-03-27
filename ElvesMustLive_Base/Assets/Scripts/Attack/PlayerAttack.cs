@@ -33,7 +33,7 @@ public class PlayerAttack : Photon.MonoBehaviour
             isAttack = false;
             coll.enabled = false;
         }
-        if ((Input.GetButtonDown("Fire1") && !home.useController || (Input.GetButtonDown("2-Fire1") && home.useController)) && !isAttack)
+        if ((Input.GetButtonDown("Fire1") && !home.useController || (Input.GetButtonDown("2-Fire1") && home.useController)) && !isAttack && !home.BuildConfirm)
         {
             isAttack = true;
             coll.enabled = true;
