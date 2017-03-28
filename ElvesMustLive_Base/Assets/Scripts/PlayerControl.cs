@@ -8,24 +8,25 @@ public class PlayerControl : Photon.MonoBehaviour {
     public GameObject player;
     public GameObject cam;
     public GameObject fpscam;
-    public FreeLookCam camscript;
+    public CapsuleCollider capscoll;
     public Animator anim;
     public PlayerHealth hp;
-    public CapsuleCollider capscoll;
+    public int gold;
     public PhotonView view;
     public bool isMine;
     public List<GameObject> weapon;
     public TextMesh txtname;
     public RayCast raycast;
     public bool useController = false;
+
     public GameObject UIRoot;
 
-    public bool BuildConfirm;
+    private UILabel UIGold;
+    private UISlider UIHealth;
 
-    GameObject tourelle;
-    GameObject pretourelle;
-    List<string> AvailableTurrets;
-    int curretTurret = 0;
+    [HideInInspector]
+    public FreeLookCam camscript;
+
 
     public int screen; // 0 = full, 1 = left, 2 = right
 
@@ -36,23 +37,18 @@ public class PlayerControl : Photon.MonoBehaviour {
         view = photonView;
         if (isMine)
         {
+            //Connect UI To the player
             UIRoot = GameObject.Find("UI Root/Window Panel");
             GameObject.Find("UI Root/Window Panel/Scroll View/UIGrid").GetComponent<OnClickTurret>().home = this;
-            UIRoot.SetActive(false);
-            // Set in the Editor.
+            UIRoot.SetActive(false); //Hide turret selection
+            UIGold = GameObject.Find("UI Root/Gold").GetComponent<UILabel>();
+            UIHealth = GameObject.Find("UI Root/Health").GetComponent<UISlider>();
+
             // Ce sera la seule dans le scene. On affiche pas ceux des autres joueurs.
             cam = (GameObject)Instantiate(Resources.Load("CameraRig"), transform.position, Quaternion.identity);
             camscript = cam.GetComponent<FreeLookCam>();
-            camscript.m_Target = gameObject.transform;
+            camscript.m_Target = gameObject.transform; //Follow me
             camscript.home = this;
-
-            BuildConfirm = false;
-            AvailableTurrets = new List<string>();
-            AvailableTurrets.Add("Cannon");
-            AvailableTurrets.Add("Hammer");
-            AvailableTurrets.Add("CrossBow");
-            tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret]);
-            pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret] + "Preview");
         }
         else
         {
@@ -72,7 +68,6 @@ public class PlayerControl : Photon.MonoBehaviour {
                 cam.GetComponentInChildren<AudioListener>().enabled = false;
                 useController = true;
                 screen = 2;
-                hp.pos.x += Screen.width / 2;
             }
         }
         else
@@ -90,95 +85,28 @@ public class PlayerControl : Photon.MonoBehaviour {
             return;
         }
 
-		if (Input.GetButtonDown("Build") && !useController || (Input.GetButtonDown("2-Build") && useController))
+        if (Input.GetKey("g"))
         {
-			if (BuildConfirm) 
-			{
-                if (raycast.Confirm())
-                {
-                    UIRoot.SetActive(false);
-                    BuildConfirm = false;
-                }
-				
-			} 
-			else 
-			{
-                UIRoot.SetActive(true);
-				raycast.SetObjPropect (pretourelle);
-				raycast.SetObj (tourelle);
-				BuildConfirm = true;
-			}
+            gold += 10;
         }
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 && !useController || (Input.GetAxis("2-Mouse ScrollWheel") > 0 && useController))
-        {
-			if (BuildConfirm) 
-			{
-				curretTurret = curretTurret - 1;
-				if (curretTurret < 0) 
-				{
-					curretTurret = AvailableTurrets.Count - 1;
-				}
-                ChangeTurret(AvailableTurrets[curretTurret]);
-            }
-        }
-
-        if (Input.GetAxis("Mouse ScrollWheel") < 0 && !useController || (Input.GetAxis("2-Mouse ScrollWheel") < 0 && useController))
-        {
-			if (BuildConfirm) 
-			{
-				curretTurret = curretTurret + 1;
-				if (curretTurret >= AvailableTurrets.Count) 
-				{
-					curretTurret = 0;
-				}
-                ChangeTurret(AvailableTurrets[curretTurret]);
-			}
-        }
-        
-        if (Input.GetAxis("Rotate") < 0 && !useController || (Input.GetAxis("2-Rotate") < 0 && useController))
-        {
-            if (BuildConfirm)
-            {
-                raycast.LeftRotate();
-            }
-        }
-		if (Input.GetAxis("Rotate") > 0 && !useController || (Input.GetAxis("2-Rotate") > 0 && useController)) 
-		{
-			if (BuildConfirm) 
-			{
-				raycast.RightRotate ();
-			}
-		}
-		if (Input.GetKey (KeyCode.Escape)) 
-		{
-			raycast.Cancel();
-            UIRoot.SetActive(false);
-			BuildConfirm = false;
-		}
 
         if (!useController && Input.GetButton("CenterCam") || useController && Input.GetButton("2-CenterCam")) //CenterCam = x
-                                          //La touche L dans TLoZelda. Pas trouver d'autre examples #Thetoto.
+                                                                                                               //La touche L dans TLoZelda. Pas trouver d'autre examples #Thetoto.
         {
             camscript.LookPlayer(player.transform.rotation.eulerAngles.y, 15f);
 
         }
     }
 
-    public void ChangeTurret(string name)
+    private void OnGUI()
     {
-        raycast.Cancel();
-        tourelle = (GameObject)Resources.Load(name);
-        pretourelle = (GameObject)Resources.Load(name + "Preview");
-        raycast.SetObjPropect(pretourelle);
-        raycast.SetObj(tourelle);
+        UIHealth.value = hp.health / hp.maxhealth;
+        UIGold.text = gold + " Golds";
     }
-	public void TurretBuildFailed()
-	{
-		this.BuildConfirm = true;
-	}
 
-#region PUN RPC
-    
+
+    #region PUN RPC
+
     [PunRPC]
     public void ActiveW(int i)
     {

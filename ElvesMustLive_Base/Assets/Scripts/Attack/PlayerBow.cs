@@ -85,7 +85,7 @@ public class PlayerBow : Photon.MonoBehaviour
         else
         {
 
-            if ((Input.GetButtonDown("Fire1") && !home.useController || Input.GetButtonDown("2-Fire1") && home.useController) && !home.BuildConfirm)
+            if ((Input.GetButtonDown("Fire1") && !home.useController || Input.GetButtonDown("2-Fire1") && home.useController) && !home.raycast.BuildConfirm)
             {
                 isAttack = true;
                 anim.SetTrigger("Atk");

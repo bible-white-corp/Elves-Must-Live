@@ -14,6 +14,8 @@ public class Health : Photon.MonoBehaviour
 	Rigidbody body;
 	float TimerbeforeDeath;
     public GameObject obj;
+    int reward = 10; //Gold when a player kill.
+    bool earned = false;
 
     void Start()
     {
@@ -60,9 +62,19 @@ public class Health : Photon.MonoBehaviour
             Death();
         }
     }
+
     public void TakeDamage(int amount)
     {
         photonView.RPC("SendDamage", PhotonTargets.AllBufferedViaServer, amount, photonView.viewID);
+    }
+    public void TakeDamage(int amount, PlayerControl from)
+    {
+        photonView.RPC("SendDamage", PhotonTargets.AllBufferedViaServer, amount, photonView.viewID);
+        if (health - amount <= 0 && !earned)
+        {
+            from.gold += reward;
+            earned = true;
+        }
     }
     public void Death()
     {

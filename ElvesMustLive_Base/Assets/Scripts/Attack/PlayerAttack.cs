@@ -33,7 +33,7 @@ public class PlayerAttack : Photon.MonoBehaviour
             isAttack = false;
             coll.enabled = false;
         }
-        if ((Input.GetButtonDown("Fire1") && !home.useController || (Input.GetButtonDown("2-Fire1") && home.useController)) && !isAttack && !home.BuildConfirm)
+        if ((Input.GetButtonDown("Fire1") && !home.useController || (Input.GetButtonDown("2-Fire1") && home.useController)) && !isAttack && !home.raycast.BuildConfirm)
         {
             isAttack = true;
             coll.enabled = true;
@@ -48,7 +48,7 @@ public class PlayerAttack : Photon.MonoBehaviour
         if (other.tag == "Shootable" && isAttack) // Can attack twice a same Ennemy...
         {
             health = other.gameObject.GetComponent<Health>();
-            health.TakeDamage(AttackDamage);
+            health.TakeDamage(AttackDamage, home);
             Debug.Log(health.health + " after");
         }
         

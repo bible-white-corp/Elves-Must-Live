@@ -21,18 +21,111 @@ public class RayCast : MonoBehaviour {
 	//Prerenducollision script2;
 	float i;
 
-	void Start () 
+    GameObject tourelle;
+    GameObject pretourelle;
+    int cost;
+    public bool BuildConfirm;
+    public List<KeyValuePair<string, int>> AvailableTurrets;
+    public int curretTurret = 0;
+
+    void Start () 
 	{
 		script = GetComponentInParent<PlayerControl> ();
-		placable = true;
+        if (!script.isMine)
+        {
+            return;
+        }
+        placable = true;
 		initiatable = true;
 		OKcolor = new Color (0, 255, 0);
 		WRONGColor = new Color (255, 0, 0);
 		NearGround = true;
-	}
-	
 
-	void LateUpdate () 
+        BuildConfirm = false;
+        AvailableTurrets = new List<KeyValuePair<string, int>>();
+        AvailableTurrets.Add(new KeyValuePair<string, int>("Cannon", 10));
+        AvailableTurrets.Add(new KeyValuePair<string, int>("Hammer", 20));
+        AvailableTurrets.Add(new KeyValuePair<string, int>("CrossBow", 30));
+        ChangeTurret(AvailableTurrets[curretTurret]);
+    }
+
+    void Update()
+    {
+        if (script.isMine == false && PhotonNetwork.connected == true)
+        {
+            return;
+        }
+
+        if (Input.GetButtonDown("Build") && !script.useController || (Input.GetButtonDown("2-Build") && script.useController))
+        {
+            if (BuildConfirm)
+            {
+                if (Confirm())
+                {
+                    script.UIRoot.SetActive(false);
+                    BuildConfirm = false;
+                }
+
+            }
+            else
+            {
+                script.UIRoot.SetActive(true);
+                SetObjPropect(pretourelle);
+                SetObj(tourelle);
+                BuildConfirm = true;
+            }
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && !script.useController || (Input.GetAxis("2-Mouse ScrollWheel") > 0 && script.useController))
+        {
+            if (BuildConfirm)
+            {
+                curretTurret = curretTurret - 1;
+                if (curretTurret < 0)
+                {
+                    curretTurret = AvailableTurrets.Count - 1;
+                }
+                ChangeTurret(AvailableTurrets[curretTurret]);
+            }
+        }
+
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && !script.useController || (Input.GetAxis("2-Mouse ScrollWheel") < 0 && script.useController))
+        {
+            if (BuildConfirm)
+            {
+                curretTurret = curretTurret + 1;
+                if (curretTurret >= AvailableTurrets.Count)
+                {
+                    curretTurret = 0;
+                }
+                ChangeTurret(AvailableTurrets[curretTurret]);
+            }
+        }
+
+        if (Input.GetAxis("Rotate") < 0 && !script.useController || (Input.GetAxis("2-Rotate") < 0 && script.useController))
+        {
+            if (BuildConfirm)
+            {
+                LeftRotate();
+            }
+        }
+        if (Input.GetAxis("Rotate") > 0 && !script.useController || (Input.GetAxis("2-Rotate") > 0 && script.useController))
+        {
+            if (BuildConfirm)
+            {
+                RightRotate();
+            }
+        }
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Cancel();
+            script.UIRoot.SetActive(false);
+            BuildConfirm = false;
+        }
+
+
+    }
+
+    void LateUpdate () 
 	{
 		if (!initiatable) 
 		{
@@ -52,7 +145,7 @@ public class RayCast : MonoBehaviour {
 			initiatable = false;
 			if (true) 
 			{
-				tempProspect= Instantiate (prospect,transform.position, new Quaternion(0,0,0,0),transform);
+				tempProspect = Instantiate (prospect,transform.position, new Quaternion(0,0,0,0),transform);
 				//script2 = tempProspect.GetComponent<Prerenducollision> ();
 				tempProspect.transform.localRotation = Quaternion.Euler (new Vector3 (0, 180, 0));
 				i = tempProspect.transform.localRotation.y;
@@ -88,12 +181,14 @@ public class RayCast : MonoBehaviour {
 
 	public bool Confirm ()
 	{
-		if (placable && NearGround )
+        Debug.Log(script.gold >= cost);
+        Debug.Log(script.gold + ", " + cost);
+		if (placable && NearGround && script.gold >= cost)
 		{
             // Pour que le master client soit le propriétaire, et pas que les tourelles dépop quand on se déco.
             script.view.RPC("PlaceTurret", PhotonTargets.MasterClient, prerendu.name, gameObject.transform.position, tempProspect.transform.rotation);
-			//PhotonNetwork.InstantiateSceneObject(prerendu.name, gameObject.transform.position, tempProspect.transform.rotation,0, new object[] { });
-			Destroy (tempProspect);
+            script.gold -= cost;
+            Destroy (tempProspect);
 			initiatable = true;
             return true;
 		} 
@@ -103,7 +198,24 @@ public class RayCast : MonoBehaviour {
             return false;
 		}
 	}
-	public void IsPlacable(bool placable)
+
+    public void ChangeTurret(KeyValuePair<string, int> turret)
+    {
+        Cancel();
+        tourelle = (GameObject)Resources.Load(turret.Key);
+        pretourelle = (GameObject)Resources.Load(turret.Key + "Preview");
+        cost = turret.Value;
+        Debug.Log(turret.Value);
+        SetObjPropect(pretourelle);
+        SetObj(tourelle);
+    }
+
+    public void TurretBuildFailed()
+    {
+        this.BuildConfirm = true;
+    }
+
+    public void IsPlacable(bool placable)
 	{
 		this.placable = placable;
 	}

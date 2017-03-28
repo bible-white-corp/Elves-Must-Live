@@ -34,6 +34,7 @@ public class FPSCam : MonoBehaviour {
             {
                 GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
                 adapt = Screen.width / 4;
+
             }
             else
             {
