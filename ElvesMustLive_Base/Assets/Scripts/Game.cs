@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class Game : MonoBehaviour {
 
     public GameObject global;
+    public GameObject tchat;
     public bool Splited;
     public bool Online;
     public bool SinglePlayer;   
@@ -33,6 +34,10 @@ public class Game : MonoBehaviour {
         if (Input.GetKeyDown("j"))
         {
             PhotonNetwork.InstantiateSceneObject("Ennemy", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
+        }
+        if (Input.GetKeyDown("t"))
+        {
+            tchat.SetActive(!tchat.activeSelf);
         }
     }
     private void OnGUI()

@@ -46,7 +46,10 @@ public class RayCast : MonoBehaviour {
         AvailableTurrets.Add(new KeyValuePair<string, int>("Cannon", 10));
         AvailableTurrets.Add(new KeyValuePair<string, int>("Hammer", 20));
         AvailableTurrets.Add(new KeyValuePair<string, int>("CrossBow", 30));
-        ChangeTurret(AvailableTurrets[curretTurret]);
+        //Init
+        tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key);
+        pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key + "Preview");
+        cost = AvailableTurrets[curretTurret].Value;
     }
 
     void Update()
@@ -201,6 +204,19 @@ public class RayCast : MonoBehaviour {
 
     public void ChangeTurret(KeyValuePair<string, int> turret)
     {
+        Cancel();
+        tourelle = (GameObject)Resources.Load(turret.Key);
+        pretourelle = (GameObject)Resources.Load(turret.Key + "Preview");
+        cost = turret.Value;
+        Debug.Log(turret.Value);
+        SetObjPropect(pretourelle);
+        SetObj(tourelle);
+    }
+
+    public void ChangeTurret(int i)
+    {
+        KeyValuePair<string, int> turret = AvailableTurrets[i];
+        curretTurret = i;
         Cancel();
         tourelle = (GameObject)Resources.Load(turret.Key);
         pretourelle = (GameObject)Resources.Load(turret.Key + "Preview");
