@@ -11,7 +11,13 @@ public class Game : MonoBehaviour {
     public GameObject tchat;
     public bool Splited;
     public bool Online;
-    public bool SinglePlayer;   
+    public bool SinglePlayer;
+
+    public int count; // Ennemies restants
+    public float ennemyTime = 5;
+    public bool wave = false;
+
+    public float time;
 
     // Use this for initialization
     void Awake()
@@ -26,6 +32,23 @@ public class Game : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (PhotonNetwork.isMasterClient && wave)
+        {
+            time -= Time.deltaTime;
+            if (time <= 0)
+            {
+                time = ennemyTime;
+                PhotonNetwork.InstantiateSceneObject("Ennemy", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
+                count -= 1; // Maybe send via network.
+            }
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            wave = !wave;
+            time = ennemyTime;
+        }
+
         if (Input.GetKey("k"))
         {
             GameObject.FindGameObjectWithTag("Shootable").GetComponent<Health>().TakeDamage(31);

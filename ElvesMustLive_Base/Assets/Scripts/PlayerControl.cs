@@ -19,9 +19,11 @@ public class PlayerControl : Photon.MonoBehaviour {
     public RayCast raycast;
     public bool useController = false;
 
-    public GameObject UIRoot;
+    public Game game;
 
+    public GameObject UIRoot;
     private UILabel UIGold;
+    private UILabel UICount;
     private UISlider UIHealth;
 
     [HideInInspector]
@@ -42,6 +44,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             GameObject.Find("UI Root/Window Panel/Scroll View/UIGrid").GetComponent<OnClickTurret>().home = this;
             UIRoot.SetActive(false); //Hide turret selection
             UIGold = GameObject.Find("UI Root/Gold").GetComponent<UILabel>();
+            UICount = GameObject.Find("UI Root/Count").GetComponent<UILabel>();
             UIHealth = GameObject.Find("UI Root/Health").GetComponent<UISlider>();
 
             // Ce sera la seule dans le scene. On affiche pas ceux des autres joueurs.
@@ -49,6 +52,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             camscript = cam.GetComponent<FreeLookCam>();
             camscript.m_Target = gameObject.transform; //Follow me
             camscript.home = this;
+            game = GameObject.Find("GameManager").GetComponent<Game>();
         }
         else
         {
@@ -102,6 +106,7 @@ public class PlayerControl : Photon.MonoBehaviour {
     {
         UIHealth.value = hp.health / hp.maxhealth;
         UIGold.text = gold + " Golds";
+        UICount.text = game.count + " restants";
     }
 
 
