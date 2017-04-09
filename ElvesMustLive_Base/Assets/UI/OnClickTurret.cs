@@ -6,8 +6,8 @@ public class OnClickTurret : MonoBehaviour {
 
     public PlayerControl home;
 
-    public void CallChangeTurret(Transform obj)
+    public void CallChangeTurret(string name)
     {
-        home.raycast.ChangeTurret(obj.GetSiblingIndex());
+        home.raycast.ChangeTurret(name);
     }
 }

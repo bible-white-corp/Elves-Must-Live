@@ -43,6 +43,10 @@ public class FPSCam : MonoBehaviour {
                 //GetComponentInChildren<AudioListener>().enabled = false;
             }
         }
+        else
+        {
+            adapt = Screen.width/2;
+        }
 
         gameObject.SetActive(false);
     }

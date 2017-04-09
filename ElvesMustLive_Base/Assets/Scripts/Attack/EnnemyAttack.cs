@@ -39,7 +39,7 @@ public class EnnemyAttack : MonoBehaviour
 
             if (Distance <= 1.6f)// Quand on est a 1.6, on commence a atk # Thetoto
             {
-                hp.gameObject.transform.LookAt(mov1.player.transform);  // Regarder le player pour pas qu'il parte en couille   
+                //hp.gameObject.transform.LookAt(mov1.player.transform);  // Regarder le player pour pas qu'il parte en couille   
                 anim.SetBool("Engage", true);
                 coll.enabled = true;
             }

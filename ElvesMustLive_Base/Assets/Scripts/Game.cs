@@ -9,15 +9,13 @@ public class Game : MonoBehaviour {
 
     public GameObject global;
     public GameObject tchat;
+    public WaveGenerator wave;
     public bool Splited;
     public bool Online;
     public bool SinglePlayer;
 
-    public int count; // Ennemies restants
-    public float ennemyTime = 5;
-    public bool wave = false;
 
-    public float time;
+
 
     // Use this for initialization
     void Awake()
@@ -29,24 +27,19 @@ public class Game : MonoBehaviour {
         }
     }
 
+    private void Start()
+    {
+        
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (PhotonNetwork.isMasterClient && wave)
-        {
-            time -= Time.deltaTime;
-            if (time <= 0)
-            {
-                time = ennemyTime;
-                PhotonNetwork.InstantiateSceneObject("Ennemy", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
-                count -= 1; // Maybe send via network.
-            }
-        }
+
 
         if (Input.GetKey(KeyCode.Space))
         {
-            wave = !wave;
-            time = ennemyTime;
+            GetComponent<Animator>().SetBool("Skip", true);
         }
 
         if (Input.GetKey("k"))
@@ -58,10 +51,7 @@ public class Game : MonoBehaviour {
         {
             PhotonNetwork.InstantiateSceneObject("Ennemy", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
         }
-        if (Input.GetKeyDown("t"))
-        {
-            tchat.SetActive(!tchat.activeSelf);
-        }
+
     }
     private void OnGUI()
     {

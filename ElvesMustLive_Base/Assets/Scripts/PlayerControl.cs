@@ -21,10 +21,7 @@ public class PlayerControl : Photon.MonoBehaviour {
 
     public Game game;
 
-    public GameObject UIRoot;
-    private UILabel UIGold;
-    private UILabel UICount;
-    private UISlider UIHealth;
+    public UIControl MyUI;
 
     [HideInInspector]
     public FreeLookCam camscript;
@@ -39,19 +36,11 @@ public class PlayerControl : Photon.MonoBehaviour {
         view = photonView;
         if (isMine)
         {
-            //Connect UI To the player
-            UIRoot = GameObject.Find("UI Root/Window Panel");
-            GameObject.Find("UI Root/Window Panel/Scroll View/UIGrid").GetComponent<OnClickTurret>().home = this;
-            UIRoot.SetActive(false); //Hide turret selection
-            UIGold = GameObject.Find("UI Root/Gold").GetComponent<UILabel>();
-            UICount = GameObject.Find("UI Root/Count").GetComponent<UILabel>();
-            UIHealth = GameObject.Find("UI Root/Health").GetComponent<UISlider>();
-
-            // Ce sera la seule dans le scene. On affiche pas ceux des autres joueurs.
             cam = (GameObject)Instantiate(Resources.Load("CameraRig"), transform.position, Quaternion.identity);
             camscript = cam.GetComponent<FreeLookCam>();
             camscript.m_Target = gameObject.transform; //Follow me
             camscript.home = this;
+
             game = GameObject.Find("GameManager").GetComponent<Game>();
         }
         else
@@ -64,12 +53,14 @@ public class PlayerControl : Photon.MonoBehaviour {
             if (int.Parse(photonView.instantiationData[0].ToString()) == 0)
             {
                 screen = 1;
+                MyUI = UIControl.SetUI("Left", this);
                 cam.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
             }
             else
             {
+                MyUI = UIControl.SetUI("Right", this);
                 cam.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 1f, 1f);
-                cam.GetComponentInChildren<AudioListener>().enabled = false;
+                cam.GetComponentInChildren<AudioListener>().enabled = false; // Only one Audio listener...
                 useController = true;
                 screen = 2;
             }
@@ -77,6 +68,7 @@ public class PlayerControl : Photon.MonoBehaviour {
         else
         {
             screen = 0;
+            MyUI = UIControl.SetUI("SinglePlayer", this);
         }
 
     }
@@ -94,19 +86,17 @@ public class PlayerControl : Photon.MonoBehaviour {
             gold += 10;
         }
 
+        if (Input.GetKeyDown("t"))
+        {
+            MyUI.tchat.SetActive(!MyUI.tchat.activeSelf);
+        }
+
         if (!useController && Input.GetButton("CenterCam") || useController && Input.GetButton("2-CenterCam")) //CenterCam = x
                                                                                                                //La touche L dans TLoZelda. Pas trouver d'autre examples #Thetoto.
         {
             camscript.LookPlayer(player.transform.rotation.eulerAngles.y, 15f);
 
         }
-    }
-
-    private void OnGUI()
-    {
-        UIHealth.value = hp.health / hp.maxhealth;
-        UIGold.text = gold + " Golds";
-        UICount.text = game.count + " restants";
     }
 
 

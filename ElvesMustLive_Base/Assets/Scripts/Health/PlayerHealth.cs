@@ -46,6 +46,10 @@ public class PlayerHealth : MonoBehaviour {
 				// c'est le machin qui fait fondre l'ennemi
 				transform.Translate (Vector3.down * sinkspeed * Time.deltaTime);
 			}
+            if (TimerbeforeDeath > 4f)
+            {
+                PhotonNetwork.Destroy(gameObject);
+            }
 		}
 	}
 
@@ -75,7 +79,11 @@ public class PlayerHealth : MonoBehaviour {
         Destroy(GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>());
         Destroy(GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>());
         
-        Destroy(gameObject, 4f);
+        //Destroy(gameObject, 4f);
     }
-        
+
+    private void OnDestroy()
+    {
+        home.MyUI.DeadMode(home.view.instantiationData, home.cam);
+    }
 }

@@ -65,14 +65,14 @@ public class RayCast : MonoBehaviour {
             {
                 if (Confirm())
                 {
-                    script.UIRoot.SetActive(false);
+                    script.MyUI.UITurret.SetActive(false);
                     BuildConfirm = false;
                 }
 
             }
             else
             {
-                script.UIRoot.SetActive(true);
+                script.MyUI.UITurret.SetActive(true);
                 SetObjPropect(pretourelle);
                 SetObj(tourelle);
                 BuildConfirm = true;
@@ -87,7 +87,7 @@ public class RayCast : MonoBehaviour {
                 {
                     curretTurret = AvailableTurrets.Count - 1;
                 }
-                ChangeTurret(AvailableTurrets[curretTurret]);
+                ChangeTurret(curretTurret);
             }
         }
 
@@ -100,7 +100,7 @@ public class RayCast : MonoBehaviour {
                 {
                     curretTurret = 0;
                 }
-                ChangeTurret(AvailableTurrets[curretTurret]);
+                ChangeTurret(curretTurret);
             }
         }
 
@@ -121,7 +121,7 @@ public class RayCast : MonoBehaviour {
         if (Input.GetKey(KeyCode.Escape))
         {
             Cancel();
-            script.UIRoot.SetActive(false);
+            script.MyUI.UITurret.SetActive(false);
             BuildConfirm = false;
         }
 
@@ -202,9 +202,11 @@ public class RayCast : MonoBehaviour {
 		}
 	}
 
-    public void ChangeTurret(KeyValuePair<string, int> turret)
+    public void ChangeTurret(string turretName)
     {
         Cancel();
+        curretTurret = AvailableTurrets.FindIndex(x => x.Key == turretName);
+        KeyValuePair<string, int> turret = AvailableTurrets[curretTurret];
         tourelle = (GameObject)Resources.Load(turret.Key);
         pretourelle = (GameObject)Resources.Load(turret.Key + "Preview");
         cost = turret.Value;
