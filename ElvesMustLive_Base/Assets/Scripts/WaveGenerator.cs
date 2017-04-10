@@ -17,16 +17,8 @@ public class WaveGenerator : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        currentWave.Enqueue(new KeyValuePair<string, int>("Ennemy", 0)); //Ennemy prefab + time in sec between ennemies.
-        currentWave.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-        currentWave.Enqueue(new KeyValuePair<string, int>("Ennemy", 5)); // KeyValuePair = Tuple
-        currentWave.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-        currentWave.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-        currentWave.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-        currentWave.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-        currentWave.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-        currentWave.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
 
+        currentWave = LoadLevel(1);
         count = currentWave.Count;
     }
 	
@@ -64,5 +56,28 @@ public class WaveGenerator : MonoBehaviour {
             wave = true;
             //Afficher un texte "Press Enter pour lancer la prochaine vague."
         }
+    }
+
+    public Queue<KeyValuePair<string, int>> LoadLevel(int lvl)
+    {
+        Queue<KeyValuePair<string, int>> newlvl = new Queue<KeyValuePair<string, int>>();
+        switch (lvl)
+        {
+            case 1:
+                newlvl.Enqueue(new KeyValuePair<string, int>("Ennemy", 0)); //Ennemy prefab + time in sec between ennemies.
+                newlvl.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
+                newlvl.Enqueue(new KeyValuePair<string, int>("Ennemy", 5)); // KeyValuePair = Tuple
+                newlvl.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
+                newlvl.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
+                newlvl.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
+                newlvl.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
+                newlvl.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
+                newlvl.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
+                break;
+
+            default:
+                break;
+        }
+        return newlvl;
     }
 }

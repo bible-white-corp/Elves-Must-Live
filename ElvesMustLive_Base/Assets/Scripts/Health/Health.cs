@@ -17,6 +17,8 @@ public class Health : Photon.MonoBehaviour
     int reward = 10; //Gold when a player kill.
     bool earned = false;
 
+    public AudioSource audio;
+
     void Start()
     {
         obj = gameObject;
@@ -56,7 +58,8 @@ public class Health : Photon.MonoBehaviour
             return;
         }
         health -= amount;
-
+        AudioClip hitClip = (AudioClip)Resources.Load("Sound/Orc/hit");
+        audio.PlayOneShot(hitClip);
         if (health <= 0)
         {
             Death();
@@ -78,6 +81,8 @@ public class Health : Photon.MonoBehaviour
     }
     public void Death()
     {
+        AudioClip deathClip = (AudioClip)Resources.Load("Sound/Orc/death");
+        audio.PlayOneShot(deathClip);
         IsDead = true;
 		anim.SetBool ("InMov", false);
 		anim.SetTrigger ("Died");
