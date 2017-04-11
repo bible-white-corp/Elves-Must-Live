@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 65150392892174946}
   - component: {fileID: 114949562220151648}
   m_Layer: 0
-  m_Name: elf_staff_03
+  m_Name: Spear5
   m_TagString: Spear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 65565499230776316}
   - component: {fileID: 114240935434133354}
   m_Layer: 0
-  m_Name: elf_staff_01
+  m_Name: Spear3
   m_TagString: Spear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 65503139786776198}
   - component: {fileID: 114543729636309066}
   m_Layer: 0
-  m_Name: Elf_javelin
+  m_Name: Spear1
   m_TagString: Spear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 65493498134227862}
   - component: {fileID: 114518915507813808}
   m_Layer: 0
-  m_Name: elf_sword_01
+  m_Name: Sword1
   m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 65849940745226322}
   - component: {fileID: 114828024520476464}
   m_Layer: 0
-  m_Name: elf_spear
+  m_Name: Spear2
   m_TagString: Spear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 137879696771255386}
   - component: {fileID: 114043554100243168}
   m_Layer: 0
-  m_Name: elf_arch_03
+  m_Name: Arc3
   m_TagString: Arch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -443,7 +443,7 @@ GameObject:
   - component: {fileID: 137436797161514118}
   - component: {fileID: 114199491988336848}
   m_Layer: 0
-  m_Name: elf_arch_02
+  m_Name: Arc2
   m_TagString: Arch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 65179035131498848}
   - component: {fileID: 114970570807806560}
   m_Layer: 0
-  m_Name: elf_sword_02
+  m_Name: Sword2
   m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -910,7 +910,7 @@ GameObject:
   - component: {fileID: 65297826744620664}
   - component: {fileID: 114018982368447398}
   m_Layer: 0
-  m_Name: elf_staff_02
+  m_Name: Spear4
   m_TagString: Spear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1276,7 +1276,7 @@ GameObject:
   - component: {fileID: 65376940982661556}
   - component: {fileID: 114652266963614092}
   m_Layer: 0
-  m_Name: elf_sword_03
+  m_Name: Sword3
   m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1490,7 +1490,7 @@ GameObject:
   - component: {fileID: 137097549129475554}
   - component: {fileID: 114608837771362618}
   m_Layer: 0
-  m_Name: elf_arch_01
+  m_Name: Arc1
   m_TagString: Arch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1758,7 +1758,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1196704417917748}
-  m_LocalRotation: {x: 0.00000513574, y: -0.000020298858, z: 0.9616655, w: 0.2742251}
+  m_LocalRotation: {x: 0.0000051357406, y: -0.00002029886, z: 0.9616656, w: 0.27422512}
   m_LocalPosition: {x: -0.59430486, y: -0.00000061035155, z: 0.000000038146972}
   m_LocalScale: {x: 0.9999998, y: 1, z: 1}
   m_Children: []
@@ -2024,7 +2024,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1800558898231468}
-  m_LocalRotation: {x: -0.7071068, y: -1.4030481e-15, z: 0.000000021073424, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071069, y: -1.4030482e-15, z: 0.000000021073426, w: 0.70710677}
   m_LocalPosition: {x: 0.3094012, y: -0.011464996, z: 0.009540023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2262,7 +2262,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1033417130880622}
-  m_LocalRotation: {x: -0.15709451, y: -0.46452925, z: -0.12836844, w: 0.8620066}
+  m_LocalRotation: {x: -0.15709452, y: -0.46452928, z: -0.12836845, w: 0.86200666}
   m_LocalPosition: {x: -0.15569839, y: 0, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_Children:
@@ -2850,7 +2850,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1742345269495280}
-  m_LocalRotation: {x: -0.036262, y: -0.023789417, z: 0.64117175, w: 0.7661709}
+  m_LocalRotation: {x: -0.036262006, y: -0.023789419, z: 0.6411718, w: 0.766171}
   m_LocalPosition: {x: -0.1516294, y: 0.0001347351, z: -0.044834748}
   m_LocalScale: {x: 0.99999994, y: 1.0000001, z: 0.9999998}
   m_Children:
@@ -3879,17 +3879,20 @@ MonoBehaviour:
   player: {fileID: 1391797194572962}
   cam: {fileID: 0}
   fpscam: {fileID: 1451582881479494}
-  camscript: {fileID: 0}
+  capscoll: {fileID: 136591229172462444}
   anim: {fileID: 95422693935125130}
   hp: {fileID: 114582891206441160}
-  capscoll: {fileID: 136591229172462444}
+  gold: 0
   view: {fileID: 0}
   isMine: 0
   weapon: []
   txtname: {fileID: 102659983886766678}
   raycast: {fileID: 114534507588710154}
-  tourelle: {fileID: 1864149235406968, guid: d83683fbf4daf804fb4ece6ab3d23ef4, type: 2}
-  pretourelle: {fileID: 0}
+  useController: 0
+  game: {fileID: 0}
+  MyUI: {fileID: 0}
+  camscript: {fileID: 0}
+  screen: 0
 --- !u!114 &114199491988336848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3945,6 +3948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae79ba76bc72dbc4cb5a2867b77b8a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  availableWeapon: []
   CurrentW: 0
 --- !u!114 &114518915507813808
 MonoBehaviour:
@@ -3997,6 +4001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f815e144b93c1418b9fd8f99a35476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BuildConfirm: 0
+  curretTurret: 0
 --- !u!114 &114543729636309066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4023,14 +4029,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 200
   maxhealth: 200
-  Slider: {fileID: 1105844407138544, guid: ee01e48ba063db94e88d77dff3923330, type: 2}
   sinkspeed: 10
   IsDead: 0
-  barDisplay: 0
-  pos: {x: 20, y: 40}
-  size: {x: 105, y: 20}
-  emptyTex: {fileID: 2800000, guid: 78d2ee169376de94b9999e5714fbb650, type: 3}
-  fullTex: {fileID: 2800000, guid: fad80d9df1b77784cbe37cd29cd35851, type: 3}
 --- !u!114 &114584053744911410
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -21,8 +21,9 @@ public class PlayerBow : Photon.MonoBehaviour
     PlayerControl home;
     //SET IN THE EDITOR
     public GameObject arrowspot;
-    Camera tpscam;
+    Camera tpscamera;
     GameObject fpscam;
+    GameObject tpscam;
 
     float t;
     float timeout = 0.8f;  
@@ -31,7 +32,8 @@ public class PlayerBow : Photon.MonoBehaviour
     void Start ()
     {
         home = GetComponentInParent<PlayerControl>();
-        tpscam = home.cam.GetComponentInChildren<Camera>();
+        tpscamera = home.cam.GetComponentInChildren<Camera>();
+        tpscam = home.cam;
         fpscam = home.fpscam;
         anim = home.anim;
     }
@@ -54,7 +56,8 @@ public class PlayerBow : Photon.MonoBehaviour
                 home.camscript.transform.eulerAngles = new Vector3(0f, home.camscript.m_LookAngle, 0f);
                 // SET TPS
                 fpscam.SetActive(false);
-                tpscam.enabled = true;
+                tpscamera.enabled = true;
+                //home.cam = tpscam;
                 home.player.transform.eulerAngles = new Vector3(0f, home.player.transform.eulerAngles.y, 0f);
             }
 
@@ -93,7 +96,8 @@ public class PlayerBow : Photon.MonoBehaviour
                 // Mettre la caméra (Une autre caméra) en mode "viser"
                 // SET FPS
                 fpscam.SetActive(true);
-                tpscam.enabled = false;
+                tpscamera.enabled = false;
+                //home.cam = fpscam;
             }
 
 

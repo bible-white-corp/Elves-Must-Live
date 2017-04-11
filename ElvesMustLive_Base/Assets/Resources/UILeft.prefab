@@ -3745,6 +3745,10 @@ MonoBehaviour:
   UIHealth: {fileID: 114970401907950036}
   scriptClick: {fileID: 114360933482239792}
   tchat: {fileID: 1082386181358934}
+  home: {fileID: 0}
+  dead: 0
+  DeadText: {fileID: 0}
+  Respawn: {fileID: 0}
 --- !u!114 &114656975470775084
 MonoBehaviour:
   m_ObjectHideFlags: 1

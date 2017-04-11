@@ -81,6 +81,7 @@ public class Health : Photon.MonoBehaviour
     }
     public void Death()
     {
+        audio.Stop();
         AudioClip deathClip = (AudioClip)Resources.Load("Sound/Orc/death");
         audio.PlayOneShot(deathClip);
         IsDead = true;

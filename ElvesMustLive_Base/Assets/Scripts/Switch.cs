@@ -8,7 +8,8 @@ public class Switch : Photon.MonoBehaviour
     Animator anim;
     float timer;
     bool timeout = false;
-    List<GameObject> weapon = new List<GameObject>();
+    List<GameObject> weapons = new List<GameObject>();
+    public List<GameObject> availableWeapon = new List<GameObject>(); 
     public int CurrentW = 0;
 
     PlayerControl home;
@@ -16,13 +17,20 @@ public class Switch : Photon.MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+
+
         home = GetComponentInParent<PlayerControl>();
         anim = home.anim;
         foreach (Transform child in gameObject.transform)
         {
-            weapon.Add(child.gameObject);
+            weapons.Add(child.gameObject);
         }
-        home.weapon = weapon;
+
+        availableWeapon.Add(weapons.Find(x => x.name == "Sword1"));
+        availableWeapon.Add(weapons.Find(x => x.name == "Spear1"));
+        availableWeapon.Add(weapons.Find(x => x.name == "Arc1"));
+
+        home.weapon = availableWeapon;
         ChangeW(0);
     }
 	
@@ -63,19 +71,19 @@ public class Switch : Photon.MonoBehaviour
     public void ChangeW(int nb)
     {
         //weapon[CurrentW].SetActive(false);
-        anim.SetBool(weapon[CurrentW].tag, false);
+        anim.SetBool(availableWeapon[CurrentW].tag, false);
         home.view.RPC("DesactiveW", PhotonTargets.All, CurrentW);
         CurrentW += nb;
         if (CurrentW < 0)
         {
-            CurrentW = weapon.Count - 1;
+            CurrentW = availableWeapon.Count - 1;
         }
-        else if (CurrentW >= weapon.Count)
+        else if (CurrentW >= availableWeapon.Count)
         {
             CurrentW = 0;
         }
         home.view.RPC("ActiveW", PhotonTargets.All, CurrentW);
-        anim.SetBool(weapon[CurrentW].tag, true);
+        anim.SetBool(availableWeapon[CurrentW].tag, true);
     }
 
 

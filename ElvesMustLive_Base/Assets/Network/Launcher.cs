@@ -136,7 +136,7 @@ public class Launcher : Photon.PunBehaviour
     {
         Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
         progress.NetworkState = 1;
-        progress.LoadALevel("Map/Map 1");
+        progress.LoadALevel("Tutorial/Level1");
     }
 
     public override void OnDisconnectedFromPhoton()

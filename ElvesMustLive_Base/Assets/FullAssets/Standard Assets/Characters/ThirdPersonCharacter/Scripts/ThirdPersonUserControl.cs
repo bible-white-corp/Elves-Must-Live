@@ -86,11 +86,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 crouch = Input.GetKey(KeyCode.C);
             }
             // calculate move direction to pass to character
-            if (m_Cam != null)
+            if (home.cam.transform != null)
             {
                 // calculate camera relative direction to move:
-                m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
-                m_Move = v*m_CamForward + h*m_Cam.right;
+                m_CamForward = Vector3.Scale(home.cam.transform.forward, new Vector3(1, 0, 1)).normalized;
+                m_Move = v*m_CamForward + h* home.cam.transform.right;
             }
             else
             {
