@@ -855,6 +855,7 @@ GameObject:
   - component: {fileID: 1263173712}
   - component: {fileID: 1263173710}
   - component: {fileID: 1263173714}
+  - component: {fileID: 1263173711}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: MainCamera
@@ -873,6 +874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013a487b25679da44b3a01f92ba31ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mode: {fileID: 1263173711}
   count: 0
   ennemyTime: 5
   wave: 0
@@ -884,6 +886,19 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1263173708}
   m_Enabled: 1
+--- !u!114 &1263173711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1263173708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4beee9a2009f18449f53437b24c0096, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wave: {fileID: 1263173709}
+  level: 0
 --- !u!20 &1263173712
 Camera:
   m_ObjectHideFlags: 0
