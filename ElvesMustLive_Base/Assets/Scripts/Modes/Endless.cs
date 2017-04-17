@@ -22,7 +22,7 @@ public class Endless : GameMode {
     {
         level += 1;
         Queue<KeyValuePair<string, int>> queue = new Queue<KeyValuePair<string, int>>();
-        switch (level) // J'aime les/la Switch <3
+        switch (level) // J'aime les/la Switch <3 T'abuses...
         {
             case 1:
                 queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0)); //Ennemy prefab + time in sec between ennemies.

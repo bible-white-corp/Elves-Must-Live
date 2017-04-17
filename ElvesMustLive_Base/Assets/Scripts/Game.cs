@@ -47,10 +47,15 @@ public class Game : MonoBehaviour {
             GameObject.FindGameObjectWithTag("Shootable").GetComponent<Health>().TakeDamage(31);
         }
 
-        if (Input.GetKeyDown("j"))
+        if (Input.GetKeyDown("p"))
         {
-            PhotonNetwork.InstantiateSceneObject("Ennemy", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
+            PhotonNetwork.InstantiateSceneObject("Assassin", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
         }
+		if (Input.GetKeyDown("j"))
+		{
+			PhotonNetwork.InstantiateSceneObject("Ennemy0", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
+		}
+
 
     }
     private void OnGUI()

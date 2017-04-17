@@ -14,8 +14,9 @@ public class Health : Photon.MonoBehaviour
 	Rigidbody body;
 	float TimerbeforeDeath;
     public GameObject obj;
-    int reward = 10; //Gold when a player kill.
+    public int reward = 10; //Gold when a player kill.
     bool earned = false;
+	public int Armor = 0;
 
     public AudioSource audio;
 
@@ -57,11 +58,13 @@ public class Health : Photon.MonoBehaviour
         {
             return;
         }
-        health -= amount;
+		health -= amount - Armor;
         AudioClip hitClip = (AudioClip)Resources.Load("Sound/Orc/hit");
         audio.PlayOneShot(hitClip);
+		Debug.Log (health);
         if (health <= 0)
         {
+			Debug.Log ("Death called");
             Death();
         }
     }
@@ -69,6 +72,7 @@ public class Health : Photon.MonoBehaviour
     public void TakeDamage(int amount)
     {
         photonView.RPC("SendDamage", PhotonTargets.AllBufferedViaServer, amount, photonView.viewID);
+		Debug.Log ("RPC CALLED");
     }
     public void TakeDamage(int amount, PlayerControl from)
     {
