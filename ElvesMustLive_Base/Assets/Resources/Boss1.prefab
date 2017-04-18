@@ -2560,7 +2560,7 @@ MonoBehaviour:
   obj: {fileID: 0}
   reward: 10
   Armor: 0
-  audio: {fileID: 0}
+  audio: {fileID: 82462131158749314}
 --- !u!135 &135770722884877208
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -2345,7 +2345,7 @@ MonoBehaviour:
   obj: {fileID: 0}
   reward: 10
   Armor: 0
-  audio: {fileID: 0}
+  audio: {fileID: 82058267598750990}
 --- !u!114 &114322119553282666
 MonoBehaviour:
   m_ObjectHideFlags: 1

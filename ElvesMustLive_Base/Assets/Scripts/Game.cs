@@ -51,10 +51,14 @@ public class Game : MonoBehaviour {
         {
             PhotonNetwork.InstantiateSceneObject("Assassin", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
         }
-		if (Input.GetKeyDown("j"))
-		{
-			PhotonNetwork.InstantiateSceneObject("Ennemy0", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
-		}
+        if (Input.GetKeyDown("j"))
+        {
+            PhotonNetwork.InstantiateSceneObject("Ennemy0", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
+        }
+        if (Input.GetKeyDown("k"))
+        {
+            PhotonNetwork.InstantiateSceneObject("Assassin", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
+        }
 
 
     }
