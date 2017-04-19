@@ -36,7 +36,7 @@ public class AssasMov : MonoBehaviour {
 	}
 	void Update()
 	{
-		if (engaged)
+		if (!hp.IsDead && engaged)
 		{
 			distance = Vector3.Distance(player.transform.position, gameObject.transform.position);
 			if (nav.enabled)

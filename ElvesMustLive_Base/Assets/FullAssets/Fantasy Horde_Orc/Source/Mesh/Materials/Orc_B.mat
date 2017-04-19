@@ -8,8 +8,8 @@ Material:
   m_PrefabInternal: {fileID: 0}
   m_Name: Orc_B
   m_Shader: {fileID: 45, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _SPECGLOSSMAP
-  m_LightmapFlags: 5
+  m_ShaderKeywords: _EMISSION _SPECGLOSSMAP
+  m_LightmapFlags: 1
   m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
@@ -98,8 +98,14 @@ Material:
         name: _Fresnel
       second: 0.92857146
     - first:
+        name: _GlossMapScale
+      second: 1
+    - first:
         name: _Glossiness
       second: 0.5
+    - first:
+        name: _GlossyReflections
+      second: 1
     - first:
         name: _Mode
       second: 0
@@ -113,11 +119,17 @@ Material:
         name: _Shininess
       second: 7.1717997
     - first:
+        name: _SmoothnessTextureChannel
+      second: 0
+    - first:
         name: _SpecInt
       second: 1
     - first:
         name: _SpecPower
       second: 3.659403
+    - first:
+        name: _SpecularHighlights
+      second: 1
     - first:
         name: _SrcBlend
       second: 1

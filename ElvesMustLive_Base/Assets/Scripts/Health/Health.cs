@@ -64,7 +64,6 @@ public class Health : Photon.MonoBehaviour
 		Debug.Log (health);
         if (health <= 0)
         {
-			Debug.Log ("Death called");
             Death();
         }
     }
@@ -72,7 +71,6 @@ public class Health : Photon.MonoBehaviour
     public void TakeDamage(int amount)
     {
         photonView.RPC("SendDamage", PhotonTargets.AllBufferedViaServer, amount, photonView.viewID);
-		Debug.Log ("RPC CALLED");
     }
     public void TakeDamage(int amount, PlayerControl from)
     {

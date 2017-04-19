@@ -8,6 +8,7 @@ MonoBehaviour {
 	public int damage;
 	Transform bulletpos;
 	GameObject explosion;
+
 	float timer;
 
 	void Start () 
