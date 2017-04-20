@@ -2,48 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canon_Aim : MonoBehaviour {
+public class Cristal_aim : MonoBehaviour {
 
 	public int DirectHitDamage;
-	public GameObject currentTarget;
+	GameObject currentTarget;
 	private Vector3 LastKnownPosition;
-	private Quaternion LookAtRotation;
-	private Quaternion temporaire;
 	public float TurretsSpeed;
 	Transform children;
 	float timerbeforeshot;
 	public float reloadtime;
 	Transform sortie;
-	public GameObject Bullet;
+	LineRenderer laser;
 	Health script;
+	float laserTime;
+	public GameObject LaserFrom;
 	bool engage; //ca sert a bidouiller 
-	public GameObject explosion;
 
 	void Start () 
 	{
+		laser = GetComponent<LineRenderer> ();
 		LastKnownPosition = Vector3.zero;
 		timerbeforeshot = 0f;
+		laserTime = 0f;
 		engage = false;
+		laser.enabled = false;
 	}
 
 	void Update () 
 
 	{
-		if (currentTarget != null)
-		{
-            
-            var targetRotation = Quaternion.LookRotation(currentTarget.transform.position - transform.position);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, TurretsSpeed * Time.deltaTime);
+		if (currentTarget != null) {
 
-            timerbeforeshot += Time.deltaTime;
-			if (timerbeforeshot > reloadtime) 
-			{
-				Shoot (transform.GetChild (0).GetChild (1));
+			var targetRotation = Quaternion.LookRotation (currentTarget.transform.position - transform.position);
+			transform.rotation = Quaternion.Slerp (transform.rotation, targetRotation, TurretsSpeed * Time.deltaTime);
+
+			timerbeforeshot += Time.deltaTime;
+			if (timerbeforeshot > reloadtime) {
+				laser.enabled = true;
+				laser.SetPosition (0, LaserFrom.transform.position);
+				laser.SetPosition (1, (new Vector3 (currentTarget.transform.position.x, currentTarget.transform.position.y + 1, currentTarget.transform.position.z)));
 				timerbeforeshot = 0f;
-			}
+				script.TakeDamage (DirectHitDamage);
+			} 
 		}
+		if (laser.enabled && laserTime < 0.1f) 
+			{
+				laserTime += Time.deltaTime;
+			} 
+		else 
+			{
+				laser.enabled = false;
+				laserTime = 0f;
+			}
 	}
-		
+
 
 	void OnTriggerEnter(Collider coll)
 	{
@@ -68,6 +80,7 @@ public class Canon_Aim : MonoBehaviour {
 		{
 			currentTarget = null;
 			engage = false;
+			laser.enabled = false;
 		}
 
 	}
@@ -77,14 +90,12 @@ public class Canon_Aim : MonoBehaviour {
 		{
 			currentTarget = null;
 			engage = false;
+			if (laser.enabled) 
+			{
+				laser.enabled = false;
+			}
 		}
 	}
 
-	void Shoot(Transform hole)
-	{
-		GameObject Shoot = Instantiate (Bullet,hole.position,hole.rotation) as GameObject;
-		Shoot.GetComponent<Rigidbody> ().AddForce (hole.forward * 2500);
-		Shoot.AddComponent<Collisionexplode> ();
-		Shoot.GetComponent<Collisionexplode> ().SetExplosion (explosion);
-	}
+
 }
