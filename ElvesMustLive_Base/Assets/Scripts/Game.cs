@@ -49,7 +49,7 @@ public class Game : MonoBehaviour {
 
         if (Input.GetKeyDown("p"))
         {
-            PhotonNetwork.InstantiateSceneObject("Assassin", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
+            PhotonNetwork.InstantiateSceneObject("Boss2", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
         }
         if (Input.GetKeyDown("j"))
         {

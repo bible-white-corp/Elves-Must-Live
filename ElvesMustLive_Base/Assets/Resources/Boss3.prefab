@@ -2436,6 +2436,7 @@ MonoBehaviour:
   AttackDamage: 10
   playerhp: {fileID: 0}
   hp: {fileID: 0}
+  FightDistance: 2.3
 --- !u!114 &114783394198283928
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2724,7 +2725,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1775146691112230}
   m_Enabled: 1
   m_Radius: 0.4
-  m_Speed: 2
+  m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

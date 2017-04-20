@@ -2403,6 +2403,8 @@ MonoBehaviour:
   sinkspeed: 1
   IsDead: 0
   obj: {fileID: 0}
+  reward: 10
+  Armor: 0
   audio: {fileID: 82919092830155310}
 --- !u!114 &114432692282471736
 MonoBehaviour:
@@ -2418,6 +2420,7 @@ MonoBehaviour:
   AttackDamage: 10
   playerhp: {fileID: 0}
   hp: {fileID: 0}
+  FightDistance: 1.6
 --- !u!114 &114588228134702848
 MonoBehaviour:
   m_ObjectHideFlags: 1
