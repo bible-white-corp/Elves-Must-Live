@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Sapeur_Mov : MonoBehaviour {
+public class Sapeur_Mov : Mov {
 
 	public Animator animator;           // Reference to the player's position.
 	public NavMeshAgent nav;               // Reference to the nav mesh agent.
@@ -32,7 +32,7 @@ public class Sapeur_Mov : MonoBehaviour {
 	}
 
 
-	public void ChangeDestination(Transform newgameObject)
+	public override void ChangeDestination(Transform newgameObject)
 	{
 		nav.SetDestination (newgameObject.position);
 		Destination = newgameObject;

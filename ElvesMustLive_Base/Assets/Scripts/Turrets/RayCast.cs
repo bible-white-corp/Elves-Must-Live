@@ -46,6 +46,7 @@ public class RayCast : MonoBehaviour {
         AvailableTurrets.Add(new KeyValuePair<string, int>("Cannon", 10));
         AvailableTurrets.Add(new KeyValuePair<string, int>("Hammer", 20));
         AvailableTurrets.Add(new KeyValuePair<string, int>("CrossBow", 30));
+        AvailableTurrets.Add(new KeyValuePair<string, int>("Cristal", 30));
         //Init
         tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key);
         pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key + "Preview");
