@@ -95,7 +95,13 @@ public class PlayerControl : Photon.MonoBehaviour {
                                                                                                                //La touche L dans TLoZelda. Pas trouver d'autre examples #Thetoto.
         {
             camscript.LookPlayer(player.transform.rotation.eulerAngles.y, 15f);
+        }
 
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            raycast.AddTurret("Cristal");
+            raycast.AddTurret("CrossBow");
+            raycast.AddTurret("Hammer");
         }
     }
 

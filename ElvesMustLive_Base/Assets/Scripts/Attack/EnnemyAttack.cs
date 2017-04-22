@@ -9,7 +9,7 @@ public class EnnemyAttack : MonoBehaviour
 	Animator anim;
     public PlayerHealth playerhp;
     float timer;
-	EnnemyMov1 mov1;
+	Mov mov1;
     public Health hp;
 	float Distance;
 	NavMeshAgent nav;
@@ -43,9 +43,10 @@ public class EnnemyAttack : MonoBehaviour
                 //hp.gameObject.transform.LookAt(mov1.player.transform);  // Regarder le player pour pas qu'il parte en couille   
                 anim.SetBool("Engage", true);
                 coll.enabled = true;
+                RotateTarget();
             }
 
-			if (Distance > FightDistance) // On s'est trop eloigne, plus a porte #Thetoto
+			if (Distance > FightDistance && !nav.enabled) // On s'est trop eloigne, plus a porte #Thetoto
             {
                 nav.enabled = true;
                 coll.enabled = false;
@@ -55,6 +56,17 @@ public class EnnemyAttack : MonoBehaviour
         }
     }
     
+    public void RotateTarget()
+    {
+        Debug.Log("Rotate");
+        Transform target = playerhp.transform;
+        Vector3 targetDir = target.position - hp.transform.position;
+        float step = 3 * Time.deltaTime;
+        Vector3 newDir = Vector3.RotateTowards(hp.transform.forward, targetDir, step, 0.0F);
+        Debug.DrawRay(hp.GetComponent<Transform>().position, newDir, Color.red);
+        hp.transform.rotation = Quaternion.LookRotation(newDir);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")

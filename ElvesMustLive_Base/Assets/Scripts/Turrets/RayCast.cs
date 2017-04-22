@@ -14,7 +14,7 @@ public class RayCast : MonoBehaviour {
 	Material[] materials;
 	SphereCollider sphere;
 	bool placable;
-	PlayerControl script;
+	PlayerControl home;
 	bool NearGround;
 	Vector3 temp;
 	GameObject tempProspect;
@@ -30,8 +30,8 @@ public class RayCast : MonoBehaviour {
 
     void Start () 
 	{
-		script = GetComponentInParent<PlayerControl> ();
-        if (!script.isMine)
+		home = GetComponentInParent<PlayerControl> ();
+        if (!home.isMine)
         {
             return;
         }
@@ -40,46 +40,70 @@ public class RayCast : MonoBehaviour {
 		OKcolor = new Color (0, 255, 0);
 		WRONGColor = new Color (255, 0, 0);
 		NearGround = true;
-
+        
         BuildConfirm = false;
         AvailableTurrets = new List<KeyValuePair<string, int>>();
-        AvailableTurrets.Add(new KeyValuePair<string, int>("Cannon", 10));
-        AvailableTurrets.Add(new KeyValuePair<string, int>("Hammer", 20));
-        AvailableTurrets.Add(new KeyValuePair<string, int>("CrossBow", 30));
-        AvailableTurrets.Add(new KeyValuePair<string, int>("Cristal", 30));
+
+        AddTurret("Cannon");
         //Init
         tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key);
         pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key + "Preview");
         cost = AvailableTurrets[curretTurret].Value;
     }
 
+    public void AddTurret(string turret)
+    {
+        switch (turret)
+        {
+            case "Cannon":
+                AvailableTurrets.Add(new KeyValuePair<string, int>("Cannon", 10));
+                home.MyUI.AddTurret("Cannon", 10);
+                return;
+            case "Hammer":
+                AvailableTurrets.Add(new KeyValuePair<string, int>("Hammer", 20));
+                home.MyUI.AddTurret("Hammer", 20);
+                return;
+            case "CrossBow":
+                AvailableTurrets.Add(new KeyValuePair<string, int>("CrossBow", 30));
+                home.MyUI.AddTurret("CrossBow", 30);
+                return;
+            case "Cristal":
+                AvailableTurrets.Add(new KeyValuePair<string, int>("Cristal", 30));
+                home.MyUI.AddTurret("Cristal", 30);
+                return;
+            default:
+                Debug.LogError("No turret nammed '" + turret + "'");
+                return;
+        }
+    }
+
     void Update()
     {
-        if (script.isMine == false && PhotonNetwork.connected == true)
+        if (home.isMine == false && PhotonNetwork.connected == true)
         {
             return;
         }
 
-        if (Input.GetButtonDown("Build") && !script.useController || (Input.GetButtonDown("2-Build") && script.useController))
+        if (Input.GetButtonDown("Build") && !home.useController || (Input.GetButtonDown("2-Build") && home.useController))
         {
             if (BuildConfirm)
             {
                 if (Confirm())
                 {
-                    script.MyUI.UITurret.SetActive(false);
+                    home.MyUI.UITurret.SetActive(false);
                     BuildConfirm = false;
                 }
 
             }
             else
             {
-                script.MyUI.UITurret.SetActive(true);
+                home.MyUI.UITurret.SetActive(true);
                 SetObjPropect(pretourelle);
                 SetObj(tourelle);
                 BuildConfirm = true;
             }
         }
-        if (Input.GetAxis("Mouse ScrollWheel") > 0 && !script.useController || (Input.GetAxis("2-Mouse ScrollWheel") > 0 && script.useController))
+        if (Input.GetAxis("Mouse ScrollWheel") > 0 && !home.useController || (Input.GetAxis("2-Mouse ScrollWheel") > 0 && home.useController))
         {
             if (BuildConfirm)
             {
@@ -92,7 +116,7 @@ public class RayCast : MonoBehaviour {
             }
         }
 
-        if (Input.GetAxis("Mouse ScrollWheel") < 0 && !script.useController || (Input.GetAxis("2-Mouse ScrollWheel") < 0 && script.useController))
+        if (Input.GetAxis("Mouse ScrollWheel") < 0 && !home.useController || (Input.GetAxis("2-Mouse ScrollWheel") < 0 && home.useController))
         {
             if (BuildConfirm)
             {
@@ -105,14 +129,14 @@ public class RayCast : MonoBehaviour {
             }
         }
 
-        if (Input.GetAxis("Rotate") < 0 && !script.useController || (Input.GetAxis("2-Rotate") < 0 && script.useController))
+        if (Input.GetAxis("Rotate") < 0 && !home.useController || (Input.GetAxis("2-Rotate") < 0 && home.useController))
         {
             if (BuildConfirm)
             {
                 LeftRotate();
             }
         }
-        if (Input.GetAxis("Rotate") > 0 && !script.useController || (Input.GetAxis("2-Rotate") > 0 && script.useController))
+        if (Input.GetAxis("Rotate") > 0 && !home.useController || (Input.GetAxis("2-Rotate") > 0 && home.useController))
         {
             if (BuildConfirm)
             {
@@ -122,7 +146,7 @@ public class RayCast : MonoBehaviour {
         if (Input.GetKey(KeyCode.Escape))
         {
             Cancel();
-            script.MyUI.UITurret.SetActive(false);
+            home.MyUI.UITurret.SetActive(false);
             BuildConfirm = false;
         }
 
@@ -185,13 +209,13 @@ public class RayCast : MonoBehaviour {
 
 	public bool Confirm ()
 	{
-        Debug.Log(script.gold >= cost);
-        Debug.Log(script.gold + ", " + cost);
-		if (placable && NearGround && script.gold >= cost)
+        Debug.Log(home.gold >= cost);
+        Debug.Log(home.gold + ", " + cost);
+		if (placable && NearGround && home.gold >= cost)
 		{
             // Pour que le master client soit le propriétaire, et pas que les tourelles dépop quand on se déco.
-            script.view.RPC("PlaceTurret", PhotonTargets.MasterClient, prerendu.name, gameObject.transform.position, tempProspect.transform.rotation);
-            script.gold -= cost;
+            home.view.RPC("PlaceTurret", PhotonTargets.MasterClient, prerendu.name, gameObject.transform.position, tempProspect.transform.rotation);
+            home.gold -= cost;
             Destroy (tempProspect);
 			initiatable = true;
             return true;
@@ -260,4 +284,6 @@ public class RayCast : MonoBehaviour {
 		initiatable = true;
 		}
 	}
+
+
 }

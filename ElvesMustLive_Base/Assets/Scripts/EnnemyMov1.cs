@@ -4,13 +4,9 @@ using UnityEngine.AI;
 
 public class EnnemyMov1 : Mov
 {
-    public Animator animator;           // Reference to the player's position.
-	public NavMeshAgent nav;               // Reference to the nav mesh agent.
-	public float distance;
+
     EnnemyAttack atkscript;
-    Health hp;
-    public GameObject player;
-	public Transform Destination;
+
 	//InitiateDestination initiate;
 
 

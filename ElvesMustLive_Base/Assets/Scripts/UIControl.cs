@@ -20,8 +20,12 @@ public class UIControl : MonoBehaviour {
     object[] respawnData;
     GameObject camera;
 
+    public Transform TurretList;
+    public int pixelAlignTurret;
+
     // Use this for initialization
     void Start () {
+        pixelAlignTurret = 0;
         game = GameObject.Find("GameManager").GetComponent<Game>();
     }
 	
@@ -64,7 +68,19 @@ public class UIControl : MonoBehaviour {
         Destroy(this.gameObject);// On destroy l'UI qui va être recréé lors de l'instantiation du player
     }
 
-
+    public void AddTurret(string turret, int price)
+    {
+        GameObject obj = (GameObject)Instantiate(Resources.Load("UI/TurretBase"), TurretList);
+        Transform tmp = obj.transform;
+        tmp.position = new Vector3(pixelAlignTurret, tmp.transform.position.y, tmp.transform.position.z);
+        tmp.GetChild(0).GetComponent<UILabel>().text = turret;
+        tmp.GetChild(1).GetComponent<UILabel>().text = "New !";
+        tmp.GetChild(2).GetComponent<UILabel>().text = price + " Golds";
+        tmp.GetChild(4).GetComponent<UISprite>().spriteName = "Orc Armor - Shoulders";
+        tmp.GetComponent<OnClickTurret>().home = home;
+        TurretList.GetComponent<UIGrid>().AddChild(tmp);
+        TurretList.GetComponent<UIGrid>().Reposition();
+    }
 
     public static UIControl SetUI(string mode, PlayerControl home)
     {

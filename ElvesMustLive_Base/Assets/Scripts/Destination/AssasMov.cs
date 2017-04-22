@@ -5,13 +5,9 @@ using UnityEngine.AI;
 
 public class AssasMov : Mov {
 
-	public Animator animator;           // Reference to the player's position.
-	public NavMeshAgent nav;               // Reference to the nav mesh agent.
-	public float distance;
+
 	AssasAttack atkscript;
-	Health hp;
-	public GameObject player;
-	public Transform Destination;
+
 	bool engaged = false;
 	PlayerHealth plyHP;
 	//InitiateDestination initiate;

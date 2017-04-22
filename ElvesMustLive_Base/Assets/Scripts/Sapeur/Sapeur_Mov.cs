@@ -5,11 +5,8 @@ using UnityEngine.AI;
 
 public class Sapeur_Mov : Mov {
 
-	public Animator animator;           // Reference to the player's position.
-	public NavMeshAgent nav;               // Reference to the nav mesh agent.
-	public float distance;
-	Health hp;
-	public Transform Destination;	
+    
+
 	//InitiateDestination initiate;
 
 
