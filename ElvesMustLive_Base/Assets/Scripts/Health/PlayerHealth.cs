@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour {
 
     PlayerControl home;
 
+    public Renderer MainRenderer;
     // Use this for initialization
     void Start ()
 	{
@@ -25,6 +26,7 @@ public class PlayerHealth : MonoBehaviour {
         //healthSlider = Slider.GetComponent<Slider>();
         anim = home.anim;
 		TimerbeforeDeath = 0;
+
     }
    
 
@@ -35,6 +37,17 @@ public class PlayerHealth : MonoBehaviour {
         {
             health = maxhealth;
         }
+
+        /*if (hitStatus)
+        {
+            time += Time.deltaTime;
+            if (time > hitTime)
+            {
+                hitStatus = false;
+                GetComponent<Renderer>().material.color = backColor;
+                time = 0f;
+            }
+        }*/
 	}
 	void FixedUpdate()
 	{
@@ -62,10 +75,14 @@ public class PlayerHealth : MonoBehaviour {
         health -= amount;
         //healthSlider.value = health;
 
+        //MainRenderer.material.color = Color.red;
+
         if (health <= 0)
         {
             Death();
         }
+        
+
     }
 
     public void Death()

@@ -1,46 +1,53 @@
 fileFormatVersion: 2
-guid: bb7a5566d1581f341b5f85a98d8c145a
-timeCreated: 1492874466
+guid: 084bc6b6444afda4a98760cd4c9c9f8f
+timeCreated: 1492880292
 licenseType: Free
-SketchUpImporter:
-  generateBackFace: 0
-  mergeCoplanarFaces: 0
-  selectedNodes: 000000000300000004000000
-  assetHash:
-    serializedVersion: 2
-    Hash: 7102ac7da984d1f98d793a933d4dc5ca
-  longitude: -0.167
-  latitude: 51.5
-  northCorrection: -0
-  fileUnit: 0
-  sketchUpImportData:
-    defaultCamera:
-      position: {x: 0.2919458, y: 0.46345568, z: 2.254324}
-      lookAt: {x: 0.37045416, y: 0.31698257, z: 0.92329705}
-      up: {x: 0.0064296443, y: 0.9940201, z: -0.109007865}
-      fov: 30
-      aspectRatio: 0
-      orthoSize: 1
-      isPerspective: 1
-    scenes: []
+ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Rocket
-    100002: //RootNode
-    100004: Wine Bottle
-    400000: Rocket
-    400002: //RootNode
-    400004: Wine Bottle
-    2300000: Rocket
-    2300002: Wine Bottle
-    3300000: Rocket
-    3300002: Wine Bottle
-    4300000: Mesh Wine Bottle
-    4300002: Mesh Rocket
+    100000: Camera
+    100002: instance_1
+    100004: instance_1_001
+    100006: instance_1_002
+    100008: instance_1_003
+    100010: instance_1_004
+    100012: instance_1_005
+    100014: Lamp
+    100016: SketchUp
+    100018: //RootNode
+    400000: Camera
+    400002: instance_1
+    400004: instance_1_001
+    400006: instance_1_002
+    400008: instance_1_003
+    400010: instance_1_004
+    400012: instance_1_005
+    400014: Lamp
+    400016: SketchUp
+    400018: //RootNode
+    2300000: instance_1
+    2300002: instance_1_001
+    2300004: instance_1_002
+    2300006: instance_1_003
+    2300008: instance_1_004
+    2300010: instance_1_005
+    3300000: instance_1
+    3300002: instance_1_001
+    3300004: instance_1_002
+    3300006: instance_1_003
+    3300008: instance_1_004
+    3300010: instance_1_005
+    4300000: instance_1
+    4300002: instance_1_001
+    4300004: instance_1_002
+    4300006: instance_1_003
+    4300008: instance_1_004
+    4300010: instance_1_005
+    9500000: //RootNode
   materials:
     importMaterials: 1
-    materialName: 2
-    materialSearch: 0
+    materialName: 0
+    materialSearch: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -61,7 +68,7 @@ SketchUpImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.0254
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -80,7 +87,7 @@ SketchUpImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -99,7 +106,7 @@ SketchUpImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
