@@ -71,6 +71,10 @@ public class RayCast : MonoBehaviour {
                 AvailableTurrets.Add(new KeyValuePair<string, int>("Cristal", 30));
                 home.MyUI.AddTurret("Cristal", 30);
                 return;
+            case "Projector":
+                AvailableTurrets.Add(new KeyValuePair<string, int>("Projector", 30));
+                home.MyUI.AddTurret("Projector", 30);
+                return;
             default:
                 Debug.LogError("No turret nammed '" + turret + "'");
                 return;
