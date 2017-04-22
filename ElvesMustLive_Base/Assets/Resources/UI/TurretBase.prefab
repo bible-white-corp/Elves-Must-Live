@@ -39,8 +39,9 @@ GameObject:
   - component: {fileID: 114453398882607104}
   - component: {fileID: 114812963926989862}
   - component: {fileID: 114179806822092358}
+  - component: {fileID: 114542498179369346}
   m_Layer: 8
-  m_Name: Cannon
+  m_Name: TurretBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -277,7 +278,7 @@ MonoBehaviour:
   disabledSprite: 
   pixelSnap: 0
   onClick:
-  - mTarget: {fileID: 0}
+  - mTarget: {fileID: 114542498179369346}
     mMethodName: CallChangeTurret
     mParameters:
     - obj: {fileID: 114315819661027116}
@@ -323,7 +324,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
-  mText: Cannon
+  mText: EMPTY
   mFontSize: 28
   mFontStyle: 0
   mAlignment: 0
@@ -358,6 +359,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollView: {fileID: 0}
   draggablePanel: {fileID: 0}
+--- !u!114 &114542498179369346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1180667413595278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b9e5eacf465c14583cdfa8acb1d7be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  home: {fileID: 0}
 --- !u!114 &114560495031441982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -398,7 +411,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
-  mText: 10 Gold
+  mText: X Gold
   mFontSize: 28
   mFontStyle: 0
   mAlignment: 0
