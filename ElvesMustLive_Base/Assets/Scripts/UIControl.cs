@@ -17,8 +17,7 @@ public class UIControl : MonoBehaviour {
     public bool dead;
     public UILabel DeadText;
     public GameObject Respawn;
-    object[] respawnData;
-    GameObject camera;
+
 
     public Transform TurretList;
     public int pixelAlignTurret;
@@ -47,15 +46,13 @@ public class UIControl : MonoBehaviour {
 
     //Oui, le script de respawn est dans le script de l'UI et oui très sale, et oui c'est full bidouillage :)
 
-    public void DeadMode(object[] data, GameObject camera)
+    public void DeadMode()
     {
-        this.camera = camera;   //Pour virer la camera au click
-        Destroy(UICount.gameObject);
-        Destroy(UIGold.gameObject);
-        Destroy(UIHealth.gameObject);
-        Destroy(UITurret.gameObject);
-
-        respawnData = data;
+        UICount.gameObject.SetActive(false);
+        UIGold.gameObject.SetActive(false);
+        UIHealth.gameObject.SetActive(false);
+        UITurret.gameObject.SetActive(false);
+        
         dead = true;
         DeadText.enabled = true;
         Respawn.SetActive(true);
@@ -63,9 +60,16 @@ public class UIControl : MonoBehaviour {
 
     public void Revive()
     {
-        PhotonNetwork.Instantiate("Perso", game.transform.position, Quaternion.identity, 0, respawnData);
-        Destroy(camera);
-        Destroy(this.gameObject);// On destroy l'UI qui va être recréé lors de l'instantiation du player
+        UICount.gameObject.SetActive(true);
+        UIGold.gameObject.SetActive(true);
+        UIHealth.gameObject.SetActive(true);
+        UITurret.gameObject.SetActive(false);
+
+        dead = false;
+        DeadText.enabled = false;
+        Respawn.SetActive(false);
+
+        home.hp.Respawn();
     }
 
     public void AddTurret(string turret, int price)

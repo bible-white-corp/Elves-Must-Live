@@ -14,7 +14,8 @@ public class PlayerHealth : MonoBehaviour {
     public bool IsDead;
     Rigidbody body;
 	float TimerbeforeDeath;
-	bool IsSinking;
+    bool IsSinking;
+    bool IsRespawning;
 
     PlayerControl home;
 
@@ -61,9 +62,24 @@ public class PlayerHealth : MonoBehaviour {
 			}
             if (TimerbeforeDeath > 4f)
             {
-                PhotonNetwork.Destroy(gameObject);
+                IsSinking = false;
+                TimerbeforeDeath = 0f;
+                FINISH();
             }
 		}
+        if (IsRespawning)
+        {
+            TimerbeforeDeath += Time.deltaTime;
+            if (TimerbeforeDeath > 2.5f)
+            {
+                IsRespawning = false;
+                TimerbeforeDeath = 0f;
+                GetComponent<Rigidbody>().isKinematic = false;
+                home.camscript.m_Target = gameObject.transform;
+                home.transform.position = home.game.transform.position;
+
+            }
+        }
 	}
 
     public void TakeDamage(int amount)
@@ -92,15 +108,28 @@ public class PlayerHealth : MonoBehaviour {
         IsDead = true;
         anim.SetTrigger("Died");
         GetComponent<Rigidbody>().isKinematic = true;
-        // A faire qu'une fois donc demande pas tant de ressources...
-        Destroy(GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>());
-        Destroy(GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>());
-        
+        GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>().enabled = false;
+        GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().enabled = false;
+
         //Destroy(gameObject, 4f);
     }
 
-    private void OnDestroy()
+    private void FINISH()
     {
-        home.MyUI.DeadMode(home.view.instantiationData, home.cam);
+        home.MyUI.DeadMode();
+        
+    }
+
+    public void Respawn()
+    {
+        IsDead = false;
+        anim.SetBool("Died", false);
+        anim.SetTrigger("Respawn");
+
+        GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>().enabled = true;
+        GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().enabled = true;
+
+        health = maxhealth;
+        IsRespawning = true;
     }
 }
