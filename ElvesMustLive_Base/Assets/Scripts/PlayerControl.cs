@@ -103,6 +103,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             raycast.AddTurret("CrossBow");
             raycast.AddTurret("Hammer");
             raycast.AddTurret("Projector");
+            raycast.AddTurret("Rocket");
         }
     }
 
