@@ -10,6 +10,8 @@ public class Collision_Pierce : MonoBehaviour {
 	Health script; //script de la vie de la cible touchee
 	float timerbeforedestruct;
 
+    public int propri;
+
 	void Start () 
 	{
 		FirstHit = false;
@@ -58,7 +60,7 @@ public class Collision_Pierce : MonoBehaviour {
             // Que le master inflige qui va ensuite retransmettre aux autres (pour pas dupliquer les dégats et bien synchro)
         {
             script = coll.gameObject.GetComponent<Health>();
-            script.TakeDamage(damage);
+            script.TakeDamage(damage, propri);
         }
 	}
 }

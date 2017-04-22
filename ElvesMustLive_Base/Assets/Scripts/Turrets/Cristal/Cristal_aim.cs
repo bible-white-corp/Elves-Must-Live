@@ -18,6 +18,8 @@ public class Cristal_aim : MonoBehaviour {
 	public GameObject LaserFrom;
 	bool engage; //ca sert a bidouiller 
 
+    public int propri;
+
 	void Start () 
 	{
 		laser = GetComponent<LineRenderer> ();
@@ -26,7 +28,9 @@ public class Cristal_aim : MonoBehaviour {
 		laserTime = 0f;
 		engage = false;
 		laser.enabled = false;
-	}
+
+        propri = int.Parse(GetComponentInParent<PhotonView>().instantiationData[0].ToString());
+    }
 
 	void Update () 
 
@@ -42,7 +46,7 @@ public class Cristal_aim : MonoBehaviour {
 				laser.SetPosition (0, LaserFrom.transform.position);
 				laser.SetPosition (1, (new Vector3 (currentTarget.transform.position.x, currentTarget.transform.position.y + 1, currentTarget.transform.position.z)));
 				timerbeforeshot = 0f;
-				script.TakeDamage (DirectHitDamage);
+				script.TakeDamage (DirectHitDamage, propri);
 			} 
 		}
 		if (laser.enabled && laserTime < 0.1f) 

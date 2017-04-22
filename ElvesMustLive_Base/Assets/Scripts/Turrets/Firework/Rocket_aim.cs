@@ -18,12 +18,16 @@ public class Rocket_aim : MonoBehaviour {
 	bool engage; //ca sert a bidouiller 
 	public GameObject explosion;
 
+    public int propri;
+
 	void Start () 
 	{
 		LastKnownPosition = Vector3.zero;
 		timerbeforeshot = 0f;
 		engage = false;
-	}
+
+        propri = int.Parse(GetComponentInParent<PhotonView>().instantiationData[0].ToString());
+    }
 
 	void Update () 
 
@@ -84,6 +88,7 @@ public class Rocket_aim : MonoBehaviour {
 		Quaternion temp = new Quaternion (transform.rotation.x,transform.rotation.y,transform.rotation.z,transform.rotation.w) * Quaternion.AngleAxis(90,Vector3.up);
 		//bidouillage de l'extreme a cause du prefab de la rocket qui est à l'envers de base #Nat
 		GameObject Shoot = Instantiate (Bullet,hole.position,temp) as GameObject;
+        Shoot.GetComponent<Rocket_explosion>().propri = propri;
 		Shoot.GetComponent<Rigidbody> ().AddForce (hole.up * 1200); 
 		Destroy (Shoot, 1);
 	}

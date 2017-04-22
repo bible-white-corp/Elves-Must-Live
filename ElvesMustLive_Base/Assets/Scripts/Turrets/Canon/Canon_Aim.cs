@@ -19,11 +19,15 @@ public class Canon_Aim : MonoBehaviour {
 	bool engage; //ca sert a bidouiller 
 	public GameObject explosion;
 
-	void Start () 
+    public int propri;
+
+    void Start () 
 	{
 		LastKnownPosition = Vector3.zero;
 		timerbeforeshot = 0f;
 		engage = false;
+
+        propri = int.Parse(GetComponentInParent<PhotonView>().instantiationData[0].ToString());
 	}
 
 	void Update () 
@@ -86,5 +90,6 @@ public class Canon_Aim : MonoBehaviour {
 		Shoot.GetComponent<Rigidbody> ().AddForce (hole.forward * 2500);
 		Shoot.AddComponent<Collisionexplode> ();
 		Shoot.GetComponent<Collisionexplode> ().SetExplosion (explosion);
-	}
+        Shoot.GetComponent<Collisionexplode>().propri = propri;
+    }
 }

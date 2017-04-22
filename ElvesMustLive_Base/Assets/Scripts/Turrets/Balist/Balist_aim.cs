@@ -18,12 +18,16 @@ public class Balist_aim : MonoBehaviour
 	bool Engage; //bool de condition pour savoir si la baliste vise actuellement une cible
 	public GameObject piercingParticules; //particules jouees quand des cibles sont atteintes
 
+    public int propri;
+
 	void Start () 
 	{
 		LastKnownPosition = Vector3.zero;
 		timebeforeshoot = 0f;
 		Engage = false;
-	}
+
+        propri = int.Parse(GetComponentInParent<PhotonView>().instantiationData[0].ToString());
+    }
 	
 	// Update is called once per frame
 	void Update () 
@@ -112,9 +116,10 @@ public class Balist_aim : MonoBehaviour
 		Shoot.GetComponent<Rigidbody> ().AddForce (hole.forward * 1500);
 		//on lui attribue une force de mouvement
 		Shoot.AddComponent<Collision_Pierce> ();
-		//on attribue au carreau le script de collision
-		Shoot.GetComponent<Collision_Pierce> ().SetPiercing (piercingParticules);
+        Shoot.GetComponent<Collision_Pierce>().propri = propri;
+        //on attribue au carreau le script de collision
+        Shoot.GetComponent<Collision_Pierce> ().SetPiercing (piercingParticules);
 		//on attribue au script de collision les particules a emettre lors de la collision
 		Shoot.GetComponent<Collision_Pierce> ().SetDamage (CrossDamage);
-	}
+    }
 }

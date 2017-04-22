@@ -15,7 +15,6 @@ public class Health : Photon.MonoBehaviour
 	float TimerbeforeDeath;
     public GameObject obj;
     public int reward = 10; //Gold when a player kill.
-    bool earned = false;
 	public int Armor = 0;
 
     public AudioSource audio;
@@ -48,12 +47,9 @@ public class Health : Photon.MonoBehaviour
     // A terme, j'aimerai que ce soit par RPC, pour synchro correctement entre les clients.
     // La personne qui fait des dégats avec son arme envoie aux autres et pas chacun de son coté #Thetoto
     [PunRPC]
-    void SendDamage(int amount, int dest)
+    void SendDamage(int amount, int from)
     {
-        if (PhotonView.Get(gameObject) != photonView)
-        {
-            return;
-        }
+        
         if (IsDead)
         {
             return;
@@ -64,25 +60,31 @@ public class Health : Photon.MonoBehaviour
 		Debug.Log (health);
         if (health <= 0)
         {
-            Death();
+            Death(from);
         }
     }
 
     public void TakeDamage(int amount)
     {
-        photonView.RPC("SendDamage", PhotonTargets.AllBufferedViaServer, amount, photonView.viewID);
+        photonView.RPC("SendDamage", PhotonTargets.AllBufferedViaServer, amount, 0);
+    }
+    public void TakeDamage(int amount, int from)
+    {
+        photonView.RPC("SendDamage", PhotonTargets.AllBufferedViaServer, amount, from);
     }
     public void TakeDamage(int amount, PlayerControl from)
     {
-        photonView.RPC("SendDamage", PhotonTargets.AllBufferedViaServer, amount, photonView.viewID);
-        if (health - amount <= 0 && !earned)
+        photonView.RPC("SendDamage", PhotonTargets.AllBufferedViaServer, amount, from.photonView.viewID);
+        /*if (health - amount <= 0 && !earned)
         {
             from.gold += reward;
             earned = true;
-        }
+        }*/
     }
-    public void Death()
+    public void Death(int killer)
     {
+        PhotonView.Find(killer).GetComponent<PlayerControl>().gold += reward;
+
         audio.Stop();
         AudioClip deathClip = (AudioClip)Resources.Load("Sound/Orc/death");
         audio.PlayOneShot(deathClip);

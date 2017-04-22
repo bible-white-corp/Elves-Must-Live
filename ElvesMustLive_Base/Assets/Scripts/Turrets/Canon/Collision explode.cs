@@ -11,6 +11,8 @@ MonoBehaviour {
 
 	float timer;
 
+    public int propri;
+
 	void Start () 
 	{
 		timer = 0;
@@ -45,9 +47,10 @@ MonoBehaviour {
 	void Explode(Collider coll)
 	{
 		var script = coll.GetComponent<Health> ();
-		script.TakeDamage (damage);
+		script.TakeDamage (damage, propri);
 		this.gameObject.GetComponent<MeshRenderer> ().enabled = false;
 		GameObject boum = Instantiate (explosion,gameObject.transform.position,gameObject.transform.rotation) as GameObject;
+        boum.GetComponent<explosionDamage>().propri = propri;
 		Destroy (boum, 1);
 		autodestruct ();
 

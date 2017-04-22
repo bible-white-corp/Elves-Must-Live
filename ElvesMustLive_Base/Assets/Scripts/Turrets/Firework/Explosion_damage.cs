@@ -5,11 +5,13 @@ using UnityEngine;
 public class Explosion_damage : MonoBehaviour {
 
 	public int damage;
+
+    public int propri;
 	void OnTriggerEnter(Collider coll)
 	{
 		if (coll.tag == "Shootable") 
 		{
-			coll.GetComponent<Health> ().TakeDamage (damage);
+			coll.GetComponent<Health> ().TakeDamage (damage, propri);
 		}
 	}
 }

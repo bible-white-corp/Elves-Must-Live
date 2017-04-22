@@ -49,7 +49,6 @@ public class PlayerAttack : Photon.MonoBehaviour
         {
             health = other.gameObject.GetComponent<Health>();
             health.TakeDamage(AttackDamage, home);
-            Debug.Log(health.health + " after");
         }
         
     }

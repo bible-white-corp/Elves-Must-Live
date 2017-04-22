@@ -222,7 +222,7 @@ public class RayCast : MonoBehaviour {
 		if (placable && NearGround && home.gold >= cost)
 		{
             // Pour que le master client soit le propriétaire, et pas que les tourelles dépop quand on se déco.
-            home.view.RPC("PlaceTurret", PhotonTargets.MasterClient, prerendu.name, gameObject.transform.position, tempProspect.transform.rotation);
+            home.view.RPC("PlaceTurret", PhotonTargets.MasterClient, prerendu.name, gameObject.transform.position, tempProspect.transform.rotation, home.view.viewID);
             home.gold -= cost;
             Destroy (tempProspect);
 			initiatable = true;

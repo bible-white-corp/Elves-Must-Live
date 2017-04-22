@@ -15,6 +15,8 @@ public class Hammer_hit : MonoBehaviour {
 	float reloadtime;
 	float i;
 
+    public int propri;
+
 	void Awake () 
 	{
 		IsElevating = false;
@@ -24,7 +26,9 @@ public class Hammer_hit : MonoBehaviour {
 		crushtimer = 0;
 		reloadtimer = 0;
 		i = 0;
-	}
+
+        propri = int.Parse(GetComponentInParent<PhotonView>().instantiationData[0].ToString());
+    }
 
 	void Update () 
 	{
@@ -96,7 +100,7 @@ public class Hammer_hit : MonoBehaviour {
 		if (PhotonNetwork.isMasterClient && IsFalling && coll.tag == "Shootable")
         // Que le master inflige qui va ensuite retransmettre aux autres (pour pas dupliquer les dégats et bien synchro)
         {
-            coll.gameObject.GetComponent<Health> ().TakeDamage (damage);
+            coll.gameObject.GetComponent<Health> ().TakeDamage (damage, propri);
 		}
 	}
 }
