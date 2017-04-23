@@ -181,7 +181,7 @@ public class RayCast : MonoBehaviour {
 			initiatable = false;
 			if (true) 
 			{
-				tempProspect = Instantiate (prospect,transform.position, new Quaternion(0,0,0,0),transform);
+				tempProspect = Instantiate (prospect ,transform.position, new Quaternion(0,0,0,0),transform);
 				//script2 = tempProspect.GetComponent<Prerenducollision> ();
 				tempProspect.transform.localRotation = Quaternion.Euler (new Vector3 (0, 180, 0));
 				i = tempProspect.transform.localRotation.y;

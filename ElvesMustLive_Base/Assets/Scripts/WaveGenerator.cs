@@ -4,25 +4,37 @@ using UnityEngine;
 
 public class WaveGenerator : MonoBehaviour {
 
-    Game game;
+    public Game game;
 
     public GameMode mode;
-
-    public int count = -1; // Ennemies restants
-    public float ennemyTime = 5;
+    
+    //public float ennemyTime = 5;
     public bool wave = false;
 
     public float time;
-    Queue<KeyValuePair<string, int>> currentWave = new Queue<KeyValuePair<string, int>>();
-    KeyValuePair<string, int> currentEnnemy = new KeyValuePair<string, int> (null, 0);
-    bool wait = false;
+    public Queue<KeyValuePair<string, float>> currentWave = new Queue<KeyValuePair<string, float>>();
+    public KeyValuePair<string, float> currentEnnemy = new KeyValuePair<string, float> (null, 0);
 
     // Use this for initialization
     void Start () {
-        currentWave = mode.LoadNextLevel();
-        count = currentWave.Count;
+        game = GetComponent<Game>();
     }
 	
+    public bool StartWave()
+    {
+        if (!wave && mode.HasNextLevel())
+        {
+            currentWave = mode.LoadNextLevel();
+        }
+        else
+        {
+            return false;
+        }
+        LoadEnnemy();
+        wave = true;
+        return true;
+    }
+
 	// Update is called once per frame
 	void Update () {
         if (!PhotonNetwork.isMasterClient) {
@@ -31,34 +43,44 @@ public class WaveGenerator : MonoBehaviour {
         
         if (wave)
         {
-            if (!wait)
-            {
-                currentEnnemy = currentWave.Dequeue();
-                time = currentEnnemy.Value;
-                wait = true;
-            }
             
             time -= Time.deltaTime;
             if (time <= 0)
             {
-                time = ennemyTime;
+                //time = ennemyTime;
                 PhotonNetwork.InstantiateSceneObject(currentEnnemy.Key, gameObject.transform.position, Quaternion.identity, 0, new object[] { });
-                count = currentWave.Count; // Maybe send via network.
 
-                wait = false;
+
                 if (currentWave.Count == 0)
                 {
                     wave = false;
+                    if (!mode.HasNextLevel())
+                    {
+                        Finish();
+                        return;
+                    }
+                    mode.level += 1;
                     currentWave = mode.LoadNextLevel();
-                    count = currentWave.Count;
+
+                }
+                else
+                {
+                    LoadEnnemy();
                 }
             }
         }
 
-        if (Input.GetKey(KeyCode.Return))
-        {
-            wave = true;
-            //Afficher un texte "Press Enter pour lancer la prochaine vague."
-        }
+
+    }
+
+    public void LoadEnnemy()
+    {
+        currentEnnemy = currentWave.Dequeue();
+        time = currentEnnemy.Value;
+    }
+
+    public void Finish()
+    {
+        Debug.Log("You Win");
     }
 }

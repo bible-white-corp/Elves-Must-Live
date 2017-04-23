@@ -319,6 +319,7 @@ MonoBehaviour:
   Carreau: {fileID: 1964453609272006, guid: a8d019f9f0d661e4f8dd2d6e8bb5276a, type: 2}
   piercingParticules: {fileID: 1767310992160170, guid: c87fc20850f7ba64cb7a5fba978cc53a,
     type: 2}
+  propri: 0
 --- !u!114 &114231364912877018
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 65130841628623830}
   - component: {fileID: 114578805437071030}
   m_Layer: 0
-  m_Name: Rocket_Launcher
+  m_Name: Rocket
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -399,6 +399,7 @@ MonoBehaviour:
   sortie: {fileID: 4632435273376330}
   Bullet: {fileID: 1632570760996808, guid: 2c2a6d6e70cdf2a4c938c919492d347a, type: 2}
   explosion: {fileID: 140836, guid: abbd30527c703dd4b99abf8c55af397a, type: 2}
+  propri: 0
 --- !u!114 &114578805437071030
 MonoBehaviour:
   m_ObjectHideFlags: 1

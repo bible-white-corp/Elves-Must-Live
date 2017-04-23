@@ -14,17 +14,24 @@ public class Game : MonoBehaviour {
     public bool Online;
     public bool SinglePlayer;
 
+    public GameMode mode;
+
 
 
 
     // Use this for initialization
     void Awake()
     {
+
         global = gameObject;
         if (PlayerPrefs.GetInt("mod") == 1)
         {
             Splited = true;
         }
+        /////////////////////////////////////////////////
+        wave = gameObject.AddComponent<WaveGenerator>();
+        mode = gameObject.AddComponent<Endless>();
+        wave.mode = mode;
     }
 
     private void Start()
@@ -35,7 +42,14 @@ public class Game : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            if (!wave.StartWave())
+            {
+                Debug.Log("No level left");
+            }
+            //Afficher un texte "Press Enter pour lancer la prochaine vague."
+        }
 
         if (Input.GetKey(KeyCode.Space))
         {

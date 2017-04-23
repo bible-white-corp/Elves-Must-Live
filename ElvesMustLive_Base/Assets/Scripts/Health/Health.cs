@@ -83,8 +83,14 @@ public class Health : Photon.MonoBehaviour
     }
     public void Death(int killer)
     {
-        PhotonView.Find(killer).GetComponent<PlayerControl>().gold += reward;
-
+        try
+        {
+            PhotonView.Find(killer).GetComponent<PlayerControl>().gold += reward;
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("No Killer...");
+        }
         audio.Stop();
         AudioClip deathClip = (AudioClip)Resources.Load("Sound/Orc/death");
         audio.PlayOneShot(deathClip);

@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 54354398885450406}
   - component: {fileID: 114641447071657458}
   m_Layer: 8
-  m_Name: UILeft
+  m_Name: UIMulti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3749,6 +3749,8 @@ MonoBehaviour:
   dead: 0
   DeadText: {fileID: 0}
   Respawn: {fileID: 0}
+  TurretList: {fileID: 0}
+  pixelAlignTurret: 0
 --- !u!114 &114656975470775084
 MonoBehaviour:
   m_ObjectHideFlags: 1

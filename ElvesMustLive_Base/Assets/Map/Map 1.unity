@@ -850,12 +850,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1263173713}
   - component: {fileID: 1263173716}
-  - component: {fileID: 1263173709}
   - component: {fileID: 1263173715}
   - component: {fileID: 1263173712}
   - component: {fileID: 1263173710}
   - component: {fileID: 1263173714}
-  - component: {fileID: 1263173711}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: MainCamera
@@ -863,22 +861,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1263173709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1263173708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 013a487b25679da44b3a01f92ba31ce3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mode: {fileID: 1263173711}
-  count: 0
-  ennemyTime: 5
-  wave: 0
-  time: 0
 --- !u!81 &1263173710
 AudioListener:
   m_ObjectHideFlags: 0
@@ -886,19 +868,6 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1263173708}
   m_Enabled: 1
---- !u!114 &1263173711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1263173708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4beee9a2009f18449f53437b24c0096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wave: {fileID: 1263173709}
-  level: 0
 --- !u!20 &1263173712
 Camera:
   m_ObjectHideFlags: 0
@@ -976,10 +945,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   global: {fileID: 0}
   tchat: {fileID: 0}
-  wave: {fileID: 1263173709}
+  wave: {fileID: 0}
   Splited: 0
   Online: 0
   SinglePlayer: 0
+  mode: {fileID: 0}
 --- !u!114 &1263173716
 MonoBehaviour:
   m_ObjectHideFlags: 0

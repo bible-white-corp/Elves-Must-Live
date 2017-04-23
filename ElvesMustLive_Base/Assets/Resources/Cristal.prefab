@@ -419,6 +419,7 @@ MonoBehaviour:
   TurretsSpeed: 100
   reloadtime: 0.75
   LaserFrom: {fileID: 1865365147049620}
+  propri: 0
 --- !u!120 &120671784220769062
 LineRenderer:
   m_ObjectHideFlags: 1

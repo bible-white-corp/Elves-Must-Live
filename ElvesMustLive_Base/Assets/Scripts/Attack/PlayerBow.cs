@@ -77,6 +77,7 @@ public class PlayerBow : Photon.MonoBehaviour
                 anim.SetTrigger("Arrow");
 
                 arrow = PhotonNetwork.Instantiate("Arrow", fpscam.transform.position, Quaternion.Euler(fpscam.transform.rotation.eulerAngles),0);
+                arrow.GetComponent<ArrowScript>().from = home.view.viewID;
                 //arrow.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
                 arrow.GetComponent<Rigidbody>().velocity = fpscam.transform.forward * 40;
                 t = 0f;

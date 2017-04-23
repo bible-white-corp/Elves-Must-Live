@@ -93,6 +93,8 @@ namespace UnityStandardAssets.Cameras
 
             // Adjust the look angle by an amount proportional to the turn speed and horizontal input.
             m_LookAngle += x*m_TurnSpeed;
+            m_LookAngle = (m_LookAngle + 360) % 360;
+
 
             // Rotate the rig (the root object) around Y axis only:
             m_TransformTargetRot = Quaternion.Euler(0f, m_LookAngle, 0f);
@@ -130,6 +132,18 @@ namespace UnityStandardAssets.Cameras
         public void LookPlayer(float h, float v)
         {
             Debug.Log(m_LookAngle + " to " + h);
+            float tmp = m_LookAngle - h;
+            if (Mathf.Abs(tmp) > 180)
+            {
+                if (tmp > 0)
+                {
+                    h = h+360;
+                }
+                else
+                {
+                    h = h-360;
+                }
+            }
             m_LookAngle = Mathf.SmoothStep(m_LookAngle, h, 0.3f);
             m_TiltAngle = Mathf.SmoothStep(m_TiltAngle, v, 0.3f);
         }

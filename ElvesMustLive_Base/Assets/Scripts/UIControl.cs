@@ -6,6 +6,7 @@ public class UIControl : MonoBehaviour {
 
     public GameObject UITurret;
     public UILabel UIGold;
+    public UILabel UIModeLevel;
     public UILabel UICount;
     public UISlider UIHealth;
     public OnClickTurret scriptClick;
@@ -39,7 +40,8 @@ public class UIControl : MonoBehaviour {
         {
             UIHealth.value = home.hp.health / home.hp.maxhealth;
             UIGold.text = home.gold + " Golds";
-            UICount.text = game.wave.count + " restants";
+            UICount.text = game.wave.currentWave.Count + " restants";
+            UIModeLevel.text = "Level " + game.wave.mode.level;
         }
     }
 
@@ -88,7 +90,22 @@ public class UIControl : MonoBehaviour {
 
     public static UIControl SetUI(string mode, PlayerControl home)
     {
-        UIControl UI = ((GameObject)Instantiate(Resources.Load("UI" + mode))).GetComponent<UIControl>();
+        UIControl UI;
+        if (mode == "Left")
+        {
+            UI = ((GameObject)Instantiate(Resources.Load("UI/UIMulti"))).GetComponent<UIControl>();
+            UI.GetComponentInChildren<Camera>().rect = new Rect(0, 0, 0.5f, 1);
+        }
+        else if (mode == "Right")
+        {
+            UI = ((GameObject)Instantiate(Resources.Load("UI/UIMulti"))).GetComponent<UIControl>();
+            UI.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0, 1, 1);
+        }
+        else
+        {
+            UI = ((GameObject)Instantiate(Resources.Load("UI/UISinglePlayer"))).GetComponent<UIControl>();
+        }
+
         UI.home = home;
         UI.scriptClick.home = home;
         UI.UITurret.SetActive(false);
