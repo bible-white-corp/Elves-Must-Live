@@ -55,7 +55,7 @@ MonoBehaviour:
   mSprites:
   - name: Cannon
     x: 1681
-    y: 1788
+    y: 1448
     width: 323
     height: 260
     borderLeft: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
     paddingBottom: 83
   - name: Cristal
     x: 1538
-    y: 548
+    y: 295
     width: 183
     height: 367
     borderLeft: 0
@@ -81,7 +81,7 @@ MonoBehaviour:
     paddingBottom: 19
   - name: CrossBow
     x: 1681
-    y: 1027
+    y: 940
     width: 340
     height: 187
     borderLeft: 0
@@ -106,8 +106,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Hammer
-    x: 1538
-    y: 169
+    x: 1722
+    y: 284
     width: 164
     height: 378
     borderLeft: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Projector
     x: 1681
-    y: 1468
+    y: 1128
     width: 243
     height: 319
     borderLeft: 0
@@ -144,9 +144,22 @@ MonoBehaviour:
     paddingRight: 82
     paddingTop: 45
     paddingBottom: 36
-  - name: Rocket
+  - name: Regen
     x: 1681
-    y: 1215
+    y: 1709
+    width: 299
+    height: 339
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 39
+    paddingRight: 62
+    paddingTop: 23
+    paddingBottom: 38
+  - name: Rocket
+    x: 1538
+    y: 663
     width: 281
     height: 252
     borderLeft: 0

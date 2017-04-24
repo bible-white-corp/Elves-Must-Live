@@ -302,11 +302,11 @@ GameObject:
   - component: {fileID: 1053587687}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!154 &1053587687
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 1430643865}
   m_Layer: 0
   m_Name: Terrain foret
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -578,13 +578,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1593280844}
-  m_LocalRotation: {x: 0.5193212, y: -0.20608139, z: 0.077527225, w: 0.8257272}
+  m_LocalRotation: {x: 0.70469606, y: -0.18101157, z: 0.12535878, w: 0.6744802}
   m_LocalPosition: {x: 147, y: 132.1, z: 52.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 62.822002, y: -34.667, z: -10.854}
+  m_LocalEulerAnglesHint: {x: 84.867004, y: -131.02301, z: -105.975006}
 --- !u!1 &1639270091
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 1639270092}
   m_Layer: 0
   m_Name: Terrain Turrets
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
