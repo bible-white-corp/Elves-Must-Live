@@ -86,7 +86,7 @@ public class UIControl : MonoBehaviour {
         tmp.GetChild(0).GetComponent<UILabel>().text = turret;
         tmp.GetChild(1).GetComponent<UILabel>().text = "New !";
         tmp.GetChild(2).GetComponent<UILabel>().text = price + " Golds";
-        tmp.GetChild(4).GetComponent<UISprite>().spriteName = "Orc Armor - Shoulders";
+        tmp.GetChild(4).GetComponent<UISprite>().spriteName = turret;
         tmp.GetComponent<OnClickTurret>().home = home;
         TurretList.GetComponent<UIGrid>().AddChild(tmp);
         TurretList.GetComponent<UIGrid>().Reposition();
