@@ -53,6 +53,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: ae6ed4283436c964c865cb1ef75f57a1, type: 2}
   mSprites:
+  - name: Cannon
+    x: 1681
+    y: 1788
+    width: 323
+    height: 260
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 54
+    paddingTop: 57
+    paddingBottom: 83
+  - name: Cristal
+    x: 1538
+    y: 548
+    width: 183
+    height: 367
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 104
+    paddingRight: 113
+    paddingTop: 14
+    paddingBottom: 19
+  - name: CrossBow
+    x: 1681
+    y: 1027
+    width: 340
+    height: 187
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 28
+    paddingRight: 32
+    paddingTop: 104
+    paddingBottom: 109
   - name: elven_wallpaper_003
     x: 0
     y: 916
@@ -65,6 +104,19 @@ MonoBehaviour:
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
+    paddingBottom: 0
+  - name: Hammer
+    x: 1538
+    y: 169
+    width: 164
+    height: 378
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 94
+    paddingRight: 142
+    paddingTop: 22
     paddingBottom: 0
   - name: LogoEML
     x: 0
@@ -79,6 +131,32 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 0
     paddingBottom: 0
+  - name: Projector
+    x: 1681
+    y: 1468
+    width: 243
+    height: 319
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 75
+    paddingRight: 82
+    paddingTop: 45
+    paddingBottom: 36
+  - name: Rocket
+    x: 1681
+    y: 1215
+    width: 281
+    height: 252
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 88
+    paddingRight: 31
+    paddingTop: 74
+    paddingBottom: 74
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0
