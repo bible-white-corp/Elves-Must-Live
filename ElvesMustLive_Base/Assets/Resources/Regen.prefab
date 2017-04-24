@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 64719897850692184}
   - component: {fileID: 114497818448129420}
   m_Layer: 0
-  m_Name: Regen_tower
+  m_Name: Regen
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

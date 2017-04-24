@@ -83,6 +83,10 @@ public class RayCast : MonoBehaviour {
                 AvailableTurrets.Add(new KeyValuePair<string, int>("Rocket", 30));
                 home.MyUI.AddTurret("Rocket", 30);
                 return;
+            case "Regen":
+                AvailableTurrets.Add(new KeyValuePair<string, int>("Regen", 30));
+                home.MyUI.AddTurret("Regen", 30);
+                return;
             default:
                 Debug.LogError("No turret nammed '" + turret + "'");
                 return;
