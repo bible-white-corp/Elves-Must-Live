@@ -15,6 +15,7 @@ TagManager:
   - Ground
   - Obstacle
   - Soutenance Debug
+  - regen
   layers:
   - Default
   - TransparentFX
