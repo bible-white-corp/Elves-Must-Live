@@ -20,6 +20,8 @@ public class Launcher : Photon.PunBehaviour
 
     public LoadProgress progress;
 
+    public string LevelName;
+
     #endregion
 
 
@@ -49,6 +51,7 @@ public class Launcher : Photon.PunBehaviour
     /// </summary>
     void Awake()
     {
+        LevelName = "Map/Map 1";
         // #Critical
         // we don't join the lobby. There is no need to join a lobby to get the list of rooms.
         PhotonNetwork.autoJoinLobby = false;
@@ -137,7 +140,7 @@ public class Launcher : Photon.PunBehaviour
         Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
         progress.NetworkState = 1;
 
-        progress.LoadALevel("Map/Map 1");
+        progress.LoadALevel(LevelName);
     }
 
     public override void OnDisconnectedFromPhoton()
