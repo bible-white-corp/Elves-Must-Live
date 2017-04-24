@@ -20,9 +20,10 @@ public class Canon_Aim : MonoBehaviour {
 	public GameObject explosion;
 
     public int propri;
-
+    AudioClip cannonClip;
     void Start () 
 	{
+        cannonClip = (AudioClip)Resources.Load("Sound/Cannon");
 		LastKnownPosition = Vector3.zero;
 		timerbeforeshot = 0f;
 		engage = false;
@@ -91,5 +92,6 @@ public class Canon_Aim : MonoBehaviour {
 		Shoot.AddComponent<Collisionexplode> ();
 		Shoot.GetComponent<Collisionexplode> ().SetExplosion (explosion);
         Shoot.GetComponent<Collisionexplode>().propri = propri;
+        GetComponent<AudioSource>().PlayOneShot(cannonClip);
     }
 }

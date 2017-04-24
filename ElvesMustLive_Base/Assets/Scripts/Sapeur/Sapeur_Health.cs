@@ -11,9 +11,11 @@ public class Sapeur_Health : Photon.MonoBehaviour {
 	GameObject boum;
 	public GameObject SAPEUR_explosion;
 	public GameObject TNT;
+    AudioClip boumClip;
 
 	void Start()
 	{
+        boumClip = (AudioClip)Resources.Load("Sound/Boum");
 		Dead = false;
 		script = GetComponent<Health> ();
 	}
@@ -25,7 +27,8 @@ public class Sapeur_Health : Photon.MonoBehaviour {
 			Dead = true;
 			boum = Instantiate (SAPEUR_explosion, TNT.transform.position, TNT.transform.rotation);
 			Destroy (TNT);
-			Destroy (boum, 1);
+            GetComponent<AudioSource>().PlayOneShot(boumClip);
+			Destroy (boum, 1.5f);
 		}
 	}
 }

@@ -26,6 +26,7 @@ public class PlayerControl : Photon.MonoBehaviour {
     [HideInInspector]
     public FreeLookCam camscript;
 
+    public bool MenuActif = false;
 
     public int screen; // 0 = full, 1 = left, 2 = right
 
@@ -76,6 +77,11 @@ public class PlayerControl : Photon.MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+        if (MenuActif)
+        {
+            //anim.SetBool("InMov", false);
+        }
+
         if (isMine == false && PhotonNetwork.connected == true)
         {
             return;
@@ -91,10 +97,12 @@ public class PlayerControl : Photon.MonoBehaviour {
             if (MyUI.boutikScript.gameObject.GetActive())
             {
                 MyUI.boutikScript.gameObject.SetActive(false);
+                MenuActif = false;
             }
             else
             {
                 MyUI.boutikScript.gameObject.SetActive(true);
+                MenuActif = true;
             }
         }
 

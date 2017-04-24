@@ -23,7 +23,7 @@ public class PlayerAttack : Photon.MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (home.isMine == false && PhotonNetwork.connected == true || home.game.paused)
+        if (home.isMine == false && PhotonNetwork.connected == true || home.game.paused || home.MenuActif)
         {
             return;
         }

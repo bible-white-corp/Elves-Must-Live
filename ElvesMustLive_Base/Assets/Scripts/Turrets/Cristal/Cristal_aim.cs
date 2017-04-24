@@ -18,10 +18,12 @@ public class Cristal_aim : MonoBehaviour {
 	public GameObject LaserFrom;
 	bool engage; //ca sert a bidouiller 
 
+    AudioClip cristalClip;
     public int propri;
 
 	void Start () 
 	{
+        cristalClip = (AudioClip)Resources.Load("Sound/cristal");
 		laser = GetComponent<LineRenderer> ();
 		LastKnownPosition = Vector3.zero;
 		timerbeforeshot = 0f;
@@ -47,6 +49,7 @@ public class Cristal_aim : MonoBehaviour {
 				laser.SetPosition (1, (new Vector3 (currentTarget.transform.position.x, currentTarget.transform.position.y + 1, currentTarget.transform.position.z)));
 				timerbeforeshot = 0f;
 				script.TakeDamage (DirectHitDamage, propri);
+                GetComponent<AudioSource>().PlayOneShot(cristalClip);
 			} 
 		}
 		if (laser.enabled && laserTime < 0.1f) 

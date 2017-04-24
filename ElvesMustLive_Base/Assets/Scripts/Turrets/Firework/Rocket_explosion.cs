@@ -20,12 +20,14 @@ public class Rocket_explosion : MonoBehaviour {
 	
 	void Explode (Collider coll)
 	{
-		foreach (GameObject pos in list)
+        GameObject temp = null;
+        foreach (GameObject pos in list)
 		{
-			GameObject temp = Instantiate (explosion, pos.transform.position, pos.transform.rotation);
+			temp = Instantiate (explosion, pos.transform.position, pos.transform.rotation);
             temp.GetComponent<Explosion_damage>().propri = propri;
 			Destroy (temp, 1);
 		}
+        temp.GetComponent<Explosion_damage>().PlaySound(); // Comme ca uniquement le dernier fait du bruit...
 		Destroy (gameObject);
 	}
 }

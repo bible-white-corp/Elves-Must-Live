@@ -41,7 +41,7 @@ public class PlayerBow : Photon.MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (home.isMine == false && PhotonNetwork.connected == true)
+        if (home.isMine == false && PhotonNetwork.connected == true || home.game.paused || home.MenuActif)
         {
             return;
         }
