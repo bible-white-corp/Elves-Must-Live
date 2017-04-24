@@ -47,9 +47,12 @@ public class Boutique : MonoBehaviour {
         }
         else if (WeaponsSel && currentWeapon != null)
         {
-            log.text = "Weapon buy is not setup";
-            //Destroy(currentWeapon);
-            //WeaponList.GetComponent<UIGrid>().Reposition();
+            home.weapons.AddWeapon(currentWeapon.transform.GetChild(0).GetComponent<UILabel>().text);
+            WeaponList.GetComponent<UIGrid>().RemoveChild(currentWeapon.transform.GetSiblingIndex());
+            Destroy(currentWeapon);
+            WeaponList.GetComponent<UIGrid>().Reposition();
+            currentWeapon = null;
+            selected.text = "Select a object";
             ShowWeapons();
         }
         else
@@ -67,7 +70,12 @@ public class Boutique : MonoBehaviour {
             int price = int.Parse(obj.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
             selected.text = str + " : " + price + " Gold";
         }
-
+        else
+        {
+            selected.text = "Select a Turret";
+        }
+        WeaponsSel = false;
+        TurretsSel = true;
         WeaponList.SetActive(false);
         TurretList.SetActive(false);
         TurretList.SetActive(true);
@@ -82,6 +90,12 @@ public class Boutique : MonoBehaviour {
             int price = int.Parse(obj.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
             selected.text = str + " : " + price + " Gold";
         }
+        else
+        {
+            selected.text = "Select a Weapon";
+        }
+        WeaponsSel = true;
+        TurretsSel = false;
         TurretList.SetActive(false);
         WeaponList.SetActive(false);
         WeaponList.SetActive(true);

@@ -14,10 +14,10 @@ public class PlayerControl : Photon.MonoBehaviour {
     public int gold;
     public PhotonView view;
     public bool isMine;
-    public List<GameObject> weapon;
     public TextMesh txtname;
     public RayCast raycast;
     public bool useController = false;
+    public Switch weapons;
 
     public Game game;
 
@@ -133,12 +133,12 @@ public class PlayerControl : Photon.MonoBehaviour {
     [PunRPC]
     public void ActiveW(int i)
     {
-        weapon[i].SetActive(true);
+        weapons.availableWeapon[i].SetActive(true);
     }
     [PunRPC]
     public void DesactiveW(int i)
     {
-        weapon[i].SetActive(false);
+        weapons.availableWeapon[i].SetActive(false);
     }
     [PunRPC]
     public void PlaceTurret(string name, Vector3 pos, Quaternion rot, int propri)

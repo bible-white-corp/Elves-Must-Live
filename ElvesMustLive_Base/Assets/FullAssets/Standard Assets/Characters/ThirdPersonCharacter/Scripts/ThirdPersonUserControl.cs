@@ -71,6 +71,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         {
             if (home.MenuActif)
             {
+                m_Character.m_ForwardAmount = 0f;
                 m_Move = Vector3.zero;
                 return;
             }

@@ -8,7 +8,7 @@ public class Switch : Photon.MonoBehaviour
     Animator anim;
     float timer;
     bool timeout = false;
-    List<GameObject> weapons = new List<GameObject>();
+    public List<GameObject> weapon = new List<GameObject>();
     public List<GameObject> availableWeapon = new List<GameObject>(); 
     public int CurrentW = 0;
 
@@ -23,19 +23,24 @@ public class Switch : Photon.MonoBehaviour
         anim = home.anim;
         foreach (Transform child in gameObject.transform)
         {
-            weapons.Add(child.gameObject);
+            weapon.Add(child.gameObject);
         }
-
-        availableWeapon.Add(weapons.Find(x => x.name == "Sword1"));
-        availableWeapon.Add(weapons.Find(x => x.name == "Spear1"));
-        availableWeapon.Add(weapons.Find(x => x.name == "Arc1"));
-
-        home.weapon = availableWeapon;
+        
+        AddWeapon("Sword1");
+        
         ChangeW(0);
     }
 	
-	// Update is called once per frame  
-	void Update () 
+    public void AddWeapon(string str)
+    {
+        if (!availableWeapon.Exists(x=>x.name == str))
+        {
+            availableWeapon.Add(weapon.Find(x => x.name == str));
+        }
+    }
+
+    // Update is called once per frame  
+    void Update () 
 	{
         if (home.isMine == false && PhotonNetwork.connected == true)
         {
