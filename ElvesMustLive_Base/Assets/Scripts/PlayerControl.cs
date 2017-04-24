@@ -86,6 +86,18 @@ public class PlayerControl : Photon.MonoBehaviour {
             gold += 10;
         }
 
+        if (Input.GetKeyDown("v"))
+        {
+            if (MyUI.boutikScript.gameObject.GetActive())
+            {
+                MyUI.boutikScript.gameObject.SetActive(false);
+            }
+            else
+            {
+                MyUI.boutikScript.gameObject.SetActive(true);
+            }
+        }
+
         if (Input.GetKeyDown("t"))
         {
             MyUI.tchat.SetActive(!MyUI.tchat.activeSelf);

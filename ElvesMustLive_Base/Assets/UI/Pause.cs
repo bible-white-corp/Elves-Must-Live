@@ -3,20 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Pause : MonoBehaviour {
+    
+    Game game;
 
-    public bool paused = false;
+    private void Start()
+    {
+        game = GameObject.Find("GameManager").GetComponent<Game>();
+    }
 
     public void PauseGame()
     {
-        if (paused)
-        {
-            Time.timeScale = 1;
-            paused = false;
-        }
-        else
-        {
-            Time.timeScale = 0;
-            paused = true;
-        }
+        game.PauseGame();
     }
 }

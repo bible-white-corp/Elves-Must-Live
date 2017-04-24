@@ -16,7 +16,7 @@ public class Game : MonoBehaviour {
 
     public GameMode mode;
 
-
+    public bool paused = false;
 
 
     // Use this for initialization
@@ -86,6 +86,20 @@ public class Game : MonoBehaviour {
         {
             GUI.color = Color.black;
             GUI.Box(new Rect(Screen.width / 2, 0, 5, Screen.height), "");
+        }
+    }
+
+    public void PauseGame()
+    {
+        if (paused)
+        {
+            Time.timeScale = 1;
+            paused = false;
+        }
+        else
+        {
+            Time.timeScale = 0;
+            paused = true;
         }
     }
 

@@ -53,6 +53,10 @@ public class RayCast : MonoBehaviour {
 
     public void AddTurret(string turret)
     {
+        if (AvailableTurrets.Exists(x => x.Key == turret)) // Si la tourelle on la possède déja...
+        {
+            return;
+        }
         switch (turret)
         {
             case "Cannon":
@@ -87,7 +91,7 @@ public class RayCast : MonoBehaviour {
 
     void Update()
     {
-        if (home.isMine == false && PhotonNetwork.connected == true)
+        if (home.isMine == false && PhotonNetwork.connected == true || home.game.paused)
         {
             return;
         }

@@ -11,6 +11,7 @@ public class UIControl : MonoBehaviour {
     public UISlider UIHealth;
     public OnClickTurret scriptClick;
     public GameObject tchat;
+    public Boutique boutikScript;
 
     Game game;
     public PlayerControl home;
@@ -76,6 +77,9 @@ public class UIControl : MonoBehaviour {
 
     public void AddTurret(string turret, int price)
     {
+        bool state = UITurret.GetActive();
+        UITurret.SetActive(true);
+
         GameObject obj = (GameObject)Instantiate(Resources.Load("UI/TurretBase"), TurretList);
         Transform tmp = obj.transform;
         tmp.position = new Vector3(pixelAlignTurret, tmp.transform.position.y, tmp.transform.position.z);
@@ -86,6 +90,8 @@ public class UIControl : MonoBehaviour {
         tmp.GetComponent<OnClickTurret>().home = home;
         TurretList.GetComponent<UIGrid>().AddChild(tmp);
         TurretList.GetComponent<UIGrid>().Reposition();
+
+        UITurret.SetActive(state);
     }
 
     public static UIControl SetUI(string mode, PlayerControl home)
@@ -108,6 +114,7 @@ public class UIControl : MonoBehaviour {
 
         UI.home = home;
         UI.scriptClick.home = home;
+        UI.boutikScript.home = home;
         UI.UITurret.SetActive(false);
         return UI;
     }
