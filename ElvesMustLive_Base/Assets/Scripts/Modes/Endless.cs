@@ -69,16 +69,16 @@ public class Endless : GameMode {
 
         for (int i = 0; i < Mathf.Pow(2,level-1); i++)
         {
-            float maxWait = 5f - i;
+            float maxWait = 5f - level;
             if (maxWait < 1f)
             {
                 maxWait = 1f;
             }
-            queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], 0));
+            queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], 2f));
             queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], UnityEngine.Random.Range(0f, maxWait)));
             queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], UnityEngine.Random.Range(0f, maxWait)));
             queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], UnityEngine.Random.Range(0f, maxWait)));
-            queue.Enqueue(new KeyValuePair<string, float>("Boss"+((i%3)+1), 5f));
+            queue.Enqueue(new KeyValuePair<string, float>("Boss"+((i%3)+1), 4f));
         }
 
         return queue;
