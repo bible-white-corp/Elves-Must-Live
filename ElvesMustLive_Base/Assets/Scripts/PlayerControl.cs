@@ -27,6 +27,7 @@ public class PlayerControl : Photon.MonoBehaviour {
     public FreeLookCam camscript;
 
     public bool MenuActif = false;
+	public bool ChatActif = false;
 
     public int screen; // 0 = full, 1 = left, 2 = right
 
@@ -92,7 +93,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             gold += 10;
         }
 
-        if (Input.GetKeyDown("v"))
+		if (Input.GetKeyDown("v") && !ChatActif)
         {
             if (MyUI.boutikScript.gameObject.GetActive())
             {
@@ -106,9 +107,34 @@ public class PlayerControl : Photon.MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown("t"))
+		if (Input.GetKeyDown ("escape")) 
+		{
+			if (ChatActif) 
+			{
+				MyUI.tchat.SetActive (!MyUI.tchat.activeSelf);
+				MyUI.tchat.GetComponentInChildren<UIInput> ().isSelected = true;
+				ChatActif = false;
+				MenuActif = false;
+			} 
+			else if (MenuActif) 
+			{
+				MyUI.boutikScript.gameObject.SetActive (false);
+				MenuActif = false;
+			} 
+			else
+			{
+				//MENU PAUSE
+			}
+		}
+
+		if (Input.GetKeyDown("t") && !MenuActif)
         {
+			if (!ChatActif)
+			{
             MyUI.tchat.SetActive(!MyUI.tchat.activeSelf);
+				ChatActif = true;
+				MenuActif = true;
+			}
         }
 
         if (!useController && Input.GetButton("CenterCam") || useController && Input.GetButton("2-CenterCam")) //CenterCam = x
