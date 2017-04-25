@@ -328,7 +328,7 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 129601edd70335e4caa148bf8a2eb588, type: 2}
-  m_TreeDistance: 2000
+  m_TreeDistance: 733
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
@@ -413,7 +413,7 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: d2a1160492a0b07439aab860705a2485, type: 2}
-  m_TreeDistance: 2000
+  m_TreeDistance: 667
   m_TreeBillboardDistance: 50
   m_TreeCrossFadeLength: 5
   m_TreeMaximumFullLODCount: 50
