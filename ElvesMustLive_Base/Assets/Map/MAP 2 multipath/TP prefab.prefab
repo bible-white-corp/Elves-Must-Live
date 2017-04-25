@@ -54,10 +54,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4918278985210474}
   - component: {fileID: 33280322381675478}
-  - component: {fileID: 136565937078096424}
   - component: {fileID: 23171566903291490}
+  - component: {fileID: 114025070984615830}
+  - component: {fileID: 64180148463895778}
+  - component: {fileID: 65572409099053654}
   m_Layer: 0
-  m_Name: TP 1
+  m_Name: TP prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1497350055917062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 202.38, y: 0.91, z: 69.76}
+  m_LocalPosition: {x: 201.41798, y: 0.42, z: 68.03525}
   m_LocalScale: {x: 4.697404, y: 1, z: 4.274415}
   m_Children:
   - {fileID: 4992594362823204}
@@ -142,8 +144,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1497350055917062}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!136 &136565937078096424
-CapsuleCollider:
+--- !u!64 &64180148463895778
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -151,10 +153,35 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &65572409099053654
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497350055917062}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 7, z: 0.5}
+  m_Center: {x: 0.000000059604645, y: 4.4, z: -0.00000008940697}
+--- !u!114 &114025070984615830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497350055917062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ab66e95bcf5caa49a7ba90535149e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TpPosition: {fileID: 0}
 --- !u!198 &198016743832937428
 ParticleSystem:
   m_ObjectHideFlags: 1

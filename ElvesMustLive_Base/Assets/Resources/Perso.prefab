@@ -3917,7 +3917,6 @@ MonoBehaviour:
   gold: 0
   view: {fileID: 0}
   isMine: 0
-  weapon: []
   txtname: {fileID: 102659983886766678}
   raycast: {fileID: 114534507588710154}
   useController: 0
@@ -3982,6 +3981,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae79ba76bc72dbc4cb5a2867b77b8a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: []
   availableWeapon: []
   CurrentW: 0
 --- !u!114 &114518915507813808
@@ -4208,7 +4208,7 @@ MonoBehaviour:
   m_RunCycleLegOffset: 0.2
   m_MoveSpeedMultiplier: 1
   m_AnimSpeedMultiplier: 1
-  m_GroundCheckDistance: 0.1
+  m_GroundCheckDistance: 0.5
   m_ForwardAmount: 0
 --- !u!114 &114949562220151648
 MonoBehaviour:
