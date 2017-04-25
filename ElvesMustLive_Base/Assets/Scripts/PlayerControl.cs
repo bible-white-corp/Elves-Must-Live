@@ -95,7 +95,16 @@ public class PlayerControl : Photon.MonoBehaviour {
             gold += 10;
         }
 
-		if (Input.GetKeyDown("v") && !ChatActif && !MenuActif)
+        if (Input.GetKeyDown(KeyCode.Return) && !ChatActif && !MenuActif)
+        {
+            if (!game.wave.StartWave())
+            {
+                Debug.Log("No level left");
+            }
+            //Afficher un texte "Press Enter pour lancer la prochaine vague."
+        }
+
+        if (Input.GetKeyDown("v") && !ChatActif && !MenuActif)
         {
             if (MyUI.boutikScript.gameObject.GetActive())
             {

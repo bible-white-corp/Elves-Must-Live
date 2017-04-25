@@ -42,14 +42,6 @@ public class Game : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            if (!wave.StartWave())
-            {
-                Debug.Log("No level left");
-            }
-            //Afficher un texte "Press Enter pour lancer la prochaine vague."
-        }
 
         if (Input.GetKey(KeyCode.Space))
         {
