@@ -288,6 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 446966146}
   - component: {fileID: 446966145}
+  - component: {fileID: 446966147}
   m_Layer: 0
   m_Name: Dest1 (2)
   m_TagString: Untagged
@@ -320,6 +321,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &446966147
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 446966144}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &754454372
 Prefab:
   m_ObjectHideFlags: 0
@@ -395,6 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 784075214}
   - component: {fileID: 784075213}
+  - component: {fileID: 784075215}
   m_Layer: 0
   m_Name: Dest1 (5)
   m_TagString: Untagged
@@ -427,6 +441,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &784075215
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 784075212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &867573378
 Prefab:
   m_ObjectHideFlags: 0
@@ -488,6 +514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 976165197}
   - component: {fileID: 976165196}
+  - component: {fileID: 976165198}
   m_Layer: 0
   m_Name: Dest1 (8)
   m_TagString: Untagged
@@ -519,6 +546,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &976165198
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976165195}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1053587686
 GameObject:
   m_ObjectHideFlags: 0
@@ -603,6 +642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1278574556}
   - component: {fileID: 1278574555}
+  - component: {fileID: 1278574557}
   m_Layer: 0
   m_Name: Dest1 (6)
   m_TagString: Untagged
@@ -635,6 +675,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1278574557
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1278574554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1410904433
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1410904435}
   - component: {fileID: 1410904434}
+  - component: {fileID: 1410904436}
   m_Layer: 0
   m_Name: Dest1 (1)
   m_TagString: Untagged
@@ -676,6 +729,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1410904436
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1410904433}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1430643863
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,6 +1345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1710379221}
   - component: {fileID: 1710379220}
+  - component: {fileID: 1710379222}
   m_Layer: 0
   m_Name: Destination1
   m_TagString: Untagged
@@ -1312,6 +1378,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1710379222
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1710379219}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1794076067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,6 +1399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1794076069}
   - component: {fileID: 1794076068}
+  - component: {fileID: 1794076070}
   m_Layer: 0
   m_Name: Dest1 (7)
   m_TagString: Untagged
@@ -1353,6 +1432,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1794076070
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1794076067}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1813755921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,6 +1453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1813755923}
   - component: {fileID: 1813755922}
+  - component: {fileID: 1813755924}
   m_Layer: 0
   m_Name: Dest1 (4)
   m_TagString: Untagged
@@ -1394,6 +1486,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1813755924
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1813755921}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2106085956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1403,6 +1507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2106085958}
   - component: {fileID: 2106085957}
+  - component: {fileID: 2106085959}
   m_Layer: 0
   m_Name: Dest1 (3)
   m_TagString: Untagged
@@ -1435,3 +1540,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2106085959
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2106085956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 0, z: 0}

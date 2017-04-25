@@ -117,6 +117,7 @@ public class UIControl : MonoBehaviour {
         {
             UI = ((GameObject)Instantiate(Resources.Load("UI/UIMulti"))).GetComponent<UIControl>();
             UI.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0, 1, 1);
+            UI.transform.position = new Vector3(-35, UI.transform.position.y, UI.transform.position.z);
         }
         else
         {

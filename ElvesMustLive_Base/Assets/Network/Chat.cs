@@ -9,6 +9,8 @@ public class Chat : MonoBehaviour, IChatClientListener {
 
     ChatClient chatClient;
     public UITextList chatArea;
+    public UIInput input;
+
 
     public void DebugReturn(DebugLevel level, string message)
     {
@@ -38,7 +40,6 @@ public class Chat : MonoBehaviour, IChatClientListener {
             msgs = string.Format("{0} : {1}", senders[i], messages[i]);
             Debug.Log(msgs);
             chatArea.Add(msgs);
-            
         }
     }
 
@@ -74,6 +75,7 @@ public class Chat : MonoBehaviour, IChatClientListener {
     {
         chatClient.Subscribe(new string[] { "MainChat" });
         chatClient.PublishMessage("MainChat", str);
+        input.value = "";
     }
 
     // Use this for initialization
@@ -85,6 +87,7 @@ public class Chat : MonoBehaviour, IChatClientListener {
         chatClient.Connect("e7c6e9a0-8a91-4063-a912-8a9915e84aad", "1.0", new ExitGames.Client.Photon.Chat.AuthenticationValues(UserName));
         chatClient.Subscribe(new string[] { "MainChat", "SecondChat" });
         chatClient.SetOnlineStatus(1, "");
+        chatArea.Clear();
     }
 	
 	// Update is called once per frame
