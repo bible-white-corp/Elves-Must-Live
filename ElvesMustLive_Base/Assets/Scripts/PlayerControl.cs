@@ -28,6 +28,8 @@ public class PlayerControl : Photon.MonoBehaviour {
 
     public bool MenuActif = false;
 	public bool ChatActif = false;
+	public bool BtkActif = false;
+	public bool PauseActif = false;
 
     public int screen; // 0 = full, 1 = left, 2 = right
 
@@ -93,17 +95,19 @@ public class PlayerControl : Photon.MonoBehaviour {
             gold += 10;
         }
 
-		if (Input.GetKeyDown("v") && !ChatActif)
+		if (Input.GetKeyDown("v") && !ChatActif && !MenuActif)
         {
             if (MyUI.boutikScript.gameObject.GetActive())
             {
                 MyUI.boutikScript.gameObject.SetActive(false);
                 MenuActif = false;
+				BtkActif = false;
             }
             else
             {
                 MyUI.boutikScript.gameObject.SetActive(true);
                 MenuActif = true;
+				BtkActif = true;
             }
         }
 
@@ -116,9 +120,10 @@ public class PlayerControl : Photon.MonoBehaviour {
 				ChatActif = false;
 				MenuActif = false;
 			} 
-			else if (MenuActif) 
+			else if (BtkActif) 
 			{
 				MyUI.boutikScript.gameObject.SetActive (false);
+				BtkActif = false;
 				MenuActif = false;
 			} 
 			else
@@ -126,10 +131,14 @@ public class PlayerControl : Photon.MonoBehaviour {
 				if (MyUI.PauseWindow.GetActive())
                 {
                     MyUI.PauseWindow.SetActive(false);
+					MenuActif = false;
+					PauseActif = false;
                 }
                 else
                 {
                     MyUI.PauseWindow.SetActive(true);
+					MenuActif = true;
+					PauseActif = true;
                 }
 			}
 		}
