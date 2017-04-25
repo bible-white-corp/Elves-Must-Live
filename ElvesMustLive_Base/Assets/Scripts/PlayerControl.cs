@@ -46,27 +46,28 @@ public class PlayerControl : Photon.MonoBehaviour {
             camscript.home = this;
 
             game = GameObject.Find("GameManager").GetComponent<Game>();
-        }
-        else
-        {
-            txtname.text = photonView.owner.NickName;
-        }
 
-        if (PlayerPrefs.GetInt("mod") == 1) //mod == 1 : splitted screen
-        { 
-            if (int.Parse(photonView.instantiationData[0].ToString()) == 0)
+
+            if (PlayerPrefs.GetInt("mod") == 1) //mod == 1 : splitted screen
             {
-                screen = 1;
-                MyUI = UIControl.SetUI("Left", this);
-                cam.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
+                if (int.Parse(photonView.instantiationData[0].ToString()) == 0)
+                {
+                    screen = 1;
+                    MyUI = UIControl.SetUI("Left", this);
+                    cam.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
+                }
+                else
+                {
+                    MyUI = UIControl.SetUI("Right", this);
+                    cam.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 1f, 1f);
+                    cam.GetComponentInChildren<AudioListener>().enabled = false; // Only one Audio listener...
+                    useController = true;
+                    screen = 2;
+                }
             }
             else
             {
-                MyUI = UIControl.SetUI("Right", this);
-                cam.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 1f, 1f);
-                cam.GetComponentInChildren<AudioListener>().enabled = false; // Only one Audio listener...
-                useController = true;
-                screen = 2;
+                txtname.text = photonView.owner.NickName;
             }
         }
         else
