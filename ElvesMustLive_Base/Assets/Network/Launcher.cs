@@ -78,6 +78,17 @@ public class Launcher : Photon.PunBehaviour
         levelWindow.SetActive(true);
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void LaunchTuto()
+    {
+        LevelName = "Tutorial/Level1";
+        Offline();
+    }
+
     #endregion
     private void Update()
     {

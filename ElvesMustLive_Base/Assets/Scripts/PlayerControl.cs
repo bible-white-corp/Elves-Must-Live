@@ -40,12 +40,15 @@ public class PlayerControl : Photon.MonoBehaviour {
         view = photonView;
         if (isMine)
         {
+            game = GameObject.Find("GameManager").GetComponent<Game>();
+
             cam = (GameObject)Instantiate(Resources.Load("CameraRig"), transform.position, Quaternion.identity);
             camscript = cam.GetComponent<FreeLookCam>();
+            camscript.m_LookAngle = game.transform.eulerAngles.y;
             camscript.m_Target = gameObject.transform; //Follow me
             camscript.home = this;
 
-            game = GameObject.Find("GameManager").GetComponent<Game>();
+
 
 
             if (PlayerPrefs.GetInt("mod") == 1) //mod == 1 : splitted screen
