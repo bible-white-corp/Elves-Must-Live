@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 //namespace Com.BibleWhiteCorp.ElvesMustLive
@@ -40,6 +41,7 @@ public class Launcher : Photon.PunBehaviour
     /// </summary>
     bool isConnecting;
 
+    public GameObject levelWindow;
     #endregion
 
 
@@ -71,11 +73,33 @@ public class Launcher : Photon.PunBehaviour
         //progress.MainCanvas.enabled = true;
     }
 
-    #endregion
+    public void ShowLevelWindow()
+    {
+        levelWindow.SetActive(true);
+    }
 
+    #endregion
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            levelWindow.SetActive(false);
+        }
+    }
 
     #region Public Methods
 
+    public void SelectLevel(UIButton MyUIButton, GameObject allMaps)
+    {
+        foreach (var item in allMaps.GetComponentsInChildren<UIButton>())
+        {
+            item.SetState(UIButtonColor.State.Normal, false);
+            item.GetComponent<Collider>().enabled = true;
+        }
+        MyUIButton.SetState(UIButtonColor.State.Disabled, false);
+        MyUIButton.GetComponent<Collider>().enabled = false;
+        LevelName = MyUIButton.gameObject.name;
+        Debug.Log("Selected : " + MyUIButton.gameObject.name);
+    }
 
     /// <summary>
     /// Start the connection process. 
@@ -84,6 +108,11 @@ public class Launcher : Photon.PunBehaviour
     /// </summary>
     public void Connect()
     {
+        if (LevelName == "")
+        {
+            return;
+        }
+        levelWindow.SetActive(false);
         progress.Set(true);
         progress.NetworkState = 0.25f;
         PhotonNetwork.offlineMode = false;
@@ -154,6 +183,11 @@ public class Launcher : Photon.PunBehaviour
     #region Offline
     public void Offline()
     {
+        if (LevelName == "")
+        {
+            return;
+        }
+        levelWindow.SetActive(false);
         progress.Set(true);
         progress.NetworkState = 0.5f;
         PhotonNetwork.offlineMode = true;

@@ -68,8 +68,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1401188645068974}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -170, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -178, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4591529239165898}
@@ -155,7 +155,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: Button
+  mText: Connexion
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 0
@@ -248,7 +248,11 @@ MonoBehaviour:
   pressedSprite: Button
   disabledSprite: Flat
   pixelSnap: 1
-  onClick: []
+  onClick:
+  - mTarget: {fileID: 0}
+    mMethodName: Connect
+    mParameters: []
+    oneShot: 0
 --- !u!114 &114882664749511336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,26 +266,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftAnchor:
     target: {fileID: 0}
-    relative: 0
-    absolute: 0
+    relative: 0.5
+    absolute: -75
   rightAnchor:
     target: {fileID: 0}
-    relative: 1
-    absolute: 0
+    relative: 0.5
+    absolute: 75
   bottomAnchor:
     target: {fileID: 0}
-    relative: 0
+    relative: 0.5
     absolute: 0
   topAnchor:
     target: {fileID: 0}
-    relative: 1
+    relative: 0.5
     absolute: 0
   updateAnchors: 1
   mColor: {r: 0.6901961, g: 0.5882353, b: 0.40784314, a: 1}
   mPivot: 4
   mWidth: 150
   mHeight: 40
-  mDepth: 2
+  mDepth: 1
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 1

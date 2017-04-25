@@ -46,13 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b4eb3a400afab046abb8471a9d746d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mMat: {fileID: 0}
+  mMat: {fileID: 2100000, guid: ec268c3ea1baceb4abb2168daed86f68, type: 2}
   mUVRect:
     serializedVersion: 2
-    x: 0.25
-    y: 0.6503906
+    x: 0.7832031
+    y: -0.0009765625
     width: 0.12402344
-    height: 0.24804688
+    height: 0.12402344
   mFont:
     mSize: 14
     mBase: 11
