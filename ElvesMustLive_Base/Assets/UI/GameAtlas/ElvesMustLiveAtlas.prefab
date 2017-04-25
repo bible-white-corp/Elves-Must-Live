@@ -53,9 +53,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: ae6ed4283436c964c865cb1ef75f57a1, type: 2}
   mSprites:
+  - name: bow1
+    x: 165
+    y: 1530
+    width: 91
+    height: 389
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 155
+    paddingRight: 154
+    paddingTop: 7
+    paddingBottom: 4
+  - name: bow2
+    x: 165
+    y: 1140
+    width: 88
+    height: 389
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 156
+    paddingRight: 156
+    paddingTop: 2
+    paddingBottom: 9
+  - name: bow3
+    x: 0
+    y: 1080
+    width: 121
+    height: 395
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 129
+    paddingRight: 150
+    paddingTop: 2
+    paddingBottom: 3
   - name: Cannon
     x: 1681
-    y: 1448
+    y: 3496
     width: 323
     height: 260
     borderLeft: 0
@@ -68,7 +107,7 @@ MonoBehaviour:
     paddingBottom: 83
   - name: Cristal
     x: 1538
-    y: 295
+    y: 2343
     width: 183
     height: 367
     borderLeft: 0
@@ -81,7 +120,7 @@ MonoBehaviour:
     paddingBottom: 19
   - name: CrossBow
     x: 1681
-    y: 940
+    y: 2988
     width: 340
     height: 187
     borderLeft: 0
@@ -94,7 +133,7 @@ MonoBehaviour:
     paddingBottom: 109
   - name: elven_wallpaper_003
     x: 0
-    y: 916
+    y: 2964
     width: 1680
     height: 1132
     borderLeft: 0
@@ -106,8 +145,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Hammer
-    x: 1722
-    y: 284
+    x: 0
+    y: 1873
     width: 164
     height: 378
     borderLeft: 0
@@ -120,7 +159,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: LogoEML
     x: 0
-    y: 204
+    y: 2252
     width: 1537
     height: 711
     borderLeft: 0
@@ -133,7 +172,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Projector
     x: 1681
-    y: 1128
+    y: 3176
     width: 243
     height: 319
     borderLeft: 0
@@ -146,7 +185,7 @@ MonoBehaviour:
     paddingBottom: 36
   - name: Regen
     x: 1681
-    y: 1709
+    y: 3757
     width: 299
     height: 339
     borderLeft: 0
@@ -159,7 +198,7 @@ MonoBehaviour:
     paddingBottom: 38
   - name: Rocket
     x: 1538
-    y: 663
+    y: 2711
     width: 281
     height: 252
     borderLeft: 0
@@ -170,6 +209,110 @@ MonoBehaviour:
     paddingRight: 31
     paddingTop: 74
     paddingBottom: 74
+  - name: spear1
+    x: 0
+    y: 398
+    width: 116
+    height: 368
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 138
+    paddingRight: 146
+    paddingTop: 2
+    paddingBottom: 30
+  - name: spear2
+    x: 165
+    y: 774
+    width: 91
+    height: 365
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 169
+    paddingRight: 140
+    paddingTop: 7
+    paddingBottom: 28
+  - name: spear3
+    x: 165
+    y: 1920
+    width: 109
+    height: 331
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 155
+    paddingRight: 136
+    paddingTop: 22
+    paddingBottom: 47
+  - name: spear4
+    x: 0
+    y: 12
+    width: 103
+    height: 385
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 132
+    paddingRight: 165
+    paddingTop: 3
+    paddingBottom: 12
+  - name: spear5
+    x: 0
+    y: 1476
+    width: 133
+    height: 396
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 131
+    paddingRight: 136
+    paddingTop: 1
+    paddingBottom: 3
+  - name: sword1
+    x: 0
+    y: 767
+    width: 149
+    height: 312
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 126
+    paddingRight: 125
+    paddingTop: 42
+    paddingBottom: 46
+  - name: sword2
+    x: 1885
+    y: 2325
+    width: 157
+    height: 385
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 112
+    paddingRight: 131
+    paddingTop: 10
+    paddingBottom: 5
+  - name: sword3
+    x: 1722
+    y: 2314
+    width: 162
+    height: 396
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 134
+    paddingRight: 104
+    paddingTop: 4
+    paddingBottom: 0
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0

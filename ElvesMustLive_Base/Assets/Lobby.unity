@@ -971,6 +971,7 @@ MonoBehaviour:
   Loglevel: 1
   MaxPlayersPerRoom: 4
   progress: {fileID: 517323413}
+  LevelName: Map/MAP 2 multipath/MAP 2
 --- !u!4 &517323412
 Transform:
   m_ObjectHideFlags: 0
