@@ -6691,8 +6691,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Orc Armor - Shoulders
+  mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
+  mSpriteName: sword3
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -9542,8 +9542,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Orc Armor - Shoulders
+  mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
+  mSpriteName: bow3
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -9779,8 +9779,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Orc Armor - Shoulders
+  mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
+  mSpriteName: spear3
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -12187,8 +12187,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Orc Armor - Shoulders
+  mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
+  mSpriteName: bow2
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -14037,8 +14037,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Orc Armor - Shoulders
+  mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
+  mSpriteName: spear4
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -14782,8 +14782,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Orc Armor - Shoulders
+  mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
+  mSpriteName: bow1
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -15136,8 +15136,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Orc Armor - Shoulders
+  mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
+  mSpriteName: sword2
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -15588,8 +15588,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Orc Armor - Shoulders
+  mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
+  mSpriteName: spear2
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -15692,7 +15692,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.981004, g: 1, b: 0.3208955, a: 1}
   mPivot: 4
-  mWidth: 98
+  mWidth: 70
   mHeight: 28
   mDepth: 15
   autoResizeBoxCollider: 0
@@ -15963,8 +15963,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Orc Armor - Shoulders
+  mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
+  mSpriteName: spear5
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -16472,8 +16472,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Orc Armor - Shoulders
+  mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
+  mSpriteName: sword1
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -16770,8 +16770,8 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 1
-  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Orc Armor - Shoulders
+  mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
+  mSpriteName: spear1
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
