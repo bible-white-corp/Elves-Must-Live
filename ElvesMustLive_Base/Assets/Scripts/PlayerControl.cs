@@ -123,7 +123,14 @@ public class PlayerControl : Photon.MonoBehaviour {
 			} 
 			else
 			{
-				//MENU PAUSE
+				if (MyUI.PauseWindow.GetActive())
+                {
+                    MyUI.PauseWindow.SetActive(false);
+                }
+                else
+                {
+                    MyUI.PauseWindow.SetActive(true);
+                }
 			}
 		}
 

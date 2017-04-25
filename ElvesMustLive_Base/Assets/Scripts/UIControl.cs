@@ -12,6 +12,7 @@ public class UIControl : MonoBehaviour {
     public OnClickTurret scriptClick;
     public GameObject tchat;
     public Boutique boutikScript;
+    public GameObject PauseWindow;
 
     Game game;
     public PlayerControl home;
@@ -94,6 +95,16 @@ public class UIControl : MonoBehaviour {
         UITurret.SetActive(state);
     }
 
+    public void QuitGame()
+    {
+        game.GetComponent<NetworkController>().LeaveRoom();
+    }
+
+    public void Resume()
+    {
+        PauseWindow.SetActive(false);
+    }
+
     public static UIControl SetUI(string mode, PlayerControl home)
     {
         UIControl UI;
@@ -124,4 +135,5 @@ public class UIControl : MonoBehaviour {
         UIControl UI = ((GameObject)Instantiate(Resources.Load("UI" + mode))).GetComponent<UIControl>();
         return UI;
     }
+    
 }
