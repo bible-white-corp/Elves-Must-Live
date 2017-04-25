@@ -67,13 +67,13 @@ public class PlayerControl : Photon.MonoBehaviour {
             }
             else
             {
-                txtname.text = photonView.owner.NickName;
+                screen = 0;
+                MyUI = UIControl.SetUI("SinglePlayer", this);
             }
         }
         else
         {
-            screen = 0;
-            MyUI = UIControl.SetUI("SinglePlayer", this);
+            txtname.text = photonView.owner.NickName;
         }
 
     }
