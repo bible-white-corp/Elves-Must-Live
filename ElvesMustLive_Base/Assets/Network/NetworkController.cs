@@ -9,6 +9,7 @@ public class NetworkController : Photon.PunBehaviour
 
     // Use this for initialization
     void Start () {
+        GetComponent<Animator>().enabled = false;
         PhotonNetwork.Instantiate("Perso", gameObject.transform.position, Quaternion.identity, 0, new object[1] { 0 }); //  0 = player 1
 
         if (PlayerPrefs.GetInt("mod") == 1)
