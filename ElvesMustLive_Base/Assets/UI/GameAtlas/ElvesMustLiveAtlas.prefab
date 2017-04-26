@@ -53,9 +53,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: ae6ed4283436c964c865cb1ef75f57a1, type: 2}
   mSprites:
+  - name: backimage
+    x: 1681
+    y: 1485
+    width: 1024
+    height: 563
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
   - name: bow1
-    x: 2448
-    y: 1093
+    x: 2305
+    y: 1095
     width: 91
     height: 389
     borderLeft: 0
@@ -67,8 +80,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 4
   - name: bow2
-    x: 2448
-    y: 703
+    x: 2305
+    y: 705
     width: 88
     height: 389
     borderLeft: 0
@@ -80,8 +93,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 9
   - name: bow3
-    x: 2326
-    y: 1400
+    x: 1844
+    y: 176
     width: 121
     height: 395
     borderLeft: 0
@@ -93,8 +106,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 3
   - name: Cannon
-    x: 1681
-    y: 245
+    x: 1981
+    y: 1224
     width: 323
     height: 260
     borderLeft: 0
@@ -106,8 +119,8 @@ MonoBehaviour:
     paddingTop: 57
     paddingBottom: 83
   - name: Cristal
-    x: 2082
-    y: 1361
+    x: 3909
+    y: 1681
     width: 183
     height: 367
     borderLeft: 0
@@ -145,8 +158,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Hammer
-    x: 2082
-    y: 585
+    x: 1981
+    y: 845
     width: 164
     height: 378
     borderLeft: 0
@@ -171,8 +184,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Map1
-    x: 1681
-    y: 1247
+    x: 3508
+    y: 1648
     width: 400
     height: 400
     borderLeft: 0
@@ -184,8 +197,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Map2
-    x: 1681
-    y: 846
+    x: 2706
+    y: 1648
     width: 400
     height: 400
     borderLeft: 0
@@ -197,7 +210,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Map3
-    x: 1681
+    x: 3107
     y: 1648
     width: 400
     height: 400
@@ -210,8 +223,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Projector
-    x: 2082
-    y: 1729
+    x: 1681
+    y: 825
     width: 243
     height: 319
     borderLeft: 0
@@ -224,7 +237,7 @@ MonoBehaviour:
     paddingBottom: 36
   - name: Regen
     x: 1681
-    y: 506
+    y: 1145
     width: 299
     height: 339
     borderLeft: 0
@@ -236,8 +249,8 @@ MonoBehaviour:
     paddingTop: 23
     paddingBottom: 38
   - name: Rocket
-    x: 2326
-    y: 1796
+    x: 1681
+    y: 572
     width: 281
     height: 252
     borderLeft: 0
@@ -249,8 +262,8 @@ MonoBehaviour:
     paddingTop: 74
     paddingBottom: 74
   - name: spear1
-    x: 2326
-    y: 1031
+    x: 2139
+    y: 476
     width: 116
     height: 368
     borderLeft: 0
@@ -262,8 +275,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 30
   - name: spear2
-    x: 2448
-    y: 337
+    x: 2305
+    y: 339
     width: 91
     height: 365
     borderLeft: 0
@@ -275,8 +288,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 28
   - name: spear3
-    x: 2326
-    y: 313
+    x: 2085
+    y: 127
     width: 109
     height: 331
     borderLeft: 0
@@ -288,8 +301,8 @@ MonoBehaviour:
     paddingTop: 22
     paddingBottom: 47
   - name: spear4
-    x: 2326
-    y: 645
+    x: 1981
+    y: 73
     width: 103
     height: 385
     borderLeft: 0
@@ -314,8 +327,8 @@ MonoBehaviour:
     paddingTop: 1
     paddingBottom: 3
   - name: sword1
-    x: 2448
-    y: 1483
+    x: 2146
+    y: 911
     width: 149
     height: 312
     borderLeft: 0
@@ -327,8 +340,8 @@ MonoBehaviour:
     paddingTop: 42
     paddingBottom: 46
   - name: sword2
-    x: 2082
-    y: 199
+    x: 1981
+    y: 459
     width: 157
     height: 385
     borderLeft: 0
@@ -340,8 +353,8 @@ MonoBehaviour:
     paddingTop: 10
     paddingBottom: 5
   - name: sword3
-    x: 2082
-    y: 964
+    x: 1681
+    y: 175
     width: 162
     height: 396
     borderLeft: 0
