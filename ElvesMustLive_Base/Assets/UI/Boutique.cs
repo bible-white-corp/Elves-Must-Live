@@ -37,6 +37,18 @@ public class Boutique : MonoBehaviour {
     {
         if (TurretsSel && currentTurret != null)
         {
+            int price = int.Parse(currentTurret.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
+            string str = currentTurret.transform.GetChild(0).GetComponent<UILabel>().text;
+            if (price > home.gold)
+            {
+                log.text = "No enought money !";
+                return;
+            }
+            else
+            {
+                home.gold -= price;
+                log.text = str + " bought";
+            }
             home.raycast.AddTurret(currentTurret.transform.GetChild(0).GetComponent<UILabel>().text);
             TurretList.GetComponent<UIGrid>().RemoveChild(currentTurret.transform.GetSiblingIndex());
             Destroy(currentTurret);
@@ -47,6 +59,18 @@ public class Boutique : MonoBehaviour {
         }
         else if (WeaponsSel && currentWeapon != null)
         {
+            int price = int.Parse(currentWeapon.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
+            string str = currentWeapon.transform.GetChild(0).GetComponent<UILabel>().text;
+            if (price > home.gold)
+            {
+                log.text = "No enought money !";
+                return;
+            }
+            else
+            {
+                home.gold -= price;
+                log.text = str + " bought";
+            }
             home.weapons.AddWeapon(currentWeapon.transform.GetChild(0).GetComponent<UILabel>().text);
             WeaponList.GetComponent<UIGrid>().RemoveChild(currentWeapon.transform.GetSiblingIndex());
             Destroy(currentWeapon);
