@@ -101,22 +101,22 @@ public class Launcher : Photon.PunBehaviour
         {
             case 0:
                 LevelName = "Tutorial/Level1";
-                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = "Tuto";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = "Tutoriel :\nAvant de se lancer dans l'aventure à l'assaut des orcs, veillez a maitriser les bases d'ElvesMustLive grâce à ce Tutoriel!\n";
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "";
                 break;
             case 1:
                 LevelName = "Map/Map 1";
-                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = "Level 1";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = "Level 1:\nPar une après-midi d'automne au poste de garde ouest d’Argedhen, des orcs surgissent de nul part et foncent vers la cité. Pris au depourvu, vous devez donner le temps à la ville de rassembler ses troupes et d'organiser ses défenses, les renforts arrivent!\n";
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map1";
                 break;
             case 2:
                 LevelName = "Map/MAP 2 multipath/MAP 2";
-                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = "Level 2";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = "Level 2:\nL'attaque n'était pas isolé et la garde s'est fait massacré, le peuple fuit en masse vers le bastion de la montagne mais les orcs ne l'entendent pas de cette oreille. Protégez la colonne de refugiés pendant qu'ils traversent le col!\n";
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map3";
                 break;
             case 3:
                 LevelName = "Map/map 3/map 3 montagne";
-                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = "Level 3";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = "Level 3:\nLe bastion n'est pas prêt et vous devez leur donner du temps pour s'organiser. Par chance, les orcs vous collent, emmenez-les dans les plateaux enneigés où le froid aura raison d'eux! Chaque minute gagnée est précieuse!\n";
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map2";
                 break;
             default:

@@ -816,13 +816,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.24626863, g: 0.18259887, b: 0.11210736, a: 1}
   mPivot: 0
-  mWidth: 396
-  mHeight: 140
+  mWidth: 392
+  mHeight: 200
   mDepth: 13
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.8285713
+  aspectRatio: 1.96
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
@@ -835,7 +835,7 @@ MonoBehaviour:
     The same [335500]UIToggle[-] script gets re-used to create tabs.'
   mFontSize: 20
   mFontStyle: 0
-  mAlignment: 0
+  mAlignment: 4
   mEncoding: 1
   mMaxLineCount: 0
   mEffectStyle: 1
@@ -1666,7 +1666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &383672247
 Transform:
   m_ObjectHideFlags: 0
@@ -3222,7 +3222,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 680555255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -193, y: 119, z: 0}
+  m_LocalPosition: {x: -188, y: 121, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 383672247}
@@ -6621,7 +6621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1804597220
 Transform:
   m_ObjectHideFlags: 0
