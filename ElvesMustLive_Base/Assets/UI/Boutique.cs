@@ -11,6 +11,7 @@ public class Boutique : MonoBehaviour {
     public GameObject TurretList;
 
     public UILabel selected;
+    public UILabel description;
     public UILabel log;
 
     GameObject currentTurret = null;
@@ -23,6 +24,7 @@ public class Boutique : MonoBehaviour {
         currentTurret = obj;
         string str = obj.transform.GetChild(0).GetComponent<UILabel>().text;
         int price = int.Parse(obj.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
+        description.text = obj.transform.GetChild(5).GetComponent<UILabel>().text;
         selected.text = str + " : " + price + " Gold";
     }
     public void SelectWeapon(GameObject obj)
@@ -30,6 +32,7 @@ public class Boutique : MonoBehaviour {
         currentWeapon = obj;
         string str = obj.transform.GetChild(0).GetComponent<UILabel>().text;
         int price = int.Parse(obj.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
+        description.text = "Je ne pense pas qu'un description soit nécéssaire... Ces armes ou ces arcs sont dévastateurs";
         selected.text = str + " : " + price + " Gold";
     }
 
@@ -48,6 +51,7 @@ public class Boutique : MonoBehaviour {
             {
                 home.gold -= price;
                 log.text = str + " bought";
+                description.text = "Sélectionner un élément pour obtenir sa description.";
             }
             home.raycast.AddTurret(currentTurret.transform.GetChild(0).GetComponent<UILabel>().text);
             TurretList.GetComponent<UIGrid>().RemoveChild(currentTurret.transform.GetSiblingIndex());
@@ -70,6 +74,7 @@ public class Boutique : MonoBehaviour {
             {
                 home.gold -= price;
                 log.text = str + " bought";
+                description.text = "Sélectionner un élément pour obtenir sa description.";
             }
             home.weapons.AddWeapon(currentWeapon.transform.GetChild(0).GetComponent<UILabel>().text);
             WeaponList.GetComponent<UIGrid>().RemoveChild(currentWeapon.transform.GetSiblingIndex());
@@ -87,42 +92,37 @@ public class Boutique : MonoBehaviour {
 
     public void ShowTurrets()
     {
-        if (currentTurret != null)
-        {
-            GameObject obj = currentTurret;
-            string str = obj.transform.GetChild(0).GetComponent<UILabel>().text;
-            int price = int.Parse(obj.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
-            selected.text = str + " : " + price + " Gold";
-        }
-        else
-        {
-            selected.text = "Select a Turret";
-        }
         WeaponsSel = false;
         TurretsSel = true;
         WeaponList.SetActive(false);
         TurretList.SetActive(false);
         TurretList.SetActive(true);
+        if (currentTurret != null)
+        {
+            SelectTurret(currentTurret);
+        }
+        else
+        {
+            selected.text = "Select a Turret";
+            description.text = "Sélectionner un élément pour obtenir sa description.";
+        }
     }
 
     public void ShowWeapons()
     {
-        if (currentWeapon != null)
-        {
-            GameObject obj = currentWeapon;
-            string str = obj.transform.GetChild(0).GetComponent<UILabel>().text;
-            int price = int.Parse(obj.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
-            selected.text = str + " : " + price + " Gold";
-        }
-        else
-        {
-            selected.text = "Select a Weapon";
-        }
         WeaponsSel = true;
         TurretsSel = false;
         TurretList.SetActive(false);
         WeaponList.SetActive(false);
         WeaponList.SetActive(true);
-
+        if (currentWeapon != null)
+        {
+            SelectWeapon(currentWeapon);
+        }
+        else
+        {
+            selected.text = "Select a Weapon";
+            description.text = "Sélectionner un élément pour obtenir sa description.";
+        }
     }
 }
