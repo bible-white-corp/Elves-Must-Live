@@ -63,7 +63,7 @@ public class Chat : MonoBehaviour, IChatClientListener {
 
     public void OnSubscribed(string[] channels, bool[] results)
     {
-        
+        chatArea.Clear();
     }
 
     public void OnUnsubscribed(string[] channels)
