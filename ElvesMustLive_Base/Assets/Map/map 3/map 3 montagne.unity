@@ -660,11 +660,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4792791658168490, guid: f6dd870a3590cb74ba9cfc48c26377d0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 41
+      value: 66
       objectReference: {fileID: 0}
     - target: {fileID: 4792791658168490, guid: f6dd870a3590cb74ba9cfc48c26377d0, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 91.5
+      value: 92
       objectReference: {fileID: 0}
     - target: {fileID: 4792791658168490, guid: f6dd870a3590cb74ba9cfc48c26377d0, type: 2}
       propertyPath: m_LocalRotation.x
@@ -704,7 +704,7 @@ Prefab:
     - target: {fileID: 198799403354803500, guid: f6dd870a3590cb74ba9cfc48c26377d0,
         type: 2}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 198799403354803500, guid: f6dd870a3590cb74ba9cfc48c26377d0,
         type: 2}
@@ -724,7 +724,7 @@ Prefab:
     - target: {fileID: 198799403354803500, guid: f6dd870a3590cb74ba9cfc48c26377d0,
         type: 2}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 198799403354803500, guid: f6dd870a3590cb74ba9cfc48c26377d0,
         type: 2}
@@ -735,6 +735,11 @@ Prefab:
         type: 2}
       propertyPath: prewarm
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198799403354803500, guid: f6dd870a3590cb74ba9cfc48c26377d0,
+        type: 2}
+      propertyPath: ShapeModule.boxZ
+      value: 6.53
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f6dd870a3590cb74ba9cfc48c26377d0, type: 2}
