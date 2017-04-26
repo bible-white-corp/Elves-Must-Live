@@ -99,7 +99,11 @@ public class RayCast : MonoBehaviour {
         {
             return;
         }
-
+        if (BuildConfirm && Input.GetKeyDown(KeyCode.Escape))
+        {
+            home.MyUI.UITurret.SetActive(false);
+            BuildConfirm = false;
+        }
         if (Input.GetButtonDown("Build") && !home.useController || (Input.GetButtonDown("2-Build") && home.useController))
         {
             if (BuildConfirm)

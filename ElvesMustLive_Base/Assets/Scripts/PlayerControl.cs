@@ -126,6 +126,10 @@ public class PlayerControl : Photon.MonoBehaviour {
 
 		if (Input.GetKeyDown ("escape")) 
 		{
+            if (raycast.BuildConfirm)
+            {
+                return;
+            }
 			if (ChatActif) 
 			{
 				MyUI.tchat.SetActive (!MyUI.tchat.activeSelf);

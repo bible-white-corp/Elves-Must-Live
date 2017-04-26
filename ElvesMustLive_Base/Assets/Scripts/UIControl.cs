@@ -103,6 +103,8 @@ public class UIControl : MonoBehaviour {
     public void Resume()
     {
         PauseWindow.SetActive(false);
+        home.MenuActif = false;
+        home.PauseActif = false;
     }
 
     public static UIControl SetUI(string mode, PlayerControl home)
