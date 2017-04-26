@@ -42,6 +42,8 @@ public class Launcher : Photon.PunBehaviour
     bool isConnecting;
 
     public GameObject levelWindow;
+
+    public GameObject historyTab;
     #endregion
 
 
@@ -87,6 +89,53 @@ public class Launcher : Photon.PunBehaviour
     {
         LevelName = "Tutorial/Level1";
         Offline();
+    }
+
+    public void LoadHistory()
+    {
+        if (!PlayerPrefs.HasKey("Histoire"))
+        {
+            PlayerPrefs.SetInt("Histoire", 0);
+        }
+        switch (PlayerPrefs.GetInt("Histoire"))
+        {
+            case 0:
+                LevelName = "Tutorial/Level1";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = "Tuto";
+                historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "";
+                break;
+            case 1:
+                LevelName = "Map/Map 1";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = "Level 1";
+                historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map1";
+                break;
+            case 2:
+                LevelName = "Map/MAP 2 multipath/MAP 2";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = "Level 2";
+                historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map3";
+                break;
+            case 3:
+                LevelName = "Map/map 3/map 3 montagne";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = "Level 3";
+                historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map2";
+                break;
+            default:
+                ResetHistory();
+                return;
+        }
+        
+    }
+
+    public void SkipHistory()
+    {
+        PlayerPrefs.SetInt("Histoire", PlayerPrefs.GetInt("Histoire") +1);
+        LoadHistory();
+    }
+
+    public void ResetHistory()
+    {
+        PlayerPrefs.SetInt("Histoire", 0);
+        LoadHistory();
     }
 
     #endregion
