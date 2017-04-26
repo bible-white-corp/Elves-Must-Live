@@ -2224,7 +2224,7 @@ Prefab:
     - target: {fileID: 114501245832017620, guid: a8c036ee45f29764da0517213fa82943,
         type: 2}
       propertyPath: mSpriteName
-      value: elven_wallpaper_003
+      value: backimage
       objectReference: {fileID: 0}
     - target: {fileID: 114501245832017620, guid: a8c036ee45f29764da0517213fa82943,
         type: 2}
