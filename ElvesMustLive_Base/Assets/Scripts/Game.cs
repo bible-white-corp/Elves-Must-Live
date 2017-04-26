@@ -30,7 +30,11 @@ public class Game : MonoBehaviour {
         }
         /////////////////////////////////////////////////
         wave = gameObject.AddComponent<WaveGenerator>();
-        mode = gameObject.AddComponent<Endless>();
+        if (mode == null)
+        {
+            mode = gameObject.AddComponent<Endless>();
+        }
+
         wave.mode = mode;
     }
 

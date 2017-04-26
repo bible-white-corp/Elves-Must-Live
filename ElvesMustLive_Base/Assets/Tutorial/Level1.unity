@@ -319,7 +319,18 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 114794671003030824, guid: a4afffe9a926bcd4ebf0054cb69085eb,
+        type: 2}
+      propertyPath: wave
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114794671003030824, guid: a4afffe9a926bcd4ebf0054cb69085eb,
+        type: 2}
+      propertyPath: mode
+      value: 
+      objectReference: {fileID: 372471181}
+    m_RemovedComponents:
+    - {fileID: 114332116056196220, guid: a4afffe9a926bcd4ebf0054cb69085eb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a4afffe9a926bcd4ebf0054cb69085eb, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &372471180 stripped
@@ -338,6 +349,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb010b2030d51ac4c87c2c55f4a88f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 1
+  wave: {fileID: 0}
   label: {fileID: 1056065378}
 --- !u!1 &508282199
 GameObject:
