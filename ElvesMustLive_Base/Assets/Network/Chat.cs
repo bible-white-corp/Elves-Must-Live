@@ -63,7 +63,7 @@ public class Chat : MonoBehaviour, IChatClientListener {
 
     public void OnSubscribed(string[] channels, bool[] results)
     {
-        chatArea.Clear();
+        
     }
 
     public void OnUnsubscribed(string[] channels)
@@ -93,5 +93,9 @@ public class Chat : MonoBehaviour, IChatClientListener {
 	// Update is called once per frame
 	void Update () {
         chatClient.Service();
+        if (Input.GetKeyDown("t"))
+        {
+            chatArea.Clear();
+        }
     }
 }
