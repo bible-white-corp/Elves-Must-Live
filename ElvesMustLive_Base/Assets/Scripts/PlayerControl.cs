@@ -110,6 +110,10 @@ public class PlayerControl : Photon.MonoBehaviour {
 
         if (Input.GetKeyDown("v") && !ChatActif && !MenuActif)
         {
+            if (useController)
+            {
+                return;
+            }
             if (MyUI.boutikScript.gameObject.GetActive())
             {
                 MyUI.boutikScript.gameObject.SetActive(false);
@@ -126,6 +130,10 @@ public class PlayerControl : Photon.MonoBehaviour {
 
 		if (Input.GetKeyDown ("escape")) 
 		{
+            if (useController)
+            {
+                return;
+            }
             if (raycast.BuildConfirm)
             {
                 return;
