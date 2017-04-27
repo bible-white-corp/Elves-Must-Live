@@ -17458,6 +17458,7 @@ MonoBehaviour:
   WeaponList: {fileID: 1963781849484298}
   TurretList: {fileID: 1320234762275760}
   selected: {fileID: 114928146991018488}
+  description: {fileID: 0}
   log: {fileID: 114089386265068162}
   home: {fileID: 0}
 --- !u!114 &114850921034297652
