@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 65587497787805718}
   - component: {fileID: 114031793634083638}
   m_Layer: 0
-  m_Name: Cannon
+  m_Name: Cannon_up0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

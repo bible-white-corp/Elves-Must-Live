@@ -82,7 +82,7 @@ GameObject:
   - component: {fileID: 64879816972381250}
   - component: {fileID: 114613310870926312}
   m_Layer: 0
-  m_Name: Cristal
+  m_Name: Cristal_up0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

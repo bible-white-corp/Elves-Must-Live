@@ -120,17 +120,37 @@ public class PlayerControl : Photon.MonoBehaviour {
             {
                 MyUI.boutikScript.gameObject.SetActive(false);
                 MenuActif = false;
-				BtkActif = false;
+                BtkActif = false;
             }
             else
             {
                 MyUI.boutikScript.gameObject.SetActive(true);
                 MenuActif = true;
-				BtkActif = true;
+                BtkActif = true;
             }
         }
 
-		if (Input.GetKeyDown ("escape")) 
+        if (Input.GetKeyDown("c") && !ChatActif && !MenuActif)
+        {
+            if (useController)
+            {
+                return;
+            }
+            if (MyUI.upgrade.gameObject.GetActive())
+            {
+                MyUI.upgrade.gameObject.SetActive(false);
+                MenuActif = false;
+                BtkActif = false;
+            }
+            else
+            {
+                MyUI.upgrade.gameObject.SetActive(true);
+                MenuActif = true;
+                BtkActif = true;
+            }
+        }
+
+        if (Input.GetKeyDown ("escape")) 
 		{
             if (useController)
             {
@@ -150,7 +170,8 @@ public class PlayerControl : Photon.MonoBehaviour {
 			else if (BtkActif) 
 			{
 				MyUI.boutikScript.gameObject.SetActive (false);
-				BtkActif = false;
+                MyUI.upgrade.gameObject.SetActive(false);
+                BtkActif = false;
 				MenuActif = false;
 			} 
 			else

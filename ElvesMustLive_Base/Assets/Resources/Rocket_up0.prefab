@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 65130841628623830}
   - component: {fileID: 114578805437071030}
   m_Layer: 0
-  m_Name: Rocket
+  m_Name: Rocket_up0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 64156358152518604}
   - component: {fileID: 114798991634458988}
   m_Layer: 0
-  m_Name: Projector
+  m_Name: Projector_up0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

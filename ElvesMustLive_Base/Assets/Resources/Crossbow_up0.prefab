@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 65160500281832926}
   - component: {fileID: 114231364912877018}
   m_Layer: 0
-  m_Name: Crossbow
+  m_Name: Crossbow_up0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

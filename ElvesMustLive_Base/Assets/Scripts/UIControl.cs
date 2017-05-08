@@ -14,6 +14,8 @@ public class UIControl : MonoBehaviour {
     public Boutique boutikScript;
     public GameObject PauseWindow;
 
+    public UpgradeWindow upgrade;
+
     Game game;
     public PlayerControl home;
 

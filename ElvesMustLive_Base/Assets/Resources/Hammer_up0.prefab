@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 64117333264984202}
   - component: {fileID: 114710220579817382}
   m_Layer: 0
-  m_Name: Hammer
+  m_Name: Hammer_up0
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

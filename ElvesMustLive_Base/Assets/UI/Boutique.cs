@@ -18,6 +18,7 @@ public class Boutique : MonoBehaviour {
     GameObject currentWeapon = null;
 
     public PlayerControl home;
+    public UIControl ui;
 
     public void SelectTurret(GameObject obj)
     {
@@ -54,6 +55,7 @@ public class Boutique : MonoBehaviour {
                 description.text = "Sélectionner un élément pour obtenir sa description.";
             }
             home.raycast.AddTurret(currentTurret.transform.GetChild(0).GetComponent<UILabel>().text, 0);
+            ui.upgrade.Unlock(currentTurret.transform.GetChild(0).GetComponent<UILabel>().text);
             TurretList.GetComponent<UIGrid>().RemoveChild(currentTurret.transform);
             Destroy(currentTurret);
             TurretList.GetComponent<UIGrid>().Reposition();
