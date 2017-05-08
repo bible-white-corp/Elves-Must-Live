@@ -13,9 +13,18 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
         protected PlayerControl home;
+
+		AudioClip jump; 
+		AudioSource audioS;
+		float timer;
+		bool lauchtimer;
         
         private void Start()
         {
+			timer = 0;
+			lauchtimer = false;
+			audioS = GetComponent<AudioSource> ();
+			jump = (AudioClip)Resources.Load("Sound/Player/saut");
             home = GetComponent<PlayerControl>();
             // get the transform of the main camera
             if (home.cam != null)
@@ -45,6 +54,15 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 return;
             }
+			if (lauchtimer) 
+			{
+				timer += Time.deltaTime;
+			}
+			if (timer > 1.2) 
+			{
+				lauchtimer = false;
+				timer = 0;
+			}
 
             //Gestion Network
             if (photonView.isMine == false && PhotonNetwork.connected == true)
@@ -52,17 +70,24 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                 return;
             }
 
-            if (!m_Jump)
-            {
-                if (home.useController)
-                {
-                    m_Jump = CrossPlatformInputManager.GetButtonDown("2-Jump");
-                }
-                else
-                {
-                    m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-                }
-            }
+			if (!m_Jump) {
+	
+
+
+				if (home.useController) 
+				{
+					m_Jump = CrossPlatformInputManager.GetButtonDown ("2-Jump");
+				} 
+				else 
+				{
+					m_Jump = CrossPlatformInputManager.GetButtonDown ("Jump");
+				}
+				if (m_Jump && !lauchtimer)
+				{
+					lauchtimer = true;
+					audioS.PlayOneShot (jump);
+				}
+			}
         }
 
 

@@ -25,13 +25,18 @@ public class PlayerBow : Photon.MonoBehaviour
     GameObject fpscam;
     GameObject tpscam;
 
+	AudioSource audioS;
+	AudioClip bow;
+
     float t;
     float timeout = 0.8f;  
 
     // Use this for initialization
     void Start ()
     {
+		bow = (AudioClip)Resources.Load("Sound/Arcs/decochage");
         home = GetComponentInParent<PlayerControl>();
+		audioS = home.GetComponent<AudioSource> ();
         tpscamera = home.cam.GetComponentInChildren<Camera>();
         tpscam = home.cam;
         fpscam = home.fpscam;
@@ -75,7 +80,7 @@ public class PlayerBow : Photon.MonoBehaviour
             {
                 Destroy(temparrow);
                 anim.SetTrigger("Arrow");
-
+				audioS.PlayOneShot (bow);
                 arrow = PhotonNetwork.Instantiate("Arrow", fpscam.transform.position, Quaternion.Euler(fpscam.transform.rotation.eulerAngles),0);
                 arrow.GetComponent<ArrowScript>().from = home.view.viewID;
                 //arrow.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
