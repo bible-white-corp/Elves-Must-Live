@@ -53,8 +53,8 @@ public class Boutique : MonoBehaviour {
                 log.text = str + " bought";
                 description.text = "Sélectionner un élément pour obtenir sa description.";
             }
-            home.raycast.AddTurret(currentTurret.transform.GetChild(0).GetComponent<UILabel>().text);
-            TurretList.GetComponent<UIGrid>().RemoveChild(currentTurret.transform.GetSiblingIndex());
+            home.raycast.AddTurret(currentTurret.transform.GetChild(0).GetComponent<UILabel>().text, 0);
+            TurretList.GetComponent<UIGrid>().RemoveChild(currentTurret.transform);
             Destroy(currentTurret);
             TurretList.GetComponent<UIGrid>().Reposition();
             currentTurret = null;

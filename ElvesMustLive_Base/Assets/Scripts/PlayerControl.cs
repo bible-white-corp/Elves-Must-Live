@@ -188,11 +188,11 @@ public class PlayerControl : Photon.MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.N))
         {
-            raycast.AddTurret("Cristal");
-            raycast.AddTurret("CrossBow");
-            raycast.AddTurret("Hammer");
-            raycast.AddTurret("Projector");
-            raycast.AddTurret("Rocket");
+            raycast.AddTurret("Cristal",2);
+            raycast.AddTurret("CrossBow",2);
+            raycast.AddTurret("Hammer",2);
+            raycast.AddTurret("Projector",2);
+            raycast.AddTurret("Rocket",1);
         }
     }
 

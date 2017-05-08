@@ -44,53 +44,62 @@ public class RayCast : MonoBehaviour {
         BuildConfirm = false;
         AvailableTurrets = new List<KeyValuePair<string, int>>();
 
-        AddTurret("Cannon");
+        AddTurret("Cannon",0);
         //Init
         tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key);
-        pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key + "Preview");
+        pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key.Split('_')[0] + "Preview");
         cost = AvailableTurrets[curretTurret].Value;
     }
 
-    public void AddTurret(string turret)
+    public void AddTurret(string turret, int level)
     {
-        if (AvailableTurrets.Exists(x => x.Key == turret)) // Si la tourelle on la possède déja...
+        if (AvailableTurrets.Exists(x => x.Key.Contains(turret))) // Si la tourelle on la possède déja...
         {
             return;
         }
         switch (turret)
         {
             case "Cannon":
-                AvailableTurrets.Add(new KeyValuePair<string, int>("Cannon", 10));
+                AvailableTurrets.Add(new KeyValuePair<string, int>("Cannon_up"+level, 10));
                 home.MyUI.AddTurret("Cannon", 10);
                 return;
             case "Hammer":
-                AvailableTurrets.Add(new KeyValuePair<string, int>("Hammer", 20));
+                AvailableTurrets.Add(new KeyValuePair<string, int>("Hammer_up" + level, 20));
                 home.MyUI.AddTurret("Hammer", 20);
                 return;
             case "CrossBow":
-                AvailableTurrets.Add(new KeyValuePair<string, int>("CrossBow", 30));
+                AvailableTurrets.Add(new KeyValuePair<string, int>("CrossBow_up" + level, 30));
                 home.MyUI.AddTurret("CrossBow", 30);
                 return;
             case "Cristal":
-                AvailableTurrets.Add(new KeyValuePair<string, int>("Cristal", 30));
+                AvailableTurrets.Add(new KeyValuePair<string, int>("Cristal_up" + level, 30));
                 home.MyUI.AddTurret("Cristal", 30);
                 return;
             case "Projector":
-                AvailableTurrets.Add(new KeyValuePair<string, int>("Projector", 30));
+                AvailableTurrets.Add(new KeyValuePair<string, int>("Projector_up" + level, 30));
                 home.MyUI.AddTurret("Projector", 30);
                 return;
             case "Rocket":
-                AvailableTurrets.Add(new KeyValuePair<string, int>("Rocket", 30));
+                AvailableTurrets.Add(new KeyValuePair<string, int>("Rocket_up" + level, 30));
                 home.MyUI.AddTurret("Rocket", 30);
                 return;
             case "Regen":
-                AvailableTurrets.Add(new KeyValuePair<string, int>("Regen", 30));
+                AvailableTurrets.Add(new KeyValuePair<string, int>("Regen_up" + level, 30));
                 home.MyUI.AddTurret("Regen", 30);
                 return;
             default:
                 Debug.LogError("No turret nammed '" + turret + "'");
                 return;
         }
+    }
+
+    public void UpgradeTurret(string name)
+    {
+        var turret = AvailableTurrets.Find(x => x.Key.Contains(name));
+        var list = turret.Key.Split(new string[1] { "_up" }, System.StringSplitOptions.None);
+        int newlvl = (int.Parse(list[1]) + 1);
+        AvailableTurrets.Remove(turret);
+        AddTurret(list[0], newlvl);
     }
 
     void Update()
@@ -250,10 +259,10 @@ public class RayCast : MonoBehaviour {
     public void ChangeTurret(string turretName)
     {
         Cancel();
-        curretTurret = AvailableTurrets.FindIndex(x => x.Key == turretName);
+        curretTurret = AvailableTurrets.FindIndex(x => x.Key.Contains(turretName));
         KeyValuePair<string, int> turret = AvailableTurrets[curretTurret];
         tourelle = (GameObject)Resources.Load(turret.Key);
-        pretourelle = (GameObject)Resources.Load(turret.Key + "Preview");
+        pretourelle = (GameObject)Resources.Load(turret.Key.Split('_')[0] + "Preview");
         cost = turret.Value;
         Debug.Log(turret.Value);
         SetObjPropect(pretourelle);
@@ -266,7 +275,7 @@ public class RayCast : MonoBehaviour {
         curretTurret = i;
         Cancel();
         tourelle = (GameObject)Resources.Load(turret.Key);
-        pretourelle = (GameObject)Resources.Load(turret.Key + "Preview");
+        pretourelle = (GameObject)Resources.Load(turret.Key.Split('_')[0] + "Preview");
         cost = turret.Value;
         Debug.Log(turret.Value);
         SetObjPropect(pretourelle);

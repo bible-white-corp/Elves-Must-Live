@@ -90,7 +90,21 @@ public class UIControl : MonoBehaviour {
         tmp.GetChild(2).GetComponent<UILabel>().text = price + " Golds";
         tmp.GetChild(4).GetComponent<UISprite>().spriteName = turret;
         tmp.GetComponent<OnClickTurret>().home = home;
+        tmp.name = turret;
         TurretList.GetComponent<UIGrid>().AddChild(tmp);
+        TurretList.GetComponent<UIGrid>().Reposition();
+
+        UITurret.SetActive(state);
+    }
+
+    public void RemoveTurret(string old)
+    {
+        bool state = UITurret.GetActive();
+        UITurret.SetActive(true);
+
+        Transform oldTurret = TurretList.transform.Find(old);
+        TurretList.GetComponent<UIGrid>().RemoveChild(oldTurret);
+        Destroy(oldTurret);
         TurretList.GetComponent<UIGrid>().Reposition();
 
         UITurret.SetActive(state);
