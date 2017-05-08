@@ -58,7 +58,6 @@ public class EnnemyAttack : MonoBehaviour
     
     public void RotateTarget()
     {
-        Debug.Log("Rotate");
         Transform target = playerhp.transform;
         Vector3 targetDir = target.position - hp.transform.position;
         float step = 3 * Time.deltaTime;

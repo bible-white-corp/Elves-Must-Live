@@ -10,11 +10,17 @@ public class PlayerAttack : Photon.MonoBehaviour
     Animator anim;
     Collider coll;
     public bool isAttack;
-
     PlayerControl home;
+	AudioClip epee;
+	AudioClip lance;
+	AudioSource audioS;
 
     // Use this for initialization
-    void Start () {
+    void Start () 
+	{
+		audioS = GetComponentInParent<AudioSource> ();
+		epee = (AudioClip)Resources.Load("Sound/Epee/Coup");
+		lance = (AudioClip)Resources.Load("Sound/Lance/coup_lance");
         home = GetComponentInParent<PlayerControl>();
         anim = home.anim;
         coll = GetComponent<BoxCollider>();
@@ -35,6 +41,14 @@ public class PlayerAttack : Photon.MonoBehaviour
         }
         if ((Input.GetButtonDown("Fire1") && !home.useController || (Input.GetButtonDown("2-Fire1") && home.useController)) && !isAttack && !home.raycast.BuildConfirm)
         {
+			if (gameObject.tag == "Sword") 
+			{
+				audioS.PlayOneShot (epee);
+			}
+			if (gameObject.tag == "Spear") 
+			{
+				audioS.PlayOneShot (lance);
+			}
             isAttack = true;
             coll.enabled = true;
             anim.SetTrigger("Atk");

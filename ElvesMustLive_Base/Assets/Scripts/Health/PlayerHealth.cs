@@ -17,12 +17,23 @@ public class PlayerHealth : MonoBehaviour {
     bool IsSinking;
     bool IsRespawning;
 
+	AudioClip gothit;
+	AudioClip jump;
+	AudioClip death;
+	AudioSource audioS;
+
+
     PlayerControl home;
+
 
     public Renderer MainRenderer;
     // Use this for initialization
     void Start ()
 	{
+
+		gothit = (AudioClip)Resources.Load("Sound/Player/coup_ventre");
+		death = (AudioClip)Resources.Load("Sound/Player/death");
+		audioS = GetComponent<AudioSource> ();
         home = GetComponentInParent<PlayerControl>();
         //healthSlider = Slider.GetComponent<Slider>();
         anim = home.anim;
@@ -38,6 +49,7 @@ public class PlayerHealth : MonoBehaviour {
         {
             health = maxhealth;
         }
+
 
         /*if (hitStatus)
         {
@@ -84,10 +96,16 @@ public class PlayerHealth : MonoBehaviour {
 
     public void TakeDamage(int amount)
     {
-        if (IsDead)
-        {
-            return;
-        }
+		
+
+		if (IsDead) 
+		{
+			return;
+		} 
+		else
+		{
+			audioS.PlayOneShot(gothit);
+		}
         health -= amount;
         //healthSlider.value = health;
 
@@ -103,6 +121,7 @@ public class PlayerHealth : MonoBehaviour {
 
     public void Death()
     {
+		
         home.camscript.m_Target = null;
 		IsSinking = true;
         IsDead = true;
@@ -110,6 +129,7 @@ public class PlayerHealth : MonoBehaviour {
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>().enabled = false;
         GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().enabled = false;
+		audioS.PlayOneShot (death);
 
         //Destroy(gameObject, 4f);
     }

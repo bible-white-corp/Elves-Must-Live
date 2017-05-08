@@ -19,9 +19,13 @@ public class Balist_aim : MonoBehaviour
 	public GameObject piercingParticules; //particules jouees quand des cibles sont atteintes
 
     public int propri;
+	AudioSource audioS;
+	AudioClip fire;
 
 	void Start () 
 	{
+		audioS = GetComponent<AudioSource> ();
+		fire = (AudioClip)Resources.Load("Sound/Crossbow/tir_crossbow");
 		LastKnownPosition = Vector3.zero;
 		timebeforeshoot = 0f;
 		Engage = false;
@@ -121,5 +125,6 @@ public class Balist_aim : MonoBehaviour
         Shoot.GetComponent<Collision_Pierce> ().SetPiercing (piercingParticules);
 		//on attribue au script de collision les particules a emettre lors de la collision
 		Shoot.GetComponent<Collision_Pierce> ().SetDamage (CrossDamage);
+		audioS.PlayOneShot (fire);
     }
 }
