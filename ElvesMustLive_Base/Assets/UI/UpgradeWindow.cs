@@ -7,6 +7,8 @@ public class UpgradeWindow : MonoBehaviour {
     public UIControl ui;
     public Transform turrets;
 
+    Transform currentTurret;
+
 	// Use this for initialization
 	void Start () {
         foreach (Transform child in turrets)
@@ -30,6 +32,7 @@ public class UpgradeWindow : MonoBehaviour {
 
     public void OnClick(Transform name)
     {
+        currentTurret = name;
         switch (name.name)
         {
             case "Cannon":
@@ -57,6 +60,11 @@ public class UpgradeWindow : MonoBehaviour {
                 Debug.LogError("No turret nammed '" + name.name + "'");
                 return;
         }
+    }
+
+    public void Upgrade()
+    {
+        ui.home.raycast.UpgradeTurret(currentTurret.name);
     }
 
 }
