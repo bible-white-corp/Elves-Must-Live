@@ -23,6 +23,8 @@ public class PlayerControl : Photon.MonoBehaviour {
 
     public UIControl MyUI;
 
+    public Camera mapCam;
+
     [HideInInspector]
     public FreeLookCam camscript;
 

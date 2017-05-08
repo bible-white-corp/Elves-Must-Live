@@ -21,6 +21,7 @@ public class UIControl : MonoBehaviour {
     public UILabel DeadText;
     public GameObject Respawn;
 
+    public MiniMapScript mapScript;
 
     public Transform TurretList;
     public int pixelAlignTurret;
@@ -130,6 +131,7 @@ public class UIControl : MonoBehaviour {
         UI.scriptClick.home = home;
         UI.boutikScript.home = home;
         UI.UITurret.SetActive(false);
+        UI.mapScript.home = home;
         return UI;
     }
 
