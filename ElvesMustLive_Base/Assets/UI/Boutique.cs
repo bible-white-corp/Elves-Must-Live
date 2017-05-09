@@ -27,18 +27,18 @@ public class Boutique : MonoBehaviour {
     public void SelectTurret(GameObject obj)
     {
         currentTurret = obj;
-        string str = obj.transform.GetChild(0).GetComponent<UILabel>().text;
+        string str = obj.name;
         int price = int.Parse(obj.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
         description.text = obj.transform.GetChild(5).GetComponent<UILabel>().text;
-        selected.text = str + " : " + price + " Gold";
+        selected.text = str + " : " + price + " " + Localization.Get("gold_start"); 
     }
     public void SelectWeapon(GameObject obj)
     {
         currentWeapon = obj;
-        string str = obj.transform.GetChild(0).GetComponent<UILabel>().text;
+        string str = obj.name;
         int price = int.Parse(obj.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
-        description.text = "Je ne pense pas qu'un description soit nécéssaire... Ces armes ou ces arcs sont dévastateurs";
-        selected.text = str + " : " + price + " Gold";
+        description.text = Localization.Get(obj.name + "_des");
+        selected.text = str + " : " + price + " " + Localization.Get("gold_start");
     }
 
     public void BuySelected()
@@ -49,14 +49,14 @@ public class Boutique : MonoBehaviour {
             string str = currentTurret.transform.GetChild(0).GetComponent<UILabel>().text;
             if (price > home.gold)
             {
-                log.text = "No enought money !";
+                log.text = Localization.Get("no_money");
                 return;
             }
             else
             {
                 home.gold -= price;
                 log.text = str + " bought";
-                description.text = "Sélectionner un élément pour obtenir sa description.";
+                description.text = Localization.Get("clickfordes");
             }
             home.raycast.AddTurret(currentTurret.transform.GetChild(0).GetComponent<UILabel>().text, 0);
             ui.upgrade.Unlock(currentTurret.transform.GetChild(0).GetComponent<UILabel>().text);
@@ -64,7 +64,7 @@ public class Boutique : MonoBehaviour {
             Destroy(currentTurret);
             TurretList.GetComponent<UIGrid>().Reposition();
             currentTurret = null;
-            selected.text = "Select a object";
+            selected.text = Localization.Get("select_a") + Localization.Get("turrets");
             ShowTurrets();
         }
         else if (WeaponsSel && currentWeapon != null)
@@ -73,26 +73,26 @@ public class Boutique : MonoBehaviour {
             string str = currentWeapon.transform.GetChild(0).GetComponent<UILabel>().text;
             if (price > home.gold)
             {
-                log.text = "No enought money !";
+                log.text = Localization.Get("no_money");
                 return;
             }
             else
             {
                 home.gold -= price;
                 log.text = str + " bought";
-                description.text = "Sélectionner un élément pour obtenir sa description.";
+                description.text = Localization.Get("clickfordes");
             }
             home.weapons.AddWeapon(currentWeapon.transform.GetChild(0).GetComponent<UILabel>().text);
             WeaponList.GetComponent<UIGrid>().RemoveChild(currentWeapon.transform.GetSiblingIndex());
             Destroy(currentWeapon);
             WeaponList.GetComponent<UIGrid>().Reposition();
             currentWeapon = null;
-            selected.text = "Select a object";
+            selected.text = Localization.Get("select_a") + Localization.Get("weapons");
             ShowWeapons();
         }
         else
         {
-            log.text = "Nothing selected";
+            log.text = Localization.Get("nothing_sel");
         }
     }
 
@@ -109,8 +109,8 @@ public class Boutique : MonoBehaviour {
         }
         else
         {
-            selected.text = "Select a Turret";
-            description.text = "Sélectionner un élément pour obtenir sa description.";
+            selected.text = Localization.Get("select_a") + Localization.Get("turrets");
+            description.text = Localization.Get("clickfordes");
         }
     }
 
@@ -127,8 +127,8 @@ public class Boutique : MonoBehaviour {
         }
         else
         {
-            selected.text = "Select a Weapon";
-            description.text = "Sélectionner un élément pour obtenir sa description.";
+            selected.text = Localization.Get("select_a") + Localization.Get("weapons");
+            description.text = Localization.Get("clickfordes");
         }
     }
 }

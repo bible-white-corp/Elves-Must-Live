@@ -46,7 +46,19 @@ public class Game : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            if (Localization.language == "Français")
+            {
+                Localization.language = "English";
+            }
+            else
+            {
+                Localization.language = "Français";
 
+            }
+            Debug.Log(Localization.language);
+        }
         if (Input.GetKey(KeyCode.Space))
         {
             GetComponent<Animator>().SetBool("Skip", true);

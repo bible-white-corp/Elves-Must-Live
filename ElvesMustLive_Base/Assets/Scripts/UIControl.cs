@@ -53,9 +53,9 @@ public class UIControl : MonoBehaviour {
         if (!dead)
         {
             UIHealth.value = home.hp.health / home.hp.maxhealth;
-            UIGold.text = home.gold + " Golds";
-            UICount.text = game.wave.currentWave.Count + " restants";
-            UIModeLevel.text = "Level " + game.wave.mode.level;
+            UIGold.text = home.gold + " " + Localization.Get("gold_start");
+            UICount.text = game.wave.currentWave.Count + " " + Localization.Get("left");
+            UIModeLevel.text = Localization.Get("Level") + game.wave.mode.level;
         }
     }
 
@@ -97,8 +97,8 @@ public class UIControl : MonoBehaviour {
         Transform tmp = obj.transform;
         tmp.position = new Vector3(pixelAlignTurret, tmp.transform.position.y, tmp.transform.position.z);
         tmp.GetChild(0).GetComponent<UILabel>().text = turret;
-        tmp.GetChild(1).GetComponent<UILabel>().text = "New !";
-        tmp.GetChild(2).GetComponent<UILabel>().text = price + " Golds";
+        tmp.GetChild(1).GetComponent<UILabel>().text = Localization.Get("new");
+        tmp.GetChild(2).GetComponent<UILabel>().text = price + " " + Localization.Get("gold_start");
         tmp.GetChild(4).GetComponent<UISprite>().spriteName = turret;
         tmp.GetComponent<OnClickTurret>().home = home;
         tmp.name = turret;

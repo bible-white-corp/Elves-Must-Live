@@ -16,11 +16,11 @@ public class MultiButton : MonoBehaviour {
     {
         if (PlayerPrefs.GetInt("mod") == 1)
         {
-            text.text = "MultiPlayer";
+            text.text = Localization.Get("multi");
         }
         else
         {
-            text.text = "SinglePlayer";
+            text.text = Localization.Get("single");
         }
     }
 }

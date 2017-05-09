@@ -331,6 +331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4229238283109294}
   - component: {fileID: 114655659249828446}
+  - component: {fileID: 114527418210007284}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -796,6 +797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4209563426865816}
   - component: {fileID: 114021583352131706}
+  - component: {fileID: 114886361343702328}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -877,6 +879,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4878369983754412}
   - component: {fileID: 114437698299119308}
+  - component: {fileID: 114172779478786038}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -1032,6 +1035,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4046159913353934}
   - component: {fileID: 114682773049948968}
+  - component: {fileID: 114140094669726714}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -1633,6 +1637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4692338719249620}
   - component: {fileID: 114627334566615506}
+  - component: {fileID: 114876880710686518}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -2587,6 +2592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4336994496556354}
   - component: {fileID: 114971041185422968}
+  - component: {fileID: 114825971756660656}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -2658,6 +2664,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4230619634926082}
   - component: {fileID: 114617385253711352}
+  - component: {fileID: 114240451250270246}
   m_Layer: 8
   m_Name: Label (2)
   m_TagString: Untagged
@@ -2730,6 +2737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4337648097493604}
   - component: {fileID: 114559743132011272}
+  - component: {fileID: 114916485456498522}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -2981,6 +2989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4376383951303138}
   - component: {fileID: 114458233484973942}
+  - component: {fileID: 114979046372515742}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -3479,6 +3488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4505444934075512}
   - component: {fileID: 114175581359954924}
+  - component: {fileID: 114640860254335148}
   m_Layer: 8
   m_Name: DeadTxt
   m_TagString: Untagged
@@ -3817,6 +3827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4383667704336660}
   - component: {fileID: 114902617885392202}
+  - component: {fileID: 114090285487882348}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -4538,6 +4549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4512802101292198}
   - component: {fileID: 114195843366604120}
+  - component: {fileID: 114287709768524398}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -5252,7 +5264,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1617697491528008}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 139.73, y: 48.92, z: 0}
+  m_LocalPosition: {x: 175.2, y: 48.92, z: 0}
   m_LocalScale: {x: 0.999, y: 0.999, z: 0.999}
   m_Children: []
   m_Father: {fileID: 4021860731488728}
@@ -6488,7 +6500,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1649410807604342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -95.1, y: 24.8, z: 0}
+  m_LocalPosition: {x: -95.1, y: 0.41, z: 0}
   m_LocalScale: {x: 0.999, y: 0.999, z: 0.999}
   m_Children: []
   m_Father: {fileID: 4021860731488728}
@@ -9595,7 +9607,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: "Ici, une description de la tourelle s\xE9lctionn\xE9e"
+  mText: Cliquez sur un item pour obtenir sa description.
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 0
@@ -10160,7 +10172,7 @@ MonoBehaviour:
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
   mText: "Regen: La ruine des \xE9quipes medicales, une tourelle qui fait leur boulot
     en continu."
-  mFontSize: 28
+  mFontSize: 0
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -10713,7 +10725,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: Upgrade
+  mText: 
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 0
@@ -10759,6 +10771,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1bd99dcf43f97d48bb6215c70f0cd40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114090285487882348
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865244267115700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: reprendre
 --- !u!114 &114094400447752768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -11592,6 +11616,18 @@ MonoBehaviour:
   onFinished: []
   eventReceiver: {fileID: 0}
   callWhenFinished: 
+--- !u!114 &114140094669726714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1227368608961470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: turrets
 --- !u!114 &114144279409100888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12045,6 +12081,18 @@ MonoBehaviour:
   hover: {x: 0, y: 0, z: 0}
   pressed: {x: 2, y: -2, z: 0}
   duration: 0.2
+--- !u!114 &114172779478786038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1203768633751006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: pause_menu
 --- !u!114 &114175581359954924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12918,12 +12966,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1126752320019016}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: Music
+  key: upgrade
 --- !u!114 &114226468686036700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13191,6 +13239,18 @@ MonoBehaviour:
   pressed: {r: 0.40784314, g: 0.29411766, b: 0.18039216, a: 1}
   disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   duration: 0.2
+--- !u!114 &114240451250270246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1589860995233762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: this_turret_has
 --- !u!114 &114248354754655842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13419,7 +13479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: 
+  key: Cannon_des
 --- !u!114 &114276870869453022
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13806,6 +13866,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &114287709768524398
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1992571835874336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: buy
 --- !u!114 &114290992965064054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17444,7 +17516,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 9.263889
+  aspectRatio: 9.268518
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Highlight - Shadowed
   mType: 1
@@ -17570,6 +17642,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &114527418210007284
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1094260427763430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: shop_des
 --- !u!114 &114527579045125208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18163,17 +18247,17 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.21641791, g: 0.15606697, b: 0.09205837, a: 1}
   mPivot: 4
-  mWidth: 68
+  mWidth: 58
   mHeight: 20
   mDepth: 5
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.4
+  aspectRatio: 2.9
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: Histoire
+  mText: Armes
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 0
@@ -19649,6 +19733,18 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
+--- !u!114 &114640860254335148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1787196634963244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: dead
 --- !u!114 &114644925707960116
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -20493,17 +20589,17 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.21641791, g: 0.15606697, b: 0.09205837, a: 1}
   mPivot: 4
-  mWidth: 76
+  mWidth: 82
   mHeight: 20
   mDepth: 5
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.8
+  aspectRatio: 4.1
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: EndLess
+  mText: Tourelles
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 0
@@ -22325,6 +22421,18 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
+--- !u!114 &114825971756660656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1571585200124782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: chat
 --- !u!114 &114828921746965422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -22815,6 +22923,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72af25c2a1299f94a86fa9cace6e252a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114876880710686518
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1365579157324754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: options
 --- !u!114 &114880540380970122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -22871,6 +22991,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollView: {fileID: 114186960297368624}
   draggablePanel: {fileID: 0}
+--- !u!114 &114886361343702328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1190674610984636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: clickfordes
 --- !u!114 &114895857372295098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -23240,6 +23372,18 @@ MonoBehaviour:
   onFinished: []
   eventReceiver: {fileID: 0}
   callWhenFinished: 
+--- !u!114 &114916485456498522
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1598107485553000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: weapons
 --- !u!114 &114916816802834780
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -23337,7 +23481,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.5
+  aspectRatio: 2.5
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
@@ -24275,6 +24419,18 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
+--- !u!114 &114979046372515742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1670980190858248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: leave
 --- !u!114 &114982932168811082
 MonoBehaviour:
   m_ObjectHideFlags: 1
