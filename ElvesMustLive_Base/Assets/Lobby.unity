@@ -616,7 +616,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: SinglePlayer
+  mText: CODE
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 0
@@ -826,13 +826,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
-  mText: 'This is the content of the second tab.
-
-
-    All the tabs do is enable / disable remote game objects of your choice.
-
-
-    The same [335500]UIToggle[-] script gets re-used to create tabs.'
+  mText: CODE
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 4
@@ -1941,6 +1935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 432698200}
   - component: {fileID: 432698201}
+  - component: {fileID: 432698202}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -2025,6 +2020,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &432698202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 432698199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: endless
 --- !u!1 &447294955
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,6 +2347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 585859833}
   - component: {fileID: 585859834}
+  - component: {fileID: 585859835}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -2424,6 +2432,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &585859835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 585859832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: offiline
 --- !u!1 &592847308
 GameObject:
   m_ObjectHideFlags: 0
@@ -3113,6 +3133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 679331430}
   - component: {fileID: 679331431}
+  - component: {fileID: 679331432}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -3197,6 +3218,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &679331432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 679331429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: connexion
 --- !u!1 &680555255
 GameObject:
   m_ObjectHideFlags: 0
@@ -3207,6 +3240,7 @@ GameObject:
   m_Component:
   - component: {fileID: 680555256}
   - component: {fileID: 680555257}
+  - component: {fileID: 680555258}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -3294,6 +3328,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &680555258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 680555255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: endless_des
 --- !u!1 &712160180
 GameObject:
   m_ObjectHideFlags: 0
@@ -5742,6 +5788,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1492798761}
   - component: {fileID: 1492798762}
+  - component: {fileID: 1492798763}
   m_Layer: 8
   m_Name: Label
   m_TagString: Untagged
@@ -5826,6 +5873,18 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!114 &1492798763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1492798760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa69d5b40401f77469779cf7f6fc94a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: 
 --- !u!1 &1541588362
 GameObject:
   m_ObjectHideFlags: 0
