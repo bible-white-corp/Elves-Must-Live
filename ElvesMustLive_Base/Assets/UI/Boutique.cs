@@ -20,6 +20,10 @@ public class Boutique : MonoBehaviour {
     public PlayerControl home;
     public UIControl ui;
 
+    private void Start()
+    {
+
+    }
     public void SelectTurret(GameObject obj)
     {
         currentTurret = obj;

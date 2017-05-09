@@ -99,7 +99,14 @@ public class RayCast : MonoBehaviour {
         var list = turret.Key.Split(new string[1] { "_up" }, System.StringSplitOptions.None);
         int newlvl = (int.Parse(list[1]) + 1);
         AvailableTurrets.Remove(turret);
-        AddTurret(list[0], newlvl);
+        AvailableTurrets.Add(new KeyValuePair<string, int>(list[0] + "_up" + newlvl, turret.Value));
+    }
+
+    public int GetLevel(string name)
+    {
+        var turret = AvailableTurrets.Find(x => x.Key.Contains(name));
+        var list = turret.Key.Split(new string[1] { "_up" }, System.StringSplitOptions.None);
+        return int.Parse(list[1]);
     }
 
     void Update()

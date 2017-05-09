@@ -32,6 +32,15 @@ public class UIControl : MonoBehaviour {
     void Start () {
         pixelAlignTurret = 0;
         game = GameObject.Find("GameManager").GetComponent<Game>();
+
+        upgrade.enabled = true;
+
+        foreach (Transform child in upgrade.turrets)
+        {
+            child.GetComponent<Collider>().enabled = false;
+            child.GetComponent<UIButton>().state = UIButtonColor.State.Disabled;
+        }
+        upgrade.enabled = false;
     }
 	
 	// Update is called once per frame
