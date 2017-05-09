@@ -127,8 +127,8 @@ public class PlayerHealth : MonoBehaviour {
         IsDead = true;
         anim.SetTrigger("Died");
         GetComponent<Rigidbody>().isKinematic = true;
-        GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>().enabled = false;
-        GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().enabled = false;
+		Destroy (GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl> ());
+		Destroy (GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>());
 		audioS.PlayOneShot (death);
 
         //Destroy(gameObject, 4f);
@@ -145,9 +145,8 @@ public class PlayerHealth : MonoBehaviour {
         IsDead = false;
         anim.SetBool("Died", false);
         anim.SetTrigger("Respawn");
-
-        GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>().enabled = true;
-        GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>().enabled = true;
+		gameObject.AddComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl> ();
+		gameObject.AddComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter> ();
 
         health = maxhealth;
         IsRespawning = true;
