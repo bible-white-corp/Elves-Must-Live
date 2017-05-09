@@ -21,6 +21,8 @@ public class PlayerHealth : MonoBehaviour {
 	AudioClip jump;
 	AudioClip death;
 	AudioSource audioS;
+	float timebeforehit;
+	bool beinghitted;
 
 
     PlayerControl home;
@@ -30,7 +32,7 @@ public class PlayerHealth : MonoBehaviour {
     // Use this for initialization
     void Start ()
 	{
-
+		beinghitted = false;
 		gothit = (AudioClip)Resources.Load("Sound/Player/coup_ventre");
 		death = (AudioClip)Resources.Load("Sound/Player/death");
 		audioS = GetComponent<AudioSource> ();
@@ -38,6 +40,7 @@ public class PlayerHealth : MonoBehaviour {
         //healthSlider = Slider.GetComponent<Slider>();
         anim = home.anim;
 		TimerbeforeDeath = 0;
+		timebeforehit = 0;
 
     }
    
@@ -49,6 +52,15 @@ public class PlayerHealth : MonoBehaviour {
         {
             health = maxhealth;
         }
+		if (beinghitted) 
+		{
+			timebeforehit += Time.deltaTime;
+			if (timebeforehit > 0.4) 
+			{
+				beinghitted = false;
+				timebeforehit = 0;
+			}
+		}
 
 
         /*if (hitStatus)
@@ -102,9 +114,10 @@ public class PlayerHealth : MonoBehaviour {
 		{
 			return;
 		} 
-		else
+		else if (!beinghitted)
 		{
 			audioS.PlayOneShot(gothit);
+			beinghitted = true;
 		}
         health -= amount;
         //healthSlider.value = health;
