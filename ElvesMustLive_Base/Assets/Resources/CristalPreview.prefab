@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 65797970905180354}
   - component: {fileID: 114803884301956780}
   - component: {fileID: 114729976243239838}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: CristalPreview
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 33436172455506082}
   - component: {fileID: 23940760749963426}
   - component: {fileID: 95534560251363420}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Crystal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ GameObject:
   - component: {fileID: 120209023053154674}
   - component: {fileID: 65379239262880666}
   - component: {fileID: 114084406665429324}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Crystal_Weapon_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

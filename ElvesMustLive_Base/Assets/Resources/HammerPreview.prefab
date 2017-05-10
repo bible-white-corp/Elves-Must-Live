@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23015440956689698}
   - component: {fileID: 65471448886294608}
   - component: {fileID: 114517467891688904}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: HammerPreview
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 4950267464376942}
   - component: {fileID: 33240427788847908}
   - component: {fileID: 23533939839436916}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Hammer_Hammer_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 23981761756151994}
   - component: {fileID: 65757919332090706}
   - component: {fileID: 114668813706345438}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Hammer_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 4086412157420082}
   - component: {fileID: 33381752978495026}
   - component: {fileID: 23139402006505958}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Hammer_Hub_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

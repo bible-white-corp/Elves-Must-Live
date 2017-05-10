@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23011667406959518}
   - component: {fileID: 114716508829376564}
   - component: {fileID: 65396006895621572}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: CrossBowPreview
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4019054994327884}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Sortie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 23346314037975292}
   - component: {fileID: 65381317232654150}
   - component: {fileID: 114371107434380342}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: CrossBow_Hub_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 4174206516348926}
   - component: {fileID: 33516488924675358}
   - component: {fileID: 23804508227629070}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: CrossBow_CrossBow_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4482710591488722}
   - component: {fileID: 33043731944852266}
   - component: {fileID: 23697020839334776}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Cannon_Cannon_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 23051357305281386}
   - component: {fileID: 136196218473281954}
   - component: {fileID: 114613493040911050}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Cannon_Hub_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 114977339824455750}
   - component: {fileID: 65724415439080290}
   - component: {fileID: 54489056693359284}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: CannonPreview
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4519111131069698}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Sortie
   m_TagString: Untagged
   m_Icon: {fileID: 0}

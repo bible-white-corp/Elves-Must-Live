@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4437968420827252}
   - component: {fileID: 33752768247117982}
   - component: {fileID: 23233001169980978}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: LightShaft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 23495182264435022}
   - component: {fileID: 65998864518613240}
   - component: {fileID: 114566302225561046}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: ProjectorPreview
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4019970896493652}
   - component: {fileID: 33155391339931114}
   - component: {fileID: 23467263270016896}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Projector_Hub_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 23360890267480030}
   - component: {fileID: 65223851753456040}
   - component: {fileID: 114056102618449516}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Projector_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 33653368377955858}
   - component: {fileID: 23348571572337790}
   - component: {fileID: 114231238934121154}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Projector_Projector_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}

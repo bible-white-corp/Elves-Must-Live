@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23897191955688026}
   - component: {fileID: 65651535271167634}
   - component: {fileID: 114795862685799408}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: RegenPreview
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 23267605634484216}
   - component: {fileID: 65218186578195362}
   - component: {fileID: 114139272093926422}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Tesla_L1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
