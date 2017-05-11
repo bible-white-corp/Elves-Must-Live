@@ -1025,6 +1025,10 @@ MonoBehaviour:
     - obj: {fileID: 383672246}
       field: 
     oneShot: 0
+  - mTarget: {fileID: 517323411}
+    mMethodName: SetEndLess
+    mParameters: []
+    oneShot: 0
 --- !u!114 &304228423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2732,6 +2736,10 @@ MonoBehaviour:
       field: 
     - obj: {fileID: 383672246}
       field: 
+    oneShot: 0
+  - mTarget: {fileID: 517323411}
+    mMethodName: SetEndLess
+    mParameters: []
     oneShot: 0
 --- !u!114 &617178274
 MonoBehaviour:
@@ -4977,6 +4985,10 @@ MonoBehaviour:
       field: 
     - obj: {fileID: 383672246}
       field: 
+    oneShot: 0
+  - mTarget: {fileID: 517323411}
+    mMethodName: SetEndLess
+    mParameters: []
     oneShot: 0
 --- !u!114 &1192366883
 MonoBehaviour:
