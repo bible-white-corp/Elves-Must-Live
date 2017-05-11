@@ -37,12 +37,20 @@ public class PlayerControl : Photon.MonoBehaviour {
 
     // Use this for initialization
     void Awake () 
-	{   
+	{
+        game = GameObject.Find("GameManager").GetComponent<Game>();
+
+        if (PhotonNetwork.isMasterClient)
+        {
+            game.masterClient = this;
+            game.InitWave();
+        }
+
         isMine = photonView.isMine;
         view = photonView;
         if (isMine)
         {
-            game = GameObject.Find("GameManager").GetComponent<Game>();
+
 
             cam = (GameObject)Instantiate(Resources.Load("CameraRig"), transform.position, Quaternion.identity);
             camscript = cam.GetComponent<FreeLookCam>();
@@ -105,7 +113,11 @@ public class PlayerControl : Photon.MonoBehaviour {
         {
             if (!game.wave.StartWave())
             {
-                Debug.Log("No level left");
+                PhotonNetwork.LeaveRoom();
+            }
+            else
+            {
+                MyUI.Info.enabled = false;
             }
             //Afficher un texte "Press Enter pour lancer la prochaine vague."
         }
@@ -173,8 +185,12 @@ public class PlayerControl : Photon.MonoBehaviour {
                 MyUI.upgrade.gameObject.SetActive(false);
                 BtkActif = false;
 				MenuActif = false;
-			} 
-			else
+			}
+            else if (MyUI.Info.enabled)
+            {
+                MyUI.Info.enabled = false;
+            }
+            else
 			{
 				if (MyUI.PauseWindow.GetActive())
                 {

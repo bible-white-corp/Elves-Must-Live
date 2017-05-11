@@ -21,6 +21,7 @@ public class UIControl : MonoBehaviour {
 
     public bool dead;
     public UILabel DeadText;
+    public UILabel Info;
     public GameObject Respawn;
 
     public MiniMapScript mapScript;

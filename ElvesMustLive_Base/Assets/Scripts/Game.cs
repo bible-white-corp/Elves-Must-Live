@@ -13,7 +13,7 @@ public class Game : MonoBehaviour {
     public bool Splited;
     public bool Online;
     public bool SinglePlayer;
-
+    public PlayerControl masterClient;
     public GameMode mode;
 
     public bool paused = false;
@@ -31,10 +31,17 @@ public class Game : MonoBehaviour {
         {
             Splited = true;
         }
+
+    }
+
+
+
+    public void InitWave()
+    {
         /////////////////////////////////////////////////
         wave = gameObject.AddComponent<WaveGenerator>();
 
-        Debug.Log("Mode : "+PlayerPrefs.GetString("Mode"));
+        Debug.Log("Mode : " + PlayerPrefs.GetString("Mode"));
         switch (PlayerPrefs.GetString("Mode"))
         {
             case "History":
@@ -57,11 +64,6 @@ public class Game : MonoBehaviour {
         wave.mode = mode;
     }
 
-    private void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -70,12 +72,7 @@ public class Game : MonoBehaviour {
             Debug.Log("You lost");
         }
         ennemyInMap = GameObject.FindGameObjectWithTag("Shootable") != null;
-
-
-
-
-
-
+        
         if (Input.GetKeyDown(KeyCode.Y))
         {
             if (Localization.language == "Français")
@@ -140,8 +137,5 @@ public class Game : MonoBehaviour {
             paused = true;
         }
     }
-
-
-
 
 }

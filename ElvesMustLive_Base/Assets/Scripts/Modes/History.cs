@@ -30,7 +30,7 @@ public class History : GameMode {
                         Add("Ennemy0", 5f);
                         Add("Ennemy0", 5f); // String dans ressource et temps qui le sépare du mob précédent.
                         Add("Ennemy0", 5f);
-                        
+                       
                         break;
                     case 1:
                         Add("Ennemy0", 5f); // Vague 2
@@ -104,6 +104,7 @@ public class History : GameMode {
             default:
                 break;
         }
+        waveRemaining--;
         return queue;
     }
 

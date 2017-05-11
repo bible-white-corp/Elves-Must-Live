@@ -8,7 +8,7 @@ public class ProtalScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        GameObject.Find("GameManager").GetComponent<Game>();
+        game = GameObject.Find("GameManager").GetComponent<Game>();
     }
 	
 	// Update is called once per frame

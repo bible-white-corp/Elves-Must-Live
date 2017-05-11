@@ -72,10 +72,19 @@ public class WaveGenerator : MonoBehaviour {
                 }
             }
         }
+        else
+        {
+            if (!game.ennemyInMap && !endGame)
+            {
+                game.masterClient.MyUI.Info.enabled = true;
+                game.masterClient.MyUI.Info.text = Localization.Get("LaunchWave");
+            }
+        }
 
         if (endGame && !game.ennemyInMap)
         {
-            GetComponent<NetworkController>().LeaveRoom(); // Dès qu'il n'y a plus d'ennemies, on sort.
+            game.masterClient.MyUI.Info.enabled = true;
+            game.masterClient.MyUI.Info.text = Localization.Get("EndLevel");
         }
     }
 
