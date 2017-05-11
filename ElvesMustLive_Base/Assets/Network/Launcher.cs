@@ -88,7 +88,18 @@ public class Launcher : Photon.PunBehaviour
     public void LaunchTuto()
     {
         LevelName = "Tutorial/Level1";
+        PlayerPrefs.SetString("Mode", "Tuto");
         Offline();
+    }
+
+    public void SetHistory()
+    {
+        PlayerPrefs.SetString("Mode", "History");
+    }
+
+    public void SetEndLess()
+    {
+        PlayerPrefs.SetString("Mode", "Endless");
     }
 
     public void LoadHistory()
@@ -97,12 +108,14 @@ public class Launcher : Photon.PunBehaviour
         {
             PlayerPrefs.SetInt("Histoire", 0);
         }
+        SetHistory();
         switch (PlayerPrefs.GetInt("Histoire"))
         {
             case 0:
                 LevelName = "Tutorial/Level1";
                 historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("tuto_des");
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "";
+                PlayerPrefs.SetString("Mode", "Tuto");
                 break;
             case 1:
                 LevelName = "Map/Map 1";

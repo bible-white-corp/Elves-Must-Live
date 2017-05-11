@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ProtalScript : MonoBehaviour {
 
-
+    Game game;
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        GameObject.Find("GameManager").GetComponent<Game>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,7 +21,7 @@ public class ProtalScript : MonoBehaviour {
         if (coll.gameObject.tag == "Shootable")
         {
             // Un ennemie est passé
-            // compteur -= 1;
+            game.globalLife -= 1;
             Destroy(coll.gameObject);
         }
     }

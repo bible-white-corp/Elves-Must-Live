@@ -28,43 +28,7 @@ public class Endless : GameMode {
     public override Queue<KeyValuePair<string, float>> LoadNextLevel()
     {
         Queue<KeyValuePair<string, float>> queue = new Queue<KeyValuePair<string, float>>();
-        /*switch (level) // J'aime les/la Switch <3 T'abuses...
-        {
-            case 1:
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0)); //Ennemy prefab + time in sec between ennemies.
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 5)); // KeyValuePair = Tuple
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-                break;
-            case 2:
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 0));
-                queue.Enqueue(new KeyValuePair<string, int>("Ennemy", 5));
-                break;
-            default:
-                Debug.Log("Win !");
-                break;
-        }*/
+        
         //Algo pour générer des queues de + en + hardcore en fonction du level
 
         for (int i = 0; i < Mathf.Pow(2,level-1); i++)

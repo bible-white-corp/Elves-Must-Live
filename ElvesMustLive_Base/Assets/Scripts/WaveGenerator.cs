@@ -15,6 +15,8 @@ public class WaveGenerator : MonoBehaviour {
     public Queue<KeyValuePair<string, float>> currentWave = new Queue<KeyValuePair<string, float>>();
     public KeyValuePair<string, float> currentEnnemy = new KeyValuePair<string, float> (null, 0);
 
+    public bool endGame;
+
     // Use this for initialization
     void Start () {
         game = GetComponent<Game>();
@@ -25,6 +27,7 @@ public class WaveGenerator : MonoBehaviour {
         if (!wave && mode.HasNextLevel())
         {
             currentWave = mode.LoadNextLevel();
+            mode.level += 1;
         }
         else
         {
@@ -59,7 +62,7 @@ public class WaveGenerator : MonoBehaviour {
                         Finish();
                         return;
                     }
-                    mode.level += 1;
+                    
                     currentWave = mode.LoadNextLevel();
 
                 }
@@ -70,7 +73,10 @@ public class WaveGenerator : MonoBehaviour {
             }
         }
 
-
+        if (endGame && !game.ennemyInMap)
+        {
+            GetComponent<NetworkController>().LeaveRoom(); // Dès qu'il n'y a plus d'ennemies, on sort.
+        }
     }
 
     public void LoadEnnemy()
@@ -81,6 +87,12 @@ public class WaveGenerator : MonoBehaviour {
 
     public void Finish()
     {
-        Debug.Log("You Win");
+        Debug.Log("You Win this level");
+        if (PlayerPrefs.GetString("Mode") == "History")
+        {
+            PlayerPrefs.SetInt("Histoire", PlayerPrefs.GetInt("Histoire") + 1);
+        }
+
+        endGame = true;
     }
 }

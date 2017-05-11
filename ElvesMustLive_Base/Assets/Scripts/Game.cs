@@ -18,6 +18,9 @@ public class Game : MonoBehaviour {
 
     public bool paused = false;
 
+    public int globalLife = 10; //Ennemies qui traversent le portail
+
+    public bool ennemyInMap;
 
     // Use this for initialization
     void Awake()
@@ -30,10 +33,26 @@ public class Game : MonoBehaviour {
         }
         /////////////////////////////////////////////////
         wave = gameObject.AddComponent<WaveGenerator>();
-        if (mode == null)
+
+        Debug.Log("Mode : "+PlayerPrefs.GetString("Mode"));
+        switch (PlayerPrefs.GetString("Mode"))
+        {
+            case "History":
+                mode = gameObject.AddComponent<History>();
+                break;
+            case "Endless":
+                mode = gameObject.AddComponent<Endless>();
+                break;
+            case "Tuto":
+                break;
+            default:
+                break;
+        }
+
+        /*if (mode == null)
         {
             mode = gameObject.AddComponent<Endless>();
-        }
+        }*/
 
         wave.mode = mode;
     }
@@ -46,6 +65,17 @@ public class Game : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (globalLife < 0)
+        {
+            Debug.Log("You lost");
+        }
+        ennemyInMap = GameObject.FindGameObjectWithTag("Shootable") != null;
+
+
+
+
+
+
         if (Input.GetKeyDown(KeyCode.Y))
         {
             if (Localization.language == "Français")
