@@ -75,7 +75,7 @@ public class WaveGenerator : MonoBehaviour {
 				if (map == 2) 
 				{
 					int temp = Random.Range (1, 3);
-					if (temp == 1) 
+					if (temp == 1 || mode.level == 1) 
 					{
 						PhotonNetwork.InstantiateSceneObject (currentEnnemy.Key, gameObject.transform.position, Quaternion.identity, 0, new object[] { });
 					}
