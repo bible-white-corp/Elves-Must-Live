@@ -12,7 +12,8 @@ public class WaveGenerator : MonoBehaviour {
     public bool wave = false;
 
     public float time;
-    public Queue<KeyValuePair<string, float>> currentWave = new Queue<KeyValuePair<string, float>>();
+    public Queue<KeyValuePair<string, float>> currentWave;
+	public int ennemiesleft;
     public KeyValuePair<string, float> currentEnnemy = new KeyValuePair<string, float> (null, 0);
 
     public bool endGame;
@@ -20,6 +21,7 @@ public class WaveGenerator : MonoBehaviour {
     // Use this for initialization
     void Start () {
         game = GetComponent<Game>();
+		ennemiesleft = 0;
     }
 	
     public bool StartWave()
@@ -27,6 +29,7 @@ public class WaveGenerator : MonoBehaviour {
         if (!wave && mode.HasNextLevel())
         {
             currentWave = mode.LoadNextLevel();
+			ennemiesleft = currentWave.Count;
             mode.level += 1;
         }
         else
@@ -52,9 +55,10 @@ public class WaveGenerator : MonoBehaviour {
             {
                 //time = ennemyTime;
                 PhotonNetwork.InstantiateSceneObject(currentEnnemy.Key, gameObject.transform.position, Quaternion.identity, 0, new object[] { });
+				ennemiesleft -= 1;
 
 
-                if (currentWave.Count == 0)
+				if (ennemiesleft == 0)
                 {
                     wave = false;
                     if (!mode.HasNextLevel())
@@ -63,7 +67,6 @@ public class WaveGenerator : MonoBehaviour {
                         return;
                     }
                     
-                    currentWave = mode.LoadNextLevel();
 
                 }
                 else

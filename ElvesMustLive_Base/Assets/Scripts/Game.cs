@@ -82,7 +82,6 @@ public class Game : MonoBehaviour {
             else
             {
                 Localization.language = "Français";
-
             }
             Debug.Log(Localization.language);
         }

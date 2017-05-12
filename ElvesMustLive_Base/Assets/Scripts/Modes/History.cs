@@ -25,18 +25,76 @@ public class History : GameMode {
                 /////////////////////////////////////////// MAP 1
                 switch (waveRemaining)
                 {
-                    case 2:
-                        Add("Ennemy0", 5f); // Vague 1
-                        Add("Ennemy0", 5f);
-                        Add("Ennemy0", 5f); // String dans ressource et temps qui le sépare du mob précédent.
-                        Add("Ennemy0", 5f);
-                       
-                        break;
-                    case 1:
-                        Add("Ennemy0", 5f); // Vague 2
-                        Add("Ennemy0", 5f);
-                        Add("Ennemy0", 5f);
-                        Add("Ennemy0", 5f);
+			case 5:
+				Add ("Ennemy0", 5f); // Vague 1
+				Add ("Ennemy0", 5f);
+				Add ("Ennemy0", 5f); // String dans ressource et temps qui le sépare du mob précédent.
+				Add ("Ennemy0", 5f);
+				break;
+			case 4:
+				Add ("Ennemy0", 5f); // Vague 2
+				Add ("Ennemy0", 0.5f);
+				Add ("Ennemy0", 5f);
+				Add ("Ennemy0", 0.5f);
+				Add ("Ennemy0", 0.5f); // Vague 2
+				Add ("Ennemy0", 5f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				break;
+
+			case 3:
+				Add ("Ennemy0", 5f); // Vague 3
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f); // String dans ressource et temps qui le sépare du mob précédent.
+				Add ("Ennemy0", 5f);
+				Add ("Ennemy0", 0.1f); // Vague 3
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 5f); // String dans ressource et temps qui le sépare du mob précédent.
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f); // Vague 3
+				Add ("Ennemy0", 5f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f); // String dans ressource et temps qui le sépare du mob précédent.
+				Add ("Ennemy0", 0.1f);
+				break;
+			case 2:
+				Add ("Ennemy0", 5f); // Vague 4
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f); // String dans ressource et temps qui le sépare du mob précédent.
+				Add ("Ennemy0", 5f);
+				Add ("Ennemy0", 0.1f); // Vague 4
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 5f); // String dans ressource et temps qui le sépare du mob précédent.
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f); // Vague 4
+				Add ("Ennemy0", 5f);
+				Add ("Ennemy0", 0.1f); // String dans ressource et temps qui le sépare du mob précédent.
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				break;
+
+			case 1:
+				Add ("Ennemy0", 5f); // Vague 5
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f); // Vague 5
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f);
+				Add ("Ennemy0", 0.1f); // Vague 5
+				Add ("Ennemy0", 0.1f); // String dans ressource et temps qui le sépare du mob précédent.
+				Add ("Ennemy0", 0.1f);
+				Add ("Boss1",0.1f);
                         
                         break;
                     default:
@@ -104,7 +162,8 @@ public class History : GameMode {
             default:
                 break;
         }
-        waveRemaining--;
+        waveRemaining-=1;
+		Debug.Log (waveRemaining);
         return queue;
     }
 
@@ -115,7 +174,7 @@ public class History : GameMode {
         {
             case 1:
                 //Map1
-                waveRemaining = 2;
+                waveRemaining = 5;
                 break;
             case 2:
                 //Map2

@@ -57,7 +57,6 @@ public class Health : Photon.MonoBehaviour
 		health -= amount - Armor;
         AudioClip hitClip = (AudioClip)Resources.Load("Sound/Orc/hit");
         audio.PlayOneShot(hitClip);
-		Debug.Log (health);
         if (health <= 0)
         {
             Death(from);
