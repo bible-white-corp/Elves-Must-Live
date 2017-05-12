@@ -5,21 +5,28 @@ using UnityEngine;
 public class WaveGenerator : MonoBehaviour {
 
     public Game game;
-
     public GameMode mode;
     
     //public float ennemyTime = 5;
     public bool wave = false;
-
+	public int map;
     public float time;
     public Queue<KeyValuePair<string, float>> currentWave;
 	public int ennemiesleft;
     public KeyValuePair<string, float> currentEnnemy = new KeyValuePair<string, float> (null, 0);
-
+	GameObject SecondSpwn;
+	Random rand;
+	bool leaveroom;
     public bool endGame;
+	float timerbeforeleaving;
 
     // Use this for initialization
     void Start () {
+		timerbeforeleaving = 0f;
+		leaveroom = false;
+		rand = new Random();
+		map = PlayerPrefs.GetInt ("Histoire");
+		SecondSpwn = GameObject.Find("Spawn2");
         game = GetComponent<Game>();
 		ennemiesleft = 0;
     }
@@ -42,11 +49,22 @@ public class WaveGenerator : MonoBehaviour {
     }
 
 	// Update is called once per frame
-	void Update () {
-        if (!PhotonNetwork.isMasterClient) {
+	void Update () 
+	{
+        if (!PhotonNetwork.isMasterClient) 
+		{
             return;
         }
-        
+		if (leaveroom) 
+		{
+			timerbeforeleaving += Time.deltaTime;
+			if (timerbeforeleaving > 5) 
+			{
+				timerbeforeleaving = 0;
+				Debug.Log ("lllllllllllleaving");
+				PhotonNetwork.LeaveRoom();
+			}
+		}
         if (wave)
         {
             
@@ -54,9 +72,23 @@ public class WaveGenerator : MonoBehaviour {
             if (time <= 0)
             {
                 //time = ennemyTime;
-                PhotonNetwork.InstantiateSceneObject(currentEnnemy.Key, gameObject.transform.position, Quaternion.identity, 0, new object[] { });
+				if (map == 2) 
+				{
+					int temp = Random.Range (1, 3);
+					if (temp == 1) 
+					{
+						PhotonNetwork.InstantiateSceneObject (currentEnnemy.Key, gameObject.transform.position, Quaternion.identity, 0, new object[] { });
+					}
+					else 
+					{
+						PhotonNetwork.InstantiateSceneObject (currentEnnemy.Key, SecondSpwn.transform.position, Quaternion.identity, 0, new object[] { });
+					}
+				}
+				else
+				{
+					PhotonNetwork.InstantiateSceneObject (currentEnnemy.Key, gameObject.transform.position, Quaternion.identity, 0, new object[] { });
+				}
 				ennemiesleft -= 1;
-
 
 				if (ennemiesleft == 0)
                 {
@@ -65,9 +97,7 @@ public class WaveGenerator : MonoBehaviour {
                     {
                         Finish();
                         return;
-                    }
-                    
-
+                    }                    
                 }
                 else
                 {
@@ -103,6 +133,8 @@ public class WaveGenerator : MonoBehaviour {
         if (PlayerPrefs.GetString("Mode") == "History")
         {
             PlayerPrefs.SetInt("Histoire", PlayerPrefs.GetInt("Histoire") + 1);
+			//PhotonNetwork.LeaveRoom ();
+			leaveroom = true;
         }
 
         endGame = true;

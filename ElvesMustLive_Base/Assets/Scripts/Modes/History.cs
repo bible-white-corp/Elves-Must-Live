@@ -108,6 +108,11 @@ public class History : GameMode {
                     case 3:
                         Add("Ennemy0", 5f); // Vague 2
                         Add("Ennemy0", 5f);
+						Add("Ennemy0", 0.1f);
+						Add("Ennemy0", 0.1f);
+						Add("Ennemy0", 0.1f);
+						Add("Ennemy0", 0.1f);
+						Add("Ennemy0", 0.1f);
                         Add("Ennemy0", 5f);
                         Add("Ennemy0", 5f);
                         break;

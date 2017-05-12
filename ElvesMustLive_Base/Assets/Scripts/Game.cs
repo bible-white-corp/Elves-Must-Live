@@ -40,7 +40,6 @@ public class Game : MonoBehaviour {
     {
         /////////////////////////////////////////////////
         wave = gameObject.AddComponent<WaveGenerator>();
-
         Debug.Log("Mode : " + PlayerPrefs.GetString("Mode"));
         switch (PlayerPrefs.GetString("Mode"))
         {

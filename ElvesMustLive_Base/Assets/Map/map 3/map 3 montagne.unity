@@ -530,6 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextPosition: {fileID: 882690372}
+  RandomPosition: {fileID: 0}
 --- !u!4 &297824532
 Transform:
   m_ObjectHideFlags: 0
@@ -1445,7 +1446,8 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -190.41199
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114332116056196220, guid: a4afffe9a926bcd4ebf0054cb69085eb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a4afffe9a926bcd4ebf0054cb69085eb, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &873811038 stripped
@@ -1493,6 +1495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextPosition: {fileID: 1898204171}
+  RandomPosition: {fileID: 0}
 --- !u!4 &882690372
 Transform:
   m_ObjectHideFlags: 0
@@ -3553,6 +3556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextPosition: {fileID: 297824532}
+  RandomPosition: {fileID: 0}
 --- !u!4 &1889488401
 Transform:
   m_ObjectHideFlags: 0
@@ -3735,6 +3739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextPosition: {fileID: 2091099047}
+  RandomPosition: {fileID: 0}
 --- !u!4 &1898204171
 Transform:
   m_ObjectHideFlags: 0
@@ -4088,6 +4093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextPosition: {fileID: 172357527}
+  RandomPosition: {fileID: 0}
 --- !u!4 &2091099047
 Transform:
   m_ObjectHideFlags: 0

@@ -111,9 +111,9 @@ public class PlayerControl : Photon.MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Return) && !ChatActif && !MenuActif)
         {
-            if (!game.wave.StartWave())
+			if (!game.wave.StartWave()&&!game.wave.wave)
             {
-                PhotonNetwork.LeaveRoom();
+				//PhotonNetwork.LeaveRoom();
             }
             else
             {
