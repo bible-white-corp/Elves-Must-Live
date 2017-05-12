@@ -55,7 +55,7 @@ public class UIControl : MonoBehaviour {
         {
             UIHealth.value = home.hp.health / home.hp.maxhealth;
             UIGold.text = home.gold + " " + Localization.Get("gold_start");
-            UICount.text = game.wave.currentWave.Count + " " + Localization.Get("left");
+			UICount.text = game.wave.ennemiesleft.ToString() + " " + Localization.Get("left");
             UIModeLevel.text = Localization.Get("Level") + game.wave.mode.level;
         }
     }

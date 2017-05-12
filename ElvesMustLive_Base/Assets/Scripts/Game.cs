@@ -40,7 +40,6 @@ public class Game : MonoBehaviour {
     {
         /////////////////////////////////////////////////
         wave = gameObject.AddComponent<WaveGenerator>();
-
         Debug.Log("Mode : " + PlayerPrefs.GetString("Mode"));
         switch (PlayerPrefs.GetString("Mode"))
         {
@@ -82,7 +81,6 @@ public class Game : MonoBehaviour {
             else
             {
                 Localization.language = "Français";
-
             }
             Debug.Log(Localization.language);
         }

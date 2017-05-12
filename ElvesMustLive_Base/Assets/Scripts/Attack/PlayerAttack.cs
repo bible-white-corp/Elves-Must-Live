@@ -58,7 +58,6 @@ public class PlayerAttack : Photon.MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         if (other.tag == "Shootable" && isAttack) // Can attack twice a same Ennemy...
         {
             health = other.gameObject.GetComponent<Health>();
