@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Map/MAP 2 multipath/MAP 2.unity
   - enabled: 1
     path: Assets/Map/map 3/map 3 montagne.unity
+  - enabled: 1
+    path: Assets/Map/Map 4/Cave.unity
