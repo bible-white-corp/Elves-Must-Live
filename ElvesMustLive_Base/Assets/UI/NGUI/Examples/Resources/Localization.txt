@@ -81,3 +81,7 @@ map1_wave3,"Et voici le gros des troupes !","And here is the bulk of the troops!
 map1_wave4,"Ca ne leur as pas plu, ils intensifient leurs attaques","It did not please them, they intensify their attacks"
 map1_wave5_1,"ATTENTION CHEF DE RAID EN APPROCHE","WARNING RAID LEADER INCOMING"
 map1_wave5_2,"Le restant des troupes s'est rassemblé autour d'un chef de guerre!","The rest of the troops gathered round a warlord!"
+close,"Fermer","Close"
+son,"Son","Sound"
+language,"Langue","Language"
+credits,"Crédits","Credits"

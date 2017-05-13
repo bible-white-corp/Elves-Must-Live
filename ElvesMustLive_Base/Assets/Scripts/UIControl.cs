@@ -14,6 +14,7 @@ public class UIControl : MonoBehaviour {
     public Boutique boutikScript;
     public GameObject PauseWindow;
 
+    public Settings settrings;
     public UpgradeWindow upgrade;
 
     Game game;
@@ -169,6 +170,12 @@ public class UIControl : MonoBehaviour {
         PauseWindow.SetActive(false);
         home.MenuActif = false;
         home.PauseActif = false;
+    }
+
+    public void OpenSettings()
+    {
+        settrings.gameObject.SetActive(true);
+        PauseWindow.SetActive(false);
     }
 
     public static UIControl SetUI(string mode, PlayerControl home)

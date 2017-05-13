@@ -200,13 +200,13 @@ public class PlayerControl : Photon.MonoBehaviour {
 			} 
 			else if (BtkActif) 
 			{
-                if (MyUI.boutikScript.gameObject.GetActive())
+                if (MyUI.upgrade.gameObject.GetActive())
                 {
-                    MyUI.boutikScript.gameObject.SetActive(false);
+                    MyUI.upgrade.gameObject.SetActive(false);
                 }
                 else
                 {
-                    MyUI.upgrade.gameObject.SetActive(false);
+                    MyUI.boutikScript.gameObject.SetActive(false);
                     BtkActif = false;
                     MenuActif = false;
                 }
@@ -217,17 +217,25 @@ public class PlayerControl : Photon.MonoBehaviour {
             }*/
             else
 			{
-				if (MyUI.PauseWindow.GetActive())
+                if (MyUI.PauseWindow.GetActive() || MyUI.settrings.gameObject.GetActive())
                 {
-                    MyUI.PauseWindow.SetActive(false);
-					MenuActif = false;
-					PauseActif = false;
+                    if (MyUI.settrings.gameObject.GetActive())
+                    {
+                        MyUI.PauseWindow.SetActive(true);
+                        MyUI.settrings.gameObject.SetActive(false);
+                    }
+                    else
+                    {
+                        MyUI.PauseWindow.SetActive(false);
+                        MenuActif = false;
+                        PauseActif = false;
+                    }
                 }
                 else
                 {
                     MyUI.PauseWindow.SetActive(true);
-					MenuActif = true;
-					PauseActif = true;
+                    MenuActif = true;
+                    PauseActif = true;
                 }
 			}
 		}

@@ -24,6 +24,11 @@ public class UpgradeWindow : MonoBehaviour {
 		
 	}
 
+    public void Close()
+    {
+        this.gameObject.SetActive(false);
+    }
+
     public void Unlock(string name)
     {
         Transform tmp = turrets.transform.Find(name);
