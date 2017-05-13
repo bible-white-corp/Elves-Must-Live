@@ -95,7 +95,7 @@ public class WaveGenerator : MonoBehaviour {
                     wave = false;
                     if (!mode.HasNextLevel())
                     {
-                        Finish();
+                        endGame = true;
                         return;
                     }                    
                 }
@@ -118,6 +118,7 @@ public class WaveGenerator : MonoBehaviour {
         {
             game.masterClient.MyUI.Info.enabled = true;
             game.masterClient.MyUI.Info.text = Localization.Get("EndLevel");
+            Finish();
         }
     }
 
@@ -134,9 +135,8 @@ public class WaveGenerator : MonoBehaviour {
         {
             PlayerPrefs.SetInt("Histoire", PlayerPrefs.GetInt("Histoire") + 1);
 			//PhotonNetwork.LeaveRoom ();
-			leaveroom = true;
+			
         }
-
-        endGame = true;
+        leaveroom = true;
     }
 }

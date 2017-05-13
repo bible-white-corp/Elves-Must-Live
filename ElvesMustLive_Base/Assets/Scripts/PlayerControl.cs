@@ -70,7 +70,7 @@ public class PlayerControl : Photon.MonoBehaviour {
                     cam.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
                 }
                 else
-                {
+                { 
                     MyUI = UIControl.SetUI("Right", this);
                     cam.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 1f, 1f);
                     cam.GetComponentInChildren<AudioListener>().enabled = false; // Only one Audio listener...
@@ -102,6 +102,23 @@ public class PlayerControl : Photon.MonoBehaviour {
         if (isMine == false && PhotonNetwork.connected == true)
         {
             return;
+        }
+
+        if (Input.GetKey(KeyCode.Plus) || Input.GetKey(KeyCode.KeypadPlus)) //////// ZOOM MINIMAP
+        {
+            if (mapCam.orthographicSize > 50)
+            {
+                return;
+            }
+            mapCam.orthographicSize += 1;
+        }
+        if (Input.GetKey(KeyCode.Minus) || Input.GetKey(KeyCode.KeypadMinus))
+        {
+            if (mapCam.orthographicSize < 10)
+            {
+                return;
+            }
+            mapCam.orthographicSize -= 1;
         }
 
         if (Input.GetKey("g"))
@@ -150,12 +167,14 @@ public class PlayerControl : Photon.MonoBehaviour {
             }
             if (MyUI.upgrade.gameObject.GetActive())
             {
+                MyUI.boutikScript.gameObject.SetActive(true);
                 MyUI.upgrade.gameObject.SetActive(false);
                 MenuActif = false;
                 BtkActif = false;
             }
             else
             {
+                MyUI.boutikScript.gameObject.SetActive(true);
                 MyUI.upgrade.gameObject.SetActive(true);
                 MenuActif = true;
                 BtkActif = true;
@@ -181,15 +200,21 @@ public class PlayerControl : Photon.MonoBehaviour {
 			} 
 			else if (BtkActif) 
 			{
-				MyUI.boutikScript.gameObject.SetActive (false);
-                MyUI.upgrade.gameObject.SetActive(false);
-                BtkActif = false;
-				MenuActif = false;
+                if (MyUI.boutikScript.gameObject.GetActive())
+                {
+                    MyUI.boutikScript.gameObject.SetActive(false);
+                }
+                else
+                {
+                    MyUI.upgrade.gameObject.SetActive(false);
+                    BtkActif = false;
+                    MenuActif = false;
+                }
 			}
-            else if (MyUI.Info.enabled)
+            /*else if (MyUI.Info.enabled)
             {
                 MyUI.Info.enabled = false;
-            }
+            }*/
             else
 			{
 				if (MyUI.PauseWindow.GetActive())
@@ -245,6 +270,11 @@ public class PlayerControl : Photon.MonoBehaviour {
     public void DesactiveW(int i)
     {
         weapons.availableWeapon[i].SetActive(false);
+    }
+    [PunRPC]
+    public void ShowHistory(string key)
+    {
+        MyUI.SetStory(key);
     }
     [PunRPC]
     public void PlaceTurret(string name, Vector3 pos, Quaternion rot, int propri)

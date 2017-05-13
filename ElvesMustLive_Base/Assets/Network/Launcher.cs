@@ -132,6 +132,11 @@ public class Launcher : Photon.PunBehaviour
                 historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("niv3_des");
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map2";
                 break;
+            case 4:
+                LevelName = "Map/Map 4/Cave";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("niv4_des");
+                historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map4";
+                break;
             default:
                 ResetHistory();
                 return;

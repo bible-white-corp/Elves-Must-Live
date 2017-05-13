@@ -61,6 +61,7 @@ public class Game : MonoBehaviour {
         }*/
 
         wave.mode = mode;
+        mode.wave = wave;
     }
 
     // Update is called once per frame

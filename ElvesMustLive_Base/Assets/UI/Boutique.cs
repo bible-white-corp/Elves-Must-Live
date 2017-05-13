@@ -24,6 +24,12 @@ public class Boutique : MonoBehaviour {
     {
 
     }
+
+    public void OpenUpgrades()
+    {
+        ui.upgrade.gameObject.SetActive(true);
+    }
+
     public void SelectTurret(GameObject obj)
     {
         currentTurret = obj;

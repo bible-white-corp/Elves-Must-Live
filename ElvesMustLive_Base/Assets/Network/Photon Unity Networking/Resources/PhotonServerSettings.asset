@@ -54,4 +54,6 @@ MonoBehaviour:
   - DesactiveW
   - SendDamage
   - PlaceTurret
+  - ShowStory
+  - ShowHistory
   DisableAutoOpenWizard: 1

@@ -22,6 +22,7 @@ public class UIControl : MonoBehaviour {
     public bool dead;
     public UILabel DeadText;
     public UILabel Info;
+    public UILabel Story;
     public GameObject Respawn;
 
     public MiniMapScript mapScript;
@@ -29,6 +30,11 @@ public class UIControl : MonoBehaviour {
     public Transform TurretList;
     public int pixelAlignTurret;
 
+    public float timer;
+    public float StoryTxtDuration = 5f;
+
+    Queue<string> StoryTampon = new Queue<string>();
+         
     // Use this for initialization
     void Start () {
         pixelAlignTurret = 0;
@@ -46,8 +52,39 @@ public class UIControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (Story.enabled)
+        {
+            timer += Time.deltaTime;
+            if (timer > StoryTxtDuration)
+            {
+                if (StoryTampon.Count >  0)
+                {
+                    timer = 0f;
+                    Story.text = StoryTampon.Dequeue();
+                }
+                else
+                {
+                    Story.enabled = false;
+                }
+            }
+        }
 	}
+
+    public void SetStory(string key)
+    {
+        
+        if (Story.enabled)
+        {
+            StoryTampon.Enqueue(key);
+        }
+        else
+        {
+            timer = 0;
+            Story.text = Localization.Get(key);
+            Story.enabled = true;
+        }
+
+    }
 
     private void OnGUI()
     {
