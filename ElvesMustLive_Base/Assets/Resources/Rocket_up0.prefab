@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 82763167277535716}
   m_Layer: 0
   m_Name: Launcher_Hub_L1
-  m_TagString: Untagged
+  m_TagString: Soutenance Debug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -356,8 +356,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.8755227, y: 0.5754513, z: 1.8755226}
-  m_Center: {x: 0.000000059604645, y: 0.2880909, z: 0.00000014901161}
+  m_Size: {x: 1.8755227, y: 1.809616, z: 1.8755226}
+  m_Center: {x: 0, y: 0.9051657, z: -0.000000039566046}
 --- !u!65 &65185283524934620
 BoxCollider:
   m_ObjectHideFlags: 1

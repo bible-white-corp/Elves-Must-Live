@@ -80,7 +80,7 @@ GameObject:
   - component: {fileID: 82931767569182706}
   m_Layer: 0
   m_Name: CrossBow_Hub_L3
-  m_TagString: Untagged
+  m_TagString: Soutenance Debug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -276,8 +276,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.215071, y: 0.5761828, z: 2.338846}
-  m_Center: {x: 0, y: 0.28772506, z: -0.00000011920929}
+  m_Size: {x: 2.215071, y: 2.4574475, z: 2.338846}
+  m_Center: {x: 0, y: 1.2283173, z: -0.00000005369145}
 --- !u!65 &65602692156141634
 BoxCollider:
   m_ObjectHideFlags: 1

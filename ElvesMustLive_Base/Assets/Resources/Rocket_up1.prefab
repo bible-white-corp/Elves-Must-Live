@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 82435616680005108}
   m_Layer: 0
   m_Name: Launcher_Hub_L2
-  m_TagString: Untagged
+  m_TagString: Soutenance Debug
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,8 +180,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1050563105420084}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 3.11}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.11, y: 0.11, z: 2.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4621080817691234}
@@ -368,8 +368,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.875523, y: 0.46370316, z: 1.8755229}
-  m_Center: {x: 0.000000059604645, y: 0.23221678, z: 0.00000011920929}
+  m_Size: {x: 1.875523, y: 1.9975998, z: 1.8755229}
+  m_Center: {x: 0, y: 0.99915314, z: -0.00000004367437}
 --- !u!65 &65770801923362036
 BoxCollider:
   m_ObjectHideFlags: 1

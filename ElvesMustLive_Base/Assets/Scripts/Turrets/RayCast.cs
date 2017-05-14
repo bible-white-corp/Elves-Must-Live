@@ -45,6 +45,7 @@ public class RayCast : MonoBehaviour {
         AvailableTurrets = new List<KeyValuePair<string, int>>();
 
         AddTurret("Cannon",0);
+        home.MyUI.upgrade.Unlock("Cannon");
         //Init
         tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key);
         pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key.Split('_')[0] + "Preview");
@@ -55,6 +56,7 @@ public class RayCast : MonoBehaviour {
     {
         if (AvailableTurrets.Exists(x => x.Key.Contains(turret))) // Si la tourelle on la possède déja...
         {
+            //var tu = AvailableTurrets.Exists(x => x.Key.Contains(turret));
             return;
         }
         switch (turret)
@@ -95,11 +97,15 @@ public class RayCast : MonoBehaviour {
 
     public void UpgradeTurret(string name)
     {
+        //Debug.Log(name);
         var turret = AvailableTurrets.Find(x => x.Key.Contains(name));
         var list = turret.Key.Split(new string[1] { "_up" }, System.StringSplitOptions.None);
         int newlvl = (int.Parse(list[1]) + 1);
         AvailableTurrets.Remove(turret);
         AvailableTurrets.Add(new KeyValuePair<string, int>(list[0] + "_up" + newlvl, turret.Value));
+        //Debug.Log(list[0] + "_up" + newlvl);
+        tourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key);
+        pretourelle = (GameObject)Resources.Load(AvailableTurrets[curretTurret].Key.Split('_')[0] + "Preview");
     }
 
     public int GetLevel(string name)
