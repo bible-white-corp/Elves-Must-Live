@@ -23,6 +23,8 @@ public class Launcher : Photon.PunBehaviour
 
     public string LevelName;
 
+    public Settings settings;
+
     #endregion
 
 
@@ -80,9 +82,17 @@ public class Launcher : Photon.PunBehaviour
         levelWindow.SetActive(true);
     }
 
+    public void OpenSettings()
+    {
+        settings.gameObject.SetActive(true);
+    }
+
     public void Quit()
     {
-        Application.Quit();
+        if (!Application.isEditor)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
     }
 
     public void LaunchTuto()

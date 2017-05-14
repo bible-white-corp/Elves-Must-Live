@@ -95,6 +95,7 @@ public class Boutique : MonoBehaviour {
             currentWeapon = null;
             selected.text = Localization.Get("select_a") + Localization.Get("weapons");
             ShowWeapons();
+            ui.upgrade.SwitchToWeapons();
         }
         else
         {

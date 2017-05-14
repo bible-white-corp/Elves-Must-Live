@@ -25,7 +25,10 @@ public class Settings : MonoBehaviour {
     public void Close()
     {
         this.gameObject.SetActive(false);
-        UI.PauseWindow.SetActive(true);
+        if (UI != null)
+        {
+            UI.PauseWindow.SetActive(true);
+        }
     }
 
 	// Use this for initialization

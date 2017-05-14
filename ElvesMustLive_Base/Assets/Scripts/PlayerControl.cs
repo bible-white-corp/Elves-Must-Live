@@ -272,12 +272,14 @@ public class PlayerControl : Photon.MonoBehaviour {
     [PunRPC]
     public void ActiveW(int i)
     {
-        weapons.availableWeapon[i].SetActive(true);
+        anim.SetBool(weapons.weapon[i].tag, true);
+        weapons.weapon[i].SetActive(true);
     }
     [PunRPC]
     public void DesactiveW(int i)
     {
-        weapons.availableWeapon[i].SetActive(false);
+        anim.SetBool(weapons.weapon[i].tag, false);
+        weapons.weapon[i].SetActive(false);
     }
     [PunRPC]
     public void ShowHistory(string key)

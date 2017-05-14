@@ -48,7 +48,7 @@ public class UIControl : MonoBehaviour {
             child.GetComponent<Collider>().enabled = false;
             child.GetComponent<UIButton>().state = UIButtonColor.State.Disabled;
         }
-        upgrade.enabled = false;
+        //upgrade.enabled = false;
     }
 	
 	// Update is called once per frame
@@ -135,7 +135,9 @@ public class UIControl : MonoBehaviour {
         GameObject obj = (GameObject)Instantiate(Resources.Load("UI/TurretBase"), TurretList);
         Transform tmp = obj.transform;
         tmp.position = new Vector3(pixelAlignTurret, tmp.transform.position.y, tmp.transform.position.z);
-        tmp.GetChild(0).GetComponent<UILabel>().text = turret;
+        tmp.GetChild(0).GetComponent<UILocalize>().key = turret;
+        tmp.GetChild(0).GetComponent<UILabel>().text = Localization.Get(turret);
+        tmp.GetChild(1).GetComponent<UILocalize>().key = "new";
         tmp.GetChild(1).GetComponent<UILabel>().text = Localization.Get("new");
         tmp.GetChild(2).GetComponent<UILabel>().text = price + " " + Localization.Get("gold_start");
         tmp.GetChild(4).GetComponent<UISprite>().spriteName = turret;

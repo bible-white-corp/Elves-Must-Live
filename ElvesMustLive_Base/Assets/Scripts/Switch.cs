@@ -39,6 +39,30 @@ public class Switch : Photon.MonoBehaviour
         }
     }
 
+    public void ChangeWeapon(string type, string newW) //
+    {
+        foreach (var item in availableWeapon)
+        {
+            GameObject cu;
+            if (item.name.Contains(type))
+            {
+                cu = item;
+                if (cu == availableWeapon[CurrentW])
+                {
+                    availableWeapon[CurrentW] = weapon.Find(x => x.name == newW);
+                    home.view.RPC("DesactiveW", PhotonTargets.All, weapon.IndexOf(weapon.Find(x => x.name == cu.name)));
+                    ChangeW(0);
+                }
+                else
+                {
+                    availableWeapon[availableWeapon.IndexOf(cu)] = weapon.Find(x => x.name == newW);
+                }
+                break;
+            }
+
+        }
+    }
+
     // Update is called once per frame  
     void Update () 
 	{
@@ -76,8 +100,9 @@ public class Switch : Photon.MonoBehaviour
     public void ChangeW(int nb)
     {
         //weapon[CurrentW].SetActive(false);
-        anim.SetBool(availableWeapon[CurrentW].tag, false);
-        home.view.RPC("DesactiveW", PhotonTargets.All, CurrentW);
+        //anim.SetBool(availableWeapon[CurrentW].tag, false); RPC
+        int globalint = weapon.IndexOf(availableWeapon[CurrentW]);
+        home.view.RPC("DesactiveW", PhotonTargets.All, globalint);
         CurrentW += nb;
         if (CurrentW < 0)
         {
@@ -87,8 +112,9 @@ public class Switch : Photon.MonoBehaviour
         {
             CurrentW = 0;
         }
-        home.view.RPC("ActiveW", PhotonTargets.All, CurrentW);
-        anim.SetBool(availableWeapon[CurrentW].tag, true);
+        globalint = weapon.IndexOf(availableWeapon[CurrentW]);
+        home.view.RPC("ActiveW", PhotonTargets.All, globalint);
+        //anim.SetBool(availableWeapon[CurrentW].tag, true); RPC
     }
 
 
