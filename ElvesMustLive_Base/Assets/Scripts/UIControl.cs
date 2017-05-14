@@ -143,6 +143,7 @@ public class UIControl : MonoBehaviour {
         tmp.GetChild(4).GetComponent<UISprite>().spriteName = turret;
         tmp.GetComponent<OnClickTurret>().home = home;
         tmp.name = turret;
+        tmp.GetComponent<OnClickTurret>().TurretCode = turret;
         TurretList.GetComponent<UIGrid>().AddChild(tmp);
         TurretList.GetComponent<UIGrid>().Reposition();
 

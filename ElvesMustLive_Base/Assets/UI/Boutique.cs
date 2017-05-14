@@ -52,7 +52,7 @@ public class Boutique : MonoBehaviour {
         if (TurretsSel && currentTurret != null)
         {
             int price = int.Parse(currentTurret.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
-            string str = currentTurret.transform.GetChild(0).GetComponent<UILabel>().text;
+            string str = currentTurret.transform.name;
             if (price > home.gold)
             {
                 log.text = Localization.Get("no_money");
@@ -64,8 +64,8 @@ public class Boutique : MonoBehaviour {
                 log.text = str + " bought";
                 description.text = Localization.Get("clickfordes");
             }
-            home.raycast.AddTurret(currentTurret.transform.GetChild(0).GetComponent<UILabel>().text, 0);
-            ui.upgrade.Unlock(currentTurret.transform.GetChild(0).GetComponent<UILabel>().text);
+            home.raycast.AddTurret(currentTurret.transform.name, 0);
+            ui.upgrade.Unlock(currentTurret.transform.name);
             TurretList.GetComponent<UIGrid>().RemoveChild(currentTurret.transform);
             Destroy(currentTurret);
             TurretList.GetComponent<UIGrid>().Reposition();
@@ -76,7 +76,7 @@ public class Boutique : MonoBehaviour {
         else if (WeaponsSel && currentWeapon != null)
         {
             int price = int.Parse(currentWeapon.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
-            string str = currentWeapon.transform.GetChild(0).GetComponent<UILabel>().text;
+            string str = currentWeapon.transform.name;
             if (price > home.gold)
             {
                 log.text = Localization.Get("no_money");
@@ -88,14 +88,17 @@ public class Boutique : MonoBehaviour {
                 log.text = str + " bought";
                 description.text = Localization.Get("clickfordes");
             }
-            home.weapons.AddWeapon(currentWeapon.transform.GetChild(0).GetComponent<UILabel>().text);
+            home.weapons.AddWeapon(currentWeapon.transform.name);
             WeaponList.GetComponent<UIGrid>().RemoveChild(currentWeapon.transform.GetSiblingIndex());
             Destroy(currentWeapon);
             WeaponList.GetComponent<UIGrid>().Reposition();
             currentWeapon = null;
             selected.text = Localization.Get("select_a") + Localization.Get("weapons");
             ShowWeapons();
-            ui.upgrade.SwitchToWeapons();
+            if (ui.upgrade.gameObject.GetActive())
+            {
+                ui.upgrade.SwitchToWeapons();
+            } // Ca bug (plus) ...
         }
         else
         {

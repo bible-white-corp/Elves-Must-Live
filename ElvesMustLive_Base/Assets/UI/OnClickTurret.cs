@@ -5,9 +5,10 @@ using UnityEngine;
 public class OnClickTurret : MonoBehaviour {
 
     public PlayerControl home;
+    public string TurretCode;
 
-    public void CallChangeTurret(string name)
+    public void CallChangeTurret()
     {
-        home.raycast.ChangeTurret(name);
+        home.raycast.ChangeTurret(TurretCode);
     }
 }

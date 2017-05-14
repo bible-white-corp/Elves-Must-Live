@@ -125,13 +125,14 @@ public class UpgradeWindow : MonoBehaviour {
         weaponActive = true;
         foreach (var item in ui.home.weapons.availableWeapon)
         {
+            Debug.Log(item.name);
             if (item.name.Contains("Sword"))
             {
                 Sword.gameObject.SetActive(true);
                 swords.value = item.name;
                 currentSword = item.name;
                 Sword.transform.GetChild(0).GetComponent<UISprite>().spriteName = currentSword.ToLower();
-                Sword.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = "Equiped";
+                Sword.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = Localization.Get("isequip");
             }
             if (item.name.Contains("Spear"))
             {
@@ -139,7 +140,7 @@ public class UpgradeWindow : MonoBehaviour {
                 spears.value = item.name;
                 currentSpear = item.name;
                 Spear.transform.GetChild(0).GetComponent<UISprite>().spriteName = currentSpear.ToLower();
-                Spear.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = "Equiped";
+                Spear.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = Localization.Get("isequip");
             }
             if (item.name.Contains("Arc"))
             {
@@ -147,7 +148,7 @@ public class UpgradeWindow : MonoBehaviour {
                 arcs.value = item.name;
                 currentArc = item.name;
                 Arc.transform.GetChild(0).GetComponent<UISprite>().spriteName = currentArc.ToLower();
-                Arc.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = "Equiped";
+                Arc.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = Localization.Get("isequip");
             }
 
         }
@@ -194,7 +195,7 @@ public class UpgradeWindow : MonoBehaviour {
         }
         if (ui.home.weapons.availableWeapon.Exists(x => x.name == current))
         {
-            go.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = "Equiped";
+            go.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = Localization.Get("isequip");
         }
         else if (buyWeapons.Contains(current))
         {
