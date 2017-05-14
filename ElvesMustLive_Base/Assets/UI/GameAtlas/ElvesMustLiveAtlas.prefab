@@ -53,6 +53,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: ae6ed4283436c964c865cb1ef75f57a1, type: 2}
   mSprites:
+  - name: arc1
+    x: 2364
+    y: 313
+    width: 91
+    height: 389
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 155
+    paddingRight: 154
+    paddingTop: 7
+    paddingBottom: 4
+  - name: arc2
+    x: 2486
+    y: 705
+    width: 88
+    height: 389
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 156
+    paddingRight: 156
+    paddingTop: 2
+    paddingBottom: 9
+  - name: arc3
+    x: 2240
+    y: 60
+    width: 121
+    height: 395
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 129
+    paddingRight: 150
+    paddingTop: 2
+    paddingBottom: 3
   - name: backimage
     x: 1681
     y: 1485
@@ -67,8 +106,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: bow1
-    x: 2364
-    y: 709
+    x: 2486
+    y: 1095
     width: 91
     height: 389
     borderLeft: 0
@@ -80,8 +119,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 4
   - name: bow2
-    x: 2364
-    y: 319
+    x: 2486
+    y: 315
     width: 88
     height: 389
     borderLeft: 0
@@ -93,8 +132,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 9
   - name: bow3
-    x: 2240
-    y: 60
+    x: 2364
+    y: 1089
     width: 121
     height: 395
     borderLeft: 0
@@ -184,7 +223,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Map1
-    x: 3107
+    x: 2706
     y: 1648
     width: 400
     height: 400
@@ -197,7 +236,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Map2
-    x: 3508
+    x: 3107
     y: 1648
     width: 400
     height: 400
@@ -210,8 +249,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Map3
-    x: 1681
-    y: 1084
+    x: 3508
+    y: 1648
     width: 400
     height: 400
     borderLeft: 0
@@ -223,8 +262,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Map4
-    x: 2706
-    y: 1648
+    x: 1681
+    y: 1084
     width: 400
     height: 400
     borderLeft: 0
@@ -288,7 +327,7 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 30
   - name: spear2
-    x: 2468
+    x: 2578
     y: 1119
     width: 91
     height: 365
@@ -315,7 +354,7 @@ MonoBehaviour:
     paddingBottom: 47
   - name: spear4
     x: 2364
-    y: 1099
+    y: 703
     width: 103
     height: 385
     borderLeft: 0
