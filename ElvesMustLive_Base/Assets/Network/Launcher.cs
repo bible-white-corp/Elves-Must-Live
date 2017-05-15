@@ -125,7 +125,7 @@ public class Launcher : Photon.PunBehaviour
                 LevelName = "Tutorial/Level1";
                 historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("tuto_des");
                 historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "tuto_des";
-                historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "";
+                historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "tuto";
                 PlayerPrefs.SetString("Mode", "Tuto");
                 break;
             case 1:
