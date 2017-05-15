@@ -32,7 +32,7 @@ public class NetworkController : Photon.PunBehaviour
     /// </summary>
     public override void OnLeftRoom()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Lobby");
     }
 
     public void LeaveRoom()
