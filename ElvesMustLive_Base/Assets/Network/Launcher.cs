@@ -124,27 +124,32 @@ public class Launcher : Photon.PunBehaviour
             case 0:
                 LevelName = "Tutorial/Level1";
                 historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("tuto_des");
+                historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "tuto_des";
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "";
                 PlayerPrefs.SetString("Mode", "Tuto");
                 break;
             case 1:
                 LevelName = "Map/Map 1";
                 historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("niv1_des");
+                historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "niv1_des";
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map1";
                 break;
             case 2:
                 LevelName = "Map/MAP 2 multipath/MAP 2";
                 historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("niv2_des");
+                historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "niv2_des";
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map3";
                 break;
             case 3:
                 LevelName = "Map/map 3/map 3 montagne";
                 historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("niv3_des");
+                historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "niv3_des";
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map2";
                 break;
             case 4:
                 LevelName = "Map/Map 4/Cave";
                 historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("niv4_des");
+                historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "niv4_des";
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map4";
                 break;
             default:

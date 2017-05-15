@@ -9,6 +9,7 @@ public class UpgradeWindow : MonoBehaviour {
     Transform currentTurret;
     public UILabel lvl;
     public UILocalize labelName;
+    public UILabel prixLabel;
 
     public GameObject Sword;
     public UIPopupList swords;
@@ -64,7 +65,8 @@ public class UpgradeWindow : MonoBehaviour {
         currentTurret = name;
         labelName.key = name.name;
         labelName.GetComponent<UILabel>().text = Localization.Get(labelName.key);
-        lvl.text = ui.home.raycast.GetLevel(name.name).ToString();
+        int savelvl = ui.home.raycast.GetLevel(name.name);
+        lvl.text = savelvl.ToString();
         if (int.Parse(lvl.text) == 2)
         {
             lvl.text = "Max";
@@ -75,6 +77,7 @@ public class UpgradeWindow : MonoBehaviour {
             lvl.text = "Max";
             currentTurret = null;
         }
+        prixLabel.text = 20 * savelvl+1 + " " + Localization.Get("gold_start");
         switch (name.name)
         {
             case "Cannon":
@@ -110,6 +113,12 @@ public class UpgradeWindow : MonoBehaviour {
         {
             return;
         }
+        int prix = int.Parse(prixLabel.text.Split(' ')[0]);
+        if (prix > ui.home.gold)
+        {
+            return;
+        }
+        ui.home.gold -= prix;
         ui.home.raycast.UpgradeTurret(currentTurret.name);
         OnClick(currentTurret);     
     }
@@ -159,12 +168,14 @@ public class UpgradeWindow : MonoBehaviour {
         string current;
         GameObject go;
         UIPopupList list;
+        int lvl;
         switch (type)
         {
             case "Sword":
                 current = currentSword;
                 go = Sword;
                 list = swords;
+                
                 break;
             case "Spear":
                 current = currentSpear;
@@ -180,13 +191,16 @@ public class UpgradeWindow : MonoBehaviour {
                 return;
 
         }
-
         if (!weaponActive || current == "Nope")
         {
             return;
         }
         current = list.value;
-        //Debug.Log(current);
+
+        Debug.Log(current);
+        lvl = int.Parse("" + current[current.Length - 1]);
+        int prix = lvl * 10;
+
         go.transform.GetChild(0).GetComponent<UISprite>().spriteName = current.ToLower();
         
         foreach (var item in buyWeapons)
@@ -196,14 +210,17 @@ public class UpgradeWindow : MonoBehaviour {
         if (ui.home.weapons.availableWeapon.Exists(x => x.name == current))
         {
             go.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = Localization.Get("isequip");
+            go.transform.GetChild(4).GetComponent<UILabel>().text = "";
         }
         else if (buyWeapons.Contains(current))
         {
             go.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = Localization.Get("equip");
+            go.transform.GetChild(4).GetComponent<UILabel>().text = "";
         }
         else
         {
             go.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = Localization.Get("buy");
+            go.transform.GetChild(4).GetComponent<UILabel>().text = prix + " " + Localization.Get("gold_start");
         }
 
         switch (type)
@@ -252,12 +269,19 @@ public class UpgradeWindow : MonoBehaviour {
         if (buyWeapons.Contains(current))
         {
             ui.home.weapons.ChangeWeapon(type, current);
-            go.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = "Equiped";
+            go.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = Localization.Get("isequip");
         }
         else
         {
+            int prix = int.Parse(go.transform.GetChild(4).GetComponent<UILabel>().text.Split(' ')[0]);
+            if (prix > ui.home.gold)
+            {
+                return;
+            }
+            ui.home.gold -= prix;
             buyWeapons.Add(current);
             go.transform.GetChild(3).GetChild(0).GetComponent<UILabel>().text = Localization.Get("equip");
+            go.transform.GetChild(4).GetComponent<UILabel>().text = "";
         }
     }
 }
