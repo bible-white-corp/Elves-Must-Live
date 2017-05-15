@@ -21,7 +21,7 @@ public class PlayVideo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape) || timer > 5.7f)
+		if (Input.GetKeyDown(KeyCode.Escape) || timer > 6.1f)
 		{
 			SceneManager.LoadScene("Lobby");
 		}
