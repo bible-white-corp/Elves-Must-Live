@@ -165,17 +165,15 @@ public class PlayerControl : Photon.MonoBehaviour {
             {
                 return;
             }
-            if (MyUI.upgrade.gameObject.GetActive())
+            if (MyUI.boutikOrc.gameObject.GetActive())
             {
-                MyUI.boutikScript.gameObject.SetActive(true);
-                MyUI.upgrade.gameObject.SetActive(false);
+                MyUI.boutikOrc.gameObject.SetActive(false);
                 MenuActif = false;
                 BtkActif = false;
             }
             else
             {
-                MyUI.boutikScript.gameObject.SetActive(true);
-                MyUI.upgrade.gameObject.SetActive(true);
+                MyUI.boutikOrc.gameObject.SetActive(true);
                 MenuActif = true;
                 BtkActif = true;
             }
@@ -197,7 +195,13 @@ public class PlayerControl : Photon.MonoBehaviour {
 				MyUI.tchat.GetComponentInChildren<UIInput> ().isSelected = true;
 				ChatActif = false;
 				MenuActif = false;
-			} 
+			}
+            else if (MyUI.boutikOrc.gameObject.GetActive())
+            {
+                MyUI.boutikOrc.gameObject.SetActive(false);
+                BtkActif = false;
+                MenuActif = false;
+            }
 			else if (BtkActif) 
 			{
                 if (MyUI.upgrade.gameObject.GetActive())
@@ -211,6 +215,7 @@ public class PlayerControl : Photon.MonoBehaviour {
                     MenuActif = false;
                 }
 			}
+            
             /*else if (MyUI.Info.enabled)
             {
                 MyUI.Info.enabled = false;

@@ -16,8 +16,9 @@ public class UIControl : MonoBehaviour {
 
     public Settings settrings;
     public UpgradeWindow upgrade;
+    public BoutikOrc boutikOrc;
 
-    Game game;
+    public Game game;
     public PlayerControl home;
 
     public bool dead;
@@ -203,6 +204,7 @@ public class UIControl : MonoBehaviour {
         UI.home = home;
         UI.scriptClick.home = home;
         UI.boutikScript.home = home;
+        UI.boutikOrc.home = home;
         UI.UITurret.SetActive(false);
         UI.mapScript.home = home;
         return UI;
