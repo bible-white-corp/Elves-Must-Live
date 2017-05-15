@@ -62,7 +62,7 @@ public class UIControl : MonoBehaviour {
                 if (StoryTampon.Count >  0)
                 {
                     timer = 0f;
-                    Story.text = StoryTampon.Dequeue();
+                    Story.text = Localization.Get(StoryTampon.Dequeue());
                 }
                 else
                 {

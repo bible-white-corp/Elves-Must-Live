@@ -349,7 +349,6 @@ GameObject:
   - component: {fileID: 278009273}
   - component: {fileID: 278009272}
   - component: {fileID: 278009271}
-  - component: {fileID: 278009270}
   m_Layer: 0
   m_Name: GlobalMap
   m_TagString: Untagged
@@ -357,13 +356,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &278009270
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 278009269}
-  m_Enabled: 1
 --- !u!92 &278009271
 Behaviour:
   m_ObjectHideFlags: 0
@@ -1360,6 +1352,7 @@ MonoBehaviour:
   SinglePlayer: 0
   masterClient: {fileID: 0}
   mode: {fileID: 0}
+  gamingmode: 
   paused: 0
   globalLife: 10
   ennemyInMap: 0
