@@ -15,6 +15,7 @@ public class Game : MonoBehaviour {
     public bool SinglePlayer;
     public PlayerControl masterClient;
     public GameMode mode;
+	public string gamingmode;
 
     public bool paused = false;
 
@@ -25,7 +26,7 @@ public class Game : MonoBehaviour {
     // Use this for initialization
     void Awake()
     {
-
+		gamingmode = "";
         global = gameObject;
         if (PlayerPrefs.GetInt("mod") == 1)
         {
@@ -41,7 +42,8 @@ public class Game : MonoBehaviour {
         /////////////////////////////////////////////////
         wave = gameObject.AddComponent<WaveGenerator>();
         Debug.Log("Mode : " + PlayerPrefs.GetString("Mode"));
-        switch (PlayerPrefs.GetString("Mode"))
+		gamingmode = PlayerPrefs.GetString ("Mode");
+		switch (gamingmode)
         {
             case "History":
                 mode = gameObject.AddComponent<History>();
@@ -67,51 +69,21 @@ public class Game : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (globalLife < 0)
-        {
-            wave.Loose();
-        }
-        ennemyInMap = GameObject.FindGameObjectWithTag("Shootable") != null;
-        
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            if (Localization.language == "Français")
-            {
-                Localization.language = "English";
-            }
-            else
-            {
-                Localization.language = "Français";
-            }
-            Debug.Log(Localization.language);
-        }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            GetComponent<Animator>().SetBool("Skip", true);
-        }
-
-        if (Input.GetKey("k"))
-        {
-        //    GameObject.FindGameObjectWithTag("Shootable").GetComponent<Health>().TakeDamage(31);
-        }
-
-        if (Input.GetKeyDown("p"))
-        {
-            PhotonNetwork.InstantiateSceneObject("Boss2", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
-        }
-        if (Input.GetKeyDown("j"))
-        {
-            PhotonNetwork.InstantiateSceneObject("Ennemy0", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
-        }
-        if (Input.GetKeyDown("k"))
-        {
-            PhotonNetwork.InstantiateSceneObject("Assassin", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
-        }
-		if (Input.GetKeyDown("o"))
+		if (gamingmode == "Versus") 
 		{
-			PhotonNetwork.InstantiateSceneObject("MOB_Sapeur", gameObject.transform.position, Quaternion.identity, 0, new object[] { });
-		}
 
+		} 
+		else 
+		{
+			if (globalLife < 0) {
+				Debug.Log ("You lost");
+			}
+			ennemyInMap = GameObject.FindGameObjectWithTag ("Shootable") != null;
+        
+			if (Input.GetKey (KeyCode.Space)) {
+				GetComponent<Animator> ().SetBool ("Skip", true);
+			}
+		}
 
     }
     private void OnGUI()
