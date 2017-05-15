@@ -69,7 +69,7 @@ public class Game : MonoBehaviour {
     {
         if (globalLife < 0)
         {
-            Debug.Log("You lost");
+            wave.Loose();
         }
         ennemyInMap = GameObject.FindGameObjectWithTag("Shootable") != null;
         

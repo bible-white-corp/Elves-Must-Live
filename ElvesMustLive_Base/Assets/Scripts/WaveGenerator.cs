@@ -116,8 +116,8 @@ public class WaveGenerator : MonoBehaviour {
 
         if (endGame && !game.ennemyInMap)
         {
-            game.masterClient.MyUI.Info.enabled = true;
-            game.masterClient.MyUI.Info.text = Localization.Get("EndLevel");
+            game.masterClient.MyUI.Info.enabled = false;
+            
             Finish();
         }
     }
@@ -130,6 +130,7 @@ public class WaveGenerator : MonoBehaviour {
 
     public void Finish()
     {
+        game.masterClient.MyUI.SetStory(Localization.Get("EndLevel"));
         Debug.Log("You Win this level");
         if (PlayerPrefs.GetString("Mode") == "History")
         {
@@ -137,6 +138,13 @@ public class WaveGenerator : MonoBehaviour {
 			//PhotonNetwork.LeaveRoom ();
 			
         }
+        leaveroom = true;
+    }
+
+    public void Loose()
+    {
+        game.masterClient.MyUI.SetStory(Localization.Get("LooseLevel"));
+        endGame = true;
         leaveroom = true;
     }
 }

@@ -339,7 +339,7 @@ Prefab:
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
       propertyPath: mWidth
-      value: 242
+      value: 212
       objectReference: {fileID: 0}
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
@@ -349,12 +349,27 @@ Prefab:
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
       propertyPath: aspectRatio
-      value: 6.5405407
+      value: 5.7297297
       objectReference: {fileID: 0}
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
       propertyPath: mFontSize
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512268956227200, guid: 5bf84dc19fad5824f8aad20f89655d67,
+        type: 2}
+      propertyPath: mWidth
+      value: 214
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512268956227200, guid: 5bf84dc19fad5824f8aad20f89655d67,
+        type: 2}
+      propertyPath: mHeight
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512268956227200, guid: 5bf84dc19fad5824f8aad20f89655d67,
+        type: 2}
+      propertyPath: aspectRatio
+      value: 5.4871793
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5bf84dc19fad5824f8aad20f89655d67, type: 2}
@@ -597,7 +612,7 @@ Prefab:
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
       propertyPath: mWidth
-      value: 242
+      value: 212
       objectReference: {fileID: 0}
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
@@ -607,12 +622,27 @@ Prefab:
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
       propertyPath: aspectRatio
-      value: 6.5405407
+      value: 5.7297297
       objectReference: {fileID: 0}
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
       propertyPath: mFontSize
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512268956227200, guid: 5bf84dc19fad5824f8aad20f89655d67,
+        type: 2}
+      propertyPath: mWidth
+      value: 214
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512268956227200, guid: 5bf84dc19fad5824f8aad20f89655d67,
+        type: 2}
+      propertyPath: mHeight
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512268956227200, guid: 5bf84dc19fad5824f8aad20f89655d67,
+        type: 2}
+      propertyPath: aspectRatio
+      value: 5.4871793
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5bf84dc19fad5824f8aad20f89655d67, type: 2}
@@ -5656,7 +5686,7 @@ Prefab:
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
       propertyPath: mWidth
-      value: 242
+      value: 212
       objectReference: {fileID: 0}
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
@@ -5666,12 +5696,27 @@ Prefab:
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
       propertyPath: aspectRatio
-      value: 6.5405407
+      value: 5.7297297
       objectReference: {fileID: 0}
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
       propertyPath: mFontSize
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512268956227200, guid: 5bf84dc19fad5824f8aad20f89655d67,
+        type: 2}
+      propertyPath: mWidth
+      value: 214
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512268956227200, guid: 5bf84dc19fad5824f8aad20f89655d67,
+        type: 2}
+      propertyPath: mHeight
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512268956227200, guid: 5bf84dc19fad5824f8aad20f89655d67,
+        type: 2}
+      propertyPath: aspectRatio
+      value: 5.4871793
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5bf84dc19fad5824f8aad20f89655d67, type: 2}
@@ -11188,7 +11233,7 @@ Prefab:
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
       propertyPath: mWidth
-      value: 242
+      value: 212
       objectReference: {fileID: 0}
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
@@ -11198,12 +11243,27 @@ Prefab:
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
       propertyPath: aspectRatio
-      value: 6.5405407
+      value: 5.7297297
       objectReference: {fileID: 0}
     - target: {fileID: 114191324469896966, guid: 5bf84dc19fad5824f8aad20f89655d67,
         type: 2}
       propertyPath: mFontSize
       value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512268956227200, guid: 5bf84dc19fad5824f8aad20f89655d67,
+        type: 2}
+      propertyPath: mWidth
+      value: 214
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512268956227200, guid: 5bf84dc19fad5824f8aad20f89655d67,
+        type: 2}
+      propertyPath: mHeight
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 114512268956227200, guid: 5bf84dc19fad5824f8aad20f89655d67,
+        type: 2}
+      propertyPath: aspectRatio
+      value: 5.4871793
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5bf84dc19fad5824f8aad20f89655d67, type: 2}
