@@ -36,7 +36,7 @@ public class Boutique : MonoBehaviour {
         string str = obj.name;
         int price = int.Parse(obj.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
         description.text = obj.transform.GetChild(5).GetComponent<UILabel>().text;
-        selected.text = str + " : " + price + " " + Localization.Get("gold_start"); 
+        selected.text = Localization.Get("cost") + " : " + price + " " + Localization.Get("gold_start"); 
     }
     public void SelectWeapon(GameObject obj)
     {
@@ -44,7 +44,7 @@ public class Boutique : MonoBehaviour {
         string str = obj.name;
         int price = int.Parse(obj.transform.GetChild(2).GetComponent<UILabel>().text.Split(' ')[0]);
         description.text = Localization.Get(obj.name + "_des");
-        selected.text = str + " : " + price + " " + Localization.Get("gold_start");
+        selected.text = Localization.Get("cost") + " : " + price + " " + Localization.Get("gold_start");
     }
 
     public void BuySelected()
@@ -61,7 +61,7 @@ public class Boutique : MonoBehaviour {
             else
             {
                 home.gold -= price;
-                log.text = str + " bought";
+                log.text = str + Localization.Get("bought");
                 description.text = Localization.Get("clickfordes");
             }
             home.raycast.AddTurret(currentTurret.transform.name, 0);
@@ -85,7 +85,7 @@ public class Boutique : MonoBehaviour {
             else
             {
                 home.gold -= price;
-                log.text = str + " bought";
+                log.text = str + Localization.Get("bought");
                 description.text = Localization.Get("clickfordes");
             }
             home.weapons.AddWeapon(currentWeapon.transform.name);
