@@ -52,18 +52,15 @@ public class Game : MonoBehaviour {
                 mode = gameObject.AddComponent<Endless>();
                 break;
             case "Tuto":
+                mode = GetComponent<Tuto>();
+                wave.tuto = true;
                 break;
             default:
                 break;
         }
-
-        /*if (mode == null)
-        {
-            mode = gameObject.AddComponent<Endless>();
-        }*/
-
         wave.mode = mode;
         mode.wave = wave;
+
     }
 
     // Update is called once per frame

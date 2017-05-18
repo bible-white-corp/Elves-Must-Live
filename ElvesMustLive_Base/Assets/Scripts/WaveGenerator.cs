@@ -20,6 +20,7 @@ public class WaveGenerator : MonoBehaviour {
     public bool endGame;
 	float timerbeforeleaving;
 
+    public bool tuto;
     // Use this for initialization
     void Start () {
 		timerbeforeleaving = 0f;
@@ -33,6 +34,9 @@ public class WaveGenerator : MonoBehaviour {
 	
     public bool StartWave()
     {
+        if (tuto) {
+            return false;
+        }
         if (!wave && mode.HasNextLevel())
         {
             currentWave = mode.LoadNextLevel();
@@ -51,7 +55,7 @@ public class WaveGenerator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-        if (!PhotonNetwork.isMasterClient) 
+        if (!PhotonNetwork.isMasterClient || tuto) 
 		{
             return;
         }
