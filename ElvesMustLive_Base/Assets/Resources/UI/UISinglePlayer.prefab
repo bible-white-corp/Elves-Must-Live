@@ -15346,6 +15346,7 @@ MonoBehaviour:
   click: 0
   UI: {fileID: 0}
   active: 0
+  speed: 0.015
 --- !u!114 &114135540989694600
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -7,6 +7,7 @@ public class ControllerMouse : MonoBehaviour {
     public bool click;
     public UIControl UI;
     public bool active;
+    public float speed;
     // Use this for initialization
     void Start () {
 	}
@@ -28,11 +29,11 @@ public class ControllerMouse : MonoBehaviour {
         }
         if (Input.GetAxis("2-Horizontal") != 0)
         {
-            this.transform.position += new Vector3(Input.GetAxis("2-Horizontal") * 0.01f, 0, 0);
+            this.transform.position += new Vector3(Input.GetAxis("2-Horizontal") * speed, 0, 0);
         }
         if (Input.GetAxis("2-Vertical") != 0)
         {
-            this.transform.position += new Vector3(0, Input.GetAxis("2-Vertical") * 0.01f, 0);
+            this.transform.position += new Vector3(0, Input.GetAxis("2-Vertical") * speed, 0);
         }
     }
 
