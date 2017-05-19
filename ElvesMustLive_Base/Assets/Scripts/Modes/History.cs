@@ -134,6 +134,7 @@ public class History : GameMode {
                         Add("Ennemy0", 0.5f);
                         Add("Ennemy0", 0.2f);
                         Add("Ennemy0", 0.2f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map2_wave1");
                         break;
                     case 4:
                         Add("Ennemy0", 5f); // Vague 2
@@ -164,6 +165,7 @@ public class History : GameMode {
                         Add("Ennemy0", 0.5f);
                         Add("Ennemy0", 0.2f);
                         Add("Ennemy0", 0.2f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map2_wave2");
                         break;
                     case 3:
                         Add("Ennemy0", 0.1f);
@@ -208,6 +210,7 @@ public class History : GameMode {
                         Add("MOB_Sapeur", 0.2f);
                         Add("MOB_Sapeur", 0.2f);
                         Add("Ennemy0", 0.1f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map2_wave3");
                         break;
 
                     case 2:
@@ -277,6 +280,7 @@ public class History : GameMode {
                         Add("Ennemy0", 0.5f);
                         Add("Ennemy0", 0.2f);
                         Add("Ennemy0", 0.2f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map2_wave4");
                         break;
 
                     case 1:
@@ -349,6 +353,8 @@ public class History : GameMode {
                         Add("Ennemy0", 0.5f);
                         Add("Ennemy0", 0.2f);
                         Add("Ennemy0", 0.2f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map2_wave5_1");
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map2_wave5_2");
                         break;
                     default:
                         break;
@@ -372,6 +378,7 @@ public class History : GameMode {
                         Add("Ennemy0", 0.5f);
                         Add("Ennemy0", 0.2f);
                         Add("Ennemy0", 0.2f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map3_wave1");
                         break;
                     case 3:
                         Add("Ennemy0", 0.5f);
@@ -414,6 +421,7 @@ public class History : GameMode {
                         Add("Ennemy0", 0.2f);
                         Add("Ennemy0", 0.2f);
                         Add("Boss1", 5f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map3_wave2");
 
 
                         break;
@@ -453,6 +461,7 @@ public class History : GameMode {
                         Add("Ennemy0", 0.2f);
                         Add("Ennemy0", 0.2f);
                         Add("Boss2", 5f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map3_wave3");
                         break;
                     case 1:
                         Add("Ennemy0", 0.2f);
@@ -486,6 +495,8 @@ public class History : GameMode {
                         Add("Ennemy0", 0.2f);
                         Add("Ennemy0", 0.2f);
                         Add("Boss3", 5f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map3_wave4_1");
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map3_wave4_2");
                         break;
                     default:
                         break;
@@ -538,6 +549,7 @@ public class History : GameMode {
                         Add("Ennemy0", 0.2f);
                         Add("Ennemy0", 0.2f);
                         Add("Ennemy0", 0.2f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map4_wave1");
 
                         break;
                     case 4://Vague 2
@@ -589,7 +601,7 @@ public class History : GameMode {
                         Add("MOB_Sapeur", 0.5f);
                         Add("Ennemy0", 0.5f);
                         Add("Ennemy0", 0.5f);
-
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map4_wave2");
                         break;
                     case 3://Vague 3
                         Add("Ennemy0", 1f);
@@ -640,6 +652,7 @@ public class History : GameMode {
                         Add("Assassin", 0.5f);
                         Add("Ennemy0", 0.5f);
                         Add("Ennemy0", 0.5f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map4_wave3");
                         break;
                     case 2://Vague 4
                         Add("Ennemy0", 0.5f);
@@ -704,6 +717,7 @@ public class History : GameMode {
                         Add("Ennemy0", 0.5f);
                         Add("Ennemy0", 0.5f);
                         Add("Boss3", 1f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map4_wave4");
 
                         break;
                     case 1://vague 5
@@ -763,6 +777,8 @@ public class History : GameMode {
                         Add("Ennemy0", 0.1f);
                         Add("Ennemy0", 0.1f);
                         Add("Ennemy0", 0.1f);
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map4_wave5_1");
+                        wave.game.masterClient.photonView.RPC("ShowHistory", PhotonTargets.All, "map4_wave5_2");
                         break;
 
                     default:
