@@ -16,7 +16,7 @@ public class UIButton : UIButtonColor
 	/// <summary>
 	/// Current button that sent out the onClick event.
 	/// </summary>
-
+    
 	static public UIButton current;
 
 	/// <summary>
@@ -231,4 +231,27 @@ public class UIButton : UIButtonColor
 			if (pixelSnap) mSprite.MakePixelPerfect();
 		}
 	}
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "ArrowSpot")
+        {
+            if (other.GetComponent<ControllerMouse>().click)
+            {
+                OnClick();
+                other.GetComponent<ControllerMouse>().click = false;
+            }
+            else
+            {
+                OnHover(true);
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "ArrowSpot")
+        {
+            OnHover(false);
+        }
+    }
 }

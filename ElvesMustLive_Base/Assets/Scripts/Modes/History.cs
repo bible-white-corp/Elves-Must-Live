@@ -810,6 +810,10 @@ public class History : GameMode {
                 //Map3
                 waveRemaining = 4;
                 break;
+            case 4:
+                //Map3
+                waveRemaining = 5;
+                break;
             default:
                 break;
         }

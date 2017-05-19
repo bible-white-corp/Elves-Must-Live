@@ -38,6 +38,7 @@ public class PlayerControl : Photon.MonoBehaviour {
     // Use this for initialization
     void Awake () 
 	{
+        useController = true;
         game = GameObject.Find("GameManager").GetComponent<Game>();
 
         if (PhotonNetwork.isMasterClient)
@@ -139,32 +140,32 @@ public class PlayerControl : Photon.MonoBehaviour {
             //Afficher un texte "Press Enter pour lancer la prochaine vague."
         }
 
-        if (Input.GetKeyDown("v") && !ChatActif && !MenuActif)
+        if (((!useController && Input.GetKeyDown("v")) || (useController && Input.GetKeyDown(KeyCode.Joystick1Button7))) && !ChatActif && !MenuActif)
         {
-            if (useController)
-            {
-                return;
-            }
             if (MyUI.boutikScript.gameObject.GetActive())
             {
                 MyUI.boutikScript.gameObject.SetActive(false);
                 MenuActif = false;
                 BtkActif = false;
+                if (useController)
+                {
+                    MyUI.mouseControl.Active(false);
+                }
             }
             else
             {
                 MyUI.boutikScript.gameObject.SetActive(true);
                 MenuActif = true;
                 BtkActif = true;
+                if (useController)
+                {
+                    MyUI.mouseControl.Active(true);
+                }
             }
         }
 
         if (Input.GetKeyDown("c") && !ChatActif && !MenuActif)
         {
-            if (useController)
-            {
-                return;
-            }
             if (MyUI.boutikOrc.gameObject.GetActive())
             {
                 MyUI.boutikOrc.gameObject.SetActive(false);
@@ -179,12 +180,8 @@ public class PlayerControl : Photon.MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown ("escape")) 
+        if ((!useController && Input.GetKeyDown ("escape")) || (useController && Input.GetKeyDown(KeyCode.Joystick1Button6)))
 		{
-            if (useController)
-            {
-                return;
-            }
             if (raycast.BuildConfirm)
             {
                 return;
@@ -195,12 +192,16 @@ public class PlayerControl : Photon.MonoBehaviour {
 				MyUI.tchat.GetComponentInChildren<UIInput> ().isSelected = true;
 				ChatActif = false;
 				MenuActif = false;
-			}
+            }
             else if (MyUI.boutikOrc.gameObject.GetActive())
             {
                 MyUI.boutikOrc.gameObject.SetActive(false);
                 BtkActif = false;
                 MenuActif = false;
+                if (useController)
+                {
+                    MyUI.mouseControl.Active(false);
+                }
             }
 			else if (BtkActif) 
 			{
@@ -213,6 +214,10 @@ public class PlayerControl : Photon.MonoBehaviour {
                     MyUI.boutikScript.gameObject.SetActive(false);
                     BtkActif = false;
                     MenuActif = false;
+                    if (useController)
+                    {
+                        MyUI.mouseControl.Active(false);
+                    }
                 }
 			}
             
@@ -234,6 +239,10 @@ public class PlayerControl : Photon.MonoBehaviour {
                         MyUI.PauseWindow.SetActive(false);
                         MenuActif = false;
                         PauseActif = false;
+                        if (useController)
+                        {
+                            MyUI.mouseControl.Active(false);
+                        }
                     }
                 }
                 else
@@ -241,6 +250,10 @@ public class PlayerControl : Photon.MonoBehaviour {
                     MyUI.PauseWindow.SetActive(true);
                     MenuActif = true;
                     PauseActif = true;
+                    if (useController)
+                    {
+                        MyUI.mouseControl.Active(true);
+                    }
                 }
 			}
 		}

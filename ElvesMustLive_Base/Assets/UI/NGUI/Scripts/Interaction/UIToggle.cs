@@ -240,4 +240,14 @@ public class UIToggle : UIWidgetContainer
 			}
 		}
 	}
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "ArrowSpot")
+        {
+            if (other.GetComponent<ControllerMouse>().click)
+            {
+                OnClick();
+            }
+        }
+    }
 }

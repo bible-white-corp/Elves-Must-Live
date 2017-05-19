@@ -75,13 +75,16 @@ public class Game : MonoBehaviour {
 			if (globalLife < 0) {
                 wave.Loose();
 			}
-			ennemyInMap = GameObject.FindGameObjectWithTag ("Shootable") != null;
+
         
-			if (Input.GetKey (KeyCode.Space)) {
-				GetComponent<Animator> ().SetBool ("Skip", true);
-			}
+
 		}
 
+        if (Input.GetKey(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0))
+        {
+            GetComponent<Animator>().SetBool("Skip", true);
+        }
+        ennemyInMap = GameObject.FindGameObjectWithTag("Shootable") != null;
     }
     private void OnGUI()
     {

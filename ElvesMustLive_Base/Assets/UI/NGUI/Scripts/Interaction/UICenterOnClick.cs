@@ -31,4 +31,14 @@ public class UICenterOnClick : MonoBehaviour
 			SpringPanel.Begin(panel.cachedGameObject, offset, 6f);
 		}
 	}
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "ArrowSpot")
+        {
+            if (other.GetComponent<ControllerMouse>().click)
+            {
+                OnClick();
+            }
+        }
+    }
 }

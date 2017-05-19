@@ -51,7 +51,7 @@ public class LoadProgress : Photon.MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
             if (async.progress == 0.9f)
             {

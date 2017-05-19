@@ -35,6 +35,8 @@ public class UIControl : MonoBehaviour {
     public float timer;
     public float StoryTxtDuration = 5f;
 
+    public ControllerMouse mouseControl;
+
     Queue<string> StoryTampon = new Queue<string>();
          
     // Use this for initialization

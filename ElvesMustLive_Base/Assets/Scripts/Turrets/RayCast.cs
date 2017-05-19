@@ -185,7 +185,7 @@ public class RayCast : MonoBehaviour {
                 RightRotate();
             }
         }
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !home.useController || (Input.GetKeyDown(KeyCode.Joystick1Button6) && home.useController))
         {
             Cancel();
             home.MyUI.UITurret.SetActive(false);
