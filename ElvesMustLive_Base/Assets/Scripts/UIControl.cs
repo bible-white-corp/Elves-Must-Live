@@ -9,6 +9,7 @@ public class UIControl : MonoBehaviour {
     public UILabel UIModeLevel;
     public UILabel UICount;
     public UISlider UIHealth;
+    public UISlider UIVillage;
     public OnClickTurret scriptClick;
     public GameObject tchat;
     public Boutique boutikScript;
@@ -95,6 +96,7 @@ public class UIControl : MonoBehaviour {
         if (!dead)
         {
             UIHealth.value = home.hp.health / home.hp.maxhealth;
+            UIVillage.value = (float)game.globalLife / (float)game.MAXglobalLife;
             UIGold.text = home.gold + " " + Localization.Get("gold_start");
 			UICount.text = game.wave.ennemiesleft.ToString() + " " + Localization.Get("left");
             UIModeLevel.text = Localization.Get("Level") + game.wave.mode.level;

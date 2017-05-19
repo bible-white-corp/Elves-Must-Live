@@ -20,7 +20,7 @@ public class Game : MonoBehaviour {
     public bool paused = false;
 
     public int globalLife = 10; //Ennemies qui traversent le portail
-
+    public int MAXglobalLife = 10;
     public bool ennemyInMap;
 
     // Use this for initialization

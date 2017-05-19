@@ -15995,6 +15995,7 @@ MonoBehaviour:
   UIModeLevel: {fileID: 114495706850003226}
   UICount: {fileID: 114286587962524822}
   UIHealth: {fileID: 114043975223863580}
+  UIVillage: {fileID: 114251926937111068}
   scriptClick: {fileID: 114129500447798666}
   tchat: {fileID: 1854533674458680}
   boutikScript: {fileID: 114964817032570408}
