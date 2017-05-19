@@ -46,6 +46,8 @@ public class Launcher : Photon.PunBehaviour
     public GameObject levelWindow;
 
     public GameObject historyTab;
+
+    public GameObject controls;
     #endregion
 
 
@@ -80,11 +82,13 @@ public class Launcher : Photon.PunBehaviour
     public void ShowLevelWindow()
     {
         levelWindow.SetActive(true);
+        ActiveCol(controls, false);
     }
 
     public void OpenSettings()
     {
         settings.gameObject.SetActive(true);
+        ActiveCol(controls, false);
     }
 
     public void Quit()
@@ -171,11 +175,22 @@ public class Launcher : Photon.PunBehaviour
         LoadHistory();
     }
 
+    public void ActiveCol(GameObject go, bool b)
+    {
+        foreach (var item in go.GetComponentsInChildren<Collider>())
+        {
+            item.enabled = b;
+            //item.gameObject.GetComponent<UIButton>().state = UIButtonColor.State.Normal;
+        }
+    }
+
     #endregion
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button6)) {
             levelWindow.SetActive(false);
+            settings.gameObject.SetActive(false);
+            ActiveCol(controls, true);
         }
     }
 
