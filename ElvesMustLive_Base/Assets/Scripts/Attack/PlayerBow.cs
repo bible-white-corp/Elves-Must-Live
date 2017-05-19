@@ -26,15 +26,17 @@ public class PlayerBow : Photon.MonoBehaviour
     GameObject tpscam;
 
 	AudioSource audioS;
-	AudioClip bow;
+    AudioClip bow;
+    AudioClip bowLoad;
 
     float t;
-    float timeout = 0.8f;  
+    float timeout = 0.6f;  
 
     // Use this for initialization
     void Start ()
     {
 		bow = (AudioClip)Resources.Load("Sound/Arcs/decochage");
+        bowLoad = (AudioClip)Resources.Load("Sound/Arcs/loadBow");
         home = GetComponentInParent<PlayerControl>();
 		audioS = home.GetComponent<AudioSource> ();
         tpscamera = home.cam.GetComponentInChildren<Camera>();
@@ -71,6 +73,7 @@ public class PlayerBow : Photon.MonoBehaviour
                 t += Time.deltaTime;
                 if (t >= timeout)
                 {
+                    audioS.PlayOneShot(bowLoad);
                     temparrow = (GameObject)Instantiate(Resources.Load("TempArrow"), transform);
                 }
                 return;
@@ -98,12 +101,13 @@ public class PlayerBow : Photon.MonoBehaviour
             {
                 isAttack = true;
                 anim.SetTrigger("Atk");
-
+                //audioS.PlayOneShot(bowLoad);
                 // Mettre la caméra (Une autre caméra) en mode "viser"
                 // SET FPS
                 fpscam.SetActive(true);
                 tpscamera.enabled = false;
                 //home.cam = fpscam;
+                t = 0f;
             }
 
 
