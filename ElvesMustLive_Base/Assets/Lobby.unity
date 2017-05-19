@@ -3630,7 +3630,7 @@ MonoBehaviour:
   MaxPlayersPerRoom: 4
   progress: {fileID: 517323413}
   LevelName: Map/MAP 2 multipath/MAP 2
-  settings: {fileID: 0}
+  settings: {fileID: 411003508}
   levelWindow: {fileID: 217560229}
   historyTab: {fileID: 1804597219}
 --- !u!4 &517323412
