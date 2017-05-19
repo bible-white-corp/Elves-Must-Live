@@ -176,6 +176,10 @@ public class UIControl : MonoBehaviour {
         PauseWindow.SetActive(false);
         home.MenuActif = false;
         home.PauseActif = false;
+        if (home.useController)
+        {
+            mouseControl.Active(false);
+        }
     }
 
     public void OpenSettings()

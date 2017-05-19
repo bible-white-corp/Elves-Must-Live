@@ -38,7 +38,8 @@ public class PlayerControl : Photon.MonoBehaviour {
     // Use this for initialization
     void Awake () 
 	{
-        useController = true;
+
+
         game = GameObject.Find("GameManager").GetComponent<Game>();
 
         if (PhotonNetwork.isMasterClient)
@@ -69,13 +70,28 @@ public class PlayerControl : Photon.MonoBehaviour {
                     screen = 1;
                     MyUI = UIControl.SetUI("Left", this);
                     cam.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
+                    if (PlayerPrefs.GetInt("Control") == 1)
+                    {
+                        useController = true;
+                    }
+                    else
+                    {
+                        useController = false;
+                    }
                 }
                 else
                 { 
                     MyUI = UIControl.SetUI("Right", this);
                     cam.GetComponentInChildren<Camera>().rect = new Rect(0.5f, 0f, 1f, 1f);
                     cam.GetComponentInChildren<AudioListener>().enabled = false; // Only one Audio listener...
-                    useController = true;
+                    if (PlayerPrefs.GetInt("Control") == 1)
+                    {
+                        useController = false;
+                    }
+                    else
+                    {
+                        useController = true;
+                    }
                     screen = 2;
                 }
             }

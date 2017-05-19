@@ -28,11 +28,32 @@ public class Settings : MonoBehaviour {
         if (UI != null)
         {
             UI.PauseWindow.SetActive(true);
+            //UI.mouseControl.Active(false);
         }
     }
 
-	// Use this for initialization
-	void Start () {
+    public void SetKey()
+    {
+        PlayerPrefs.SetInt("Control", 0); // 0 = keyboard
+        if (UI != null)
+        {
+            UI.home.useController = false;
+            UI.mouseControl.Active(false);
+        }
+    }
+
+    public void SetCont()
+    {
+        PlayerPrefs.SetInt("Control", 1); // 1 = xbox controller
+        if (UI != null)
+        {
+            UI.home.useController = true;
+            UI.mouseControl.Active(true);
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
         son.value = AudioListener.volume;	
 	}
 	

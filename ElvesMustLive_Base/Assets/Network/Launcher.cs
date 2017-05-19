@@ -174,7 +174,7 @@ public class Launcher : Photon.PunBehaviour
     #endregion
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button6)) {
             levelWindow.SetActive(false);
         }
     }
