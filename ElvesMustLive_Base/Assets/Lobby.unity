@@ -2313,11 +2313,11 @@ GameObject:
   m_Component:
   - component: {fileID: 326595400}
   - component: {fileID: 326595407}
+  - component: {fileID: 326595402}
   - component: {fileID: 326595406}
   - component: {fileID: 326595405}
   - component: {fileID: 326595404}
   - component: {fileID: 326595403}
-  - component: {fileID: 326595402}
   - component: {fileID: 326595401}
   m_Layer: 8
   m_Name: Tab 1
@@ -2447,7 +2447,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 326595399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15cc9c62605319f4a9b20b15918913fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tweenTarget: {fileID: 1652357645}
@@ -2455,6 +2455,12 @@ MonoBehaviour:
   pressed: {r: 0.40784314, g: 0.29411766, b: 0.18039216, a: 1}
   disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  pixelSnap: 0
+  onClick: []
 --- !u!65 &326595407
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4403,11 +4409,11 @@ GameObject:
   m_Component:
   - component: {fileID: 650883278}
   - component: {fileID: 650883285}
+  - component: {fileID: 650883280}
   - component: {fileID: 650883284}
   - component: {fileID: 650883283}
   - component: {fileID: 650883282}
   - component: {fileID: 650883281}
-  - component: {fileID: 650883280}
   - component: {fileID: 650883279}
   m_Layer: 8
   m_Name: Tab 2
