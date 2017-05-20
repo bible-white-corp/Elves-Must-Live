@@ -3638,6 +3638,7 @@ MonoBehaviour:
   settings: {fileID: 411003508}
   levelWindow: {fileID: 217560229}
   historyTab: {fileID: 1804597219}
+  controls: {fileID: 898456417}
 --- !u!4 &517323412
 Transform:
   m_ObjectHideFlags: 0
