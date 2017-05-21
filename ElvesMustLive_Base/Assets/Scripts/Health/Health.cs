@@ -47,7 +47,7 @@ public class Health : Photon.MonoBehaviour
     // A terme, j'aimerai que ce soit par RPC, pour synchro correctement entre les clients.
     // La personne qui fait des dégats avec son arme envoie aux autres et pas chacun de son coté #Thetoto
     [PunRPC]
-    void SendDamage(int amount, int from)
+    public void SendDamage(int amount, int from)
     {
         
         if (IsDead)
