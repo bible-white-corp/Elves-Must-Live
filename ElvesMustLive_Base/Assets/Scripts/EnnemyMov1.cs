@@ -17,7 +17,7 @@ public class EnnemyMov1 : Mov
 		animator = GetComponentInParent<Animator> ();
         atkscript = GetComponentInChildren<EnnemyAttack>();
         hp = GetComponentInParent<Health>();
-        atkscript.enabled = false;
+        //atkscript.enabled = false;
 		distance = 5;	
 		//initiate = GetComponent <InitiateDestination> ();
 	}
@@ -25,7 +25,7 @@ public class EnnemyMov1 : Mov
 	{
 		//initiate.enabled = true;
 		//nav.enabled = true;
-		animator.SetBool ("InMov", true);
+		//animator.SetBool ("InMov", true);
 	}
 	void Update()
 	{
