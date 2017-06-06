@@ -184,7 +184,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3001
+  startingRenderQueue: 3005
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 100, w: 100}
@@ -1130,7 +1130,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3001
+  startingRenderQueue: 3005
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 100, w: 100}
@@ -1263,11 +1263,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4778537627485706, guid: fa13999f97b2bab4cb2148eaea18f8f2, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.017
       objectReference: {fileID: 0}
     - target: {fileID: 4778537627485706, guid: fa13999f97b2bab4cb2148eaea18f8f2, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.653
       objectReference: {fileID: 0}
     - target: {fileID: 4778537627485706, guid: fa13999f97b2bab4cb2148eaea18f8f2, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1304,7 +1304,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1551238555902294, guid: fa13999f97b2bab4cb2148eaea18f8f2, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114690596913407396, guid: fa13999f97b2bab4cb2148eaea18f8f2,
         type: 2}
@@ -3640,6 +3640,7 @@ MonoBehaviour:
   progress: {fileID: 517323413}
   LevelName: Map/MAP 2 multipath/MAP 2
   settings: {fileID: 411003508}
+  mouseC: {fileID: 1137448536}
   levelWindow: {fileID: 217560229}
   historyTab: {fileID: 1804597219}
   controls: {fileID: 898456417}
@@ -7243,7 +7244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1137448537
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7321,7 +7322,7 @@ Transform:
   m_PrefabInternal: {fileID: 204133157}
   m_GameObject: {fileID: 1137448536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0.017, y: 0.653, z: 0}
   m_LocalScale: {x: 0.025, y: 0.025, z: 0.001}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7891,7 +7892,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 150, y: 40, z: 0}
-  m_Center: {x: 0, y: 0, z: -4.25}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1290048143
 GameObject:
   m_ObjectHideFlags: 0
@@ -11502,7 +11503,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 150, y: 40, z: 0}
-  m_Center: {x: 0, y: 0, z: -4.25}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1983809831
 GameObject:
   m_ObjectHideFlags: 0

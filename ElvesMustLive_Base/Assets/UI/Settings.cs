@@ -30,6 +30,10 @@ public class Settings : MonoBehaviour {
             UI.PauseWindow.SetActive(true);
             //UI.mouseControl.Active(false);
         }
+        else
+        {
+            GameObject.Find("Launcher").GetComponent<Launcher>().ActiveCol(GameObject.Find("Launcher").GetComponent<Launcher>().controls, true);
+        }
     }
 
     public void SetKey()

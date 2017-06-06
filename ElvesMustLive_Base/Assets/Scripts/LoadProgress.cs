@@ -53,7 +53,7 @@ public class LoadProgress : Photon.MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
-            if (async.progress == 0.9f)
+            if (async != null && async.progress == 0.9f)
             {
                 Debug.Log("Launch");
                 async.allowSceneActivation = true;

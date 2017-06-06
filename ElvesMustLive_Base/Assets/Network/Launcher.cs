@@ -25,6 +25,7 @@ public class Launcher : Photon.PunBehaviour
 
     public Settings settings;
 
+    public GameObject mouseC;
     #endregion
 
 
@@ -75,6 +76,7 @@ public class Launcher : Photon.PunBehaviour
 
     private void Start()
     {
+        PlayerPrefs.SetInt("Control", 0); // Set keyboard par défaut
         //progress.LoadCanvas.enabled = false;
         //progress.MainCanvas.enabled = true;
     }
@@ -84,6 +86,8 @@ public class Launcher : Photon.PunBehaviour
         levelWindow.SetActive(true);
         ActiveCol(controls, false);
     }
+
+    
 
     public void OpenSettings()
     {
@@ -191,6 +195,11 @@ public class Launcher : Photon.PunBehaviour
             levelWindow.SetActive(false);
             settings.gameObject.SetActive(false);
             ActiveCol(controls, true);
+        }
+
+        if (!mouseC.GetActive() && (Input.GetAxis("2-Horizontal") != 0 || Input.GetAxis("2-Vertical") != 0))
+        {
+            mouseC.SetActive(true);
         }
     }
 
