@@ -28,7 +28,7 @@ public class Door : MonoBehaviour {
     void Update () {
         if (woodLife < 0)
         {
-            door.SetActive(false);
+            //door.SetActive(false);
         }
 	}
 }

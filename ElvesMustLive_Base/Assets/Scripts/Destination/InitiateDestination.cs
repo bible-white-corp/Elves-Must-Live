@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class InitiateDestination : MonoBehaviour {
 
 	public Transform FirstDestination;
@@ -12,8 +12,8 @@ public class InitiateDestination : MonoBehaviour {
 	void Start () 
 	{
         
-		script = GetComponent<EnnemyMov1>();
-        animator = script.animator;
+		//script = GetComponent<EnnemyMov1>();
+        animator = GetComponent<Animator>();
         //FirstDestination = GameObject.Find("Destination1").transform;
         //script.ChangeDestination(FirstDestination);
     }
@@ -24,10 +24,10 @@ public class InitiateDestination : MonoBehaviour {
         time += Time.deltaTime;
         if (PlayerPrefs.GetFloat("tt") < time && !ready)
         {
-            script.ChangeDestination(FirstDestination);
+            GetComponent<NavMeshAgent>().SetDestination(GameObject.Find("DD").transform.position);
             PlayerPrefs.SetFloat("tt", time + 1.3f);
             animator.SetBool("InMov", true);
-            Debug.Log("Send," + time);
+            //Debug.Log("Send," + time);
             ready = true;
         }
 	}

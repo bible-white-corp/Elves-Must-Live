@@ -89,7 +89,7 @@ public class CINEMATIQUE : MonoBehaviour {
             gard.destination = des2.position;
             anim.SetTrigger("mov");
         }
-        if (!b7 && time > 37)
+        if (!b7 && time > 36.5)
         {
             b7 = true;
             gard.enabled = false;
