@@ -11,7 +11,7 @@ public class InitiateDestination : MonoBehaviour {
     Animator animator;
 	void Start () 
 	{
-        PlayerPrefs.SetFloat("tt", 0f);
+        
 		script = GetComponent<EnnemyMov1>();
         animator = script.animator;
         //FirstDestination = GameObject.Find("Destination1").transform;
@@ -25,7 +25,7 @@ public class InitiateDestination : MonoBehaviour {
         if (PlayerPrefs.GetFloat("tt") < time && !ready)
         {
             script.ChangeDestination(FirstDestination);
-            PlayerPrefs.SetFloat("tt", time + 1.7f);
+            PlayerPrefs.SetFloat("tt", time + 1.3f);
             animator.SetBool("InMov", true);
             Debug.Log("Send," + time);
             ready = true;
