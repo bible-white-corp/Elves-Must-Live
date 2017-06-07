@@ -23029,7 +23029,7 @@ Prefab:
         type: 2}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: c0de8fba5e053834eb9b449b23030ce7, type: 2}
+      objectReference: {fileID: 9100000, guid: d2dc11c1edf2937468628d90a25aa09c, type: 2}
     - target: {fileID: 1269171468861140, guid: 0a88fc77663e2bf4aa08e99a486240a5, type: 2}
       propertyPath: m_Name
       value: Guard3 (1)
