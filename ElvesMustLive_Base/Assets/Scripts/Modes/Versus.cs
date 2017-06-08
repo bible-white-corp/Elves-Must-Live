@@ -6,8 +6,8 @@ using UnityEngine;
 public class Versus : MonoBehaviour 
 {
 	public List<string> ennemies = new List<string>();
-	bool wave;
-	int level;
+	public bool wave;
+	public int level;
 	Queue<KeyValuePair<string, float>> queue1;
 	Queue<KeyValuePair<string, float>> queue2;
 	KeyValuePair<string, float> currentmonster1;
@@ -16,14 +16,14 @@ public class Versus : MonoBehaviour
 	public GameObject spawn2;
 	public int PV1 = 10;
 	public int PV2 = 10;
-	float timer1;
-	float timer2;
-	bool ended1;
-	bool ended2;
-	bool game;
-	float timer;
-	int winner;
-	float timerbeforequit;
+	public float timer1;
+	public float timer2;
+	public bool ended1;
+	public bool ended2;
+	public bool game;
+	public float timer;
+	public int winner;
+	public float timerbeforequit;
 
 	void Start () 
 	{
@@ -32,8 +32,8 @@ public class Versus : MonoBehaviour
 		wave = false;
 		spawn1 = GameObject.Find ("Spawn1");
 		spawn2 = GameObject.Find ("Spawn2");
-		bool ended1 = false;
-		bool ended2 = false;
+		//bool ended1 = false;
+		//bool ended2 = false;
 		timer = 0;
 		timer1 = 0f;
 		timer2 = 0f;
@@ -45,7 +45,9 @@ public class Versus : MonoBehaviour
 		ennemies.Add("Ennemy0");
 		level = 1;
 
-	}
+        currentmonster1 = new KeyValuePair<string, float>("Ennemy0", 0f);
+        currentmonster2 = new KeyValuePair<string, float>("Ennemy0", 0f);
+    }
 
 	// Update is called once per frame
 	void Update () 

@@ -98,8 +98,17 @@ public class UIControl : MonoBehaviour {
             UIHealth.value = home.hp.health / home.hp.maxhealth;
             UIVillage.value = (float)game.globalLife / (float)game.MAXglobalLife;
             UIGold.text = home.gold + " " + Localization.Get("gold_start");
-			UICount.text = game.wave.ennemiesleft.ToString() + " " + Localization.Get("left");
-            UIModeLevel.text = Localization.Get("Level") + game.wave.mode.level;
+
+            if (game.gamingmode == "Versus")
+            {
+                UICount.text = "Versus";
+               UIModeLevel.text = "Versus";
+            }
+            else
+            {
+                UICount.text = game.wave.ennemiesleft.ToString() + " " + Localization.Get("left");
+                UIModeLevel.text = Localization.Get("Level") + game.wave.mode.level;
+            }
         }
     }
 

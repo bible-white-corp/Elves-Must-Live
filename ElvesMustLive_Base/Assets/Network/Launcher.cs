@@ -102,7 +102,12 @@ public class Launcher : Photon.PunBehaviour
             System.Diagnostics.Process.GetCurrentProcess().Kill();
         }
     }
-
+    public void LaunchVersus()
+    {
+        LevelName = "Map/Map Versus/Map Versus";
+        PlayerPrefs.SetString("Mode", "Versus");
+        Connect();
+    }
     public void LaunchTuto()
     {
         LevelName = "Tutorial/Level1";

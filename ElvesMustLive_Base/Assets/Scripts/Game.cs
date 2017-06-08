@@ -27,6 +27,7 @@ public class Game : MonoBehaviour {
     void Awake()
     {
 		gamingmode = "";
+        gamingmode = PlayerPrefs.GetString("Mode");
         global = gameObject;
         if (PlayerPrefs.GetInt("mod") == 1)
         {
@@ -82,7 +83,12 @@ public class Game : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0))
         {
-            GetComponent<Animator>().SetBool("Skip", true);
+            try
+            {
+                GetComponent<Animator>().SetBool("Skip", true);
+            }
+            catch
+            {}
         }
         ennemyInMap = GameObject.FindGameObjectWithTag("Shootable") != null;
     }

@@ -111,7 +111,10 @@ public class PlayerControl : Photon.MonoBehaviour {
         if (PhotonNetwork.isMasterClient && screen != 2)
         {
             game.masterClient = this; // Master = Server + gauche
-            game.InitWave();
+            if (game.gamingmode != "Versus")
+            {
+                game.InitWave();
+            }
         }
 
     }

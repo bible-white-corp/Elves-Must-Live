@@ -21,3 +21,5 @@ EditorBuildSettings:
     path: Assets/Map/map 3/map 3 montagne.unity
   - enabled: 1
     path: Assets/Map/Map 4/Cave.unity
+  - enabled: 1
+    path: Assets/Map/Map Versus/Map Versus.unity
