@@ -1695,7 +1695,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1915670611840468}
-  m_LocalRotation: {x: -0.57594734, y: 0.07369195, z: 0.7799204, w: -0.23361997}
+  m_LocalRotation: {x: -0.5759474, y: 0.07369196, z: 0.77992046, w: -0.23361999}
   m_LocalPosition: {x: -0.34037077, y: -0.27359766, z: 0.7648589}
   m_LocalScale: {x: -0.5000017, y: -0.500001, z: -0.50000113}
   m_Children: []
@@ -2129,7 +2129,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 6d8fb59136e1dc44fa76dd9949189f16, type: 2}
+  - {fileID: 2100000, guid: 0323a89918625a643b0c0d66ad64a9d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2683,6 +2683,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   nav: {fileID: 0}
   distance: 0
+  player: {fileID: 0}
   Destination: {fileID: 0}
 --- !u!136 &136386193990307082
 CapsuleCollider:
