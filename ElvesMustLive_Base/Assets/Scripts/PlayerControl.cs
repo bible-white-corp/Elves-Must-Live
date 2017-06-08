@@ -42,12 +42,6 @@ public class PlayerControl : Photon.MonoBehaviour {
 
         game = GameObject.Find("GameManager").GetComponent<Game>();
 
-        if (PhotonNetwork.isMasterClient)
-        {
-            game.masterClient = this;
-            game.InitWave();
-        }
-
         isMine = photonView.isMine;
         view = photonView;
         if (isMine)
@@ -67,7 +61,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             {
                 if (int.Parse(photonView.instantiationData[0].ToString()) == 0)
                 {
-                    screen = 1;
+                    screen = 1; // MAIN
                     MyUI = UIControl.SetUI("Left", this);
                     cam.GetComponentInChildren<Camera>().rect = new Rect(0f, 0f, 0.5f, 1f);
                     if (PlayerPrefs.GetInt("Control") == 1)
@@ -114,6 +108,12 @@ public class PlayerControl : Photon.MonoBehaviour {
             txtname.text = photonView.owner.NickName;
         }
 
+        if (PhotonNetwork.isMasterClient && screen != 2)
+        {
+            game.masterClient = this; // Master = Server + gauche
+            game.InitWave();
+        }
+
     }
 	
 	// Update is called once per frame
@@ -151,7 +151,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             gold += 10;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && !ChatActif && !MenuActif)
+        if (Input.GetKeyDown(KeyCode.Return) && !ChatActif && !MenuActif && screen != 2)
         {
 			if (!game.wave.StartWave()&&!game.wave.wave)
             {
@@ -282,7 +282,7 @@ public class PlayerControl : Photon.MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown("t") && !MenuActif)
+		if (Input.GetKeyDown("t") && !MenuActif && !useController)
         {
 			if (!ChatActif)
 			{
@@ -298,7 +298,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             camscript.LookPlayer(player.transform.rotation.eulerAngles.y, 15f);
         }
 
-        if (Input.GetKeyDown(KeyCode.N))
+        if (Input.GetKeyDown(KeyCode.N)) // CHEATER
         {
             raycast.AddTurret("Cristal",2);
             raycast.AddTurret("CrossBow",2);
