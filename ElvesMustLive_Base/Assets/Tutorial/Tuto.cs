@@ -73,7 +73,7 @@ public class Tuto : GameMode {
                 }
                 break;
             case 6:
-                if (Input.GetKeyDown(KeyCode.B))
+                if (Input.GetKeyDown(KeyCode.B) && game.masterClient.raycast.placable && game.masterClient.raycast.NearGround)
                 {
                     label.text = Localization.Get("tuto_" + i);
                     i++;
@@ -101,7 +101,7 @@ public class Tuto : GameMode {
                 if (game.masterClient.raycast.AvailableTurrets.Count >= 2)
                 {
                     var turret = game.masterClient.raycast.AvailableTurrets.Find(x => !x.Key.Contains("Cannon"));
-                    label.text = "[0000ff]" + Localization.Get(turret.Key.Split('_')[0]) + "[-] ? " + Localization.Get("tuto_" + i);
+                    label.text = "[00bfff]" + Localization.Get(turret.Key.Split('_')[0]) + "[-] ? " + Localization.Get("tuto_" + i);
                     i++;
                 }
                 break;
@@ -173,6 +173,20 @@ public class Tuto : GameMode {
                 if (Input.GetKeyDown(KeyCode.Return))
                 {
                     label.text = Localization.Get("tuto_" + i);
+                    i++;
+                }
+                break;
+            case 19:
+                if (Input.GetKeyDown(KeyCode.Escape))
+                {
+                    label.text = Localization.Get("tuto_" + i);
+                    i++;
+                }
+                break;
+            case 20:
+                if (Input.GetKeyDown(KeyCode.Return))
+                {
+                    label.text = "";
                     i++;
                 }
                 break;

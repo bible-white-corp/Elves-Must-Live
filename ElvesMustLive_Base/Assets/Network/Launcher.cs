@@ -106,11 +106,11 @@ public class Launcher : Photon.PunBehaviour
     {
         LevelName = "Map/Map Versus/Map Versus";
         PlayerPrefs.SetString("Mode", "Versus");
-        Connect();
+        //Connect();
     }
     public void LaunchTuto()
     {
-        LevelName = "Tutorial/Level1";
+        LevelName = "Map/MAP tuto/Map TUTO";
         PlayerPrefs.SetString("Mode", "Tuto");
         Offline();
     }

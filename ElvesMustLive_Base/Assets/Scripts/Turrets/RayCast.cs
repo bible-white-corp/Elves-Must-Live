@@ -13,9 +13,9 @@ public class RayCast : MonoBehaviour {
 	Color WRONGColor;
 	Material[] materials;
 	SphereCollider sphere;
-	bool placable;
+	public bool placable;
 	PlayerControl home;
-	bool NearGround;
+	public bool NearGround;
 	Vector3 temp;
 	GameObject tempProspect;
 	//Prerenducollision script2;
