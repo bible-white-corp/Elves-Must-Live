@@ -56,4 +56,7 @@ MonoBehaviour:
   - PlaceTurret
   - ShowStory
   - ShowHistory
+  - QuitRoom
+  - ShowInfo
+  - ShowInfoRed
   DisableAutoOpenWizard: 1

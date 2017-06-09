@@ -96,16 +96,19 @@ public class UIControl : MonoBehaviour {
         if (!dead)
         {
             UIHealth.value = home.hp.health / home.hp.maxhealth;
-            UIVillage.value = (float)game.globalLife / (float)game.MAXglobalLife;
+
             UIGold.text = home.gold + " " + Localization.Get("gold_start");
 
             if (game.gamingmode == "Versus")
             {
-                UICount.text = "Versus";
-               UIModeLevel.text = "Versus";
+                Versus SV = game.GetComponent<Versus>();
+                UICount.text = SV.GetCount(home) + " " + Localization.Get("left");
+                UIModeLevel.text = Localization.Get("Level") + SV.level;
+                UIVillage.value = SV.GetVillageValue(home);
             }
             else
             {
+                UIVillage.value = (float)game.globalLife / (float)game.MAXglobalLife;
                 UICount.text = game.wave.ennemiesleft.ToString() + " " + Localization.Get("left");
                 UIModeLevel.text = Localization.Get("Level") + game.wave.mode.level;
             }
@@ -179,6 +182,11 @@ public class UIControl : MonoBehaviour {
 
     public void QuitGame()
     {
+        if (game.gamingmode == "Versus")
+        {
+            game.GetComponent<Versus>().RemovePlayer(home);
+        }
+
         game.GetComponent<NetworkController>().LeaveRoom();
     }
 

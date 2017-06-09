@@ -53,14 +53,15 @@ public class BoutikOrc : MonoBehaviour
             ////////AJOUT DE LENNEMIE DANS LE MODE VERSUS
             if (PlayerPrefs.GetString("Mode") == "Versus")
             {
-                if (PhotonNetwork.isMasterClient && home.screen != 2)
+                ui.game.GetComponent<Versus>().AddMonster(currentTurret.transform.name, home);
+                /*if (PhotonNetwork.isMasterClient && home.screen != 2)
                 {
                     ui.game.GetComponent<Versus>().AddMonster(currentTurret.transform.name, 1);
                 }
                 else
                 {
                     ui.game.GetComponent<Versus>().AddMonster(currentTurret.transform.name, 2);
-                }
+                }*/
             }
 
             //TurretList.GetComponent<UIGrid>().RemoveChild(currentTurret.transform);

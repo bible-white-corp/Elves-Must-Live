@@ -41,7 +41,7 @@ public class PlayerControl : Photon.MonoBehaviour {
 
 
         game = GameObject.Find("GameManager").GetComponent<Game>();
-
+        game.gamers.Add(this);
         isMine = photonView.isMine;
         view = photonView;
         if (isMine)
@@ -108,13 +108,18 @@ public class PlayerControl : Photon.MonoBehaviour {
             txtname.text = photonView.owner.NickName;
         }
 
-        if (PhotonNetwork.isMasterClient && screen != 2)
+        if (isMine && PhotonNetwork.isMasterClient && screen != 2)
         {
             game.masterClient = this; // Master = Server + gauche
             if (game.gamingmode != "Versus")
             {
                 game.InitWave();
             }
+        }
+
+        if (PhotonNetwork.isMasterClient && game.gamingmode == "Versus")
+        {
+            this.transform.position = game.GetComponent<Versus>().AddPlayer(this);
         }
 
     }
@@ -310,7 +315,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             raycast.AddTurret("Rocket",1);
         }
     }
-
+    
 
     #region PUN RPC
 
@@ -329,12 +334,38 @@ public class PlayerControl : Photon.MonoBehaviour {
     [PunRPC]
     public void ShowHistory(string key)
     {
-        MyUI.SetStory(key);
+        foreach (var item in game.gamers)
+        {
+            item.photonView.RPC("ShowInfo", PhotonTargets.All, key);
+        }
+    }
+    [PunRPC]
+    public void ShowInfo(string key)
+    {
+        if (isMine)
+        {
+            MyUI.SetStory(key);
+        }
+    }
+    [PunRPC]
+    public void ShowInfoRed(string key)
+    {
+        if (isMine)
+        {
+            MyUI.Info.enabled = true;
+            MyUI.Info.text = Localization.Get(key);
+        }
     }
     [PunRPC]
     public void PlaceTurret(string name, Vector3 pos, Quaternion rot, int propri)
     {
         PhotonNetwork.InstantiateSceneObject(name, pos, rot, 0, new object[1] { propri });
+    }
+
+    [PunRPC]
+    public void QuitRoom()
+    {
+        PhotonNetwork.LeaveRoom();
     }
     #endregion
 }

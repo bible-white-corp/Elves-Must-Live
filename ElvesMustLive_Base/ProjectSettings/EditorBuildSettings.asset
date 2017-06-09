@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Map/Map 1.unity
   - enabled: 1
     path: Assets/Map/MAP tuto/Map TUTO.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/Tutorial/Level1.unity
   - enabled: 1
     path: Assets/Map/MAP 2 multipath/MAP 2.unity

@@ -23,6 +23,8 @@ public class Game : MonoBehaviour {
     public int MAXglobalLife = 10;
     public bool ennemyInMap;
 
+    public List<PlayerControl> gamers = new List<PlayerControl>();
+
     // Use this for initialization
     void Awake()
     {

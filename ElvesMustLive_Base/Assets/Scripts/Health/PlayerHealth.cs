@@ -108,7 +108,6 @@ public class PlayerHealth : MonoBehaviour {
 
     public void TakeDamage(int amount)
     {
-		
 
 		if (IsDead) 
 		{
@@ -134,8 +133,7 @@ public class PlayerHealth : MonoBehaviour {
 
     public void Death()
     {
-		
-        home.camscript.m_Target = null;
+
 		IsSinking = true;
         IsDead = true;
         anim.SetTrigger("Died");
@@ -143,7 +141,12 @@ public class PlayerHealth : MonoBehaviour {
 		Destroy (GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl> ());
 		Destroy (GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>());
 		audioS.PlayOneShot (death);
-
+        try
+        {
+            home.camscript.m_Target = null;
+        }
+        catch
+        {}
         //Destroy(gameObject, 4f);
     }
 

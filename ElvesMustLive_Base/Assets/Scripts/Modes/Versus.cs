@@ -14,8 +14,9 @@ public class Versus : MonoBehaviour
 	KeyValuePair<string, float> currentmonster2;
 	public GameObject spawn1;
 	public GameObject spawn2;
-	public int PV1 = 10;
-	public int PV2 = 10;
+	public int PV1 = 15;
+	public int PV2 = 15;
+    public int PVMax = 15;
 	public float timer1;
 	public float timer2;
 	public bool ended1;
@@ -25,8 +26,18 @@ public class Versus : MonoBehaviour
 	public int winner;
 	public float timerbeforequit;
 
-	void Start () 
+    public bool playing = false;
+    public bool finish = false;
+
+    public List<PlayerControl> team1 = new List<PlayerControl>();
+    public List<PlayerControl> team2 = new List<PlayerControl>();
+
+    Game script;
+
+    void Start () 
 	{
+        PV1 = PVMax;
+        PV2 = PVMax;
 		timerbeforequit = 0;
 		game = true;
 		wave = false;
@@ -44,26 +55,144 @@ public class Versus : MonoBehaviour
 		ennemies.Add("Ennemy0"); // pour plus de proportion d'ennemies classiques
 		ennemies.Add("Ennemy0");
 		level = 1;
+        script = GetComponent<Game>();
 
         currentmonster1 = new KeyValuePair<string, float>("Ennemy0", 0f);
         currentmonster2 = new KeyValuePair<string, float>("Ennemy0", 0f);
     }
 
-	// Update is called once per frame
-	void Update () 
+    public Vector3 AddPlayer(PlayerControl player)
+    {
+        Vector3 trans = Vector3.zero;
+        if (team2.Count < team1.Count)
+        {
+            team2.Add(player);
+            //player.ShowHistory("team1");
+            player.photonView.RPC("ShowInfo", PhotonTargets.All, "team2");
+            player.gameObject.transform.position = spawn2.transform.position;
+            trans = spawn2.transform.position;
+        }
+        else
+        {
+            team1.Add(player);
+            player.photonView.RPC("ShowInfo", PhotonTargets.All, "team1");
+            //player.ShowHistory("team2");
+            player.gameObject.transform.position = spawn1.transform.position;
+            trans = spawn1.transform.position;
+        }
+        if (team1.Count > 0 && team2.Count > 0)
+        {
+            playing = true;
+            foreach (var item in team1)
+            {
+                item.photonView.RPC("ShowInfoRed", PhotonTargets.All, "");
+            }
+            foreach (var item in team2)
+            {
+                item.photonView.RPC("ShowInfoRed", PhotonTargets.All, "");
+            }
+        }
+        return trans;
+    }
+
+    public void RemovePlayer(PlayerControl player)
+    {
+        if (team1.Contains(player))
+        {
+            team1.Remove(player);
+        }
+        else
+        {
+            team2.Remove(player);
+        }
+        if (team1.Count > 0 && team2.Count > 0)
+        { }
+        else
+        {
+            playing = false;
+        }
+    }
+
+    public int GetCount(PlayerControl player)
+    {
+        if (team1.Contains(player))
+        {
+            return queue1.Count;
+        }
+        else
+        {
+            return queue2.Count;
+        }
+    }
+
+    public float GetVillageValue(PlayerControl player)
+    {
+        if (team1.Contains(player))
+        {
+            return (float)PV1 / (float)PVMax;
+        }
+        else
+        {
+            return (float)PV2 / (float)PVMax;
+        }
+    }
+
+    // Update is called once per frame
+    void Update () 
 	{
+        if (!PhotonNetwork.isMasterClient)
+        {
+            return;
+        }
+
+        if (!playing)
+        {
+            foreach (var item in team1)
+            {
+                item.photonView.RPC("ShowInfoRed",PhotonTargets.All,"less_than_2");
+            }
+            foreach (var item in team2)
+            {
+                item.photonView.RPC("ShowInfoRed", PhotonTargets.All, "less_than_2");
+            }
+            return;
+        }
 
 
 		if (!game) 
 		{
-
-			//MESSAGE DE FIN AVEC LE WINNER (int winner = 1 ou 2)
-			timerbeforequit += Time.deltaTime;
+            Game script = GetComponent<Game>();
+            if (!finish)
+            {
+                if (winner == 1)
+                {
+                    foreach (var item in team1)
+                    {
+                        item.photonView.RPC("ShowInfo",PhotonTargets.All, "victory_1");
+                    }
+                    foreach (var item in team2)
+                    {
+                        item.photonView.RPC("ShowInfo", PhotonTargets.All, "loose_2");
+                    }
+                }
+                else
+                {
+                    foreach (var item in team1)
+                    {
+                        item.photonView.RPC("ShowInfo", PhotonTargets.All, "loose_1");
+                    }
+                    foreach (var item in team2)
+                    {
+                        item.photonView.RPC("ShowInfo", PhotonTargets.All, "victory_2");
+                    }
+                }
+            }
+            timerbeforequit += Time.deltaTime;
 			if (timerbeforequit > 5) 
 			{
 				timerbeforequit = 0;
-				PhotonNetwork.LeaveRoom ();
-			}
+                script.masterClient.photonView.RPC("QuitRoom", PhotonTargets.All);
+            }
 		} 
 		else 
 		
@@ -110,7 +239,7 @@ public class Versus : MonoBehaviour
 					ended2 = false;
 				}
 			}
-			if (PV1 < 0 || PV2 < 0) 
+			if (PV1 <= 0 || PV2 <= 0) 
 			{
 				game = false;
 				if (PV1 < 0) {
@@ -143,15 +272,15 @@ public class Versus : MonoBehaviour
 		return queue;
 	}
 
-	public void AddMonster (string monster, int player)
+	public void AddMonster (string monster, PlayerControl player)
 	{
-		if (player == 1) 
+		if (team1.Contains(player)) 
 		{
-			queue1.Enqueue (new KeyValuePair<string, float>(monster, 0.5f));
+			queue2.Enqueue (new KeyValuePair<string, float>(monster, 0.5f));
 		} 
 		else 
 		{
-			queue2.Enqueue (new KeyValuePair<string, float>(monster, 0.5f));
+			queue1.Enqueue (new KeyValuePair<string, float>(monster, 0.5f));
 		}
 	}
 		
