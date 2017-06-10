@@ -184,7 +184,14 @@ public class UIControl : MonoBehaviour {
     {
         if (game.gamingmode == "Versus")
         {
-            game.GetComponent<Versus>().RemovePlayer(home);
+            if (PhotonNetwork.isMasterClient)
+            {
+                game.GetComponent<Versus>().RemovePlayer(home);
+            }
+            else
+            {
+                home.photonView.RPC("RemoveVersus", PhotonTargets.MasterClient, home.photonView.viewID);
+            }
         }
 
         game.GetComponent<NetworkController>().LeaveRoom();

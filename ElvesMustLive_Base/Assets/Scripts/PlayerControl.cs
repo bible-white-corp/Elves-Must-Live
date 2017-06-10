@@ -119,7 +119,8 @@ public class PlayerControl : Photon.MonoBehaviour {
 
         if (PhotonNetwork.isMasterClient && game.gamingmode == "Versus")
         {
-            this.transform.position = game.GetComponent<Versus>().AddPlayer(this);
+            photonView.RPC("TPMe", PhotonPlayer.Find(photonView.ownerId), game.GetComponent<Versus>().AddPlayer(this));
+            //this.transform.position = game.GetComponent<Versus>().AddPlayer(this);
         }
 
     }
@@ -340,9 +341,19 @@ public class PlayerControl : Photon.MonoBehaviour {
         }
     }
     [PunRPC]
+    public void TPMe(Vector3 dest)
+    {
+        this.transform.position = dest;
+    }
+    [PunRPC]
     public void AddMonsterVersus(string name, int home)
     {
         game.GetComponent<Versus>().AddMonster(name, PhotonView.Find(home).GetComponent<PlayerControl>());
+    }
+    [PunRPC]
+    public void RemoveVersus(int home)
+    {
+        game.GetComponent<Versus>().RemovePlayer(PhotonView.Find(home).GetComponent<PlayerControl>());
     }
     [PunRPC]
     public void ShowInfo(string key)
