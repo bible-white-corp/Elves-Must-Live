@@ -46,14 +46,21 @@ public class BoutikOrc : MonoBehaviour
             else
             {
                 home.gold -= price;
-                log.text = str + Localization.Get("bought");
+                log.text = Localization.Get(str) + Localization.Get("bought");
                 description.text = Localization.Get("clickfordes");
             }
             Debug.Log("Ennemie acheté : " + currentTurret.transform.name);
             ////////AJOUT DE LENNEMIE DANS LE MODE VERSUS
             if (PlayerPrefs.GetString("Mode") == "Versus")
             {
-                ui.game.GetComponent<Versus>().AddMonster(currentTurret.transform.name, home);
+                if (PhotonNetwork.isMasterClient)
+                {
+                    ui.game.GetComponent<Versus>().AddMonster(currentTurret.transform.name, home);
+                }
+                else
+                {
+                    home.photonView.RPC("AddMonsterVersus", PhotonTargets.MasterClient, currentTurret.transform.name, home.photonView.viewID);
+                }
                 /*if (PhotonNetwork.isMasterClient && home.screen != 2)
                 {
                     ui.game.GetComponent<Versus>().AddMonster(currentTurret.transform.name, 1);

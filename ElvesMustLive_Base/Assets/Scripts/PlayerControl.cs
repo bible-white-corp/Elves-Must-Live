@@ -340,6 +340,11 @@ public class PlayerControl : Photon.MonoBehaviour {
         }
     }
     [PunRPC]
+    public void AddMonsterVersus(string name, int home)
+    {
+        game.GetComponent<Versus>().AddMonster(name, PhotonView.Find(home).GetComponent<PlayerControl>());
+    }
+    [PunRPC]
     public void ShowInfo(string key)
     {
         if (isMine)
