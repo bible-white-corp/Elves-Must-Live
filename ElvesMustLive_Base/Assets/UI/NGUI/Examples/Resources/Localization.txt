@@ -159,7 +159,7 @@ tuto_17,"Rappelez vous que dans [99ff00]Elves Must Live[-], la victoire vient de
 tuto_18,"C'est ici que s'achève le Didacticiel. Maintenant, laissez moi en paix, vous avez un peuple à sauver, je vous rappelle. Appuyez sur [99ff00]Echap[-] pour ouvrir le menu [ff0000]Pause[-] puis sur [ff0000]Quitter[-] pour revenir au Menu principal","This is the end of this tutorial. Now, leave me alone, you have people to save!\nPress [99ff00]Escape[-] to open the [ff0000]Pause[-] window and select [ff0000]Leave[-] !"
 tuto_19,"Vous pouvez quand même visiter un peu la carte avant... Rencontrer les elfes, tester les téléporteurs... Appuyez sur [99ff00]Entrer[-] pour effacer ce message.","You can visit this map before... Meet elfs, try teleports,... Press [99ff00]Enter[-] to hide this message."
 team1,"Vous êtes dans l'équipe 1","You play for team 1"
-team1,"Vous êtes dans l'équipe 2","You play for team 2"
+team2,"Vous êtes dans l'équipe 2","You play for team 2"
 victory_1,"L'équipe 1 est victorieuse, félicitations","Team 1 wins, congratulations !"
 victory_2,"L'équipe 2 est victorieuse, félicitations","Team 2 wins, congratulations !"
 loose_1,"L'équipe 2 est victorieuse, vous avez perdu","Team 2 wins, you loose"
