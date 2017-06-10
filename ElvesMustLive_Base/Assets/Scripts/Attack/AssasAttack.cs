@@ -59,7 +59,7 @@ public class AssasAttack : MonoBehaviour {
 		if (other.tag == "Player" && !hp.IsDead)
 		{
 			playerhp.TakeDamage(AttackDamage);
-			Debug.Log("Player :" + playerhp.health);
+			//Debug.Log("Player :" + playerhp.health);
 		}
 	}
 

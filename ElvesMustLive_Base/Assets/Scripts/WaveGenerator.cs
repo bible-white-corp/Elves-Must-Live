@@ -74,7 +74,7 @@ public class WaveGenerator : MonoBehaviour {
                 else
                 {
 
-                    Debug.Log("lllllllllllleaving");
+                    //Debug.Log("lllllllllllleaving");
                     game.masterClient.photonView.RPC("QuitRoom", PhotonTargets.All);
                 }
 			}

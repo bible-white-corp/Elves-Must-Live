@@ -22,7 +22,7 @@ public class ProtalScript : MonoBehaviour {
         {
             // Un ennemie est passé
             game.globalLife -= 1;
-            Destroy(coll.gameObject);
+            PhotonNetwork.Destroy(coll.gameObject);
         }
     }
 }

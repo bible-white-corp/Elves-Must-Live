@@ -789,7 +789,7 @@ public class History : GameMode {
                 break;
         }
         waveRemaining -= 1;
-        Debug.Log(waveRemaining);
+        //Debug.Log(waveRemaining);
         return queue;
     }
 

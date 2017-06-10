@@ -55,7 +55,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             camscript.home = this;
 
 
-            Debug.Log(PlayerPrefs.GetInt("Control"));
+            //Debug.Log(PlayerPrefs.GetInt("Control"));
 
             if (PlayerPrefs.GetInt("mod") == 1) //mod == 1 : splitted screen
             {

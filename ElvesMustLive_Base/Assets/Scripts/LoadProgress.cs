@@ -72,7 +72,7 @@ public class LoadProgress : Photon.MonoBehaviour {
         {
             if (async != null && async.progress == 0.9f)
             {
-                Debug.Log("Launch");
+                //Debug.Log("Launch");
                 async.allowSceneActivation = true;
             }
         }

@@ -20,16 +20,16 @@ public class NetworkController : Photon.PunBehaviour
         if (PlayerPrefs.GetInt("mod") == 1)
         {
             PhotonNetwork.Instantiate("Perso", gameObject.transform.position, Quaternion.identity, 0, new object[1] { 1 } ); //  1 = player 2
-            Debug.Log("Add another player");
+            //Debug.Log("Add another player");
         }
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetKeyDown("n"))
+        /*if (Input.GetKeyDown("n"))
         {
             Debug.Log(PhotonNetwork.room.PlayerCount + "Players in this room");
-        }
+        }*/
 	}
 
     /// <summary>

@@ -18,7 +18,7 @@ public class PortalVersus2 : MonoBehaviour {
 	{
 		if (coll.tag == "Shootable") 
 		{
-			Destroy (coll.gameObject);
+			PhotonNetwork.Destroy (coll.gameObject);
 			script.PV2-=1;
 		}
 	}

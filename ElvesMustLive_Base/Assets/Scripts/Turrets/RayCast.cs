@@ -251,8 +251,8 @@ public class RayCast : MonoBehaviour {
 
 	public bool Confirm ()
 	{
-        Debug.Log(home.gold >= cost);
-        Debug.Log(home.gold + ", " + cost);
+        //Debug.Log(home.gold >= cost);
+        //Debug.Log(home.gold + ", " + cost);
 		if (placable && NearGround && home.gold >= cost)
 		{
             // Pour que le master client soit le propriétaire, et pas que les tourelles dépop quand on se déco.
@@ -277,7 +277,6 @@ public class RayCast : MonoBehaviour {
         tourelle = (GameObject)Resources.Load(turret.Key);
         pretourelle = (GameObject)Resources.Load(turret.Key.Split('_')[0] + "Preview");
         cost = turret.Value;
-        Debug.Log(turret.Value);
         SetObjPropect(pretourelle);
         SetObj(tourelle);
     }
@@ -290,7 +289,6 @@ public class RayCast : MonoBehaviour {
         tourelle = (GameObject)Resources.Load(turret.Key);
         pretourelle = (GameObject)Resources.Load(turret.Key.Split('_')[0] + "Preview");
         cost = turret.Value;
-        Debug.Log(turret.Value);
         SetObjPropect(pretourelle);
         SetObj(tourelle);
     }

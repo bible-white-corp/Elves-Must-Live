@@ -53,7 +53,7 @@ public class PlayVideo : MonoBehaviour {
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape) || timer > maxTime)
 		{
-            Debug.Log("Quit" + timer);
+            //Debug.Log("Quit" + timer);
 			SceneManager.LoadScene("Lobby");
 		}
 		timer += Time.deltaTime;

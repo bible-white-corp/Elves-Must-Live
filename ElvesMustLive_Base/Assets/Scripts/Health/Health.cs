@@ -113,6 +113,6 @@ public class Health : Photon.MonoBehaviour
         body.isKinematic = true;
         body.constraints = RigidbodyConstraints.None;
         IsSinking = true;
-        Destroy(gameObject, 4f);
+        PhotonNetwork.Destroy(gameObject, 4f);
     }
 }

@@ -329,7 +329,7 @@ public class Launcher : Photon.PunBehaviour
         {
             PlayerPrefs.SetInt("mod", 0);
         }
-        Debug.Log("Set to "+ PlayerPrefs.GetInt("mod"));  
+        //Debug.Log("Set to "+ PlayerPrefs.GetInt("mod"));  
     }
     #endregion
 
