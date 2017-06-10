@@ -59,4 +59,8 @@ MonoBehaviour:
   - QuitRoom
   - ShowInfo
   - ShowInfoRed
+  - AddMonsterVersus
+  - RemoveVersus
+  - TPMe
+  - QuitRoom2
   DisableAutoOpenWizard: 1

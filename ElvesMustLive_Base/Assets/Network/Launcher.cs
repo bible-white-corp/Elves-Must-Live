@@ -132,6 +132,7 @@ public class Launcher : Photon.PunBehaviour
             PlayerPrefs.SetInt("Histoire", 0);
         }
         SetHistory();
+        Debug.Log(PlayerPrefs.GetInt("Histoire"));
         switch (PlayerPrefs.GetInt("Histoire"))
         {
             case 0:
@@ -142,7 +143,7 @@ public class Launcher : Photon.PunBehaviour
                 PlayerPrefs.SetString("Mode", "Tuto");
                 break;
             case 1:
-                LevelName = "Map/Map 1";
+                LevelName = "Map/Map 1-";
                 historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("niv1_des");
                 historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "niv1_des";
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map1";
@@ -234,6 +235,7 @@ public class Launcher : Photon.PunBehaviour
         {
             return;
         }
+        PlayerPrefs.SetInt("Online", 1);
         levelWindow.SetActive(false);
         progress.Set(true);
         progress.NetworkState = 0.25f;
@@ -309,6 +311,7 @@ public class Launcher : Photon.PunBehaviour
         {
             return;
         }
+        PlayerPrefs.SetInt("Online", 0);
         levelWindow.SetActive(false);
         progress.Set(true);
         progress.NetworkState = 0.5f;

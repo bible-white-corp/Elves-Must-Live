@@ -20,10 +20,27 @@ public class LoadProgress : Photon.MonoBehaviour {
 
     private void Start()
     {
-
+        if (PlayerPrefs.HasKey("Cin") && PlayerPrefs.GetInt("Cin") == 1)
+        {
+            PlayerPrefs.SetInt("Cin", 0);
+            GetComponent<Launcher>().LevelName = "Map/Map 1";
+            NetworkState = 1;
+            LoadALevel("Map/Map 1");
+        }
     }
     public void LoadALevel(string levelName)
     {
+        if (levelName == "Map/Map 1-")
+        {
+            PlayerPrefs.SetInt("Cin", 1);
+            SceneManager.LoadScene("Cin1");
+            return;
+        }
+        else
+        {
+            PlayerPrefs.SetInt("Cin", 0);
+        }
+
         PhotonNetwork.PrepareLoadLevel(levelName);
 
         async = SceneManager.LoadSceneAsync(levelName);

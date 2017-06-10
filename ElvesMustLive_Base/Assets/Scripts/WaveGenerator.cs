@@ -19,6 +19,7 @@ public class WaveGenerator : MonoBehaviour {
 	bool leaveroom;
     public bool endGame;
 	float timerbeforeleaving;
+    public bool winner = false;
 
     public bool tuto;
     // Use this for initialization
@@ -65,8 +66,17 @@ public class WaveGenerator : MonoBehaviour {
 			if (timerbeforeleaving > 5) 
 			{
 				timerbeforeleaving = 0;
-				Debug.Log ("lllllllllllleaving");
-				PhotonNetwork.LeaveRoom();
+                if (winner && PlayerPrefs.GetString("Mode") == "History" && UnityEngine.SceneManagement.SceneManager.GetActiveScene() == UnityEngine.SceneManagement.SceneManager.GetSceneByName("Cave"))
+                {
+                    Debug.Log("LaunchCin");
+                    game.masterClient.photonView.RPC("QuitRoom2", PhotonTargets.All);
+                }
+                else
+                {
+
+                    Debug.Log("lllllllllllleaving");
+                    game.masterClient.photonView.RPC("QuitRoom", PhotonTargets.All);
+                }
 			}
 		}
         if (wave)
@@ -118,7 +128,7 @@ public class WaveGenerator : MonoBehaviour {
             }
         }
 
-        if (endGame && !game.ennemyInMap)
+        if (!leaveroom && endGame && !game.ennemyInMap)
         {
             game.masterClient.MyUI.Info.enabled = false;
             
@@ -143,6 +153,7 @@ public class WaveGenerator : MonoBehaviour {
 			
         }
         leaveroom = true;
+        winner = true;
     }
 
     public void Loose()
@@ -150,5 +161,6 @@ public class WaveGenerator : MonoBehaviour {
         game.masterClient.MyUI.SetStory(Localization.Get("LooseLevel"));
         endGame = true;
         leaveroom = true;
+        winner = false;
     }
 }

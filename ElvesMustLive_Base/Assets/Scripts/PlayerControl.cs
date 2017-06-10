@@ -383,5 +383,11 @@ public class PlayerControl : Photon.MonoBehaviour {
     {
         PhotonNetwork.LeaveRoom();
     }
+    [PunRPC]
+    public void QuitRoom2()
+    {
+        PlayerPrefs.SetInt("Cin", 2);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Cin2");
+    }
     #endregion
 }
