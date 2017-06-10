@@ -135,7 +135,7 @@ public class Launcher : Photon.PunBehaviour
         switch (PlayerPrefs.GetInt("Histoire"))
         {
             case 0:
-                LevelName = "Tutorial/Level1";
+                LevelName = "Map/MAP tuto/Map TUTO";
                 historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("tuto_des");
                 historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "tuto_des";
                 historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "tuto";

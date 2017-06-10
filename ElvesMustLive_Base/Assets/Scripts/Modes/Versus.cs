@@ -125,6 +125,18 @@ public class Versus : MonoBehaviour
         }
     }
 
+    public Vector3 GetSpawn(PlayerControl player)
+    {
+        if (team1.Contains(player))
+        {
+            return spawn1.transform.position;
+        }
+        else
+        {
+            return spawn2.transform.position;
+        }
+    }
+
     public float GetVillageValue(PlayerControl player)
     {
         if (team1.Contains(player))
@@ -242,7 +254,7 @@ public class Versus : MonoBehaviour
 			if (PV1 <= 0 || PV2 <= 0) 
 			{
 				game = false;
-				if (PV1 < 0) {
+				if (PV1 <= 0) {
 					winner = 2;
 				} else {
 					winner = 1;

@@ -100,7 +100,14 @@ public class PlayerHealth : MonoBehaviour {
                 TimerbeforeDeath = 0f;
                 GetComponent<Rigidbody>().isKinematic = false;
                 home.camscript.m_Target = gameObject.transform;
-                home.transform.position = home.game.transform.position;
+                if (home.game.gamingmode == "Versus")
+                {
+                    home.transform.position = home.game.GetComponent<Versus>().GetSpawn(home);
+                }
+                else
+                {
+                    home.transform.position = home.game.transform.position;
+                }
 
             }
         }

@@ -1261,11 +1261,11 @@ GameObject:
   - component: {fileID: 377780900}
   m_Layer: 0
   m_Name: Sol Map 1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!154 &377780900
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -1356,6 +1356,7 @@ MonoBehaviour:
   spawn2: {fileID: 0}
   PV1: 10
   PV2: 10
+  PVMax: 15
   timer1: 0
   timer2: 0
   ended1: 0
@@ -1364,6 +1365,10 @@ MonoBehaviour:
   timer: 0
   winner: 0
   timerbeforequit: 0
+  playing: 0
+  finish: 0
+  team1: []
+  team2: []
 --- !u!114 &409981476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1388,6 +1393,7 @@ MonoBehaviour:
   globalLife: 10
   MAXglobalLife: 10
   ennemyInMap: 0
+  gamers: []
 --- !u!4 &409981477
 Transform:
   m_ObjectHideFlags: 0
@@ -1544,7 +1550,7 @@ GameObject:
   - component: {fileID: 444850054}
   m_Layer: 0
   m_Name: Map 2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -1995,11 +2001,11 @@ GameObject:
   - component: {fileID: 479253922}
   m_Layer: 0
   m_Name: Terrain ElveBase
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!154 &479253922
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -4213,11 +4219,11 @@ GameObject:
   - component: {fileID: 1311981782}
   m_Layer: 0
   m_Name: Sol Map 2
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!154 &1311981782
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -5232,7 +5238,7 @@ GameObject:
   - component: {fileID: 1727073874}
   m_Layer: 0
   m_Name: Map 1
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -5516,11 +5522,11 @@ GameObject:
   - component: {fileID: 1871179766}
   m_Layer: 0
   m_Name: Terrain ElveBase
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!154 &1871179766
 TerrainCollider:
   m_ObjectHideFlags: 0

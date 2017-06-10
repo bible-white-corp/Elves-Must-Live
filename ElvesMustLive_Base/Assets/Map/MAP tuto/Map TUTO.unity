@@ -696,6 +696,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180.396
       objectReference: {fileID: 0}
+    - target: {fileID: 1416390917035564, guid: 8bb3282501629f34380af9116d79c2c0, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82919092830155310, guid: 8bb3282501629f34380af9116d79c2c0, type: 2}
     - {fileID: 114327714888548666, guid: 8bb3282501629f34380af9116d79c2c0, type: 2}
@@ -809,6 +813,10 @@ Prefab:
     - target: {fileID: 4380188903772940, guid: ec2c2f568997d33499b53c02eef5256c, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180.396
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767788769350346, guid: ec2c2f568997d33499b53c02eef5256c, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82449964207684564, guid: ec2c2f568997d33499b53c02eef5256c, type: 2}
@@ -1193,6 +1201,10 @@ Prefab:
     - target: {fileID: 4381197131066738, guid: 2236845d024630f47aa1c638270bc535, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 187.786
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775146691112230, guid: 2236845d024630f47aa1c638270bc535, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82102258809821094, guid: 2236845d024630f47aa1c638270bc535, type: 2}
@@ -2229,6 +2241,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 187.786
       objectReference: {fileID: 0}
+    - target: {fileID: 1868867418659696, guid: 1edd7634991166f4dbc5c62f333361b7, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82462131158749314, guid: 1edd7634991166f4dbc5c62f333361b7, type: 2}
     - {fileID: 114912341565692008, guid: 1edd7634991166f4dbc5c62f333361b7, type: 2}
@@ -2602,6 +2618,10 @@ Prefab:
     - target: {fileID: 4876946517801532, guid: 4d1f15139c5db3e499d9074153be1285, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 187.786
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695707107513720, guid: 4d1f15139c5db3e499d9074153be1285, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82192177080860492, guid: 4d1f15139c5db3e499d9074153be1285, type: 2}
@@ -3839,6 +3859,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180.396
       objectReference: {fileID: 0}
+    - target: {fileID: 1714249599788894, guid: 8498230ace47b2647961f9d42722ab6c, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82058267598750990, guid: 8498230ace47b2647961f9d42722ab6c, type: 2}
     - {fileID: 114293183953770376, guid: 8498230ace47b2647961f9d42722ab6c, type: 2}
@@ -4116,6 +4140,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180.396
       objectReference: {fileID: 0}
+    - target: {fileID: 1416390917035564, guid: 8bb3282501629f34380af9116d79c2c0, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82919092830155310, guid: 8bb3282501629f34380af9116d79c2c0, type: 2}
     - {fileID: 114327714888548666, guid: 8bb3282501629f34380af9116d79c2c0, type: 2}
@@ -4269,6 +4297,7 @@ MonoBehaviour:
   globalLife: 10
   MAXglobalLife: 10
   ennemyInMap: 0
+  gamers: []
 --- !u!114 &850296071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6843,6 +6872,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 187.786
       objectReference: {fileID: 0}
+    - target: {fileID: 1775146691112230, guid: 2236845d024630f47aa1c638270bc535, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82102258809821094, guid: 2236845d024630f47aa1c638270bc535, type: 2}
     - {fileID: 114875313203153742, guid: 2236845d024630f47aa1c638270bc535, type: 2}
@@ -8320,6 +8353,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180.396
       objectReference: {fileID: 0}
+    - target: {fileID: 1767788769350346, guid: ec2c2f568997d33499b53c02eef5256c, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82449964207684564, guid: ec2c2f568997d33499b53c02eef5256c, type: 2}
     - {fileID: 114327558795080378, guid: ec2c2f568997d33499b53c02eef5256c, type: 2}
@@ -8651,6 +8688,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180.396
       objectReference: {fileID: 0}
+    - target: {fileID: 1714249599788894, guid: 8498230ace47b2647961f9d42722ab6c, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82058267598750990, guid: 8498230ace47b2647961f9d42722ab6c, type: 2}
     - {fileID: 114293183953770376, guid: 8498230ace47b2647961f9d42722ab6c, type: 2}
@@ -8888,6 +8929,10 @@ Prefab:
     - target: {fileID: 4346333405649000, guid: 1edd7634991166f4dbc5c62f333361b7, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 187.786
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868867418659696, guid: 1edd7634991166f4dbc5c62f333361b7, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82462131158749314, guid: 1edd7634991166f4dbc5c62f333361b7, type: 2}
@@ -10177,6 +10222,10 @@ Prefab:
     - target: {fileID: 4876946517801532, guid: 4d1f15139c5db3e499d9074153be1285, type: 2}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 187.786
+      objectReference: {fileID: 0}
+    - target: {fileID: 1695707107513720, guid: 4d1f15139c5db3e499d9074153be1285, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82192177080860492, guid: 4d1f15139c5db3e499d9074153be1285, type: 2}
