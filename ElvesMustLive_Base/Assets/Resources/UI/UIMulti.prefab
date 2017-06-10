@@ -12514,7 +12514,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 1
   mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
-  mSpriteName: Projector
+  mSpriteName: Boss1
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -21765,7 +21765,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3004
+  startingRenderQueue: 3013
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: -132.5, y: -3.619995, z: 1876.19, w: 240}
@@ -28798,7 +28798,7 @@ MonoBehaviour:
   keepAspectRatio: 0
   aspectRatio: 1
   mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
-  mSpriteName: Rocket
+  mSpriteName: Boss1
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -30136,7 +30136,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3003
+  startingRenderQueue: 3009
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: 0, y: 0, z: 960, w: 1080}

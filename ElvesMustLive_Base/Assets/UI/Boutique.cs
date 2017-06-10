@@ -61,7 +61,7 @@ public class Boutique : MonoBehaviour {
             else
             {
                 home.gold -= price;
-                log.text = str + Localization.Get("bought");
+                log.text = Localization.Get(str) + Localization.Get("bought");
                 description.text = Localization.Get("clickfordes");
             }
             home.raycast.AddTurret(currentTurret.transform.name, 0);
@@ -85,7 +85,7 @@ public class Boutique : MonoBehaviour {
             else
             {
                 home.gold -= price;
-                log.text = str + Localization.Get("bought");
+                log.text = Localization.Get(str) + Localization.Get("bought");
                 description.text = Localization.Get("clickfordes");
             }
             home.weapons.AddWeapon(currentWeapon.transform.name);
