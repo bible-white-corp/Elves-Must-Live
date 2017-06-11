@@ -95,6 +95,11 @@ public class Launcher : Photon.PunBehaviour
         ActiveCol(controls, false);
     }
 
+    public void LaunchCredit()
+    {
+        SceneManager.LoadScene("credit");
+    }
+
     public void Quit()
     {
         if (!Application.isEditor)

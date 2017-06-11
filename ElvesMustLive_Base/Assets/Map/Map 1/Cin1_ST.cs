@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cin1_ST : MonoBehaviour {
 
-	float timer;
-	public UILabel label;
+	public float timer;
+	public Text label;
 	int i;
 	bool un = true;
 	bool deux=true;
@@ -18,6 +19,7 @@ public class Cin1_ST : MonoBehaviour {
 	bool neuf=true;
 	void Start () 
 	{
+        label = GetComponent<Text>();
 		timer = 0;
 		i = 1;
 	}
@@ -26,61 +28,68 @@ public class Cin1_ST : MonoBehaviour {
 	void Update () 
 	{
 		timer += Time.deltaTime;
-		if (un && timer > 44 && timer < 49)
+        label.text = "";
+		if (timer > 46 && timer < 49.7)
 		{
-			label.text = Localization.Get ("Cin1_"+i);
+			label.text = Localization.Get ("Cin1_1");
 			un = false;
 			i += 1;
 		}
-		if (deux && timer > 50 && timer < 54)
+		if (timer > 50.2 && timer < 53.5)
 		{
-			label.text = Localization.Get ("Cin1_" + i);
+			label.text = Localization.Get ("Cin1_2");
 			deux = false;
 			i += 1;
 		}
-		if (trois && timer > 54 && timer < 57)
+		if (timer > 53.5 && timer < 57.4)
 		{
-			label.text = Localization.Get ("Cin1_" + i);
-			trois = false;
+            label.text = Localization.Get("Cin1_3");
+            trois = false;
 			i += 1;
 		}
-		if (quatre && timer > 57 && timer < 58)
+		if (timer > 57.4 && timer < 58.5)
 		{
-			label.text = Localization.Get ("Cin1_" + i);
-			quatre = false;
+            label.text = Localization.Get("Cin1_4");
+            quatre = false;
 			i += 1;
 		}
-		if (cinq && timer > 58 && timer < 60)
+		if (timer > 58.5 && timer < 60)
 		{
-			label.text = Localization.Get ("Cin1_" + i);
-			cinq = false;
+            label.text = Localization.Get("Cin1_5");
+            cinq = false;
 			i += 1;
 		}
-		if (six && timer > 61 && timer < 64)
+		if (timer > 61.5 && timer < 64.5)
 		{
-			label.text = Localization.Get ("Cin1_" + i);
-			six = false;
+            label.text = Localization.Get("Cin1_6");
+            six = false;
 			i += 1;
 		}
-		if (sept && timer > 64 && timer < 66)
+		if (timer > 64 && timer < 66.5)
 		{
-			label.text = Localization.Get ("Cin1_" + i);
-			sept = false;
-			i += 1;
-		}
-
-		if (huit && timer > 66 && timer < 69)
-		{
-			label.text = Localization.Get ("Cin1_" + i);
-			huit = false;
-			i += 1;
-		}
-		if (neuf && timer > 69 && timer < 70)
-		{
-			label.text = Localization.Get ("Cin1_" + i);
-			neuf = false;
+            label.text = Localization.Get("Cin1_7");
+            sept = false;
 			i += 1;
 		}
 
-	}
+		if (timer > 66.5 && timer < 69.4)
+		{
+            label.text = Localization.Get("Cin1_8");
+            huit = false;
+			i += 1;
+		}
+        if (timer > 69.4 && timer < 70)
+        {
+            label.text = Localization.Get("Cin1_9");
+            neuf = false;
+            i += 1;
+        }
+        if (timer > 70)
+        {
+            label.text = "";
+            neuf = false;
+            i += 1;
+        }
+
+    }
 }

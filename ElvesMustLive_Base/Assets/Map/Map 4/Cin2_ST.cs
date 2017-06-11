@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cin2_ST : MonoBehaviour {
 
 	float timer;
-	public UILabel label;
+	public Text label;
 	int i;
 	bool un = true;
 	bool deux=true;
@@ -14,36 +15,44 @@ public class Cin2_ST : MonoBehaviour {
 
 	void Start () 
 	{
+        label = GetComponent<Text>();
 		timer = 0;
 		i = 1;
 	}
 		
 	void Update () 
 	{
+        label.text = "";
 		timer += Time.deltaTime;
-		if (un && timer > 21 && timer < 24)
+		if (timer > 20.5 && timer < 24.6)
 		{
-			label.text = Localization.Get ("Cin2_"+i);
+			label.text = Localization.Get ("Cin2_1");
 			un = false;
 			i += 1;
 		}
-		if (deux && timer > 25 && timer < 29)
+		if (timer > 24.6 && timer < 29.4)
 		{
-			label.text = Localization.Get ("Cin2_" + i);
+			label.text = Localization.Get ("Cin2_2");
 			deux = false;
 			i += 1;
 		}
-		if (trois && timer > 30&& timer < 32)
+		if (timer > 29.4 && timer < 32.6)
 		{
-			label.text = Localization.Get ("Cin2_" + i);
+			label.text = Localization.Get ("Cin2_3");
 			trois = false;
 			i += 1;
 		}
-		if (quatre && timer > 34 && timer < 35)
-		{
-			label.text = Localization.Get ("Cin2_" + i);
-			quatre = false;
-			i += 1;
-		}
-	}
+        if (timer > 33.5 && timer < 35.9)
+        {
+            label.text = Localization.Get("Cin2_4");
+            quatre = false;
+            i += 1;
+        }
+        if (timer > 36.5)
+        {
+            label.text = "";
+            quatre = false;
+            i += 1;
+        }
+    }
 }

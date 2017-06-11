@@ -28,4 +28,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cin1.unity
   - enabled: 1
+    path: Assets/credit.unity
+  - enabled: 1
     path: Assets/Cin2.unity
