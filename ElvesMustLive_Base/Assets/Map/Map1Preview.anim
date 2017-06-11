@@ -122,7 +122,7 @@ AnimationClip:
         tangentMode: 0
       - serializedVersion: 2
         time: 11.133333
-        value: {x: 170.9, y: 6.85, z: 6.38}
+        value: {x: 170.9, y: 5.9, z: 15.3}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -369,7 +369,7 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 11.133333
-        value: 6.85
+        value: 5.9
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -427,7 +427,7 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 11.133333
-        value: 6.38
+        value: 15.3
         inSlope: 0
         outSlope: 0
         tangentMode: 136
