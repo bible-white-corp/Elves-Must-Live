@@ -44,7 +44,7 @@ public class Regen : MonoBehaviour {
 	{
 		if (coll.tag == "Player")
 			{
-			Destroy(coll.transform.FindChild("regenParticule 1(Clone)").gameObject);
+			Destroy(coll.transform.Find("regenParticule 1(Clone)").gameObject);
 			}
 	}
 }

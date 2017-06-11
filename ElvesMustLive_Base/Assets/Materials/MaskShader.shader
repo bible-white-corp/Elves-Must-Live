@@ -1,4 +1,6 @@
-﻿Shader "Unlit/Transparent Colored Masked"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Unlit/Transparent Colored Masked"
 {
 	Properties
 	{
@@ -53,7 +55,7 @@
 				vertexToFragment vertexProgram (appdata_t vertexData)
 				{
 					vertexToFragment output;
-					output.vertex = mul(UNITY_MATRIX_MVP, vertexData.vertex);
+					output.vertex = UnityObjectToClipPos(vertexData.vertex);
 					output.textureCoordinate = TRANSFORM_TEX(vertexData.textureCoordinate, _MainTex);
 					output.color = vertexData.color;
 					return output;

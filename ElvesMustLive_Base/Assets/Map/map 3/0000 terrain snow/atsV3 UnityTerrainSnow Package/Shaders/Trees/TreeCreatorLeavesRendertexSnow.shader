@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
 Shader "Hidden/Nature/Tree Creator Leaves Rendertex Snow" {
@@ -41,7 +43,7 @@ float4 _TerrainTreeLightColors[4];
 v2f vert (appdata_full v) {	
 	v2f o;
 	ExpandBillboard (UNITY_MATRIX_IT_MV, v.vertex, v.normal, v.tangent);
-	o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+	o.pos = UnityObjectToClipPos (v.vertex);
 	o.uv = v.texcoord.xy;
 	float3 viewDir = normalize(ObjSpaceViewDir(v.vertex));
 	
