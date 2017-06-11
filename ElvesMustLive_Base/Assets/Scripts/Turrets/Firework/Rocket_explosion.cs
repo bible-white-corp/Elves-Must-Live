@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rocket_explosion : MonoBehaviour {
 
-
+    public int damage;
 	public GameObject explosion;
 	public GameObject[] list;
 
@@ -25,7 +25,8 @@ public class Rocket_explosion : MonoBehaviour {
 		{
 			temp = Instantiate (explosion, pos.transform.position, pos.transform.rotation);
             temp.GetComponent<Explosion_damage>().propri = propri;
-			Destroy (temp, 1);
+            temp.GetComponent<Explosion_damage>().damage = damage;
+            Destroy (temp, 1);
 		}
         temp.GetComponent<Explosion_damage>().PlaySound(); // Comme ca uniquement le dernier fait du bruit...
 		Destroy (gameObject);

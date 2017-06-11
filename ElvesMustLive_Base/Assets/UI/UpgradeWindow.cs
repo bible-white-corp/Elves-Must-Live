@@ -78,33 +78,108 @@ public class UpgradeWindow : MonoBehaviour {
             currentTurret = null;
         }
         prixLabel.text = 20 * savelvl+1 + " " + Localization.Get("gold_start");
+        int price = 0;
+        /*
         switch (name.name)
         {
             case "Cannon":
-
-                return;
+                switch (savelvl)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    default:
+                        prixLabel.text = "";
+                        break;
+                }
+                break;
             case "Hammer":
-
-                return;
+                switch (savelvl)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    default:
+                        prixLabel.text = "";
+                        break;
+                }
+                break;
             case "CrossBow":
-
-                return;
+                switch (savelvl)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    default:
+                        prixLabel.text = "";
+                        break;
+                }
+                break;
             case "Cristal":
-
-                return;
+                switch (savelvl)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    default:
+                        prixLabel.text = "";
+                        break;
+                }
+                break;
             case "Projector":
-
-                return;
+                switch (savelvl)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    default:
+                        prixLabel.text = "";
+                        break;
+                }
+                break;
             case "Rocket":
-
-                return;
+                switch (savelvl)
+                {
+                    case 0:
+                        break;
+                    default:
+                        prixLabel.text = "";
+                        break;
+                }
+                break;
             case "Regen":
-
-                return;
+                switch (savelvl)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    default:
+                        prixLabel.text = "";
+                        break;
+                }
+                break;
             default:
                 Debug.LogError("No turret nammed '" + name.name + "'");
-                return; 
+                break; 
+        }*/
+        switch (savelvl)
+        {
+            case 0:
+                price = 100;
+                break;
+            case 1:
+                price = 300;
+                break;
+            default:
+                break;
         }
+        prixLabel.text = price + " " + Localization.Get("gold_start");
     }
 
     public void Upgrade()
@@ -175,7 +250,6 @@ public class UpgradeWindow : MonoBehaviour {
                 current = currentSword;
                 go = Sword;
                 list = swords;
-                
                 break;
             case "Spear":
                 current = currentSpear;
@@ -197,15 +271,78 @@ public class UpgradeWindow : MonoBehaviour {
         }
         current = list.value;
 
-        Debug.Log(current);
+        //Debug.Log(current);
         lvl = int.Parse("" + current[current.Length - 1]);
         int prix = lvl * 10;
+        switch (type)
+        {
+            case "Sword":
+                switch (lvl)
+                {
+                    case 1:
+                        prix = 30;
+                        break;
+                    case 2:
+                        prix = 50;
+                        break;
+                    case 3:
+                        prix = 100;
+                        break;
+                    default:
+                        prix = 0;
+                        break;
+                }
+                break;
+            case "Spear":
+                switch (lvl)
+                {
+                    case 1:
+                        prix = 20;
+                        break;
+                    case 2:
+                        prix = 25;
+                        break;
+                    case 3:
+                        prix = 50;
+                        break;
+                    case 4:
+                        prix = 100;
+                        break;
+                    case 5:
+                        prix = 150;
+                        break;
+                    default:
+                        prix = 0;
+                        break;
+                }
+                break;
+            case "Arc":
+                switch (lvl)
+                {
+                    case 1:
+                        prix = 30;
+                        break;
+                    case 2:
+                        prix = 50;
+                        break;
+                    case 3:
+                        prix = 100;
+                        break;
+                    default:
+                        prix = 0;
+                        break;
+                }
+                break;
+            default:
+                prix = 0;
+                return;
 
+        }
         go.transform.GetChild(0).GetComponent<UISprite>().spriteName = current.ToLower();
         
         foreach (var item in buyWeapons)
         {
-            Debug.Log(item);
+            //Debug.Log(item);
         }
         if (ui.home.weapons.availableWeapon.Exists(x => x.name == current))
         {

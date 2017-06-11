@@ -2409,11 +2409,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365ef4627d327424c9444635672b0b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 300
   sinkspeed: 1
   IsDead: 0
   obj: {fileID: 0}
-  reward: 10
+  reward: 100
   Armor: 0
   audio: {fileID: 82192177080860492}
 --- !u!114 &114219259828498624
@@ -2530,7 +2530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c42c7c861b8e64dafd04513eb3a2d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 10
+  AttackDamage: 20
   playerhp: {fileID: 0}
   hp: {fileID: 0}
   FightDistance: 2

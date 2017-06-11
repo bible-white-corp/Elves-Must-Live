@@ -19239,7 +19239,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
-  mText: 20 Gold
+  mText: 10 Gold
   mFontSize: 28
   mFontStyle: 0
   mAlignment: 0
@@ -19518,7 +19518,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3013
+  startingRenderQueue: 3009
   mAlpha: 1
   mClipping: 3
   mClipRange: {x: -132.5, y: -3.619995, z: 1876.19, w: 240}
@@ -21661,7 +21661,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
-  mText: 20 Gold
+  mText: 30 Gold
   mFontSize: 28
   mFontStyle: 0
   mAlignment: 0
@@ -22553,7 +22553,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3003
+  startingRenderQueue: 3000
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 300, w: 200}
@@ -24509,7 +24509,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
-  mText: 20 Gold
+  mText: 30 Gold
   mFontSize: 28
   mFontStyle: 0
   mAlignment: 0
@@ -25067,7 +25067,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
-  mText: 20 Gold
+  mText: 30 Gold
   mFontSize: 28
   mFontStyle: 0
   mAlignment: 0
@@ -26383,7 +26383,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
-  mText: 20 Gold
+  mText: 75 Gold
   mFontSize: 28
   mFontStyle: 0
   mAlignment: 0
@@ -27515,7 +27515,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
-  mText: 20 Gold
+  mText: 75 Gold
   mFontSize: 28
   mFontStyle: 0
   mAlignment: 0
@@ -28445,7 +28445,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 0}
   mFont: {fileID: 11400000, guid: 16a2d4ace59bac64dbcf4085964b38eb, type: 2}
-  mText: 20 Gold
+  mText: 50 Gold
   mFontSize: 28
   mFontStyle: 0
   mAlignment: 0
@@ -28516,7 +28516,7 @@ MonoBehaviour:
   alwaysOnScreen: 0
   anchorOffset: 0
   renderQueue: 0
-  startingRenderQueue: 3010
+  startingRenderQueue: 3006
   mAlpha: 1
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 0, w: 0}

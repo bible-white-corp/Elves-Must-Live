@@ -5,8 +5,9 @@ using UnityEngine;
 public class Collisionexplode : 
 MonoBehaviour {
 
-	public int damage;
-	Transform bulletpos;
+    public int damage;
+    public int globaldamage;
+    Transform bulletpos;
 	GameObject explosion;
 
 	float timer;
@@ -22,12 +23,17 @@ MonoBehaviour {
 	{
 		explosion = explo;
 	}
-	public void SetDirectHitDamage(int damage)
-	{
-		this.damage = damage;
-	}
-	// Update is called once per frame
-	void Update () 
+    public void SetDirectHitDamage(int damage)
+    {
+        this.damage = damage;
+    }
+
+    public void SetGlobalDamage(int damage)
+    {
+        this.globaldamage = damage;
+    }
+    // Update is called once per frame
+    void Update () 
 	{
 		timer += Time.deltaTime;
 		if (timer >= 1) 
@@ -51,7 +57,8 @@ MonoBehaviour {
 		this.gameObject.GetComponent<MeshRenderer> ().enabled = false;
 		GameObject boum = Instantiate (explosion,gameObject.transform.position,gameObject.transform.rotation) as GameObject;
         boum.GetComponent<explosionDamage>().propri = propri;
-		Destroy (boum, 1);
+        boum.GetComponent<explosionDamage>().ExplosionDamage = globaldamage;
+        Destroy (boum, 1);
 		autodestruct ();
 
 	}

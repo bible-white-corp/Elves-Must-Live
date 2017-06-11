@@ -5,7 +5,9 @@ using UnityEngine;
 public class Canon_Aim : MonoBehaviour {
 
 	public int DirectHitDamage;
-	public GameObject currentTarget;
+    public int GlobalDamage;
+
+    public GameObject currentTarget;
 	private Vector3 LastKnownPosition;
 	private Quaternion LookAtRotation;
 	private Quaternion temporaire;
@@ -18,6 +20,7 @@ public class Canon_Aim : MonoBehaviour {
 	Health script;
 	bool engage; //ca sert a bidouiller 
 	public GameObject explosion;
+
 
     public int propri;
     AudioClip cannonClip;
@@ -90,7 +93,9 @@ public class Canon_Aim : MonoBehaviour {
 		GameObject Shoot = Instantiate (Bullet,hole.position,hole.rotation) as GameObject;
 		Shoot.GetComponent<Rigidbody> ().AddForce (hole.forward * 2500);
 		Shoot.AddComponent<Collisionexplode> ();
-		Shoot.GetComponent<Collisionexplode> ().SetExplosion (explosion);
+        Shoot.GetComponent<Collisionexplode>().SetExplosion(explosion);
+        Shoot.GetComponent<Collisionexplode>().SetDirectHitDamage(DirectHitDamage);
+        Shoot.GetComponent<Collisionexplode>().SetGlobalDamage(GlobalDamage);
         Shoot.GetComponent<Collisionexplode>().propri = propri;
         GetComponent<AudioSource>().PlayOneShot(cannonClip);
     }

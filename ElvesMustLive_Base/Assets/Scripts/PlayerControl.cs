@@ -39,7 +39,7 @@ public class PlayerControl : Photon.MonoBehaviour {
     void Awake () 
 	{
 
-
+        gold = 50;
         game = GameObject.Find("GameManager").GetComponent<Game>();
         game.gamers.Add(this);
         isMine = photonView.isMine;

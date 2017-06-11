@@ -381,7 +381,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   regenparticules: {fileID: 1218463751297844, guid: b98882738c03ef14cb7e1d1f17ea1246,
     type: 2}
-  RegenPerSecond: 25
+  RegenPerSecond: 20
 --- !u!122 &122172543517706382
 Halo:
   m_ObjectHideFlags: 1

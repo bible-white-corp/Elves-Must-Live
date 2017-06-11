@@ -400,6 +400,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DirectHitDamage: 50
+  GlobalDamage: 25
   currentTarget: {fileID: 0}
   TurretsSpeed: 100
   reloadtime: 2

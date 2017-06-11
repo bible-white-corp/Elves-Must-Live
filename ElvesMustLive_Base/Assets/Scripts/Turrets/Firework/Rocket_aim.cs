@@ -92,8 +92,9 @@ public class Rocket_aim : MonoBehaviour {
 		//bidouillage de l'extreme a cause du prefab de la rocket qui est à l'envers de base #Nat
 		GameObject Shoot = Instantiate (Bullet,hole.position,temp) as GameObject;
         GetComponent<AudioSource>().PlayOneShot(launchSound);
+        Shoot.GetComponent<Rocket_explosion>().damage = DirectHitDamage;
         Shoot.GetComponent<Rocket_explosion>().propri = propri;
-		Shoot.GetComponent<Rigidbody> ().AddForce (hole.up * 1200); 
+        Shoot.GetComponent<Rigidbody> ().AddForce (hole.up * 1200); 
 		Destroy (Shoot, 1);
 	}
 }

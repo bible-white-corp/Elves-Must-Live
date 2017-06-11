@@ -4162,7 +4162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19d387aa2108ca4ba390d513a43c898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 10
+  AttackDamage: 100
   isAttack: 0
 --- !u!114 &114043554100243168
 MonoBehaviour:
@@ -4181,7 +4181,7 @@ MonoBehaviour:
   rx: 0
   ry: 0
   rz: 0
-  AttackDamage: 10
+  AttackDamage: 60
   isAttack: 0
   arrowspot: {fileID: 1509104102714424}
 --- !u!114 &114135632122480180
@@ -4234,7 +4234,7 @@ MonoBehaviour:
   rx: 0
   ry: 0
   rz: 0
-  AttackDamage: 10
+  AttackDamage: 40
   isAttack: 0
   arrowspot: {fileID: 1509104102714424}
 --- !u!114 &114240935434133354
@@ -4248,7 +4248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19d387aa2108ca4ba390d513a43c898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 10
+  AttackDamage: 80
   isAttack: 0
 --- !u!114 &114330541392448342
 MonoBehaviour:
@@ -4286,7 +4286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19d387aa2108ca4ba390d513a43c898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 10
+  AttackDamage: 25
   isAttack: 0
 --- !u!114 &114521961300393520
 MonoBehaviour:
@@ -4326,6 +4326,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f815e144b93c1418b9fd8f99a35476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placable: 0
+  NearGround: 0
   BuildConfirm: 0
   curretTurret: 0
 --- !u!114 &114543729636309066
@@ -4339,7 +4341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19d387aa2108ca4ba390d513a43c898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 10
+  AttackDamage: 50
   isAttack: 0
 --- !u!114 &114582891206441160
 MonoBehaviour:
@@ -4352,8 +4354,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 961cc4cc9a7024249897a9efea84edb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
-  maxhealth: 200
+  health: 300
+  maxhealth: 300
   sinkspeed: 10
   IsDead: 0
   MainRenderer: {fileID: 0}
@@ -4439,7 +4441,7 @@ MonoBehaviour:
   rx: 0
   ry: 0
   rz: 0
-  AttackDamage: 10
+  AttackDamage: 25
   isAttack: 0
   arrowspot: {fileID: 1509104102714424}
 --- !u!114 &114652266963614092
@@ -4453,7 +4455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19d387aa2108ca4ba390d513a43c898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 10
+  AttackDamage: 50
   isAttack: 0
 --- !u!114 &114786807324860868
 MonoBehaviour:
@@ -4479,7 +4481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19d387aa2108ca4ba390d513a43c898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 10
+  AttackDamage: 65
   isAttack: 0
 --- !u!114 &114877156379384752
 MonoBehaviour:
@@ -4512,7 +4514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19d387aa2108ca4ba390d513a43c898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 10
+  AttackDamage: 150
   isAttack: 0
 --- !u!114 &114970570807806560
 MonoBehaviour:
@@ -4525,7 +4527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e19d387aa2108ca4ba390d513a43c898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackDamage: 10
+  AttackDamage: 35
   isAttack: 0
 --- !u!114 &114979556348199418
 MonoBehaviour:

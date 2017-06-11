@@ -2399,7 +2399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365ef4627d327424c9444635672b0b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
+  health: 100
   sinkspeed: 1
   IsDead: 0
   obj: {fileID: 0}

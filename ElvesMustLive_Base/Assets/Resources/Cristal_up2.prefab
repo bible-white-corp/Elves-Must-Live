@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64f73da2f09dc14a9a771bc673ddc81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DirectHitDamage: 15
+  DirectHitDamage: 35
   TurretsSpeed: 100
   reloadtime: 0.5
   LaserFrom: {fileID: 1165438991636020}
