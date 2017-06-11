@@ -16,7 +16,7 @@ public class Game : MonoBehaviour {
     public PlayerControl masterClient;
     public GameMode mode;
 	public string gamingmode;
-
+    public bool cheats;
     public bool paused = false;
 
     public int globalLife = 10; //Ennemies qui traversent le portail
@@ -28,6 +28,15 @@ public class Game : MonoBehaviour {
     // Use this for initialization
     void Awake()
     {
+        if (PlayerPrefs.HasKey("cheat"))
+        {
+            cheats = PlayerPrefs.GetInt("cheat") == 1;
+        }
+        else
+        {
+            cheats = false;
+        }
+
 		gamingmode = "";
         gamingmode = PlayerPrefs.GetString("Mode");
         global = gameObject;

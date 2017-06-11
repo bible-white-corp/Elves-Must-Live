@@ -48,7 +48,7 @@ public class PlayerHealth : MonoBehaviour {
     // Update is called once per frame
     void Update () 
 	{
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.H) && home.game.cheats)
         {
             health = maxhealth;
         }

@@ -155,7 +155,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             mapCam.orthographicSize -= 1;
         }
 
-        if (Input.GetKey("g"))
+        if (Input.GetKey("g") && game.cheats)
         {
             gold += 10;
         }
@@ -307,7 +307,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             camscript.LookPlayer(player.transform.rotation.eulerAngles.y, 15f);
         }
 
-        if (Input.GetKeyDown(KeyCode.N)) // CHEATER
+        if (Input.GetKeyDown(KeyCode.N) && game.cheats) // CHEATER
         {
             raycast.AddTurret("Cristal",2);
             raycast.AddTurret("CrossBow",2);

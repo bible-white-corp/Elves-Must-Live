@@ -212,6 +212,7 @@ public class UIControl : MonoBehaviour {
     {
         settrings.gameObject.SetActive(true);
         PauseWindow.SetActive(false);
+        settrings.cheatT.value = PlayerPrefs.GetInt("cheat") == 1;
     }
 
     public static UIControl SetUI(string mode, PlayerControl home)

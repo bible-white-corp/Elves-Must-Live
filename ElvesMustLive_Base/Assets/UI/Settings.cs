@@ -6,6 +6,7 @@ public class Settings : MonoBehaviour {
 
     public UIScrollBar son;
     public UIControl UI;
+    public UIToggle cheatT;
 
     public void French()
     {
@@ -36,6 +37,24 @@ public class Settings : MonoBehaviour {
         }
     }
 
+    public void ChangeCheats()
+    {
+
+        bool b = PlayerPrefs.GetInt("cheat") == 0;
+        Debug.Log("Set cheats : " + b);
+        PlayerPrefs.SetInt("cheat", 0);
+        if (b)
+        {
+
+            PlayerPrefs.SetInt("cheat", 1);
+        }
+        if (UI != null)
+        {
+            UI.game.cheats = b;
+        }
+        cheatT.value = b;
+    }
+
     public void SetKey()
     {
         PlayerPrefs.SetInt("Control", 0); // 0 = keyboard
@@ -58,7 +77,12 @@ public class Settings : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        son.value = AudioListener.volume;	
+        son.value = AudioListener.volume;
+        if (!PlayerPrefs.HasKey("cheat"))
+        {
+            PlayerPrefs.SetInt("cheat", 0);
+        }
+        cheatT.value = PlayerPrefs.GetInt("cheat") == 1;
 	}
 	
 	// Update is called once per frame

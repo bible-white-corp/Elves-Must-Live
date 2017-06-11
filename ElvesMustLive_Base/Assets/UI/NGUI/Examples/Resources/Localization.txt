@@ -178,3 +178,4 @@ Cin2_1,"Ouf, c’était le dernier, peut être pour l'instant mais grâce à ton
 Cin2_2,"et à de nombreux sacrifices, le peuple elfe a survécu et pourra se reconstruire.","and many sacrifices, the people survived and will lick our wounds."
 Cin2_3,"Nous te serons éternellement reconnaissants...","We will be eternally grateful to you ..."
 Cin2_4,"Le danger est écarté, rentrons au village.","The danger is over, return to the village."
+cheats,"Triche","Cheats"
