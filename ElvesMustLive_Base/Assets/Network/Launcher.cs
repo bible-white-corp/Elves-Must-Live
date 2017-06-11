@@ -132,7 +132,7 @@ public class Launcher : Photon.PunBehaviour
             PlayerPrefs.SetInt("Histoire", 0);
         }
         SetHistory();
-        Debug.Log(PlayerPrefs.GetInt("Histoire"));
+        //Debug.Log(PlayerPrefs.GetInt("Histoire"));
         switch (PlayerPrefs.GetInt("Histoire"))
         {
             case 0:
