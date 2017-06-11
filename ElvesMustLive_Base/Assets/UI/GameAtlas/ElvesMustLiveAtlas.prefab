@@ -54,8 +54,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: ae6ed4283436c964c865cb1ef75f57a1, type: 2}
   mSprites:
   - name: arc1
-    x: 3143
-    y: 425
+    x: 3392
+    y: 205
     width: 91
     height: 389
     borderLeft: 0
@@ -67,8 +67,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 4
   - name: arc2
-    x: 3247
-    y: 479
+    x: 3588
+    y: 259
     width: 88
     height: 389
     borderLeft: 0
@@ -80,8 +80,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 9
   - name: arc3
-    x: 3021
-    y: 805
+    x: 3112
+    y: 199
     width: 121
     height: 395
     borderLeft: 0
@@ -94,7 +94,7 @@ MonoBehaviour:
     paddingBottom: 3
   - name: Assassin
     x: 2545
-    y: 881
+    y: 630
     width: 291
     height: 319
     borderLeft: 0
@@ -119,8 +119,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Boss1
-    x: 2545
-    y: 221
+    x: 2896
+    y: 894
     width: 215
     height: 339
     borderLeft: 0
@@ -132,8 +132,8 @@ MonoBehaviour:
     paddingTop: 11
     paddingBottom: 0
   - name: bow1
-    x: 3143
-    y: 35
+    x: 3496
+    y: 259
     width: 91
     height: 389
     borderLeft: 0
@@ -145,8 +145,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 4
   - name: bow2
-    x: 3247
-    y: 89
+    x: 3677
+    y: 259
     width: 88
     height: 389
     borderLeft: 0
@@ -158,8 +158,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 9
   - name: bow3
-    x: 3021
-    y: 409
+    x: 3270
+    y: 585
     width: 121
     height: 395
     borderLeft: 0
@@ -171,8 +171,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 3
   - name: Cannon
-    x: 2896
-    y: 1224
+    x: 2545
+    y: 369
     width: 323
     height: 260
     borderLeft: 0
@@ -184,8 +184,8 @@ MonoBehaviour:
     paddingTop: 57
     paddingBottom: 83
   - name: Cristal
-    x: 2837
-    y: 833
+    x: 2896
+    y: 526
     width: 183
     height: 367
     borderLeft: 0
@@ -236,8 +236,8 @@ MonoBehaviour:
     paddingTop: 29
     paddingBottom: 0
   - name: Hammer
-    x: 2837
-    y: 454
+    x: 2896
+    y: 147
     width: 164
     height: 378
     borderLeft: 0
@@ -275,7 +275,7 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Map1
-    x: 2082
+    x: 1681
     y: 812
     width: 400
     height: 400
@@ -288,8 +288,8 @@ MonoBehaviour:
     paddingTop: 0
     paddingBottom: 0
   - name: Map2
-    x: 1681
-    y: 411
+    x: 2082
+    y: 812
     width: 400
     height: 400
     borderLeft: 0
@@ -302,7 +302,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Map3
     x: 1681
-    y: 10
+    y: 411
     width: 400
     height: 400
     borderLeft: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: Map4
     x: 1681
-    y: 812
+    y: 10
     width: 400
     height: 400
     borderLeft: 0
@@ -328,7 +328,7 @@ MonoBehaviour:
     paddingBottom: 0
   - name: MOB_Sapeur
     x: 2545
-    y: 1201
+    y: 950
     width: 350
     height: 283
     borderLeft: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
     paddingBottom: 30
   - name: Projector
     x: 2545
-    y: 561
+    y: 49
     width: 243
     height: 319
     borderLeft: 0
@@ -366,8 +366,8 @@ MonoBehaviour:
     paddingTop: 23
     paddingBottom: 38
   - name: Rocket
-    x: 3220
-    y: 1232
+    x: 3112
+    y: 981
     width: 281
     height: 252
     borderLeft: 0
@@ -379,8 +379,8 @@ MonoBehaviour:
     paddingTop: 74
     paddingBottom: 74
   - name: spear1
-    x: 3021
-    y: 40
+    x: 3270
+    y: 216
     width: 116
     height: 368
     borderLeft: 0
@@ -392,8 +392,8 @@ MonoBehaviour:
     paddingTop: 2
     paddingBottom: 30
   - name: spear2
-    x: 3336
-    y: 503
+    x: 2789
+    y: 3
     width: 91
     height: 365
     borderLeft: 0
@@ -405,8 +405,8 @@ MonoBehaviour:
     paddingTop: 7
     paddingBottom: 28
   - name: spear3
-    x: 3247
-    y: 869
+    x: 3496
+    y: 649
     width: 109
     height: 331
     borderLeft: 0
@@ -418,8 +418,8 @@ MonoBehaviour:
     paddingTop: 22
     paddingBottom: 47
   - name: spear4
-    x: 3143
-    y: 815
+    x: 3392
+    y: 595
     width: 103
     height: 385
     borderLeft: 0
@@ -457,8 +457,8 @@ MonoBehaviour:
     paddingTop: 42
     paddingBottom: 46
   - name: sword2
-    x: 2837
-    y: 68
+    x: 3112
+    y: 595
     width: 157
     height: 385
     borderLeft: 0
@@ -495,6 +495,19 @@ MonoBehaviour:
     paddingRight: 0
     paddingTop: 33
     paddingBottom: 34
+  - name: txteml
+    x: 2545
+    y: 1234
+    width: 1274
+    height: 250
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 33
+    paddingRight: 65
+    paddingTop: 55
+    paddingBottom: 19
   mPixelSize: 1
   mReplacement: {fileID: 0}
   mCoordinates: 0

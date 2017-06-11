@@ -863,7 +863,7 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 0, b: 0, a: 0.891}
   mPivot: 4
-  mWidth: 992
+  mWidth: 1239
   mHeight: 497
   mDepth: 5
   autoResizeBoxCollider: 0
@@ -2749,15 +2749,15 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 1000
-  mHeight: 463
+  mWidth: 1300
+  mHeight: 383
   mDepth: 4
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
-  keepAspectRatio: 1
-  aspectRatio: 2.1601124
+  keepAspectRatio: 0
+  aspectRatio: 3.3942559
   mAtlas: {fileID: 114534469638217348, guid: 1d755cdc4d66f364db69e841ed05414c, type: 2}
-  mSpriteName: LogoEML
+  mSpriteName: txteml
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
@@ -3282,15 +3282,15 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 0.8364698, b: 0.5298507, a: 0.822}
+  mColor: {r: 1, g: 0.8364698, b: 0.5298507, a: 0.891}
   mPivot: 4
-  mWidth: 1000
+  mWidth: 1247
   mHeight: 505
   mDepth: 2
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.980198
+  aspectRatio: 2.469307
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Highlight - Thin
   mType: 1
@@ -7672,13 +7672,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 0, b: 0, a: 1}
   mPivot: 4
-  mWidth: 1920
+  mWidth: 1980
   mHeight: 1080
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.7777778
+  aspectRatio: 1.8333334
   mAtlas: {fileID: 11400000, guid: 62adb30369acbf943a67cee0f69267a3, type: 2}
   mSpriteName: Wooden Background
   mType: 1
