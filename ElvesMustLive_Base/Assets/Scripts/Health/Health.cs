@@ -41,6 +41,10 @@ public class Health : Photon.MonoBehaviour
 				// c'est le machin qui fait fondre l'ennemi
 				transform.Translate (Vector3.down * sinkspeed * Time.deltaTime);
 			}
+            if (TimerbeforeDeath > 4.5f)
+            {
+                PhotonNetwork.Destroy(gameObject);
+            }
         }
     }
 
@@ -113,6 +117,6 @@ public class Health : Photon.MonoBehaviour
         body.isKinematic = true;
         body.constraints = RigidbodyConstraints.None;
         IsSinking = true;
-        PhotonNetwork.Destroy(gameObject, 4f);
+        //Destroy(gameObject, 4f);
     }
 }
