@@ -92,7 +92,7 @@ public class Game : MonoBehaviour {
 
 		}
 
-        if (Input.GetKey(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0))
+        if (Input.GetKey(KeyCode.Space) || Input.GetKeyDown(KeyCode.Joystick1Button0) || Input.GetButtonDown("Submit") || Input.GetButtonDown("2-Submit") || Input.GetButtonDown("Cancel") || Input.GetButtonDown("2-Cancel"))
         {
             try
             {

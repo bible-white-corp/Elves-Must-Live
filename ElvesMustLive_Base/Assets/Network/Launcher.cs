@@ -202,7 +202,7 @@ public class Launcher : Photon.PunBehaviour
     #endregion
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button6)) {
+        if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("2-Cancel")) {
             levelWindow.SetActive(false);
             settings.gameObject.SetActive(false);
             ActiveCol(controls, true);

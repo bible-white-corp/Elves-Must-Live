@@ -50,11 +50,32 @@ public class Versus : MonoBehaviour
 		timer2 = 0f;
 		queue1 = new Queue<KeyValuePair<string, float>>();
 		queue2 = new Queue<KeyValuePair<string, float>>();
-		ennemies.Add("Assassin");
-		ennemies.Add("MOB_Sapeur");
-		ennemies.Add("Ennemy0"); // pour plus de proportion d'ennemies classiques
-		ennemies.Add("Ennemy0");
-		level = 1;
+        ennemies.Add("Assassin");
+        ennemies.Add("Assassin");
+        ennemies.Add("Assassin");
+        ennemies.Add("Assassin");
+        ennemies.Add("Assassin");
+        ennemies.Add("MOB_Sapeur");
+        ennemies.Add("MOB_Sapeur");
+        ennemies.Add("MOB_Sapeur");
+        ennemies.Add("MOB_Sapeur");
+        ennemies.Add("Ennemy0"); // pour plus de proportion d'ennemies classiques
+        ennemies.Add("Ennemy0");
+        ennemies.Add("Ennemy0");
+        ennemies.Add("Ennemy0");
+        ennemies.Add("Ennemy0");
+        ennemies.Add("Ennemy0");
+        ennemies.Add("Ennemy0");
+        ennemies.Add("Ennemy0");
+        ennemies.Add("Ennemy0");
+        ennemies.Add("Ennemy0");
+        ennemies.Add("Ennemy0");
+        ennemies.Add("Boss1");
+        ennemies.Add("Boss1");
+        ennemies.Add("Boss2");
+        ennemies.Add("Boss3");
+        ennemies.Add("Ennemy0");
+        level = 1;
         script = GetComponent<Game>();
 
         currentmonster1 = new KeyValuePair<string, float>("Ennemy0", 0f);
@@ -266,22 +287,22 @@ public class Versus : MonoBehaviour
 	Queue<KeyValuePair<string, float>> LoadNextLevel(Queue<KeyValuePair<string, float>> queue)
 	{
 
-		//Algo pour générer des queues de + en + hardcore en fonction du level
+        //Algo pour générer des queues de + en + hardcore en fonction du level
 
-		for (int i = 0; i < Mathf.Pow(2,level-1); i++)
-		{
-			float maxWait = 5f - level;
-			if (maxWait < 1f)
-			{
-				maxWait = 1f;
-			}
-			queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], 2f));
-			queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], UnityEngine.Random.Range(0f, maxWait)));
-			queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], UnityEngine.Random.Range(0f, maxWait)));
-			queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], UnityEngine.Random.Range(0f, maxWait)));
-			queue.Enqueue(new KeyValuePair<string, float>("Boss"+((i%3)+1), 4f));
-		}
-		return queue;
+        for (int i = 0; i < level; i++)
+        {
+            float maxWait = 5f - level;
+            if (maxWait < 1f)
+            {
+                maxWait = 1f;
+            }
+            queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], 2f));
+            queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], UnityEngine.Random.Range(0f, maxWait)));
+            queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], UnityEngine.Random.Range(0f, maxWait)));
+            queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], UnityEngine.Random.Range(0f, maxWait)));
+            queue.Enqueue(new KeyValuePair<string, float>(ennemies[UnityEngine.Random.Range(0, ennemies.Count)], UnityEngine.Random.Range(0f, maxWait)));
+        }
+        return queue;
 	}
 
 	public void AddMonster (string monster, PlayerControl player)

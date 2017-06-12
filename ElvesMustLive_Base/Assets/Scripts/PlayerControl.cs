@@ -160,7 +160,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             gold += 10;
         }
 
-        if (Input.GetKeyDown(KeyCode.Return) && !ChatActif && !MenuActif && screen != 2)
+        if (((!useController && Input.GetButtonDown("Submit")) || (useController && Input.GetButtonDown("2-Submit"))) && !ChatActif && !MenuActif && screen != 2)
         {
 			if (!game.wave.StartWave()&&!game.wave.wave)
             {
@@ -173,7 +173,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             //Afficher un texte "Press Enter pour lancer la prochaine vague."
         }
 
-        if (((!useController && Input.GetKeyDown("v")) || (useController && Input.GetKeyDown(KeyCode.Joystick1Button7))) && !ChatActif && !MenuActif)
+        if (((!useController && Input.GetButtonDown("Shop")) || (useController && Input.GetButtonDown("2-Shop"))) && !ChatActif && !MenuActif)
         {
             if (MyUI.boutikScript.gameObject.GetActive())
             {
@@ -197,23 +197,31 @@ public class PlayerControl : Photon.MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown("c") && !ChatActif && !MenuActif)
+        if (((!useController && Input.GetButtonDown("OrcShop")) || (useController && Input.GetButtonDown("2-OrcShop"))) && !ChatActif && !MenuActif)
         {
             if (MyUI.boutikOrc.gameObject.GetActive())
             {
                 MyUI.boutikOrc.gameObject.SetActive(false);
                 MenuActif = false;
                 BtkActif = false;
+                if (useController)
+                {
+                    MyUI.mouseControl.Active(false);
+                }
             }
             else
             {
                 MyUI.boutikOrc.gameObject.SetActive(true);
                 MenuActif = true;
                 BtkActif = true;
+                if (useController)
+                {
+                    MyUI.mouseControl.Active(true);
+                }
             }
         }
 
-        if ((!useController && Input.GetKeyDown ("escape")) || (useController && Input.GetKeyDown(KeyCode.Joystick1Button6)))
+        if ((!useController && Input.GetButtonDown("Cancel")) || (useController && Input.GetButtonDown("2-Cancel")))
 		{
             if (raycast.BuildConfirm)
             {

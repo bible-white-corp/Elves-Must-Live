@@ -55,7 +55,7 @@ public class PlayVideo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.Escape) || video.frame == (long)video.frameCount -1)
+		if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("2-Cancel") || video.frame == (long)video.frameCount -1)
 		{
             //Debug.Log("Quit" + timer);
 			SceneManager.LoadScene("Lobby");

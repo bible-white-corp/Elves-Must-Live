@@ -19,7 +19,8 @@ public class NetworkController : Photon.PunBehaviour
 
         if (PlayerPrefs.GetInt("mod") == 1)
         {
-            PhotonNetwork.Instantiate("Perso", gameObject.transform.position, Quaternion.identity, 0, new object[1] { 1 } ); //  1 = player 2
+        	Vector3 temp = new Vector3(gameObject.transform.position.x + 1,gameObject.transform.position.y,gameObject.transform.position.z);
+            PhotonNetwork.Instantiate("Perso", temp, Quaternion.identity, 0, new object[1] { 1 } ); //  1 = player 2
             //Debug.Log("Add another player");
         }
     }

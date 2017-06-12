@@ -121,7 +121,7 @@ public class RayCast : MonoBehaviour {
         {
             return;
         }
-        if (BuildConfirm && Input.GetKeyDown(KeyCode.Escape))
+        if (BuildConfirm && ((Input.GetButtonDown("Cancel") && !home.useController) || (Input.GetButtonDown("2-Cancel") && home.useController)))
         {
             home.MyUI.UITurret.SetActive(false);
             BuildConfirm = false;
@@ -185,7 +185,7 @@ public class RayCast : MonoBehaviour {
                 RightRotate();
             }
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && !home.useController || (Input.GetKeyDown(KeyCode.Joystick1Button6) && home.useController))
+        if ((Input.GetButtonDown("Cancel") && !home.useController) || (Input.GetButtonDown("2-Cancel") && home.useController))
         {
             Cancel();
             home.MyUI.UITurret.SetActive(false);
