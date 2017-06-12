@@ -23,10 +23,12 @@ public class Placability : MonoBehaviour {
 	}
 	void OnTriggerStay(Collider coll)
 	{
-		if (coll.tag == "Obstacle")
+		if (coll.tag == "Obstacle" || coll.tag == "Ground")
 		{
 		this.IsPlacable =false;
         }
+		if (coll.tag == "Special")
+			this.IsPlacable = true;
 	}
 
 }

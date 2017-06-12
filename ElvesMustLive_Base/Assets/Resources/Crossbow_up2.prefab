@@ -170,6 +170,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23531910120769304
 MeshRenderer:
@@ -201,6 +202,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23913097920061838
 MeshRenderer:
@@ -232,6 +234,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33104519981812574
 MeshFilter:
@@ -419,7 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec332947da0541f44ac5e11d2e73aedf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CrossDamage: 150
+  CrossDamage: 100
   currentTarget: {fileID: 0}
   TurretSpeed: 70
   ReloadTime: 1.25

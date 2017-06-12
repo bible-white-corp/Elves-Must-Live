@@ -118,7 +118,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1059661624104910}
   m_LocalRotation: {x: -2.9916547e-10, y: -0.64185125, z: 3.5741743e-10, w: 0.7668292}
-  m_LocalPosition: {x: 98.87511, y: 2.801685, z: 105.67642}
+  m_LocalPosition: {x: 39.510567, y: -0.18472457, z: 56.079983}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4337121827005900}
@@ -168,6 +168,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23139402006505958
 MeshRenderer:
@@ -199,6 +200,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23533939839436916
 MeshRenderer:
@@ -230,6 +232,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23981761756151994
 MeshRenderer:
@@ -261,6 +264,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33240427788847908
 MeshFilter:
@@ -312,7 +316,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.52, y: 12, z: 11}
+  m_Size: {x: 3.52, y: 13.4, z: 11}
   m_Center: {x: 0, y: 3.5, z: 3.5}
 --- !u!114 &114517467891688904
 MonoBehaviour:
