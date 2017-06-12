@@ -23,7 +23,7 @@ public class Placability_hammer : MonoBehaviour {
 	}
 	void OnTriggerStay(Collider coll)
 	{
-		if (coll.tag == "Obstacle")
+		if (coll.tag == "Obstacle" || coll.tag == "Ground")
 		{
 			this.IsPlacable =false;
 		}

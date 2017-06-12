@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: 33977720030419522}
   - component: {fileID: 23911180636224938}
   - component: {fileID: 64535267818910744}
+  - component: {fileID: 114952574524222276}
   m_Layer: 0
   m_Name: Regen_up2
   m_TagString: Obstacle
@@ -284,6 +285,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!23 &23911180636224938
 MeshRenderer:
@@ -315,6 +317,7 @@ MeshRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
 --- !u!33 &33735570807518866
 MeshFilter:
@@ -382,6 +385,31 @@ MonoBehaviour:
   regenparticules: {fileID: 1218463751297844, guid: b98882738c03ef14cb7e1d1f17ea1246,
     type: 2}
   RegenPerSecond: 20
+--- !u!114 &114952574524222276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1703011266225368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 0
+  instantiationId: -1
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
 --- !u!122 &122172543517706382
 Halo:
   m_ObjectHideFlags: 1
