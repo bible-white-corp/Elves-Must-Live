@@ -119,7 +119,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             {
                 h = CrossPlatformInputManager.GetAxis("Horizontal");
                 v = CrossPlatformInputManager.GetAxis("Vertical");
-                crouch = Input.GetKey(KeyCode.C);
+                //crouch = Input.GetKey(KeyCode.C);
             }
             // calculate move direction to pass to character
             if (home.cam.transform != null)
