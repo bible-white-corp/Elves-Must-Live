@@ -18,6 +18,8 @@ public class Game : MonoBehaviour {
 	public string gamingmode;
     public bool cheats;
     public bool paused = false;
+	Animator anim;
+	bool endpreview = false;
 
     public int globalLife = 10; //Ennemies qui traversent le portail
     public int MAXglobalLife = 10;
@@ -28,6 +30,7 @@ public class Game : MonoBehaviour {
     // Use this for initialization
     void Awake()
     {
+		anim = GetComponent<Animator> ();
         if (PlayerPrefs.HasKey("cheat"))
         {
             cheats = PlayerPrefs.GetInt("cheat") == 1;
@@ -40,12 +43,12 @@ public class Game : MonoBehaviour {
 		gamingmode = "";
         gamingmode = PlayerPrefs.GetString("Mode");
         global = gameObject;
-        if (PlayerPrefs.GetInt("mod") == 1)
-        {
-            Splited = true;
-        }
-
     }
+
+	void Start ()
+	{
+		
+	}
 
 
 
@@ -97,11 +100,23 @@ public class Game : MonoBehaviour {
             try
             {
                 GetComponent<Animator>().SetBool("Skip", true);
+
             }
             catch
             {}
         }
         ennemyInMap = GameObject.FindGameObjectWithTag("Shootable") != null;
+
+		if (!endpreview && anim.enabled == false) 
+		{
+			endpreview = true;
+			if (PlayerPrefs.GetInt("mod") == 1)
+			{
+				Splited = true;
+				GUI.color = Color.black;
+				GUI.Box(new Rect(Screen.width / 2, 0, 5, Screen.height), "");
+			}
+		}
     }
     private void OnGUI()
     {

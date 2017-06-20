@@ -55,9 +55,11 @@ public class PlayVideo : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("2-Cancel") || video.frame == (long)video.frameCount -1)
+		if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("2-Cancel") || video.frame >= (long)video.frameCount -5)
 		{
-            //Debug.Log("Quit" + timer);
+            Debug.Log("Quit" + timer);
+			if (PlayerPrefs.GetInt("Cin") == 2)
+				PhotonNetwork.LeaveRoom (); 
 			SceneManager.LoadScene("Lobby");
 		}
 		timer += Time.deltaTime;

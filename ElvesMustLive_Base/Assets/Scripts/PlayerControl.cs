@@ -197,7 +197,7 @@ public class PlayerControl : Photon.MonoBehaviour {
             }
         }
 
-        if (((!useController && Input.GetButtonDown("OrcShop")) || (useController && Input.GetButtonDown("2-OrcShop"))) && !ChatActif && !MenuActif)
+		if (game.gamingmode == "Versus"&&((!useController && Input.GetButtonDown("OrcShop")) || (useController && Input.GetButtonDown("2-OrcShop"))) && !ChatActif && !MenuActif)
         {
             if (MyUI.boutikOrc.gameObject.GetActive())
             {
