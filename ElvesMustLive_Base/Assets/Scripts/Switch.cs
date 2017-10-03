@@ -8,7 +8,8 @@ public class Switch : Photon.MonoBehaviour
     Animator anim;
     float timer;
     bool timeout = false;
-    List<GameObject> weapon = new List<GameObject>();
+    public List<GameObject> weapon = new List<GameObject>();
+    public List<GameObject> availableWeapon = new List<GameObject>(); 
     public int CurrentW = 0;
 
     PlayerControl home;
@@ -16,19 +17,54 @@ public class Switch : Photon.MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
+
+
         home = GetComponentInParent<PlayerControl>();
         anim = home.anim;
         foreach (Transform child in gameObject.transform)
         {
-            Debug.Log(child.gameObject);
             weapon.Add(child.gameObject);
         }
-        home.weapon = weapon;
+        
+        AddWeapon("Sword1");
+        
         ChangeW(0);
     }
 	
-	// Update is called once per frame  
-	void Update () 
+    public void AddWeapon(string str)
+    {
+        if (!availableWeapon.Exists(x=>x.name == str))
+        {
+            availableWeapon.Add(weapon.Find(x => x.name == str));
+        }
+    }
+
+    public void ChangeWeapon(string type, string newW) //
+    {
+        foreach (var item in availableWeapon)
+        {
+            GameObject cu;
+            if (item.name.Contains(type))
+            {
+                cu = item;
+                if (cu == availableWeapon[CurrentW])
+                {
+                    availableWeapon[CurrentW] = weapon.Find(x => x.name == newW);
+                    home.view.RPC("DesactiveW", PhotonTargets.All, weapon.IndexOf(weapon.Find(x => x.name == cu.name)));
+                    ChangeW(0);
+                }
+                else
+                {
+                    availableWeapon[availableWeapon.IndexOf(cu)] = weapon.Find(x => x.name == newW);
+                }
+                break;
+            }
+
+        }
+    }
+
+    // Update is called once per frame  
+    void Update () 
 	{
         if (home.isMine == false && PhotonNetwork.connected == true)
         {
@@ -46,16 +82,13 @@ public class Switch : Photon.MonoBehaviour
 		}
 		else
 		{
-        	if (Input.GetAxis("Mouse ScrollWheel") > 0 && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk"))
+        	if ((!home.useController && Input.GetAxis("Mouse ScrollWheel") > 0 || home.useController && Input.GetAxis("2-Mouse ScrollWheel") > 0) && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk") && !home.raycast.BuildConfirm)
         	{
-        	    Debug.Log("Change weapon (+)");
         	    ChangeW(1);
-                
         	    timeout = true;
         	}
-        	if (Input.GetAxis("Mouse ScrollWheel") < 0 && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk"))
+        	if ((!home.useController && Input.GetAxis("Mouse ScrollWheel") < 0 || home.useController && Input.GetAxis("2-Mouse ScrollWheel") < 0) && !anim.GetCurrentAnimatorStateInfo(0).IsTag("atk") && !home.raycast.BuildConfirm)
         	{
-        	    Debug.Log("Change weapon (-)");
         	    ChangeW(-1);
         	    timeout = true;
         	}
@@ -67,19 +100,21 @@ public class Switch : Photon.MonoBehaviour
     public void ChangeW(int nb)
     {
         //weapon[CurrentW].SetActive(false);
-        anim.SetBool(weapon[CurrentW].tag, false);
-        home.view.RPC("DesactiveW", PhotonTargets.All, CurrentW);
+        //anim.SetBool(availableWeapon[CurrentW].tag, false); RPC
+        int globalint = weapon.IndexOf(availableWeapon[CurrentW]);
+        home.view.RPC("DesactiveW", PhotonTargets.All, globalint);
         CurrentW += nb;
         if (CurrentW < 0)
         {
-            CurrentW = weapon.Count - 1;
+            CurrentW = availableWeapon.Count - 1;
         }
-        else if (CurrentW >= weapon.Count)
+        else if (CurrentW >= availableWeapon.Count)
         {
             CurrentW = 0;
         }
-        home.view.RPC("ActiveW", PhotonTargets.All, CurrentW);
-        anim.SetBool(weapon[CurrentW].tag, true);
+        globalint = weapon.IndexOf(availableWeapon[CurrentW]);
+        home.view.RPC("ActiveW", PhotonTargets.All, globalint);
+        //anim.SetBool(availableWeapon[CurrentW].tag, true); RPC
     }
 
 

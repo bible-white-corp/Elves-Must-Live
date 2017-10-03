@@ -10,7 +10,6 @@ using System.Collections;
 /// <summary>
 /// Player name input field. Let the user input his name, will appear above the player in the game.
 /// </summary>
-[RequireComponent(typeof(InputField))]
 public class PlayerNameInputField : MonoBehaviour
 {
     #region Private Variables
@@ -26,16 +25,14 @@ public class PlayerNameInputField : MonoBehaviour
     /// </summary>
     void Start()
     {
-
-
         string defaultName = "";
-        InputField _inputField = this.GetComponent<InputField>();
+        UIInput _inputField = GetComponentInChildren<UIInput>();
         if (_inputField != null)
         {
             if (PlayerPrefs.HasKey("PlayerName"))
             {
                 defaultName = PlayerPrefs.GetString("PlayerName");
-                _inputField.text = defaultName;
+                _inputField.value = defaultName;
             }
         }
 

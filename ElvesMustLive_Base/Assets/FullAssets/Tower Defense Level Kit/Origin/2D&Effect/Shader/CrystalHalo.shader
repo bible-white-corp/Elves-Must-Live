@@ -1,3 +1,5 @@
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
 // Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
 
 // Shader created with Shader Forge v1.21 
@@ -52,7 +54,7 @@ Shader "TowerDefenseKit/CrystalHalo" {
                 o.normalDir = UnityObjectToWorldNormal(v.normal);
                 v.vertex.xyz += (v.normal*(_Size*0.02+0.01));
                 o.posWorld = mul(unity_ObjectToWorld, v.vertex);
-                o.pos = mul(UNITY_MATRIX_MVP, v.vertex );
+                o.pos = UnityObjectToClipPos(v.vertex );
                 return o;
             }
             float4 frag(VertexOutput i) : COLOR {
@@ -97,7 +99,7 @@ Shader "TowerDefenseKit/CrystalHalo" {
                 VertexOutput o = (VertexOutput)0;
                 o.normalDir = UnityObjectToWorldNormal(v.normal);
                 v.vertex.xyz += (v.normal*(_Size*0.02+0.01));
-                o.pos = mul(UNITY_MATRIX_MVP, v.vertex );
+                o.pos = UnityObjectToClipPos(v.vertex );
                 TRANSFER_SHADOW_CASTER(o)
                 return o;
             }

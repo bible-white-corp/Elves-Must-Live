@@ -5,10 +5,14 @@ using UnityEngine;
 public class Collisionexplode : 
 MonoBehaviour {
 
-	public int damage;
-	Transform bulletpos;
+    public int damage;
+    public int globaldamage;
+    Transform bulletpos;
 	GameObject explosion;
+
 	float timer;
+
+    public int propri;
 
 	void Start () 
 	{
@@ -19,12 +23,17 @@ MonoBehaviour {
 	{
 		explosion = explo;
 	}
-	public void SetDirectHitDamage(int damage)
-	{
-		this.damage = damage;
-	}
-	// Update is called once per frame
-	void Update () 
+    public void SetDirectHitDamage(int damage)
+    {
+        this.damage = damage;
+    }
+
+    public void SetGlobalDamage(int damage)
+    {
+        this.globaldamage = damage;
+    }
+    // Update is called once per frame
+    void Update () 
 	{
 		timer += Time.deltaTime;
 		if (timer >= 1) 
@@ -44,10 +53,12 @@ MonoBehaviour {
 	void Explode(Collider coll)
 	{
 		var script = coll.GetComponent<Health> ();
-		script.TakeDamage (damage);
+		script.TakeDamage (damage, propri);
 		this.gameObject.GetComponent<MeshRenderer> ().enabled = false;
 		GameObject boum = Instantiate (explosion,gameObject.transform.position,gameObject.transform.rotation) as GameObject;
-		Destroy (boum, 1);
+        boum.GetComponent<explosionDamage>().propri = propri;
+        boum.GetComponent<explosionDamage>().ExplosionDamage = globaldamage;
+        Destroy (boum, 1);
 		autodestruct ();
 
 	}

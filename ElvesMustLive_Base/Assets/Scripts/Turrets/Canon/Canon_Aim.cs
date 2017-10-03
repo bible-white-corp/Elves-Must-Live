@@ -5,7 +5,9 @@ using UnityEngine;
 public class Canon_Aim : MonoBehaviour {
 
 	public int DirectHitDamage;
-	public GameObject currentTarget;
+    public int GlobalDamage;
+
+    public GameObject currentTarget;
 	private Vector3 LastKnownPosition;
 	private Quaternion LookAtRotation;
 	private Quaternion temporaire;
@@ -19,34 +21,25 @@ public class Canon_Aim : MonoBehaviour {
 	bool engage; //ca sert a bidouiller 
 	public GameObject explosion;
 
-	void Start () 
+
+    public int propri;
+    AudioClip cannonClip;
+    void Start () 
 	{
+        cannonClip = (AudioClip)Resources.Load("Sound/Cannon");
 		LastKnownPosition = Vector3.zero;
 		timerbeforeshot = 0f;
 		engage = false;
+
+        propri = int.Parse(GetComponentInParent<PhotonView>().instantiationData[0].ToString());
 	}
 
 	void Update () 
-	//il est a noter que ce script a pour seul but de changer l'orientation de la tourelle selon l'axe y!
+
 	{
 		if (currentTarget != null)
 		{
-            /*
-			if (currentTarget.transform.position != LastKnownPosition) 
-			{
-				LastKnownPosition = currentTarget.transform.position;
-				LookAtRotation = Quaternion.LookRotation (LastKnownPosition - transform.position);
-			}
-			if (transform.rotation != LookAtRotation) 
-			{
-				//attention gros bidouillage en approche
-				temporaire = transform.rotation;
-				temporaire[1] = LookAtRotation.y;
-				transform.rotation = Quaternion.RotateTowards(transform.rotation,temporaire,TurretsSpeed* Time.deltaTime);
-				transform.GetChild (0).rotation = new Quaternion (LookAtRotation.x, transform.rotation.y, transform.rotation.z, transform.rotation.w);  
-			}*/
-
-            //Seum que mes deux lignes remplacent toute ta merde ?
+            
             var targetRotation = Quaternion.LookRotation(currentTarget.transform.position - transform.position);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, TurretsSpeed * Time.deltaTime);
 
@@ -100,6 +93,10 @@ public class Canon_Aim : MonoBehaviour {
 		GameObject Shoot = Instantiate (Bullet,hole.position,hole.rotation) as GameObject;
 		Shoot.GetComponent<Rigidbody> ().AddForce (hole.forward * 2500);
 		Shoot.AddComponent<Collisionexplode> ();
-		Shoot.GetComponent<Collisionexplode> ().SetExplosion (explosion);
-	}
+        Shoot.GetComponent<Collisionexplode>().SetExplosion(explosion);
+        Shoot.GetComponent<Collisionexplode>().SetDirectHitDamage(DirectHitDamage);
+        Shoot.GetComponent<Collisionexplode>().SetGlobalDamage(GlobalDamage);
+        Shoot.GetComponent<Collisionexplode>().propri = propri;
+        GetComponent<AudioSource>().PlayOneShot(cannonClip);
+    }
 }

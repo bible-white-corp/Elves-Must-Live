@@ -29,7 +29,7 @@ namespace UnityStandardAssets.Cameras
         private Quaternion m_PivotTargetRot;
         private Quaternion m_TransformTargetRot;
 
-
+        public PlayerControl home;
 
 
         protected override void Awake()
@@ -43,12 +43,15 @@ namespace UnityStandardAssets.Cameras
             m_PivotTargetRot = m_Pivot.transform.localRotation;
             m_TransformTargetRot = transform.localRotation;
 
-
         }
-
 
         protected void Update()
         {
+            if (home.MenuActif)
+            {
+                return;
+            }
+
             HandleRotationMovement();
             if (m_LockCursor && Input.GetMouseButtonUp(0))
             {
@@ -79,12 +82,24 @@ namespace UnityStandardAssets.Cameras
 			if(Time.timeScale < float.Epsilon)
 			return;
 
+            float x;
+            float y;
             // Read the user input
-            var x = CrossPlatformInputManager.GetAxis("Mouse X");
-            var y = CrossPlatformInputManager.GetAxis("Mouse Y");
+            if (home.useController)
+            {
+                x = CrossPlatformInputManager.GetAxis("2-Mouse X");
+                y = CrossPlatformInputManager.GetAxis("2-Mouse Y");
+            }
+            else
+            {
+                x = CrossPlatformInputManager.GetAxis("Mouse X");
+                y = CrossPlatformInputManager.GetAxis("Mouse Y");
+            }
 
             // Adjust the look angle by an amount proportional to the turn speed and horizontal input.
             m_LookAngle += x*m_TurnSpeed;
+            m_LookAngle = (m_LookAngle + 360) % 360;
+
 
             // Rotate the rig (the root object) around Y axis only:
             m_TransformTargetRot = Quaternion.Euler(0f, m_LookAngle, 0f);
@@ -122,6 +137,18 @@ namespace UnityStandardAssets.Cameras
         public void LookPlayer(float h, float v)
         {
             Debug.Log(m_LookAngle + " to " + h);
+            float tmp = m_LookAngle - h;
+            if (Mathf.Abs(tmp) > 180)
+            {
+                if (tmp > 0)
+                {
+                    h = h+360;
+                }
+                else
+                {
+                    h = h-360;
+                }
+            }
             m_LookAngle = Mathf.SmoothStep(m_LookAngle, h, 0.3f);
             m_TiltAngle = Mathf.SmoothStep(m_TiltAngle, v, 0.3f);
         }

@@ -12,13 +12,26 @@ namespace UnityStandardAssets.Characters.ThirdPerson
         private Vector3 m_CamForward;             // The current forward direction of the camera
         private Vector3 m_Move;
         private bool m_Jump;                      // the world-relative desired move direction, calculated from the camForward and user input.
+        protected PlayerControl home;
 
+		AudioClip jump; 
+		AudioSource audioS;
+		float timer;
+		bool lauchtimer;
         
         private void Start()
         {
-
+			timer = 0;
+			lauchtimer = false;
+			audioS = GetComponent<AudioSource> ();
+			jump = (AudioClip)Resources.Load("Sound/Player/saut");
+            home = GetComponent<PlayerControl>();
             // get the transform of the main camera
-            if (Camera.main != null)
+            if (home.cam != null)
+            {
+                m_Cam = home.cam.transform;
+            }
+            else if (Camera.main != null)
             {
                 m_Cam = Camera.main.transform;
             }
@@ -31,27 +44,62 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             // get the third person character ( this should never be null due to require component )
             m_Character = GetComponent<ThirdPersonCharacter>();
+
         }
 
 
         private void Update()
         {
+            if (home.MenuActif)
+            {
+                return;
+            }
+			if (lauchtimer) 
+			{
+				timer += Time.deltaTime;
+			}
+			if (timer > 1.2) 
+			{
+				lauchtimer = false;
+				timer = 0;
+			}
+
             //Gestion Network
             if (photonView.isMine == false && PhotonNetwork.connected == true)
             {
                 return;
             }
 
-            if (!m_Jump)
-            {
-                m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
-            }
+			if (!m_Jump) {
+	
+
+
+				if (home.useController) 
+				{
+					m_Jump = CrossPlatformInputManager.GetButtonDown ("2-Jump");
+				} 
+				else 
+				{
+					m_Jump = CrossPlatformInputManager.GetButtonDown ("Jump");
+				}
+				if (m_Jump && !lauchtimer)
+				{
+					lauchtimer = true;
+					audioS.PlayOneShot (jump);
+				}
+			}
         }
 
 
         // Fixed update is called in sync with physics
         private void FixedUpdate()
         {
+            if (home.MenuActif)
+            {
+                m_Character.m_ForwardAmount = 0f;
+                m_Move = Vector3.zero;
+                return;
+            }
             //Gestion Network
             if (photonView.isMine == false && PhotonNetwork.connected == true)
             {
@@ -59,16 +107,26 @@ namespace UnityStandardAssets.Characters.ThirdPerson
             }
 
             // read inputs
-            float h = CrossPlatformInputManager.GetAxis("Horizontal");
-            float v = CrossPlatformInputManager.GetAxis("Vertical");
-            bool crouch = Input.GetKey(KeyCode.C);
-
+            float h;
+            float v;
+            bool crouch = false;
+            if (home.useController)
+            {
+                h = CrossPlatformInputManager.GetAxis("2-Horizontal");
+                v = CrossPlatformInputManager.GetAxis("2-Vertical");
+            }
+            else
+            {
+                h = CrossPlatformInputManager.GetAxis("Horizontal");
+                v = CrossPlatformInputManager.GetAxis("Vertical");
+                //crouch = Input.GetKey(KeyCode.C);
+            }
             // calculate move direction to pass to character
-            if (m_Cam != null)
+            if (home.cam.transform != null)
             {
                 // calculate camera relative direction to move:
-                m_CamForward = Vector3.Scale(m_Cam.forward, new Vector3(1, 0, 1)).normalized;
-                m_Move = v*m_CamForward + h*m_Cam.right;
+                m_CamForward = Vector3.Scale(home.cam.transform.forward, new Vector3(1, 0, 1)).normalized;
+                m_Move = v*m_CamForward + h* home.cam.transform.right;
             }
             else
             {

@@ -7,54 +7,72 @@ using UnityStandardAssets.Cameras;
 public class PlayerHealth : MonoBehaviour {
     public float health = 30;
     public float maxhealth = 30;
-    public GameObject Slider;
-    private Slider healthSlider;
+    //public GameObject Slider;
+    //private Slider healthSlider;
 	public float sinkspeed = 10f;
     Animator anim;
     public bool IsDead;
     Rigidbody body;
 	float TimerbeforeDeath;
-	bool IsSinking;
+    bool IsSinking;
+    bool IsRespawning;
+
+	AudioClip gothit;
+	AudioClip jump;
+	AudioClip death;
+	AudioSource audioS;
+	float timebeforehit;
+	bool beinghitted;
+
 
     PlayerControl home;
-    
+
+
+    public Renderer MainRenderer;
     // Use this for initialization
     void Start ()
 	{
+		beinghitted = false;
+		gothit = (AudioClip)Resources.Load("Sound/Player/coup_ventre");
+		death = (AudioClip)Resources.Load("Sound/Player/death");
+		audioS = GetComponent<AudioSource> ();
         home = GetComponentInParent<PlayerControl>();
-        healthSlider = Slider.GetComponent<Slider>();
+        //healthSlider = Slider.GetComponent<Slider>();
         anim = home.anim;
 		TimerbeforeDeath = 0;
+		timebeforehit = 0;
+
     }
-
-    public float barDisplay;
-    public Vector2 pos = new Vector2(20, 40);
-    public Vector2 size = new Vector2(105, 20);
-    public Texture2D emptyTex;
-    public Texture2D fullTex;
-    
-
-    void OnGUI()
-    {
-        barDisplay = health / maxhealth;
-        //draw the background:
-        GUI.BeginGroup(new Rect(pos.x, pos.y, size.x, size.y));
-        GUI.Box(new Rect(0, 0, size.x, size.y), emptyTex);
-
-        //draw the filled-in part:
-        GUI.BeginGroup(new Rect(0, 0, size.x * barDisplay, size.y));
-        GUI.Box(new Rect(0, 0, size.x, size.y), fullTex);
-        GUI.EndGroup();
-        GUI.EndGroup();
-    }
+   
 
     // Update is called once per frame
     void Update () 
 	{
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.H) && home.game.cheats)
         {
             health = maxhealth;
         }
+		if (beinghitted) 
+		{
+			timebeforehit += Time.deltaTime;
+			if (timebeforehit > 0.4) 
+			{
+				beinghitted = false;
+				timebeforehit = 0;
+			}
+		}
+
+
+        /*if (hitStatus)
+        {
+            time += Time.deltaTime;
+            if (time > hitTime)
+            {
+                hitStatus = false;
+                GetComponent<Renderer>().material.color = backColor;
+                time = 0f;
+            }
+        }*/
 	}
 	void FixedUpdate()
 	{
@@ -66,36 +84,94 @@ public class PlayerHealth : MonoBehaviour {
 				// c'est le machin qui fait fondre l'ennemi
 				transform.Translate (Vector3.down * sinkspeed * Time.deltaTime);
 			}
+            if (TimerbeforeDeath > 4f)
+            {
+                IsSinking = false;
+                TimerbeforeDeath = 0f;
+                FINISH();
+            }
 		}
+        if (IsRespawning)
+        {
+            TimerbeforeDeath += Time.deltaTime;
+            if (TimerbeforeDeath > 2.5f)
+            {
+                IsRespawning = false;
+                TimerbeforeDeath = 0f;
+                GetComponent<Rigidbody>().isKinematic = false;
+                home.camscript.m_Target = gameObject.transform;
+                if (home.game.gamingmode == "Versus")
+                {
+                    home.transform.position = home.game.GetComponent<Versus>().GetSpawn(home);
+                }
+                else
+                {
+                    home.transform.position = home.game.transform.position;
+                }
+
+            }
+        }
 	}
 
     public void TakeDamage(int amount)
     {
-        if (IsDead)
-        {
-            return;
-        }
+
+		if (IsDead) 
+		{
+			return;
+		} 
+		else if (!beinghitted)
+		{
+			audioS.PlayOneShot(gothit);
+			beinghitted = true;
+		}
         health -= amount;
-        healthSlider.value = health;
+        //healthSlider.value = health;
+
+        //MainRenderer.material.color = Color.red;
 
         if (health <= 0)
         {
             Death();
         }
+        
+
     }
 
     public void Death()
     {
-        home.camscript.m_Target = null;
+
 		IsSinking = true;
         IsDead = true;
         anim.SetTrigger("Died");
         GetComponent<Rigidbody>().isKinematic = true;
-        // A faire qu'une fois donc demande pas tant de ressources...
-        Destroy(GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl>());
-        Destroy(GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>());
-        
-        Destroy(gameObject, 4f);
+		Destroy (GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl> ());
+		Destroy (GetComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter>());
+		audioS.PlayOneShot (death);
+        try
+        {
+            home.camscript.m_Target = null;
+        }
+        catch
+        {}
+        //Destroy(gameObject, 4f);
     }
+
+    private void FINISH()
+    {
+        home.MyUI.DeadMode();
         
+    }
+
+    public void Respawn()
+    {
+        IsDead = false;
+        anim.SetBool("Died", false);
+        anim.SetTrigger("Respawn");
+		gameObject.AddComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonUserControl> ();
+		gameObject.AddComponent<UnityStandardAssets.Characters.ThirdPerson.ThirdPersonCharacter> ();
+
+        health = maxhealth;
+        IsRespawning = true;
+    }
 }

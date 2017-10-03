@@ -3082,6 +3082,14 @@ public static class PhotonNetwork
         SceneManager.LoadScene(levelNumber);
     }
 
+    public static void PrepareLoadLevel(int levelNumber)
+    {
+        networkingPeer.SetLevelInPropsIfSynced(levelNumber);
+
+        PhotonNetwork.isMessageQueueRunning = false;
+        networkingPeer.loadingLevelAndPausedNetwork = true;
+    }
+
     /// <summary>Wraps loading a level to pause the network mesage-queue. Optionally syncs the loaded level in a room.</summary>
     /// <remarks>
     /// While loading levels, it makes sense to not dispatch messages received by other players.
@@ -3108,6 +3116,13 @@ public static class PhotonNetwork
         SceneManager.LoadScene(levelName);
     }
 
+    public static void PrepareLoadLevel(string levelName)
+    {
+        networkingPeer.SetLevelInPropsIfSynced(levelName);
+        PhotonNetwork.isMessageQueueRunning = false;
+        networkingPeer.loadingLevelAndPausedNetwork = true;
+
+    }
 
     /// <summary>
     /// This operation makes Photon call your custom web-service by name (path) with the given parameters.

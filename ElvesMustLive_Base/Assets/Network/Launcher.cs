@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
 //namespace Com.BibleWhiteCorp.ElvesMustLive
@@ -18,11 +19,13 @@ public class Launcher : Photon.PunBehaviour
     [Tooltip("The maximum number of players per room. When a room is full, it can't be joined by new players, and so new room will be created")]
     public byte MaxPlayersPerRoom = 4;
 
-    [Tooltip("The Ui Panel to let the user enter name, connect and play")]
-    public GameObject controlPanel;
-    [Tooltip("The UI Label to inform the user that the connection is in progress")]
-    public GameObject progressLabel;
+    public LoadProgress progress;
 
+    public string LevelName;
+
+    public Settings settings;
+
+    public GameObject mouseC;
     #endregion
 
 
@@ -41,6 +44,11 @@ public class Launcher : Photon.PunBehaviour
     /// </summary>
     bool isConnecting;
 
+    public GameObject levelWindow;
+
+    public GameObject historyTab;
+
+    public GameObject controls;
     #endregion
 
 
@@ -68,15 +76,158 @@ public class Launcher : Photon.PunBehaviour
 
     private void Start()
     {
-        progressLabel.SetActive(false);
-        controlPanel.SetActive(true);   
+        PlayerPrefs.SetInt("Control", 0); // Set keyboard par défaut
+        //progress.LoadCanvas.enabled = false;
+        //progress.MainCanvas.enabled = true;
+    }
+
+    public void ShowLevelWindow()
+    {
+        levelWindow.SetActive(true);
+        ActiveCol(controls, false);
+    }
+
+    
+
+    public void OpenSettings()
+    {
+        settings.gameObject.SetActive(true);
+        ActiveCol(controls, false);
+    }
+
+    public void LaunchCredit()
+    {
+        SceneManager.LoadScene("credit");
+    }
+
+    public void Quit()
+    {
+        if (!Application.isEditor)
+        {
+            System.Diagnostics.Process.GetCurrentProcess().Kill();
+        }
+    }
+    public void LaunchVersus()
+    {
+        LevelName = "Map/Map Versus/Map Versus";
+        PlayerPrefs.SetString("Mode", "Versus");
+        //Connect();
+    }
+    public void LaunchTuto()
+    {
+        LevelName = "Map/MAP tuto/Map TUTO";
+        PlayerPrefs.SetString("Mode", "Tuto");
+        Offline();
+    }
+
+    public void SetHistory()
+    {
+        PlayerPrefs.SetString("Mode", "History");
+    }
+
+    public void SetEndLess()
+    {
+        PlayerPrefs.SetString("Mode", "Endless");
+    }
+
+    public void LoadHistory()
+    {
+        if (!PlayerPrefs.HasKey("Histoire"))
+        {
+            PlayerPrefs.SetInt("Histoire", 0);
+        }
+        SetHistory();
+        //Debug.Log(PlayerPrefs.GetInt("Histoire"));
+        switch (PlayerPrefs.GetInt("Histoire"))
+        {
+            case 0:
+                LevelName = "Map/MAP tuto/Map TUTO";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("tuto_des");
+                historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "tuto_des";
+                historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "tuto";
+                PlayerPrefs.SetString("Mode", "Tuto");
+                break;
+            case 1:
+                LevelName = "Map/Map 1-";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("niv1_des");
+                historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "niv1_des";
+                historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map1";
+                break;
+            case 2:
+                LevelName = "Map/MAP 2 multipath/MAP 2";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("niv2_des");
+                historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "niv2_des";
+                historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map3";
+                break;
+            case 3:
+                LevelName = "Map/map 3/map 3 montagne";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("niv3_des");
+                historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "niv3_des";
+                historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map2";
+                break;
+            case 4:
+                LevelName = "Map/Map 4/Cave";
+                historyTab.transform.GetChild(0).GetComponent<UILabel>().text = Localization.Get("niv4_des");
+                historyTab.transform.GetChild(0).GetComponent<UILocalize>().key = "niv4_des";
+                historyTab.transform.GetChild(2).GetComponent<UISprite>().spriteName = "Map4";
+                break;
+            default:
+                ResetHistory();
+                return;
+        }
+        
+    }
+
+    public void SkipHistory()
+    {
+        PlayerPrefs.SetInt("Histoire", PlayerPrefs.GetInt("Histoire") +1);
+        LoadHistory();
+    }
+
+    public void ResetHistory()
+    {
+        PlayerPrefs.SetInt("Histoire", 0);
+        LoadHistory();
+    }
+
+    public void ActiveCol(GameObject go, bool b)
+    {
+        foreach (var item in go.GetComponentsInChildren<Collider>())
+        {
+            item.enabled = b;
+            //item.gameObject.GetComponent<UIButton>().state = UIButtonColor.State.Normal;
+        }
     }
 
     #endregion
+    private void Update()
+    {
+        if (Input.GetButtonDown("Cancel") || Input.GetButtonDown("2-Cancel")) {
+            levelWindow.SetActive(false);
+            settings.gameObject.SetActive(false);
+            ActiveCol(controls, true);
+        }
 
+        if (!mouseC.GetActive() && (Input.GetAxis("2-Horizontal") != 0 || Input.GetAxis("2-Vertical") != 0))
+        {
+            mouseC.SetActive(true);
+        }
+    }
 
     #region Public Methods
 
+    public void SelectLevel(UIButton MyUIButton, GameObject allMaps)
+    {
+        foreach (var item in allMaps.GetComponentsInChildren<UIButton>())
+        {
+            item.SetState(UIButtonColor.State.Normal, false);
+            item.GetComponent<Collider>().enabled = true;
+        }
+        MyUIButton.SetState(UIButtonColor.State.Disabled, false);
+        MyUIButton.GetComponent<Collider>().enabled = false;
+        LevelName = MyUIButton.gameObject.name;
+        Debug.Log("Selected : " + MyUIButton.gameObject.name);
+    }
 
     /// <summary>
     /// Start the connection process. 
@@ -85,8 +236,15 @@ public class Launcher : Photon.PunBehaviour
     /// </summary>
     public void Connect()
     {
-        progressLabel.SetActive(true);
-        controlPanel.SetActive(false);
+        if (LevelName == "")
+        {
+            return;
+        }
+        PlayerPrefs.SetInt("Online", 1);
+        levelWindow.SetActive(false);
+        progress.Set(true);
+        progress.NetworkState = 0.25f;
+        PhotonNetwork.offlineMode = false;
 
         // keep track of the will to join a room, because when we come back from the game we will get a callback that we are connected, so we need to know what to do then
         isConnecting = true;
@@ -119,29 +277,32 @@ public class Launcher : Photon.PunBehaviour
         if (isConnecting)
         {
             // #Critical: The first we try to do is to join a potential existing room. If there is, good, else, we'll be called back with OnPhotonRandomJoinFailed()
+            progress.NetworkState = 0.5f;
             PhotonNetwork.JoinRandomRoom();
         }
+        
 
     }
 
     public override void OnPhotonRandomJoinFailed(object[] codeAndMsg)
     {
         Debug.Log("DemoAnimator/Launcher:OnPhotonRandomJoinFailed() was called by PUN. No random room available, so we create one.\nCalling: PhotonNetwork.CreateRoom(null, new RoomOptions() {maxPlayers = 4}, null);");
-
+        progress.NetworkState = 0.75f;
         // #Critical: we failed to join a random room, maybe none exists or they are all full. No worries, we create a new room.
-        PhotonNetwork.CreateRoom(null, new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
+        PhotonNetwork.CreateRoom(PhotonNetwork.playerName, new RoomOptions() { MaxPlayers = MaxPlayersPerRoom }, null);
     }
 
     public override void OnJoinedRoom()
     {
         Debug.Log("DemoAnimator/Launcher: OnJoinedRoom() called by PUN. Now this client is in a room.");
-        PhotonNetwork.LoadLevel("Map/Map 1");
+        progress.NetworkState = 1;
+
+        progress.LoadALevel(LevelName);
     }
 
     public override void OnDisconnectedFromPhoton()
     {
-        progressLabel.SetActive(false);
-        controlPanel.SetActive(true);
+        progress.Set(false);
 
         Debug.LogWarning("DemoAnimator/Launcher: OnDisconnectedFromPhoton() was called by PUN");
     }
@@ -151,13 +312,29 @@ public class Launcher : Photon.PunBehaviour
     #region Offline
     public void Offline()
     {
+        if (LevelName == "")
+        {
+            return;
+        }
+        PlayerPrefs.SetInt("Online", 0);
+        levelWindow.SetActive(false);
+        progress.Set(true);
+        progress.NetworkState = 0.5f;
         PhotonNetwork.offlineMode = true;
         PhotonNetwork.CreateRoom("Offline");
     }
 
     public void LocalMulti()
     {
-        Debug.Log("Nothing.");  
+        if (PlayerPrefs.GetInt("mod") == 0)
+        {
+            PlayerPrefs.SetInt("mod", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("mod", 0);
+        }
+        //Debug.Log("Set to "+ PlayerPrefs.GetInt("mod"));  
     }
     #endregion
 

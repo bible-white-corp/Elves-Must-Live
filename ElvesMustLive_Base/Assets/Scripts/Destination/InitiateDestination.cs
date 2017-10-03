@@ -8,7 +8,7 @@ public class InitiateDestination : MonoBehaviour {
 	EnnemyMov1 script;
 	void Start () 
 	{
-        script = GetComponentInChildren<EnnemyMov1>();
+		script = GetComponent<EnnemyMov1>();
         FirstDestination = GameObject.Find("Destination1").transform;
         script.ChangeDestination(FirstDestination);
     }

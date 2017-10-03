@@ -8,6 +8,8 @@ public class ArrowScript : Photon.MonoBehaviour {
     public Rigidbody rigid;
     float time;
 
+    public int from;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -37,7 +39,7 @@ public class ArrowScript : Photon.MonoBehaviour {
             Debug.Log(other.gameObject);
             try
             {
-                other.GetComponent<Health>().TakeDamage(AttackDamage); 
+                other.GetComponent<Health>().TakeDamage(AttackDamage, from); 
                 // Faudrais le send by the network, la fleche va tellement vite que les autres recoivent pas la collision
                 // (Un RPC sur le script health des ennemies)
                 Debug.Log("You touch " + other.gameObject);

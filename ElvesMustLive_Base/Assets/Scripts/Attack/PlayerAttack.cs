@@ -10,11 +10,17 @@ public class PlayerAttack : Photon.MonoBehaviour
     Animator anim;
     Collider coll;
     public bool isAttack;
-
     PlayerControl home;
+	AudioClip epee;
+	AudioClip lance;
+	AudioSource audioS;
 
     // Use this for initialization
-    void Start () {
+    void Start () 
+	{
+		audioS = GetComponentInParent<AudioSource> ();
+		epee = (AudioClip)Resources.Load("Sound/Epee/Coup");
+		lance = (AudioClip)Resources.Load("Sound/Lance/coup_lance");
         home = GetComponentInParent<PlayerControl>();
         anim = home.anim;
         coll = GetComponent<BoxCollider>();
@@ -23,7 +29,7 @@ public class PlayerAttack : Photon.MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if (home.isMine == false && PhotonNetwork.connected == true)
+        if (home.isMine == false && PhotonNetwork.connected == true || home.game.paused || home.MenuActif)
         {
             return;
         }
@@ -33,8 +39,16 @@ public class PlayerAttack : Photon.MonoBehaviour
             isAttack = false;
             coll.enabled = false;
         }
-        if (Input.GetButton("Fire1") && !isAttack)
+        if ((Input.GetButtonDown("Fire1") && !home.useController || (Input.GetButtonDown("2-Fire1") && home.useController)) && !isAttack && !home.raycast.BuildConfirm)
         {
+			if (gameObject.tag == "Sword") 
+			{
+				audioS.PlayOneShot (epee);
+			}
+			if (gameObject.tag == "Spear") 
+			{
+				audioS.PlayOneShot (lance);
+			}
             isAttack = true;
             coll.enabled = true;
             anim.SetTrigger("Atk");
@@ -44,12 +58,10 @@ public class PlayerAttack : Photon.MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         if (other.tag == "Shootable" && isAttack) // Can attack twice a same Ennemy...
         {
             health = other.gameObject.GetComponent<Health>();
-            health.TakeDamage(AttackDamage);
-            Debug.Log(health.health + " after");
+            health.TakeDamage(AttackDamage, home);
         }
         
     }

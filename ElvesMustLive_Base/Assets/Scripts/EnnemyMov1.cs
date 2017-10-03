@@ -2,15 +2,11 @@
 using System.Collections;
 using UnityEngine.AI;
 
-public class EnnemyMov1 : MonoBehaviour
+public class EnnemyMov1 : Mov
 {
-    public Animator animator;           // Reference to the player's position.
-	public NavMeshAgent nav;               // Reference to the nav mesh agent.
-	public float distance;
+
     EnnemyAttack atkscript;
-    Health hp;
-    public GameObject player;
-	public Transform Destination;
+
 	//InitiateDestination initiate;
 
 
@@ -69,7 +65,7 @@ public class EnnemyMov1 : MonoBehaviour
             atkscript.enabled = false;
 		}
 	}
-	public void ChangeDestination(Transform newgameObject)
+	public override void ChangeDestination(Transform newgameObject)
 	{
 		nav.SetDestination (newgameObject.position);
 		Destination = newgameObject;

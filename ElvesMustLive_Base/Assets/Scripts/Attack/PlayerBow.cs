@@ -21,17 +21,26 @@ public class PlayerBow : Photon.MonoBehaviour
     PlayerControl home;
     //SET IN THE EDITOR
     public GameObject arrowspot;
-    //GameObject tpscam;
+    Camera tpscamera;
     GameObject fpscam;
+    GameObject tpscam;
+
+	AudioSource audioS;
+    AudioClip bow;
+    AudioClip bowLoad;
 
     float t;
-    float timeout = 0.8f;  
+    float timeout = 0.6f;  
 
     // Use this for initialization
     void Start ()
     {
+		bow = (AudioClip)Resources.Load("Sound/Arcs/decochage");
+        bowLoad = (AudioClip)Resources.Load("Sound/Arcs/loadBow");
         home = GetComponentInParent<PlayerControl>();
-        //tpscam = home.cam;
+		audioS = home.GetComponent<AudioSource> ();
+        tpscamera = home.cam.GetComponentInChildren<Camera>();
+        tpscam = home.cam;
         fpscam = home.fpscam;
         anim = home.anim;
     }
@@ -39,16 +48,14 @@ public class PlayerBow : Photon.MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (home.isMine == false && PhotonNetwork.connected == true)
+        if (home.isMine == false && PhotonNetwork.connected == true || home.game.paused || home.MenuActif)
         {
             return;
         }
-
-
-
+        
         if (isAttack)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && !home.useController || Input.GetButtonDown("2-Fire1") && home.useController)
             {
                 anim.SetTrigger("Cancel");
                 Destroy(temparrow);
@@ -56,6 +63,8 @@ public class PlayerBow : Photon.MonoBehaviour
                 home.camscript.transform.eulerAngles = new Vector3(0f, home.camscript.m_LookAngle, 0f);
                 // SET TPS
                 fpscam.SetActive(false);
+                tpscamera.enabled = true;
+                //home.cam = tpscam;
                 home.player.transform.eulerAngles = new Vector3(0f, home.player.transform.eulerAngles.y, 0f);
             }
 
@@ -64,17 +73,19 @@ public class PlayerBow : Photon.MonoBehaviour
                 t += Time.deltaTime;
                 if (t >= timeout)
                 {
+                    audioS.PlayOneShot(bowLoad);
                     temparrow = (GameObject)Instantiate(Resources.Load("TempArrow"), transform);
                 }
                 return;
             }
             
-            if (Input.GetButtonDown("Fire2"))
+            if (Input.GetButtonDown("Fire2") && !home.useController || Input.GetButtonDown("2-Fire2") && home.useController)
             {
                 Destroy(temparrow);
                 anim.SetTrigger("Arrow");
-
+				audioS.PlayOneShot (bow);
                 arrow = PhotonNetwork.Instantiate("Arrow", fpscam.transform.position, Quaternion.Euler(fpscam.transform.rotation.eulerAngles),0);
+                arrow.GetComponent<ArrowScript>().from = home.view.viewID;
                 //arrow.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
                 arrow.GetComponent<Rigidbody>().velocity = fpscam.transform.forward * 40;
                 t = 0f;
@@ -86,14 +97,17 @@ public class PlayerBow : Photon.MonoBehaviour
         else
         {
 
-            if (Input.GetButtonDown("Fire1"))
+            if ((Input.GetButtonDown("Fire1") && !home.useController || Input.GetButtonDown("2-Fire1") && home.useController) && !home.raycast.BuildConfirm)
             {
                 isAttack = true;
                 anim.SetTrigger("Atk");
-
+                //audioS.PlayOneShot(bowLoad);
                 // Mettre la caméra (Une autre caméra) en mode "viser"
                 // SET FPS
                 fpscam.SetActive(true);
+                tpscamera.enabled = false;
+                //home.cam = fpscam;
+                t = 0f;
             }
 
 

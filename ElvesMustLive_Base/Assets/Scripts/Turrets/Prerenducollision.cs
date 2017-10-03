@@ -33,6 +33,8 @@ public class Prerenducollision : MonoBehaviour
 		{
 			this.NearGround = true;
 		}
+		if (coll.tag == "Special")
+			this.NearGround = true;
 	}
 
 	void OnTriggerExit (Collider coll)
